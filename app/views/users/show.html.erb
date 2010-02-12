@@ -1,0 +1,43 @@
+<p>
+  <b>Käyttäjä:</b>
+  <%=h @user.username %>
+</p>
+
+<p>
+  <b>Puhelin:</b>
+  <%=h @user.phone %>
+</p>
+
+<p>
+  <b>Osoite:</b>
+  <%=h @user.address %>
+</p>
+
+<p>
+  <b>Silmät:</b>
+  <%=h @user.eyes %>
+</p>
+
+<p>
+  <b>Lasit:</b>
+  <%=h @user.glasses %>
+</p>
+
+<p>
+  <b>Pituus:</b>
+  <%=h @user.height %>
+</p>
+
+<p>
+  <b>Hiukset:</b>
+  <%=h @user.hair %>
+</p>
+
+<p>
+  <b>Muut tuntomerkit:</b>
+  <%=h @user.other_notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

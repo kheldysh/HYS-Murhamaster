@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%=h @tournament.title %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%=h @tournament.start_date %>
+</p>
+
+<p>
+  <b>Finish date:</b>
+  <%=h @tournament.finish_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_tournament_path(@tournament) %> |
+<%= link_to 'Back', tournaments_path %>

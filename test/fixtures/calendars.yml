@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  monday: MyText
+  tuesday: MyText
+  wednesday: MyText
+  thursday: MyText
+  friday: MyText
+  saturday: MyText
+  sunday: MyText
+
+two:
+  monday: MyText
+  tuesday: MyText
+  wednesday: MyText
+  thursday: MyText
+  friday: MyText
+  saturday: MyText
+  sunday: MyText

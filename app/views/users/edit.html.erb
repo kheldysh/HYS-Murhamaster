@@ -1,0 +1,52 @@
+<h1>Editing user</h1>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %><br />
+    <%= f.text_field :password_confirmation %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :eyes %><br />
+    <%= f.text_field :eyes %>
+  </p>
+  <p>
+    <%= f.label :glasses %><br />
+    <%= f.text_field :glasses %>
+  </p>
+  <p>
+    <%= f.label :height %><br />
+    <%= f.text_field :height %> cm
+  </p>
+  <p>
+    <%= f.label :hair %><br />
+    <%= f.text_field :hair %>
+  </p>
+  <p>
+    <%= f.label :other_notes %><br />
+    <%= f.text_field :other_notes %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>

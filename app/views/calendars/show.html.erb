@@ -1,0 +1,38 @@
+<p>
+  <b>Monday:</b>
+  <%=h @calendar.monday %>
+</p>
+
+<p>
+  <b>Tuesday:</b>
+  <%=h @calendar.tuesday %>
+</p>
+
+<p>
+  <b>Wednesday:</b>
+  <%=h @calendar.wednesday %>
+</p>
+
+<p>
+  <b>Thursday:</b>
+  <%=h @calendar.thursday %>
+</p>
+
+<p>
+  <b>Friday:</b>
+  <%=h @calendar.friday %>
+</p>
+
+<p>
+  <b>Saturday:</b>
+  <%=h @calendar.saturday %>
+</p>
+
+<p>
+  <b>Sunday:</b>
+  <%=h @calendar.sunday %>
+</p>
+
+
+<%= link_to 'Edit', edit_calendar_path(@calendar) %> |
+<%= link_to 'Back', calendars_path %>

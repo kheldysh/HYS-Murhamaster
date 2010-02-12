@@ -1,0 +1,40 @@
+<h1>Editing calendar</h1>
+
+<% form_for(@calendar) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :monday %><br />
+    <%= f.text_area :monday %>
+  </p>
+  <p>
+    <%= f.label :tuesday %><br />
+    <%= f.text_area :tuesday %>
+  </p>
+  <p>
+    <%= f.label :wednesday %><br />
+    <%= f.text_area :wednesday %>
+  </p>
+  <p>
+    <%= f.label :thursday %><br />
+    <%= f.text_area :thursday %>
+  </p>
+  <p>
+    <%= f.label :friday %><br />
+    <%= f.text_area :friday %>
+  </p>
+  <p>
+    <%= f.label :saturday %><br />
+    <%= f.text_area :saturday %>
+  </p>
+  <p>
+    <%= f.label :sunday %><br />
+    <%= f.text_area :sunday %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @calendar %> |
+<%= link_to 'Back', calendars_path %>

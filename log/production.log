@@ -1,0 +1,2736 @@
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:33:02) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:33:06) [GET]
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:33:11) [GET]
+
+ActionController::RoutingError (No route matches "/users" with {:method=>:get}):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:33:27) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:36:17) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:36:20) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:36:20) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:36:20) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:36:20) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:36:21) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:36:21) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:36:21) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:37:12) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:42:22) [GET]
+
+NoMethodError (undefined method `camelize' for :tournaments:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:42:54) [GET]
+
+NoMethodError (undefined method `camelize' for :tournaments:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:44:11) [GET]
+
+NoMethodError (undefined method `camelize' for :tournaments:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:44:11) [GET]
+
+NoMethodError (undefined method `camelize' for :tournaments:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-01-29 10:47:05) [GET]
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 3ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:47:05) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-01-29 10:47:06) [GET]
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:47:06) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-01-29 10:48:58) [GET]
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:48:58) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-01-29 10:48:58) [GET]
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:48:59) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-01-29 10:48:59) [GET]
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:48:59) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-01-29 10:50:59) [GET]
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:50:59) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-01-29 10:51:01) [GET]
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:51:01) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:53:00) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:53:37) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:53:38) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:54:11) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:54:12) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:54:12) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:54:12) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:54:13) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:54:13) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:54:13) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing ApplicationController#index (for 62.142.47.116 at 2010-01-29 10:54:13) [GET]
+
+NoMethodError (undefined method `camelize' for :users:Symbol):
+  
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-01-29 10:54:43) [GET]
+no login, redirecting
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#index (for 62.142.47.116 at 2010-01-29 10:54:43) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 10ms (View: 7, DB: 1) | 200 OK [http://salamurhaajat.net/login]
+
+
+Processing SessionsController#create (for 62.142.47.116 at 2010-01-29 10:56:36) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"5rhTLb5GzHaaFL+ksEGV0HewbzmAl84LyOLYvZ4SOK8=", "user"=>{"username"=>"jkolanki", "password"=>"huuhkaja"}}
+found user #<User:0x2adbe9ea3428>
+testing against password huuhkaja
+62d99579419975b9a1c6f3e08bd46bd2b5142cde == 62d99579419975b9a1c6f3e08bd46bd2b5142cde
+correct info
+user logged in!
+Redirected to http://salamurhaajat.net:12003/
+Completed in 3ms (DB: 0) | 302 Found [http://salamurhaajat.net/session]
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-01-29 10:56:36) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://salamurhaajat.net/]
+
+
+Processing TournamentsController#new (for 62.142.47.116 at 2010-01-29 10:56:54) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/new
+Completed in 93ms (View: 91, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/new]
+
+
+Processing TournamentsController#create (for 62.142.47.116 at 2010-01-29 10:58:04) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"5rhTLb5GzHaaFL+ksEGV0HewbzmAl84LyOLYvZ4SOK8=", "tournament"=>{"start_date(1i)"=>"2010", "start_date(2i)"=>"2", "start_date(3i)"=>"6", "title"=>"Hallituksenvaihtoviikot 2010", "finish_date(1i)"=>"2010", "finish_date(2i)"=>"2", "finish_date(3i)"=>"28"}}
+auth confirmed
+admin!
+Redirected to http://salamurhaajat.net:12003/tournaments/1
+Completed in 9ms (DB: 1) | 302 Found [http://salamurhaajat.net/tournaments]
+
+
+Processing TournamentsController#show (for 62.142.47.116 at 2010-01-29 10:58:04) [GET]
+  Parameters: {"id"=>"1"}
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1]
+
+
+Processing TournamentsController#edit (for 62.142.47.116 at 2010-01-29 10:58:07) [GET]
+  Parameters: {"id"=>"1"}
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/edit
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/edit]
+
+
+Processing TournamentsController#update (for 62.142.47.116 at 2010-01-29 10:58:25) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"5rhTLb5GzHaaFL+ksEGV0HewbzmAl84LyOLYvZ4SOK8=", "id"=>"1", "tournament"=>{"team_game"=>"1", "app_deadline(1i)"=>"2010", "start_date(1i)"=>"2010", "start_date(2i)"=>"2", "app_deadline(2i)"=>"2", "start_date(3i)"=>"6", "title"=>"Hallituksenvaihtoviikot 2010", "app_deadline(3i)"=>"5", "app_deadline(4i)"=>"23", "app_deadline(5i)"=>"59", "finish_date(1i)"=>"2010", "finish_date(2i)"=>"2", "finish_date(3i)"=>"28"}}
+auth confirmed
+admin!
+Redirected to http://salamurhaajat.net:12003/tournaments/1
+Completed in 4ms (DB: 1) | 302 Found [http://salamurhaajat.net/tournaments/1]
+
+
+Processing TournamentsController#show (for 62.142.47.116 at 2010-01-29 10:58:25) [GET]
+  Parameters: {"id"=>"1"}
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 10:58:30) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 21ms (View: 14, DB: 2) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:01:30) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:01:31) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:01:48) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:01:49) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:03:27) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:03:59) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 32ms (View: 25, DB: 3) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing UsersController#index (for 62.142.47.116 at 2010-01-29 11:04:25) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 53ms (View: 51, DB: 0) | 200 OK [http://salamurhaajat.net/users]
+
+
+Processing SessionsController#destroy (for 62.142.47.116 at 2010-01-29 11:04:34) [GET]
+auth confirmed
+Redirected to http://salamurhaajat.net:12003/
+Completed in 2ms (DB: 0) | 302 Found [http://salamurhaajat.net/logout]
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-01-29 11:04:34) [GET]
+no login, redirecting
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#index (for 62.142.47.116 at 2010-01-29 11:04:34) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/login]
+
+
+Processing SessionsController#create (for 62.142.47.116 at 2010-01-29 11:05:02) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"PQXH3yEgWi2lNKUcClIWypK74s5lONkZkVh01UKXKWI=", "user"=>{"username"=>"asd", "password"=>"asd"}}
+found user 
+testing against password asd
+
+NoMethodError (undefined method `password' for nil:NilClass):
+  app/models/user.rb:29:in `authenticate'
+  app/controllers/sessions_controller.rb:6:in `create'
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:05:12) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#create (for 62.142.47.116 at 2010-01-29 11:05:18) [POST]
+  Parameters: {"player"=>{"alias"=>""}, "commit"=>"Create", "authenticity_token"=>"PQXH3yEgWi2lNKUcClIWypK74s5lONkZkVh01UKXKWI=", "tournament_id"=>"1", "user"=>{"address"=>"", "glasses"=>"", "hair"=>"", "password_confirmation"=>"asd", "eyes"=>"", "username"=>"asd", "other_notes"=>"", "height"=>"", "phone"=>"", "last_name"=>"", "password"=>"asd", "first_name"=>""}, "team"=>{"name"=>""}, "calendar"=>{"friday"=>"", "misc"=>"", "wednesday"=>"", "tuesday"=>"", "sunday"=>"", "saturday"=>"", "monday"=>"", "thursday"=>""}}
+
+ActiveRecord::RecordInvalid (Validation failed: Content type --- ainoastaan kuvatiedosto kelpaa):
+  app/controllers/ilmos_controller.rb:56:in `create'
+  app/controllers/ilmos_controller.rb:38:in `create'
+
+Rendering /home/salamnzy/rails_apps/master2/public/422.html (422 Unprocessable Entity)
+
+
+Processing IlmosController#create (for 62.142.47.116 at 2010-01-29 11:06:10) [POST]
+  Parameters: {"player"=>{"alias"=>"testi"}, "commit"=>"Create", "authenticity_token"=>"PQXH3yEgWi2lNKUcClIWypK74s5lONkZkVh01UKXKWI=", "tournament_id"=>"1", "user"=>{"address"=>"testi", "glasses"=>"testi", "hair"=>"testi", "password_confirmation"=>"testi", "eyes"=>"testi", "username"=>"testi", "other_notes"=>"testi", "height"=>"111", "phone"=>"testi", "last_name"=>"testi", "password"=>"testi", "first_name"=>"testi"}, "team"=>{"name"=>"testi"}, "picture"=>{"uploaded_picture"=>#<File:/tmp/RackMultipart20100129-1484-caqznb-0>}, "calendar"=>{"friday"=>"testi", "misc"=>"testi", "wednesday"=>"testi", "tuesday"=>"testi", "sunday"=>"testi", "saturday"=>"testi", "monday"=>"testi", "thursday"=>"testi"}}
+Redirected to http://salamurhaajat.net:12003/
+Completed in 80ms (DB: 17) | 302 Found [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-01-29 11:06:10) [GET]
+no login, redirecting
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#index (for 62.142.47.116 at 2010-01-29 11:06:10) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/login]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:10:26) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:10:42) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+
+ActionView::TemplateError (compile error
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:24: syntax error, unexpected ')'
+... f.label :Käyttäjätunnus* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:28: syntax error, unexpected ')'
+....concat(( f.label :Salasana* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:41: syntax error, unexpected ')'
+...concat(( p.label :Peitenimi* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:48: syntax error, unexpected ')'
+...r.concat(( t.label :Joukkue* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:54: syntax error, unexpected ')'
+...r.concat(( f.label :Etunimi* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:58: syntax error, unexpected ')'
+....concat(( f.label :Sukunimi* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:67: syntax error, unexpected ')'
+...er.concat(( f.label :Osoite* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:71: syntax error, unexpected ')'
+...r.concat(( f.label :Silmät* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:75: syntax error, unexpected ')'
+...fer.concat(( f.label :Lasit* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:79: syntax error, unexpected ')'
+...er.concat(( f.label :Pituus* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:83: syntax error, unexpected ')'
+...r.concat(( f.label :Hiukset* ).to_s); @output_buffer.concat ...
+                              ^) on line #24 of app/views/ilmos/show.html.erb:
+21: 
+22: <h3>Murhamaster-tunnus</h3>
+23:   <p class="secret">
+24:     <%= f.label :Käyttäjätunnus* %><br />
+25:     <%= f.text_field :username %>
+26:   </p>
+27:   <p class="secret">
+
+    app/views/ilmos/show.html.erb:146:in `compile!'
+    app/controllers/ilmos_controller.rb:14:in `show'
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:10:43) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+
+ActionView::TemplateError (compile error
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:24: syntax error, unexpected ')'
+... f.label :Käyttäjätunnus* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:28: syntax error, unexpected ')'
+....concat(( f.label :Salasana* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:41: syntax error, unexpected ')'
+...concat(( p.label :Peitenimi* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:48: syntax error, unexpected ')'
+...r.concat(( t.label :Joukkue* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:54: syntax error, unexpected ')'
+...r.concat(( f.label :Etunimi* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:58: syntax error, unexpected ')'
+....concat(( f.label :Sukunimi* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:67: syntax error, unexpected ')'
+...er.concat(( f.label :Osoite* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:71: syntax error, unexpected ')'
+...r.concat(( f.label :Silmät* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:75: syntax error, unexpected ')'
+...fer.concat(( f.label :Lasit* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:79: syntax error, unexpected ')'
+...er.concat(( f.label :Pituus* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:83: syntax error, unexpected ')'
+...r.concat(( f.label :Hiukset* ).to_s); @output_buffer.concat ...
+                              ^) on line #24 of app/views/ilmos/show.html.erb:
+21: 
+22: <h3>Murhamaster-tunnus</h3>
+23:   <p class="secret">
+24:     <%= f.label :Käyttäjätunnus* %><br />
+25:     <%= f.text_field :username %>
+26:   </p>
+27:   <p class="secret">
+
+    app/views/ilmos/show.html.erb:146:in `compile!'
+    app/controllers/ilmos_controller.rb:14:in `show'
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:10:44) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+
+ActionView::TemplateError (compile error
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:24: syntax error, unexpected ')'
+... f.label :Käyttäjätunnus* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:28: syntax error, unexpected ')'
+....concat(( f.label :Salasana* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:41: syntax error, unexpected ')'
+...concat(( p.label :Peitenimi* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:48: syntax error, unexpected ')'
+...r.concat(( t.label :Joukkue* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:54: syntax error, unexpected ')'
+...r.concat(( f.label :Etunimi* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:58: syntax error, unexpected ')'
+....concat(( f.label :Sukunimi* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:67: syntax error, unexpected ')'
+...er.concat(( f.label :Osoite* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:71: syntax error, unexpected ')'
+...r.concat(( f.label :Silmät* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:75: syntax error, unexpected ')'
+...fer.concat(( f.label :Lasit* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:79: syntax error, unexpected ')'
+...er.concat(( f.label :Pituus* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:83: syntax error, unexpected ')'
+...r.concat(( f.label :Hiukset* ).to_s); @output_buffer.concat ...
+                              ^) on line #24 of app/views/ilmos/show.html.erb:
+21: 
+22: <h3>Murhamaster-tunnus</h3>
+23:   <p class="secret">
+24:     <%= f.label :Käyttäjätunnus* %><br />
+25:     <%= f.text_field :username %>
+26:   </p>
+27:   <p class="secret">
+
+    app/views/ilmos/show.html.erb:146:in `compile!'
+    app/controllers/ilmos_controller.rb:14:in `show'
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:10:44) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+
+ActionView::TemplateError (compile error
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:24: syntax error, unexpected ')'
+... f.label :Käyttäjätunnus* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:28: syntax error, unexpected ')'
+....concat(( f.label :Salasana* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:41: syntax error, unexpected ')'
+...concat(( p.label :Peitenimi* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:48: syntax error, unexpected ')'
+...r.concat(( t.label :Joukkue* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:54: syntax error, unexpected ')'
+...r.concat(( f.label :Etunimi* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:58: syntax error, unexpected ')'
+....concat(( f.label :Sukunimi* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:67: syntax error, unexpected ')'
+...er.concat(( f.label :Osoite* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:71: syntax error, unexpected ')'
+...r.concat(( f.label :Silmät* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:75: syntax error, unexpected ')'
+...fer.concat(( f.label :Lasit* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:79: syntax error, unexpected ')'
+...er.concat(( f.label :Pituus* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:83: syntax error, unexpected ')'
+...r.concat(( f.label :Hiukset* ).to_s); @output_buffer.concat ...
+                              ^) on line #24 of app/views/ilmos/show.html.erb:
+21: 
+22: <h3>Murhamaster-tunnus</h3>
+23:   <p class="secret">
+24:     <%= f.label :Käyttäjätunnus* %><br />
+25:     <%= f.text_field :username %>
+26:   </p>
+27:   <p class="secret">
+
+    app/views/ilmos/show.html.erb:146:in `compile!'
+    app/controllers/ilmos_controller.rb:14:in `show'
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:12:39) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+
+ActionView::TemplateError (compile error
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:24: syntax error, unexpected ')'
+... f.label :Käyttäjätunnus* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:28: syntax error, unexpected ')'
+....concat(( f.label :Salasana* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:41: syntax error, unexpected ')'
+...concat(( p.label :Peitenimi* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:48: syntax error, unexpected ')'
+...r.concat(( t.label :Joukkue* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:54: syntax error, unexpected ')'
+...r.concat(( f.label :Etunimi* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:58: syntax error, unexpected ')'
+....concat(( f.label :Sukunimi* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:67: syntax error, unexpected ')'
+...er.concat(( f.label :Osoite* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:71: syntax error, unexpected ')'
+...r.concat(( f.label :Silmät* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:75: syntax error, unexpected ')'
+...fer.concat(( f.label :Lasit* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:79: syntax error, unexpected ')'
+...er.concat(( f.label :Pituus* ).to_s); @output_buffer.concat ...
+                              ^
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:83: syntax error, unexpected ')'
+...r.concat(( f.label :Hiukset* ).to_s); @output_buffer.concat ...
+                              ^) on line #24 of app/views/ilmos/show.html.erb:
+21: 
+22: <h3>Murhamaster-tunnus</h3>
+23:   <p class="secret">
+24:     <%= f.label :Käyttäjätunnus* %><br />
+25:     <%= f.text_field :username %>
+26:   </p>
+27:   <p class="secret">
+
+    app/views/ilmos/show.html.erb:146:in `compile!'
+    app/controllers/ilmos_controller.rb:14:in `show'
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:12:51) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 33ms (View: 25, DB: 4) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:18:26) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 57ms (View: 56, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:22:45) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+
+ActionView::TemplateError (compile error
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:76: unterminated string meets end of file
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:76: syntax error, unexpected $end, expecting ')') on line #76 of app/views/ilmos/show.html.erb:
+73:   </p>
+74:   <p>
+75:     <%= f.label "Silmälasit*" %><br />
+76:     <%= f.select ( :glasses, %w { "Aina" "Joskus "Ei" } ) %>
+77:   </p>
+78:   <p>
+79:     <%= f.label "Pituus*" %><br />
+
+    app/views/ilmos/show.html.erb:76:in `compile!'
+    app/controllers/ilmos_controller.rb:14:in `show'
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:22:46) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+
+ActionView::TemplateError (compile error
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:76: unterminated string meets end of file
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:76: syntax error, unexpected $end, expecting ')') on line #76 of app/views/ilmos/show.html.erb:
+73:   </p>
+74:   <p>
+75:     <%= f.label "Silmälasit*" %><br />
+76:     <%= f.select ( :glasses, %w { "Aina" "Joskus "Ei" } ) %>
+77:   </p>
+78:   <p>
+79:     <%= f.label "Pituus*" %><br />
+
+    app/views/ilmos/show.html.erb:76:in `compile!'
+    app/controllers/ilmos_controller.rb:14:in `show'
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:25:00) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+
+ActionView::TemplateError (compile error
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:76: unterminated string meets end of file
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:76: syntax error, unexpected $end, expecting ')') on line #76 of app/views/ilmos/show.html.erb:
+73:   </p>
+74:   <p>
+75:     <%= f.label "Silmälasit*" %><br />
+76:     <%= f.select ( :glasses, %w { "Aina", "Joskus, "Ei" } ) %>
+77:   </p>
+78:   <p>
+79:     <%= f.label "Pituus*" %><br />
+
+    app/views/ilmos/show.html.erb:76:in `compile!'
+    app/controllers/ilmos_controller.rb:14:in `show'
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:26:01) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+
+ActionView::TemplateError (compile error
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:76: unterminated string meets end of file
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:76: syntax error, unexpected $end, expecting ')') on line #76 of app/views/ilmos/show.html.erb:
+73:   </p>
+74:   <p>
+75:     <%= f.label "Silmälasit*" %><br />
+76:     <%= f.select ( :glasses, %w { "Aina", "Joskus", "Ei" } ) %>
+77:   </p>
+78:   <p>
+79:     <%= f.label "Pituus*" %><br />
+
+    app/views/ilmos/show.html.erb:76:in `compile!'
+    app/controllers/ilmos_controller.rb:14:in `show'
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:26:05) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+
+ActionView::TemplateError (compile error
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:76: unterminated string meets end of file
+/home/salamnzy/rails_apps/master2/app/views/ilmos/show.html.erb:76: syntax error, unexpected $end, expecting ')') on line #76 of app/views/ilmos/show.html.erb:
+73:   </p>
+74:   <p>
+75:     <%= f.label "Silmälasit*" %><br />
+76:     <%= f.select ( :glasses, %w { "Aina", "Joskus", "Ei" } ) %>
+77:   </p>
+78:   <p>
+79:     <%= f.label "Pituus*" %><br />
+
+    app/views/ilmos/show.html.erb:76:in `compile!'
+    app/controllers/ilmos_controller.rb:14:in `show'
+
+Rendering /home/salamnzy/rails_apps/master2/public/500.html (500 Internal Server Error)
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:28:52) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 33ms (View: 25, DB: 3) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:29:12) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 57ms (View: 56, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 11:29:16) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 88.112.122.12 at 2010-01-29 11:38:46) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 88.112.122.12 at 2010-01-29 13:05:06) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 157.24.2.59 at 2010-01-29 15:49:10) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 15ms (View: 5, DB: 8) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.78.223.37 at 2010-01-29 17:19:13) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 88.112.122.12 at 2010-01-29 18:17:39) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 88.112.122.12 at 2010-01-29 18:18:09) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 12ms (View: 6, DB: 4) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 18:30:37) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 18:30:46) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 18:31:04) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 18:31:05) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 18:31:20) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-29 18:51:27) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 88.112.122.12 at 2010-01-29 18:54:35) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 88.112.122.12 at 2010-01-29 18:54:52) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-30 03:31:19) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 104ms (View: 6, DB: 48) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-01-30 03:32:20) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing UsersController#index (for 62.142.47.116 at 2010-01-30 03:32:33) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://salamurhaajat.net/users]
+
+
+Processing SessionsController#create (for 62.142.47.116 at 2010-01-30 03:32:50) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"fFUWmAP4PGi8+XfglXrY9sHyF3ci8cmL/i38fsNcREg=", "user"=>{"username"=>"jkolanki", "password"=>"huuhkaja"}}
+found user #<User:0x2af5476e7078>
+testing against password huuhkaja
+62d99579419975b9a1c6f3e08bd46bd2b5142cde == 62d99579419975b9a1c6f3e08bd46bd2b5142cde
+correct info
+user logged in!
+Redirected to http://salamurhaajat.net:12003/
+Completed in 73ms (DB: 70) | 302 Found [http://salamurhaajat.net/session]
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-01-30 03:32:50) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://salamurhaajat.net/]
+
+
+Processing PlayersController#index (for 62.142.47.116 at 2010-01-30 03:32:56) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 393ms (View: 267, DB: 123) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing IlmosController#show (for 88.112.122.12 at 2010-01-30 11:49:42) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 27ms (View: 5, DB: 21) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 67.195.110.177 at 2010-01-30 16:02:52) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing UsersController#index (for 67.195.110.177 at 2010-01-30 16:07:15) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/users]
+
+
+Processing TournamentsController#index (for 67.195.110.177 at 2010-01-30 16:41:15) [GET]
+no login, redirecting
+Redirected to http://salamurhaajat.net/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing IlmosController#show (for 88.112.122.12 at 2010-01-30 17:55:30) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 88.112.122.12 at 2010-01-30 18:11:10) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing UsersController#new (for 67.195.110.177 at 2010-01-31 00:22:04) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://salamurhaajat.net/users/new]
+
+
+Processing IlmosController#show (for 88.192.229.217 at 2010-01-31 01:01:04) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.3.42 at 2010-01-31 16:15:29) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 80ms (View: 6, DB: 73) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing UsersController#index (for 62.142.47.116 at 2010-02-01 00:58:51) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/users]
+
+
+Processing SessionsController#create (for 62.142.47.116 at 2010-02-01 00:58:58) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"v2wiTiNOsBh6+vZQvDS4ocSWQXWMQ+4SF98eKxsGncM=", "user"=>{"username"=>"jkolanki", "password"=>"huuhkaja"}}
+found user #<User:0x2af5474a4018>
+testing against password huuhkaja
+62d99579419975b9a1c6f3e08bd46bd2b5142cde == 62d99579419975b9a1c6f3e08bd46bd2b5142cde
+correct info
+user logged in!
+Redirected to http://salamurhaajat.net:12003/
+Completed in 2ms (DB: 1) | 302 Found [http://salamurhaajat.net/session]
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-02-01 00:58:58) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/]
+
+
+Processing PlayersController#index (for 62.142.47.116 at 2010-02-01 00:59:05) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing IlmosController#show (for 66.249.65.40 at 2010-02-01 04:50:18) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 28ms (View: 5, DB: 22) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-02-01 05:29:38) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/]
+
+
+Processing SessionsController#destroy (for 62.142.47.116 at 2010-02-01 05:29:44) [GET]
+auth confirmed
+Redirected to http://salamurhaajat.net:12003/
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/logout]
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-02-01 05:29:45) [GET]
+no login, redirecting
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#index (for 62.142.47.116 at 2010-02-01 05:29:45) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/login]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-02-01 05:29:58) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#create (for 62.142.47.116 at 2010-02-01 05:30:29) [POST]
+  Parameters: {"player"=>{"alias"=>""}, "commit"=>"Create", "authenticity_token"=>"858j5PxJAdi1Vfcwwv0/IaIytp1tFgTvsya3mZtdllA=", "tournament_id"=>"1", "user"=>{"address"=>"", "glasses"=>"Aina", "hair"=>"", "password_confirmation"=>"", "eyes"=>"", "username"=>"", "other_notes"=>"", "height"=>"", "phone"=>"", "last_name"=>"", "password"=>"", "first_name"=>""}, "team"=>{"name"=>""}, "calendar"=>{"friday"=>"", "misc"=>"", "wednesday"=>"", "tuesday"=>"", "sunday"=>"", "saturday"=>"", "monday"=>"", "thursday"=>""}}
+
+ActiveRecord::RecordInvalid (Validation failed: Username can't be blank, Username is too short (minimum is 3 characters), Password can't be blank):
+  app/controllers/ilmos_controller.rb:39:in `create'
+  app/controllers/ilmos_controller.rb:38:in `create'
+
+Rendering /home/salamnzy/rails_apps/master2/public/422.html (422 Unprocessable Entity)
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-02-01 05:31:30) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-02-01 05:31:38) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 128.214.20.122 at 2010-02-01 13:44:02) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing UsersController#index (for 66.249.65.40 at 2010-02-01 15:34:26) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/users]
+
+
+Processing IlmosController#show (for 82.181.88.79 at 2010-02-01 17:48:21) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 82.181.88.79 at 2010-02-01 21:10:01) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 82.181.88.79 at 2010-02-01 21:10:20) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing UsersController#index (for 62.142.47.116 at 2010-02-02 01:27:02) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/users]
+
+
+Processing SessionsController#create (for 62.142.47.116 at 2010-02-02 01:27:10) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"858j5PxJAdi1Vfcwwv0/IaIytp1tFgTvsya3mZtdllA=", "user"=>{"username"=>"jkolanki", "password"=>"huuhkaja"}}
+found user #<User:0x2af5474a0d00>
+testing against password huuhkaja
+62d99579419975b9a1c6f3e08bd46bd2b5142cde == 62d99579419975b9a1c6f3e08bd46bd2b5142cde
+correct info
+user logged in!
+Redirected to http://salamurhaajat.net:12003/
+Completed in 55ms (DB: 54) | 302 Found [http://salamurhaajat.net/session]
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-02-02 01:27:10) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 31ms (View: 1, DB: 29) | 200 OK [http://salamurhaajat.net/]
+
+
+Processing UsersController#index (for 62.142.47.116 at 2010-02-02 01:27:25) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/users]
+
+
+Processing PlayersController#index (for 62.142.47.116 at 2010-02-02 01:27:30) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 25ms (View: 1, DB: 23) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing UsersController#index (for 62.142.47.116 at 2010-02-02 06:02:43) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/users]
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-02-02 06:48:17) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 28ms (View: 4, DB: 21) | 200 OK [http://salamurhaajat.net/]
+
+
+Processing SessionsController#destroy (for 62.142.47.116 at 2010-02-02 06:48:24) [GET]
+auth confirmed
+Redirected to http://salamurhaajat.net:12003/
+Completed in 2ms (DB: 0) | 302 Found [http://salamurhaajat.net/logout]
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-02-02 06:48:24) [GET]
+no login, redirecting
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#index (for 62.142.47.116 at 2010-02-02 06:48:24) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 22ms (View: 4, DB: 17) | 200 OK [http://salamurhaajat.net/login]
+
+
+Processing IlmosController#show (for 128.214.20.122 at 2010-02-02 09:11:34) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 125ms (View: 119, DB: 3) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 128.214.114.162 at 2010-02-02 16:51:57) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing TournamentsController#index (for 128.214.114.162 at 2010-02-02 16:52:16) [GET]
+no login, redirecting
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#index (for 128.214.114.162 at 2010-02-02 16:52:16) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/login]
+
+
+Processing SessionsController#create (for 128.214.114.162 at 2010-02-02 16:52:21) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"ldmWJn42h6cyCYbVQhjrTI2+0ssQUlCmd6RsUkf08t4=", "user"=>{"username"=>"jkolanki", "password"=>"huuhhkaja"}}
+found user #<User:0x2b0c4dd2f440>
+testing against password huuhhkaja
+33ed02926b41efdb1e9b00171ab5b09058d116ca == 62d99579419975b9a1c6f3e08bd46bd2b5142cde
+login failed!
+Redirected to http://salamurhaajat.net:12003/login
+Completed in 2ms (DB: 0) | 302 Found [http://salamurhaajat.net/session]
+
+
+Processing UsersController#index (for 128.214.114.162 at 2010-02-02 16:52:21) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/login]
+
+
+Processing SessionsController#create (for 128.214.114.162 at 2010-02-02 16:52:27) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"ldmWJn42h6cyCYbVQhjrTI2+0ssQUlCmd6RsUkf08t4=", "user"=>{"username"=>"jkolanki", "password"=>"huuhkaja"}}
+found user #<User:0x2b0c4dd0c8a0>
+testing against password huuhkaja
+62d99579419975b9a1c6f3e08bd46bd2b5142cde == 62d99579419975b9a1c6f3e08bd46bd2b5142cde
+correct info
+user logged in!
+Redirected to http://salamurhaajat.net:12003/
+Completed in 1ms (DB: 0) | 302 Found [http://salamurhaajat.net/session]
+
+
+Processing TournamentsController#index (for 128.214.114.162 at 2010-02-02 16:52:27) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/]
+
+
+Processing PlayersController#index (for 128.214.114.162 at 2010-02-02 16:52:32) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 201ms (View: 197, DB: 1) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing IlmosController#show (for 217.64.180.44 at 2010-02-02 18:34:26) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 85.76.47.155 at 2010-02-02 20:07:42) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 40ms (View: 5, DB: 33) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 80.221.63.106 at 2010-02-02 21:54:14) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.193 at 2010-02-03 09:43:20) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 82.181.212.117 at 2010-02-03 14:13:45) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 75ms (View: 5, DB: 69) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 20:55:22) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 20:56:33) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 6, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 21:17:33) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 21:51:02) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 50ms (View: 48, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 21:51:17) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing UsersController#index (for 62.142.47.116 at 2010-02-03 22:25:26) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/users]
+
+
+Processing SessionsController#create (for 62.142.47.116 at 2010-02-03 22:25:32) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"AQtOM/5Wv3Ua5GfahFpShNMVACyV7QSfyMsmIVF4+8c=", "user"=>{"username"=>"jkolanki", "password"=>"huuhkaja"}}
+found user #<User:0x2b0c4dd7f238>
+testing against password huuhkaja
+62d99579419975b9a1c6f3e08bd46bd2b5142cde == 62d99579419975b9a1c6f3e08bd46bd2b5142cde
+correct info
+user logged in!
+Redirected to http://salamurhaajat.net:12003/
+Completed in 2ms (DB: 1) | 302 Found [http://salamurhaajat.net/session]
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-02-03 22:25:32) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/]
+
+
+Processing TournamentsController#show (for 62.142.47.116 at 2010-02-03 22:25:35) [GET]
+  Parameters: {"id"=>"1"}
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1]
+
+
+Processing PlayersController#index (for 62.142.47.116 at 2010-02-03 22:25:40) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 22:42:01) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 22:42:02) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 22:42:03) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 22:42:03) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 22:42:05) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 22:42:25) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 22:42:52) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 22:42:56) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-02-03 22:57:42) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 51ms (View: 43, DB: 4) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-02-03 22:58:12) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 32ms (View: 25, DB: 3) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-02-03 22:59:52) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 37ms (View: 27, DB: 6) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-02-03 23:00:29) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 33ms (View: 25, DB: 4) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 23:08:26) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 71ms (View: 70, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-02-03 23:19:14) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 33ms (View: 25, DB: 4) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 23:29:15) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 61ms (View: 60, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 23:29:17) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 23:29:17) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-02-03 23:30:34) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-02-03 23:30:59) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 33ms (View: 25, DB: 4) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing PlayersController#index (for 62.142.47.116 at 2010-02-03 23:32:00) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 78ms (View: 74, DB: 2) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing SessionsController#destroy (for 62.142.47.116 at 2010-02-03 23:32:08) [GET]
+auth confirmed
+Redirected to http://salamurhaajat.net:12003/
+Completed in 2ms (DB: 0) | 302 Found [http://salamurhaajat.net/logout]
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-02-03 23:32:08) [GET]
+no login, redirecting
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#index (for 62.142.47.116 at 2010-02-03 23:32:08) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://salamurhaajat.net/login]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 23:33:11) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#create (for 94.101.5.101 at 2010-02-03 23:47:35) [POST]
+  Parameters: {"player"=>{"alias"=>"Le Tank"}, "commit"=>"Lähetä", "authenticity_token"=>"BNtC4388S5CS7r+X7qQ3nsX5z72TxPiCIlG/AXI3EUg=", "tournament_id"=>"1", "user"=>{"address"=>"Kämnerintie 7G 57, 00750 Helsinki", "glasses"=>"Ei", "hair"=>"Ruskeat (kuva ajantasainen)", "password_confirmation"=>"poiuyq1", "eyes"=>"Siniset", "username"=>"darkismus", "other_notes"=>"yleensä fleece-takkeja käytössä", "height"=>"198", "phone"=>"040-5466967", "last_name"=>"Puikkonen", "password"=>"poiuyq1", "first_name"=>"Tuomas"}, "team"=>{"name"=>"Get a Role"}, "picture"=>{"uploaded_picture"=>#<File:/tmp/RackMultipart20100203-23630-8dyq2r-0>}, "calendar"=>{"friday"=>"14-18 ohjelmaa Kumpulassa (Exactum), tarkemmin luento ja robottiohjelmoinnin harjoitustyön tapaaminen. Illasta mahdollisesti kotiin tai hengausta Gurulassa.", "misc"=>"Liikenne kotoa laitokselle ja laitokselta kotiin busseilla 73, 75, 74 ja joskus 72. Kotoa keskustaan ja keskustasta kotiin junilla I ja K, illalla N tai T.", "wednesday"=>"klo. 14-18 opiskelua kumpulassa, yleensä kumpulaan jo ennen kahtatoista laskareita tekemään. Kuuden jälkeen kotiin rauhoittumaan.\r\n\r\n10.2. Hallintokoulutusta 17-19 Kumpulassa.", "tuesday"=>"14-16 tietokoneen rakenteen luento kumpulassa. Klo. 18 jälkeen ehkä Alter Egon kertsillä.", "sunday"=>"Kotona-hengausta jos en ole puttaamassa poneja.", "saturday"=>"Yleensä hyvin random-päivä, suurin osa ajasta varmaan kotona ja ehkä kaupassa käyntiä yms.", "monday"=>"Lukujärjestyksessä ei mitään. Saatan käydä kumpulassa (Exactum) opintopiireilemässä kahdentoista aikoihin. Muuten ei suunnitelmia.", "thursday"=>"Ryhmätöitä 10-16 kumpulassa (Exactum), sen jälkeen tavallisesti kotiin."}}
+Redirected to http://salamurhaajat.net:12003/
+Completed in 114ms (DB: 38) | 302 Found [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing TournamentsController#index (for 94.101.5.101 at 2010-02-03 23:47:36) [GET]
+no login, redirecting
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#index (for 94.101.5.101 at 2010-02-03 23:47:36) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/login]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-03 23:47:44) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-04 01:10:31) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing PlayersController#index (for 62.142.47.116 at 2010-02-04 02:16:09) [GET]
+no login, redirecting
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/players]
+
+
+Processing UsersController#index (for 62.142.47.116 at 2010-02-04 02:16:09) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/login]
+
+
+Processing SessionsController#create (for 62.142.47.116 at 2010-02-04 02:16:16) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"X4WJoS5gSlaQ8v/oHxW5ii9DrKFhNtVpwdmWr1o2RvE=", "user"=>{"username"=>"jkolanki", "password"=>"huuhkaja"}}
+found user #<User:0x2adfee485938>
+testing against password huuhkaja
+62d99579419975b9a1c6f3e08bd46bd2b5142cde == 62d99579419975b9a1c6f3e08bd46bd2b5142cde
+correct info
+user logged in!
+Redirected to http://salamurhaajat.net:12003/
+Completed in 38ms (DB: 37) | 302 Found [http://salamurhaajat.net/session]
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-02-04 02:16:16) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 34ms (View: 3, DB: 29) | 200 OK [http://salamurhaajat.net/]
+
+
+Processing PlayersController#index (for 62.142.47.116 at 2010-02-04 02:16:21) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 24ms (View: 2, DB: 21) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing IlmosController#show (for 80.221.63.106 at 2010-02-04 08:49:26) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing PlayersController#index (for 62.142.47.116 at 2010-02-04 16:23:15) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 50ms (View: 3, DB: 46) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing PlayersController#index (for 62.142.47.116 at 2010-02-04 16:23:17) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 3ms (View: 2, DB: 1) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing PlayersController#index (for 62.142.47.116 at 2010-02-04 19:31:35) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 4ms (View: 2, DB: 1) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing IlmosController#show (for 88.112.84.13 at 2010-02-04 20:05:53) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 6, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 82.181.88.79 at 2010-02-04 20:18:46) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 82.181.88.79 at 2010-02-04 20:19:22) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 82.181.88.79 at 2010-02-04 20:21:45) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing TournamentsController#index (for 85.76.21.138 at 2010-02-04 21:08:40) [GET]
+no login, redirecting
+Redirected to http://www.salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://www.salamurhaajat.net/]
+
+
+Processing UsersController#index (for 85.76.21.138 at 2010-02-04 21:08:41) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.salamurhaajat.net/login]
+
+
+Processing SessionsController#create (for 85.76.21.138 at 2010-02-04 21:09:03) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"heyvknpJ+Pddbc8rhiaxD4CRql2wvvkP3ADvABvIALk=", "user"=>{"username"=>"jkolanki", "password"=>"huuhkaja"}}
+found user #<User:0x2adfee3e1540>
+testing against password huuhkaja
+62d99579419975b9a1c6f3e08bd46bd2b5142cde == 62d99579419975b9a1c6f3e08bd46bd2b5142cde
+correct info
+user logged in!
+Redirected to http://www.salamurhaajat.net:12003/
+Completed in 2ms (DB: 1) | 302 Found [http://www.salamurhaajat.net/session]
+
+
+Processing TournamentsController#index (for 85.76.21.138 at 2010-02-04 21:09:04) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://www.salamurhaajat.net/]
+
+
+Processing PlayersController#index (for 85.76.21.138 at 2010-02-04 21:10:05) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 4ms (View: 2, DB: 1) | 200 OK [http://www.salamurhaajat.net/players]
+
+
+Processing PlayersController#index (for 62.142.47.116 at 2010-02-05 04:36:59) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing PlayersController#index (for 62.142.47.116 at 2010-02-05 04:37:29) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-02-05 04:57:13) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 144ms (View: 5, DB: 138) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#create (for 62.142.47.116 at 2010-02-05 04:57:19) [POST]
+  Parameters: {"player"=>{"alias"=>""}, "commit"=>"Lähetä", "authenticity_token"=>"X4WJoS5gSlaQ8v/oHxW5ii9DrKFhNtVpwdmWr1o2RvE=", "tournament_id"=>"1", "user"=>{"address"=>"", "glasses"=>"Aina", "hair"=>"", "password_confirmation"=>"", "eyes"=>"", "username"=>"as", "other_notes"=>"", "height"=>"", "phone"=>"", "last_name"=>"", "password"=>"asd", "first_name"=>""}, "team"=>{"name"=>""}, "calendar"=>{"friday"=>"", "misc"=>"", "wednesday"=>"", "tuesday"=>"", "sunday"=>"", "saturday"=>"", "monday"=>"", "thursday"=>""}}
+
+ActiveRecord::RecordInvalid (Validation failed: Username is too short (minimum is 3 characters), Password doesn't match confirmation):
+  app/controllers/ilmos_controller.rb:39:in `create'
+  app/controllers/ilmos_controller.rb:38:in `create'
+
+Rendering /home/salamnzy/rails_apps/master2/public/422.html (422 Unprocessable Entity)
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-02-05 05:39:58) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing TournamentsController#index (for 62.142.47.116 at 2010-02-05 05:40:03) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/]
+
+
+Processing TournamentsController#edit (for 62.142.47.116 at 2010-02-05 05:40:05) [GET]
+  Parameters: {"id"=>"1"}
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/edit
+Completed in 60ms (View: 59, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/edit]
+
+
+Processing TournamentsController#update (for 62.142.47.116 at 2010-02-05 05:40:46) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"X4WJoS5gSlaQ8v/oHxW5ii9DrKFhNtVpwdmWr1o2RvE=", "id"=>"1", "tournament"=>{"team_game"=>"1", "app_deadline(1i)"=>"2010", "start_date(1i)"=>"2010", "start_date(2i)"=>"2", "app_deadline(2i)"=>"2", "start_date(3i)"=>"15", "title"=>"Hallituksenvaihtoviikot 2010", "app_deadline(3i)"=>"10", "app_deadline(4i)"=>"23", "app_deadline(5i)"=>"59", "finish_date(1i)"=>"2010", "finish_date(2i)"=>"2", "finish_date(3i)"=>"28"}}
+auth confirmed
+admin!
+Redirected to http://salamurhaajat.net:12003/tournaments/1
+Completed in 14ms (DB: 10) | 302 Found [http://salamurhaajat.net/tournaments/1]
+
+
+Processing TournamentsController#show (for 62.142.47.116 at 2010-02-05 05:40:46) [GET]
+  Parameters: {"id"=>"1"}
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-02-05 05:40:52) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 88.114.205.238 at 2010-02-05 07:52:18) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 88.114.205.238 at 2010-02-05 07:53:30) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 88.114.205.238 at 2010-02-05 07:53:53) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 80.221.63.106 at 2010-02-05 09:09:58) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing PlayersController#index (for 62.142.47.116 at 2010-02-05 14:37:32) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 27ms (View: 2, DB: 25) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing IlmosController#create (for 80.221.63.106 at 2010-02-05 15:54:20) [POST]
+  Parameters: {"player"=>{"alias"=>"Hilleri"}, "commit"=>"Lähetä", "authenticity_token"=>"F00lOsf9mivBQoGkeWr0eqZaj755KTFco4htfDxSuOs=", "tournament_id"=>"1", "user"=>{"address"=>"Koukkuniementie 2 E 137, Espoo", "glasses"=>"Joskus", "hair"=>"Pitkät, ruskeat, yleensä poninhännällä", "password_confirmation"=>"Raparperi5", "eyes"=>"Harmaat", "username"=>"Suroboro", "other_notes"=>"Leuan päässä parrantynkää. Vaatetuksena ulkona musta tai tummansininen takki ja musta hattu", "height"=>"173", "phone"=>"044 281 5623", "last_name"=>"Hyvönen", "password"=>"Raparperi5", "first_name"=>"Tommi"}, "team"=>{"name"=>"Get a Role"}, "picture"=>{"uploaded_picture"=>#<File:/tmp/RackMultipart20100205-23630-je67r4-0>}, "calendar"=>{"friday"=>"12-14 Luento yliopiston päärakennuksessa", "misc"=>"Yleensä kuljen kodin ja keskustan väliä bussilla 132 (Matinlahti - Kampin keskus)", "wednesday"=>"12-14 Luento yliopiston päärakennuksessa\r\n14-16 Luento Porthaniassa\r\n16-18 Seminaari Vuorikatu 3A:ssa", "tuesday"=>"14-16 Luento yliopiston päärakennuksessa\r\n\r\n18 alkaen kerhoilta Uudella ylioppilastalolla (B-rappu, 4. kerros)", "sunday"=>"Ei suunnitelmia toistaiseksi", "saturday"=>"Ei suunnitelmia toistaiseksi", "monday"=>"10-12 Luento Porthaniassa\r\n16-18 Luento yliopiston päärakennuksessa\r\n\r\n18 alkaen kerhotilan siivousta Uudella ylioppilastalolla (B-rappu, 4. kerros)", "thursday"=>"16-18 Luento Fabianinkatu 24:ssä"}}
+Redirected to http://salamurhaajat.net:12003/
+Completed in 101ms (DB: 92) | 302 Found [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing TournamentsController#index (for 80.221.63.106 at 2010-02-05 15:54:20) [GET]
+no login, redirecting
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#index (for 80.221.63.106 at 2010-02-05 15:54:20) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/login]
+
+
+Processing IlmosController#show (for 62.142.47.116 at 2010-02-05 16:23:53) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing TournamentsController#show (for 62.142.46.241 at 2010-02-05 16:50:40) [GET]
+  Parameters: {"id"=>"1"}
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+Completed in 4ms (View: 1, DB: 2) | 200 OK [http://salamurhaajat.net/tournaments/1]
+
+
+Processing TournamentsController#edit (for 62.142.46.241 at 2010-02-05 16:50:40) [GET]
+  Parameters: {"id"=>"1"}
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/edit
+Completed in 55ms (View: 7, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/edit]
+
+
+Processing PlayersController#index (for 62.142.46.241 at 2010-02-05 17:00:03) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 4ms (View: 2, DB: 1) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing TeamsController#index (for 62.142.46.241 at 2010-02-05 17:00:11) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/teams
+Rendering teams/index
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://salamurhaajat.net/teams]
+
+
+Processing TeamsController#show (for 62.142.46.241 at 2010-02-05 17:01:49) [GET]
+  Parameters: {"id"=>"2"}
+auth confirmed
+admin!
+Rendering template within layouts/teams
+Rendering teams/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/teams/2]
+
+
+Processing TeamsController#index (for 62.142.46.241 at 2010-02-05 17:01:51) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/teams
+Rendering teams/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/teams]
+
+
+Processing TeamsController#show (for 62.142.46.241 at 2010-02-05 17:01:52) [GET]
+  Parameters: {"id"=>"3"}
+auth confirmed
+admin!
+Rendering template within layouts/teams
+Rendering teams/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/teams/3]
+
+
+Processing TeamsController#index (for 62.142.46.241 at 2010-02-05 17:01:53) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/teams
+Rendering teams/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/teams]
+
+
+Processing TeamsController#show (for 62.142.46.241 at 2010-02-05 17:01:53) [GET]
+  Parameters: {"id"=>"4"}
+auth confirmed
+admin!
+Rendering template within layouts/teams
+Rendering teams/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/teams/4]
+
+
+Processing TeamsController#index (for 62.142.46.241 at 2010-02-05 17:01:54) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/teams
+Rendering teams/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/teams]
+
+
+Processing TeamsController#index (for 62.142.46.241 at 2010-02-05 17:02:22) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/teams
+Rendering teams/index
+Completed in 7ms (View: 4, DB: 1) | 200 OK [http://salamurhaajat.net/teams]
+
+
+Processing IlmosController#show (for 80.221.63.106 at 2010-02-05 17:18:00) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 149ms (View: 142, DB: 3) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 82.181.88.79 at 2010-02-05 18:54:55) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 23ms (View: 22, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 82.181.88.79 at 2010-02-05 19:17:03) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 85.76.114.108 at 2010-02-05 19:37:35) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 82.181.88.79 at 2010-02-05 21:46:36) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 82.181.88.79 at 2010-02-05 22:01:49) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing PlayersController#index (for 62.142.46.241 at 2010-02-06 00:22:27) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 116ms (View: 112, DB: 2) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing IlmosController#show (for 80.221.27.173 at 2010-02-06 12:57:31) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing PlayersController#index (for 62.142.46.241 at 2010-02-06 13:03:44) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 4ms (View: 2, DB: 1) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing IlmosController#show (for 67.195.112.224 at 2010-02-06 16:04:22) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing UsersController#index (for 67.195.112.224 at 2010-02-06 16:09:01) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://salamurhaajat.net/users]
+
+
+Processing IlmosController#show (for 94.101.5.101 at 2010-02-06 16:44:44) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing PlayersController#index (for 62.142.46.241 at 2010-02-06 22:51:26) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 5ms (View: 2, DB: 2) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing PlayersController#index (for 62.142.46.241 at 2010-02-07 04:11:52) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 277ms (View: 2, DB: 274) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing TeamsController#show (for 62.142.46.241 at 2010-02-07 04:28:10) [GET]
+  Parameters: {"id"=>"3"}
+auth confirmed
+admin!
+Rendering template within layouts/teams
+Rendering teams/show
+Completed in 29ms (View: 3, DB: 25) | 200 OK [http://salamurhaajat.net/teams/3]
+
+
+Processing IlmosController#show (for 66.249.65.5 at 2010-02-07 15:42:20) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing UsersController#new (for 66.249.65.5 at 2010-02-08 06:34:31) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 57ms (View: 56, DB: 0) | 200 OK [http://salamurhaajat.net/users/new]
+
+
+Processing IlmosController#show (for 82.181.88.79 at 2010-02-08 06:59:57) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 82.181.88.79 at 2010-02-08 06:59:59) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 88.193.85.227 at 2010-02-08 19:58:56) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 60ms (View: 5, DB: 53) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#create (for 88.193.85.227 at 2010-02-08 20:15:14) [POST]
+  Parameters: {"player"=>{"alias"=>"Khorloogiin Choibalsan"}, "commit"=>"Lähetä", "authenticity_token"=>"7CIt+leGNttr6A7AiIBSf9tRofrsNWgsYLmEHjH4Ikw=", "tournament_id"=>"1", "user"=>{"address"=>"Rautalammintie 3 B 302", "glasses"=>"Aina", "hair"=>"vaaleat", "password_confirmation"=>"rupikonna", "eyes"=>"siniset", "username"=>"Seiuchi", "other_notes"=>"", "height"=>"163", "phone"=>"040-5773755", "last_name"=>"Mursu", "password"=>"rupikonna", "first_name"=>"Laura"}, "team"=>{"name"=>"Kitsune"}, "picture"=>{"uploaded_picture"=>#<File:/tmp/RackMultipart20100208-30544-1jj30hf-0>}, "calendar"=>{"friday"=>"19.02.\r\n21-> tanssit Bottalla, Museokatu 10", "misc"=>"", "wednesday"=>"17.02.\r\n10-12 Japan's History, Unioninkatu 38 F211\r\n12-14 Johdatus terminologiaan, Unioninkatu 40, sl. 1\r\n14-16 Chinese II Unioninkatu 38 F113", "tuesday"=>"16.02. \r\n10-12 Japani 1, Kielikeskus/Fabianinkatu 26, 1. krs.\r\n", "sunday"=>"", "saturday"=>"", "monday"=>"15.02. (akateemisia vartteja ei huomioitu)\r\n10-13 English, Kielikeskus/Fabianinkatu 26 SH205\r\n14-16 Chinese II Unioninkatu 38 F113\r\n16-18 Kiinan keskustelukurssi, Konfutse-instituutti (Unioninkatu 33, 3. krs.)", "thursday"=>"18.02. \r\n8.30-> Asian Trends Seminar, Unioninkatu 33\r\n10-12 Kulttuurisemiotiikka ja kääntäminen, keskustakampuksen päärakennus, 5. tai 6. sali"}}
+Redirected to http://salamurhaajat.net:12003/
+Completed in 87ms (DB: 67) | 302 Found [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing TournamentsController#index (for 88.193.85.227 at 2010-02-08 20:15:14) [GET]
+no login, redirecting
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#index (for 88.193.85.227 at 2010-02-08 20:15:14) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/login]
+
+
+Processing PlayersController#index (for 62.142.46.241 at 2010-02-09 04:52:02) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 59ms (View: 2, DB: 56) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing TeamsController#index (for 62.142.46.241 at 2010-02-09 04:52:14) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/teams
+Rendering teams/index
+Completed in 27ms (View: 3, DB: 23) | 200 OK [http://salamurhaajat.net/teams]
+
+
+Processing IlmosController#show (for 88.193.82.4 at 2010-02-09 17:44:38) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#create (for 88.193.82.4 at 2010-02-09 17:52:52) [POST]
+  Parameters: {"player"=>{"alias"=>"Fale"}, "commit"=>"Lähetä", "authenticity_token"=>"zxfoVbgsFRCBo1Y/T/n2so61CzwnPGT1QoeVCNRCZU4=", "tournament_id"=>"1", "user"=>{"address"=>"kivenlahdenkatu 3 e 53", "glasses"=>"Aina", "hair"=>"pitkät, tumman ruskeat", "password_confirmation"=>"ybjux2em", "eyes"=>"tumman ruskeat", "username"=>"Fale", "other_notes"=>"", "height"=>"169", "phone"=>"0456511013", "last_name"=>"Kanerva", "password"=>"ybjux2em", "first_name"=>"Taija"}, "team"=>{"name"=>"Kitsune"}, "picture"=>{"uploaded_picture"=>#<File:/tmp/RackMultipart20100209-30544-9iqbsn-0>}, "calendar"=>{"friday"=>"18-20 kulttuurikeskus Caisassa korean tunneilla", "misc"=>"Bussi välillä kivenlahti-Kamppi ainakin koulupäivinä: 165, 147, 150\r\nMetro Ruoholahdesta/ Kampista Kaisaniemeen\r\n(Saatan juhliessa olla myös piilarit päässä. Lähes aina käytän kuitenkin silmälaseja)", "wednesday"=>"yleensä kotona", "tuesday"=>"12-16 oppitunneilla, unioninkatu 38", "sunday"=>"", "saturday"=>"", "monday"=>"14-16 oppitunneilla, unioninkatu 38", "thursday"=>"10-14 tunneilla, unioninkatu 38"}}
+Redirected to http://salamurhaajat.net:12003/
+Completed in 142ms (DB: 29) | 302 Found [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing TournamentsController#index (for 88.193.82.4 at 2010-02-09 17:52:52) [GET]
+no login, redirecting
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#index (for 88.193.82.4 at 2010-02-09 17:52:52) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/login]
+
+
+Processing SessionsController#create (for 88.193.82.4 at 2010-02-09 17:53:02) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"zxfoVbgsFRCBo1Y/T/n2so61CzwnPGT1QoeVCNRCZU4=", "user"=>{"username"=>"Fale", "password"=>"ybjux2em"}}
+found user #<User:0x2ba2e87ffa10>
+testing against password ybjux2em
+a94ce972476f4fb44561b53a131b810e5c5a1613 == a94ce972476f4fb44561b53a131b810e5c5a1613
+correct info
+user logged in!
+Redirected to http://salamurhaajat.net:12003/
+Completed in 3ms (DB: 0) | 302 Found [http://salamurhaajat.net/session]
+
+
+Processing TournamentsController#index (for 88.193.82.4 at 2010-02-09 17:53:02) [GET]
+auth confirmed
+not admin!
+Redirected to http://salamurhaajat.net:12003/users/7
+Filter chain halted as [:is_admin?] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#show (for 88.193.82.4 at 2010-02-09 17:53:02) [GET]
+  Parameters: {"id"=>"7"}
+auth confirmed
+Rendering template within layouts/users
+Rendering users/show
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/users/7]
+
+
+Processing UsersController#edit (for 88.193.82.4 at 2010-02-09 17:53:18) [GET]
+  Parameters: {"id"=>"7"}
+auth confirmed
+Rendering template within layouts/users
+Rendering users/edit
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://salamurhaajat.net/users/7/edit]
+
+
+Processing IlmosController#show (for 88.193.82.4 at 2010-02-09 17:58:40) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#create (for 88.193.82.4 at 2010-02-09 17:58:45) [POST]
+  Parameters: {"player"=>{"alias"=>""}, "commit"=>"Lähetä", "authenticity_token"=>"zxfoVbgsFRCBo1Y/T/n2so61CzwnPGT1QoeVCNRCZU4=", "tournament_id"=>"1", "user"=>{"address"=>"", "glasses"=>"Aina", "hair"=>"", "password_confirmation"=>"", "eyes"=>"", "username"=>"", "other_notes"=>"", "height"=>"", "phone"=>"", "last_name"=>"", "password"=>"", "first_name"=>""}, "team"=>{"name"=>""}, "calendar"=>{"friday"=>"", "misc"=>"", "wednesday"=>"", "tuesday"=>"", "sunday"=>"", "saturday"=>"", "monday"=>"", "thursday"=>""}}
+
+ActiveRecord::RecordInvalid (Validation failed: Username can't be blank, Username is too short (minimum is 3 characters), Password can't be blank):
+  app/controllers/ilmos_controller.rb:39:in `create'
+  app/controllers/ilmos_controller.rb:38:in `create'
+
+Rendering /home/salamnzy/rails_apps/master2/public/422.html (422 Unprocessable Entity)
+
+
+Processing IlmosController#show (for 80.221.33.11 at 2010-02-09 18:05:24) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing TeamsController#index (for 62.142.46.241 at 2010-02-09 18:08:13) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/teams
+Rendering teams/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://salamurhaajat.net/teams]
+
+
+Processing IlmosController#show (for 83.145.207.200 at 2010-02-10 00:35:14) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 55ms (View: 5, DB: 50) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing TeamsController#index (for 62.142.46.241 at 2010-02-10 01:52:01) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/teams
+Rendering teams/index
+Completed in 36ms (View: 3, DB: 33) | 200 OK [http://salamurhaajat.net/teams]
+
+
+Processing PlayersController#index (for 62.142.46.241 at 2010-02-10 01:52:07) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 54ms (View: 3, DB: 51) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing IlmosController#show (for 88.112.40.55 at 2010-02-10 02:22:11) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 27ms (View: 5, DB: 21) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing TeamsController#index (for 62.142.46.241 at 2010-02-10 05:37:38) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/teams
+Rendering teams/index
+Completed in 64ms (View: 3, DB: 61) | 200 OK [http://salamurhaajat.net/teams]
+
+
+Processing PlayersController#index (for 62.142.46.241 at 2010-02-10 13:28:24) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 6ms (View: 3, DB: 2) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing UsersController#index (for 62.142.46.241 at 2010-02-10 13:29:13) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/users]
+
+
+Processing SessionsController#create (for 62.142.46.241 at 2010-02-10 13:29:19) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"X4WJoS5gSlaQ8v/oHxW5ii9DrKFhNtVpwdmWr1o2RvE=", "user"=>{"username"=>"jkolanki", "password"=>"huuhkaja"}}
+found user #<User:0x2ba2e8535000>
+testing against password huuhkaja
+62d99579419975b9a1c6f3e08bd46bd2b5142cde == 62d99579419975b9a1c6f3e08bd46bd2b5142cde
+correct info
+user logged in!
+Redirected to http://salamurhaajat.net:12003/
+Completed in 1ms (DB: 0) | 302 Found [http://salamurhaajat.net/session]
+
+
+Processing TournamentsController#index (for 62.142.46.241 at 2010-02-10 13:29:19) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://salamurhaajat.net/]
+
+
+Processing IlmosController#show (for 213.243.131.153 at 2010-02-10 14:01:31) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#create (for 213.243.131.153 at 2010-02-10 14:08:35) [POST]
+  Parameters: {"player"=>{"alias"=>"Röllö-make"}, "commit"=>"Lähetä", "authenticity_token"=>"phDihnZz0GP0Ds2yYAOIrR0HpaxIWLkKCKsTHBLSor4=", "tournament_id"=>"1", "user"=>{"address"=>"Vanhanlinnankuja 1 b 38 00900 Helsinki", "glasses"=>"Ei", "hair"=>"tummat, ponnarilla", "password_confirmation"=>"saatana", "eyes"=>"Sini-harmaa", "username"=>"perkele", "other_notes"=>"", "height"=>"172", "phone"=>"0407750363", "last_name"=>"Harmaajärvi", "password"=>"saatana", "first_name"=>"Hannu"}, "team"=>{"name"=>"Puliukot"}, "picture"=>{"uploaded_picture"=>#<File:/tmp/RackMultipart20100210-30544-m1ur4s-0>}, "calendar"=>{"friday"=>"", "misc"=>"", "wednesday"=>"", "tuesday"=>"", "sunday"=>"", "saturday"=>"", "monday"=>"", "thursday"=>""}}
+Redirected to http://salamurhaajat.net:12003/
+Completed in 17ms (DB: 8) | 302 Found [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing TournamentsController#index (for 213.243.131.153 at 2010-02-10 14:08:35) [GET]
+no login, redirecting
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#index (for 213.243.131.153 at 2010-02-10 14:08:35) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/login]
+
+
+Processing SessionsController#create (for 213.243.131.153 at 2010-02-10 14:08:41) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"phDihnZz0GP0Ds2yYAOIrR0HpaxIWLkKCKsTHBLSor4=", "user"=>{"username"=>"perkele", "password"=>"saatana"}}
+found user #<User:0x2ba2e87d73a8>
+testing against password saatana
+d51f9b9ec4c8881849d1502786e67ab0138746dc == d51f9b9ec4c8881849d1502786e67ab0138746dc
+correct info
+user logged in!
+Redirected to http://salamurhaajat.net:12003/
+Completed in 1ms (DB: 0) | 302 Found [http://salamurhaajat.net/session]
+
+
+Processing TournamentsController#index (for 213.243.131.153 at 2010-02-10 14:08:41) [GET]
+auth confirmed
+not admin!
+Redirected to http://salamurhaajat.net:12003/users/8
+Filter chain halted as [:is_admin?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#show (for 213.243.131.153 at 2010-02-10 14:08:41) [GET]
+  Parameters: {"id"=>"8"}
+auth confirmed
+Rendering template within layouts/users
+Rendering users/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/users/8]
+
+
+Processing UsersController#edit (for 213.243.131.153 at 2010-02-10 14:09:17) [GET]
+  Parameters: {"id"=>"8"}
+auth confirmed
+Rendering template within layouts/users
+Rendering users/edit
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://salamurhaajat.net/users/8/edit]
+
+
+Processing UsersController#index (for 213.243.131.153 at 2010-02-10 14:09:24) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/users]
+
+
+Processing IlmosController#show (for 213.243.131.153 at 2010-02-10 14:09:30) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 213.243.131.153 at 2010-02-10 14:24:14) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.78.227.52 at 2010-02-10 17:11:03) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 83.145.207.200 at 2010-02-10 17:17:21) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 62.78.227.52 at 2010-02-10 17:17:47) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#create (for 62.78.227.52 at 2010-02-10 17:37:45) [POST]
+  Parameters: {"player"=>{"alias"=>"Rane"}, "commit"=>"Lähetä", "authenticity_token"=>"TZHAl6FqA2aaAsQ/OTWxMOyidX0wzuvkXLT5hoprdxw=", "tournament_id"=>"1", "user"=>{"address"=>"Pitkänsillanranta 7 A 24", "glasses"=>"Ei", "hair"=>"Tumman ruskeat, about 1cm", "password_confirmation"=>"ALeCoq", "eyes"=>"Ette kysyis värisokeelta vaikeita. Harmaat? Tarkennan kunhan kysyn joltain", "username"=>"ajl", "other_notes"=>"", "height"=>"191", "phone"=>"040 569 8010", "last_name"=>"Lantto", "password"=>"ALeCoq", "first_name"=>"Anttijuhani"}, "team"=>{"name"=>"puliukot"}, "picture"=>{"uploaded_picture"=>#<File:/tmp/RackMultipart20100210-30544-184szy6-0>}, "calendar"=>{"friday"=>"", "misc"=>"", "wednesday"=>"", "tuesday"=>"", "sunday"=>"", "saturday"=>"", "monday"=>"", "thursday"=>""}}
+Redirected to http://salamurhaajat.net:12003/
+Completed in 21ms (DB: 12) | 302 Found [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing TournamentsController#index (for 62.78.227.52 at 2010-02-10 17:37:45) [GET]
+no login, redirecting
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#index (for 62.78.227.52 at 2010-02-10 17:37:46) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/login]
+
+
+Processing IlmosController#show (for 83.145.207.200 at 2010-02-10 17:46:57) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#create (for 83.145.207.200 at 2010-02-10 18:37:19) [POST]
+  Parameters: {"player"=>{"alias"=>"Unibomber"}, "commit"=>"Lähetä", "authenticity_token"=>"l8FhT1iSv+bAiyeaVFuTRvgxXEvcWJRqMdIebRnn6oo=", "tournament_id"=>"1", "user"=>{"address"=>"Sireenikatu 4 b 22", "glasses"=>"Ei", "hair"=>"pitkät, vaaleanruskeat", "password_confirmation"=>"fhotix73", "eyes"=>"vihreät", "username"=>"lyssa", "other_notes"=>"", "height"=>"170", "phone"=>"0503619528", "last_name"=>"Helenius", "password"=>"fhotix73", "first_name"=>"Kati"}, "team"=>{"name"=>"Kitsune"}, "picture"=>{"uploaded_picture"=>#<File:/tmp/RackMultipart20100210-30544-1pzbh96-0>}, "calendar"=>{"friday"=>"", "misc"=>"", "wednesday"=>"12.15-13.45 U40 sali 4", "tuesday"=>"9.15-11.45 F26 SH403\r\n14.15-15.45 PR sali 1", "sunday"=>"", "saturday"=>"", "monday"=>"10.15-11.45 U40 sali 4", "thursday"=>"9.15-11.45 F26 SH403\r\n12.15-13.45 U38 F205\r\n14.15-15.45 PR sali 1"}}
+Redirected to http://salamurhaajat.net:12003/
+Completed in 17ms (DB: 7) | 302 Found [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing TournamentsController#index (for 83.145.207.200 at 2010-02-10 18:37:19) [GET]
+no login, redirecting
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#index (for 83.145.207.200 at 2010-02-10 18:37:19) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/login]
+
+
+Processing SessionsController#create (for 83.145.207.200 at 2010-02-10 18:37:33) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"l8FhT1iSv+bAiyeaVFuTRvgxXEvcWJRqMdIebRnn6oo=", "user"=>{"username"=>"lyssa", "password"=>"fhotix73"}}
+found user #<User:0x2ba2e8793e28>
+testing against password fhotix73
+85ccff67490fbe5f9d2c11216898184d6cd12c93 == 85ccff67490fbe5f9d2c11216898184d6cd12c93
+correct info
+user logged in!
+Redirected to http://salamurhaajat.net:12003/
+Completed in 2ms (DB: 0) | 302 Found [http://salamurhaajat.net/session]
+
+
+Processing TournamentsController#index (for 83.145.207.200 at 2010-02-10 18:37:33) [GET]
+auth confirmed
+not admin!
+Redirected to http://salamurhaajat.net:12003/users/10
+Filter chain halted as [:is_admin?] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#show (for 83.145.207.200 at 2010-02-10 18:37:33) [GET]
+  Parameters: {"id"=>"10"}
+auth confirmed
+Rendering template within layouts/users
+Rendering users/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/users/10]
+
+
+Processing IlmosController#show (for 83.145.207.200 at 2010-02-10 18:39:03) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 83.145.207.200 at 2010-02-10 18:48:00) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 83.145.207.200 at 2010-02-10 18:48:15) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing UsersController#index (for 83.145.207.200 at 2010-02-10 18:48:21) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/users]
+
+
+Processing IlmosController#show (for 83.145.207.200 at 2010-02-10 18:49:19) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 83.145.207.200 at 2010-02-10 19:03:34) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing PlayersController#index (for 62.142.46.241 at 2010-02-10 19:25:36) [GET]
+auth confirmed
+Rendering template within layouts/application
+Rendering players/index
+Completed in 7ms (View: 4, DB: 2) | 200 OK [http://salamurhaajat.net/players]
+
+
+Processing TeamsController#index (for 62.142.46.241 at 2010-02-10 19:25:48) [GET]
+auth confirmed
+admin!
+Rendering template within layouts/teams
+Rendering teams/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://salamurhaajat.net/teams]
+
+
+Processing IlmosController#show (for 80.221.63.106 at 2010-02-10 20:00:06) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 83.150.83.116 at 2010-02-11 09:56:28) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 6ms (View: 5, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 83.150.83.116 at 2010-02-11 10:04:35) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 57ms (View: 55, DB: 1) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#show (for 83.150.83.116 at 2010-02-11 10:08:54) [GET]
+  Parameters: {"tournament_id"=>"1"}
+Rendering template within layouts/application
+Rendering ilmos/show
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing IlmosController#create (for 83.150.83.116 at 2010-02-11 10:27:55) [POST]
+  Parameters: {"player"=>{"alias"=>"Das Puzzle Spieler"}, "commit"=>"Lähetä", "authenticity_token"=>"ejvoOUANShH4PA3Ed7YrHRcbbfRsy2PCr6ZJLgBACzk=", "tournament_id"=>"1", "user"=>{"address"=>"Kalevankatu 45 C 26", "glasses"=>"Aina", "hair"=>"vaaleat", "password_confirmation"=>"paholainen", "eyes"=>"Siniharmaat", "username"=>"suojelus", "other_notes"=>"N900 kännykkä", "height"=>"163", "phone"=>"0408649394", "last_name"=>"Säynevirta", "password"=>"paholainen", "first_name"=>"Miika"}, "team"=>{"name"=>"Get a Role"}, "picture"=>{"uploaded_picture"=>#<File:/tmp/RackMultipart20100211-30544-1icwhtf-0>}, "calendar"=>{"friday"=>"19.2. Töissä 8-16 Sorvaajakatu 15, herttoniemi", "misc"=>"Useimmiten julkisilla, töihin metro ja bussi 79. Ei omaa autoa tai polkupyörää. Rauhoitusehto: ei tunkeutumista sorvaajakatu 15 sisätiloihin (työpaikka)", "wednesday"=>"17.2. vapaapäivä, päivitän tarkemmin mikäli uusia menoja ilmestyy", "tuesday"=>"16.2. Alter Egon kerhoilta klo 18 ->", "sunday"=>"21.2. vapaapäivä, päivitän tarkemmin mikäli uusia menoja ilmestyy", "saturday"=>"20.2. vapaapäivä, päivitän tarkemmin mikäli uusia menoja ilmestyy", "monday"=>"15.2. paluu otaniemestä kotiin viimeistään tämän päivän puolella. Vapaapäivä, päivitän tarkemmin mikäli uusia menoja ilmestyy", "thursday"=>"18.2. vapaapäivä, päivitän tarkemmin mikäli uusia menoja ilmestyy"}}
+Redirected to http://salamurhaajat.net:12003/
+Completed in 85ms (DB: 23) | 302 Found [http://salamurhaajat.net/tournaments/1/ilmo]
+
+
+Processing TournamentsController#index (for 83.150.83.116 at 2010-02-11 10:27:55) [GET]
+no login, redirecting
+Redirected to http://salamurhaajat.net:12003/login
+Filter chain halted as [:is_authenticated?] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#index (for 83.150.83.116 at 2010-02-11 10:27:55) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://salamurhaajat.net/login]
+
+
+Processing SessionsController#create (for 83.150.83.116 at 2010-02-11 10:28:52) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"ejvoOUANShH4PA3Ed7YrHRcbbfRsy2PCr6ZJLgBACzk=", "user"=>{"username"=>"suojelus", "password"=>"paholainen"}}
+found user #<User:0x2ba2e880d250>
+testing against password paholainen
+34306c2d0a99bc28a52d2236da1d37d76fecc1b3 == 34306c2d0a99bc28a52d2236da1d37d76fecc1b3
+correct info
+user logged in!
+Redirected to http://salamurhaajat.net:12003/
+Completed in 2ms (DB: 1) | 302 Found [http://salamurhaajat.net/session]
+
+
+Processing TournamentsController#index (for 83.150.83.116 at 2010-02-11 10:28:52) [GET]
+auth confirmed
+not admin!
+Redirected to http://salamurhaajat.net:12003/users/11
+Filter chain halted as [:is_admin?] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://salamurhaajat.net/]
+
+
+Processing UsersController#show (for 83.150.83.116 at 2010-02-11 10:28:52) [GET]
+  Parameters: {"id"=>"11"}
+auth confirmed
+Rendering template within layouts/users
+Rendering users/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://salamurhaajat.net/users/11]

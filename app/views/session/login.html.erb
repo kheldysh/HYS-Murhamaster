@@ -1,0 +1,19 @@
+<h1>Login</h1>
+
+<% form_tag 'create' do %>
+  <%= error_messages_for 'user' %>
+
+
+  <label for='user_login'>Username</label><br />
+  <%= text_field 'user', 'login', :size => 20 %><br />
+
+  <label for='user_login'>Password</label><br />
+  <%= password_field 'user', 'password', :size => 20 %><br />
+
+  <p>
+    <%= submit_tag 'Login' %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', users_path %>

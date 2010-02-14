@@ -1,3 +1,16 @@
+<p>
+  <b>Joukkue:</b>
+  <%=h @team.name %>
+</p>
+
+<p>
+  <b>Pelaajat:</b>
+  <ul>
+  <% @team.players.each do |player| %>
+    <li><%= link_to player.with_real_name, team_player_path(@team) %></li>
+  <% end %>
+  </ul>
+</p>
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>

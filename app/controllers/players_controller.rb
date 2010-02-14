@@ -1,6 +1,6 @@
 class PlayersController < ApplicationController
 
-  before_filter :own_data?
+  before_filter :own_data?, :except => [:show]
 
 
   # GET /tournaments
@@ -14,31 +14,20 @@ class PlayersController < ApplicationController
     end
   end
 
-  # GET /tournaments/1
-  # GET /tournaments/1.xml
   def show
-    @tournament = Tournament.find(params[:id])
+    @player = Player.find(params[:id])
+    @user = @player.user
+    @calendar = @user.calendar
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @tournament }
-    end
   end
 
   # GET /tournaments/new
   # GET /tournaments/new.xml
   def new
-    @tournament = Tournament.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @tournament }
-    end
   end
 
   # GET /tournaments/1/edit
   def edit
-    @tournament = Tournament.find(params[:id])
   end
 
   # POST /tournaments

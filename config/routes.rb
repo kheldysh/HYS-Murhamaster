@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :teams
-
+  map.resources :teams do |team|
+    team.resources :players
+  end
+  
   map.resources :calendars
 
   map.resources :tournaments do |tournament|

@@ -9,13 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100214020237) do
+ActiveRecord::Schema.define(:version => 20100214171029) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "player_id"
     t.integer  "target_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tournament_id"
   end
 
   create_table "calendars", :force => true do |t|
@@ -49,6 +50,21 @@ ActiveRecord::Schema.define(:version => 20100214020237) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "team_id"
+  end
+
+  create_table "referees", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "tournament_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "team_assignments", :force => true do |t|
+    t.integer  "team_id"
+    t.integer  "target_id"
+    t.integer  "tournament_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "teams", :force => true do |t|

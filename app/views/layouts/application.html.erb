@@ -18,6 +18,11 @@
 <div id="sidepanel">
 <p><b><%= link_to 'Omat tiedot', edit_user_path(current_user) %></b><br />
    <b><%= link_to 'Oma kalenteri', edit_calendar_path(current_user.calendar) %></b></p>
+
+<% current_user.tournaments.each do |tournament| %>
+  <h4><%= link_to tournament.title, tournament, :id => tournament.id  %></h4>
+<% end %>
+
 <h3>Kohteet</h3>
   
   <% current_user.players.each do |player| %>

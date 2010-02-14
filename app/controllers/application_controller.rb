@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
       redirect_to login_path
     end
   end
-  
+
   # filter for preventing users from seeing others' data
   def own_data?
     if params[:id] == session[:user_id].to_s() or session[:admin]

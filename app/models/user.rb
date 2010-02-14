@@ -5,12 +5,12 @@ class User < ActiveRecord::Base
   has_many :players
   has_one :calendar
   has_one :picture
+  has_many :referees
+  has_many :tournaments, :through => :referees
   
   validates_presence_of :username, :password
   validates_uniqueness_of :username
 
-
-  
   validates_length_of :username, :in => 3..15
   
   # validates_length_of :password, :in => 5..30, :allow_blank => true, :on => :update
@@ -20,6 +20,12 @@ class User < ActiveRecord::Base
   # attr_accessor :password, :password_confirmation
  
   before_create :hash_password
+
+  def full_name
+    "%s %s" % [ self.first_name, self.last_name ]
+  end
+
+
  
   def self.authenticate(username, password)
     user = User.find_by_username(username)

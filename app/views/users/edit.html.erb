@@ -1,4 +1,6 @@
-<h1>Editing user</h1>
+<h1>Käyttäjätietojen muokkaus</h1>
+
+<b><%= link_to "Vaihda kuvaa...", edit_user_picture_path(@user) %></b>
 
 <% form_for(@user) do |f| %>
   <%= f.error_messages %>
@@ -36,6 +38,7 @@
     <%= f.label "Hiukset" %><br />
     <%= f.text_field :hair %>
   </p>
+
   <p>
     <%= f.label "Muut tuntomerkit" %><br />
     <%= f.text_field :other_notes %>

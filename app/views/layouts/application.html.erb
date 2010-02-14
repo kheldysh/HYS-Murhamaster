@@ -12,7 +12,23 @@
 
 <p style="color: green"><%= flash[:notice] %></p>
 
-<%= yield  %>
+<% if logged_in? %>
+<div id="sidepanel">
+<h3>Kohteet</h3>
+  <% current_user.players.each do |player| %>
+    <%= player.tournament.title %>
+
+    <% player.targets.each do |target| %>
+      <%= link_to target.name, target %>
+    <% end %>
+
+  <% end %>
+
+<% end %>
+</div>
+<div id="content">
+  <%= yield(:content) or yield %>
+</div>
 
 </body>
 </html>

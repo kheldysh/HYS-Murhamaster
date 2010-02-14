@@ -35,6 +35,8 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
+    calendar = Calendar.new
+    @user.calendar = calendar
     if @user.save
       flash[:notice] = 'User was successfully created.'
       redirect_to root_path

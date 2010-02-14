@@ -1,39 +1,41 @@
 <h1>Editing calendar</h1>
 
-<% form_for(@calendar) do |f| %>
-  <%= f.error_messages %>
+<% form_for(@calendar) do |c| %>
+  <%= c.error_messages %>
 
   <p>
-    <%= f.label :monday %><br />
-    <%= f.text_area :monday %>
+    <%= c.label :Maanantai %><br />
+    <%= c.text_area :monday, "rows" => 5 %>
   </p>
   <p>
-    <%= f.label :tuesday %><br />
-    <%= f.text_area :tuesday %>
+    <%= c.label :Tiistai %><br />
+    <%= c.text_area :tuesday, "rows" => 5  %>
   </p>
   <p>
-    <%= f.label :wednesday %><br />
-    <%= f.text_area :wednesday %>
+    <%= c.label :Keskiviikko %><br />
+    <%= c.text_area :wednesday, "rows" => 5  %>
   </p>
   <p>
-    <%= f.label :thursday %><br />
-    <%= f.text_area :thursday %>
+    <%= c.label :Torstai %><br />
+    <%= c.text_area :thursday, "rows" => 5  %>
   </p>
   <p>
-    <%= f.label :friday %><br />
-    <%= f.text_area :friday %>
+    <%= c.label :Perjantai %><br />
+    <%= c.text_area :friday, "rows" => 5  %>
   </p>
   <p>
-    <%= f.label :saturday %><br />
-    <%= f.text_area :saturday %>
+    <%= c.label :Lauantai %><br />
+    <%= c.text_area :saturday, "rows" => 5  %>
   </p>
   <p>
-    <%= f.label :sunday %><br />
-    <%= f.text_area :sunday %>
+    <%= c.label :Sunnuntai %><br />
+    <%= c.text_area :sunday, "rows" => 5  %>
   </p>
   <p>
-    <%= f.submit "Update" %>
+    <%= c.label "Liikennevälineet, muut huomiot" %><br />
+    <%= c.text_area :misc, "rows" => 5  %>
   </p>
+
 <% end %>
 
 <%= link_to 'Show', @calendar %> |

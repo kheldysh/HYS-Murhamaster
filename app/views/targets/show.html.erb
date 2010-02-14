@@ -1,0 +1,104 @@
+<h3><%= @target.tournament.title %></h3>
+<table>
+<tr>
+<td>
+
+<p>
+  <b>Nimi:</b>
+  <%=h "%s %s" % [ @user.first_name, @user.last_name ] %>
+</p>
+<p>
+  <b>Peitenimi:</b>
+  <%=h @target.name %>
+</p>
+
+<% if @target.team != nil %>
+<p>
+  <b>Joukkue:</b>
+  <%=h @target.team.name %>
+</p>
+<% end>
+
+<p>
+  <b>Osoite:</b>
+  <%=h @user.address %>
+</p>
+
+<p>
+  <b>Silmät:</b>
+  <%=h @user.eyes %>
+</p>
+
+<p>
+  <b>Silmälasit:</b>
+  <%=h @user.glasses %>
+</p>
+
+<p>
+  <b>Pituus:</b>
+  <%=h @user.height %>
+</p>
+
+<p>
+  <b>Hiukset:</b>
+  <%=h @user.hair %>
+</p>
+
+<p>
+  <b>Muut tuntomerkit:</b>
+  <%=h @user.other_notes %>
+</p>
+
+</td>
+
+<td>
+<h4>Kalenteri<h4>
+
+<p>
+  <b>Maanantai:</b>
+  <%=h @calendar.monday %>
+</p>
+
+<p>
+  <b>Tiistai:</b>
+  <%=h @calendar.tuesday %>
+</p>
+
+<p>
+  <b>Keskiviikko:</b>
+  <%=h @calendar.wednesday %>
+</p>
+
+<p>
+  <b>Torstai:</b>
+  <%=h @calendar.thursday %>
+</p>
+
+<p>
+  <b>Perjantai:</b>
+  <%=h @calendar.friday %>
+</p>
+
+<p>
+  <b>Lauantai:</b>
+  <%=h @calendar.saturday %>
+</p>
+
+<p>
+  <b>Sunnuntai:</b>
+  <%=h @calendar.sunday %>
+</p>
+
+<p>
+  <b>Liikennevälineet, muut huomiot</b>
+  <%=h @calendar.misc %>
+</p>
+
+</td>
+</tr>
+</table>
+
+<%= link_to 'Edit', edit_calendar_path(@calendar) %> |
+<%= link_to 'Back', calendars_path %>
+
+<%= link_to 'Back', :back %>

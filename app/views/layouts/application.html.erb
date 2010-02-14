@@ -11,24 +11,33 @@
 <h1>MURHAMASTER 2.0 BETA</h1>
 
 <p style="color: green"><%= flash[:notice] %></p>
-
+<table cellspacing="10">
+<tr>
 <% if logged_in? %>
+<td class="sidepanel">
 <div id="sidepanel">
+<p><b><%= link_to 'Omat tiedot', edit_user_path(current_user) %></b><br />
+   <b><%= link_to 'Oma kalenteri', edit_calendar_path(current_user.calendar) %></b></p>
 <h3>Kohteet</h3>
+  
   <% current_user.players.each do |player| %>
-    <%= player.tournament.title %>
-
+    <h4><%= player.tournament.title %></h4>
+    <ul>
     <% player.targets.each do |target| %>
-      <%= link_to target.name, target %>
+          
+      <li><%= link_to target.name, target %></li>
     <% end %>
-
+    </ul>
   <% end %>
-
-<% end %>
 </div>
+</td>
+<% end %>
+<td>
 <div id="content">
   <%= yield(:content) or yield %>
 </div>
-
+</td>
+</tr>
+</table>
 </body>
 </html>

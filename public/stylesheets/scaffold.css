@@ -6,6 +6,8 @@ body, p, ol, ul, td {
   line-height: 18px;
 }
 
+td.sidepanel { vertical-align: top; }
+
 p.secret {  color: #cc0000 }
 
 pre {

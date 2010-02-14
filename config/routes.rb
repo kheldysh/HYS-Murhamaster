@@ -7,7 +7,9 @@ ActionController::Routing::Routes.draw do |map|
     tournament.resource :ilmo
   end
 
-  map.resources "users"
+  map.resources :users do |user|
+    user.resources :targets
+  end
 
   map.resource :session
 

@@ -4,45 +4,43 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
+    <%= f.label "Etunimi" %><br />
+    <%= f.text_field :first_name %>
   </p>
   <p>
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
+    <%= f.label "Sukunimi" %><br />
+    <%= f.text_field :last_name %>
   </p>
-  <p>
-    <%= f.label :password_confirmation %><br />
-    <%= f.text_field :password_confirmation %>
-  </p>
-  <p>
-    <%= f.label :phone %><br />
+  
+  <p class="secret">
+    <%= f.label :Puhelin %><br />
     <%= f.text_field :phone %>
   </p>
   <p>
-    <%= f.label :address %><br />
+    <%= f.label "Osoite" %><br />
     <%= f.text_field :address %>
   </p>
   <p>
-    <%= f.label :eyes %><br />
+    <%= f.label "Silmät" %><br />
     <%= f.text_field :eyes %>
   </p>
   <p>
-    <%= f.label :glasses %><br />
-    <%= f.text_field :glasses %>
+    <%= f.label "Silmälasit" %><br />
+    <%= f.select ( :glasses, [ "Aina", "Joskus", "Ei" ] ) %>
   </p>
   <p>
-    <%= f.label :height %><br />
-    <%= f.text_field :height %> cm
+    <%= f.label "Pituus" %><br />
+    <%= f.text_field :height, "size" => 3, "maxlength" => 3 %> cm
   </p>
   <p>
-    <%= f.label :hair %><br />
+    <%= f.label "Hiukset" %><br />
     <%= f.text_field :hair %>
   </p>
   <p>
-    <%= f.label :other_notes %><br />
+    <%= f.label "Muut tuntomerkit" %><br />
     <%= f.text_field :other_notes %>
   </p>
+
   <p>
     <%= f.submit "Update" %>
   </p>

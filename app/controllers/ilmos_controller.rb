@@ -27,7 +27,8 @@ skip_before_filter :is_authenticated?
 
 
     if @tournament.team_game
-      @team = Team.find(:first, :conditions => { :name => params[:team][:id], :tournament_id => @tournament.id } )
+      logger.info("searching for existing team with name: %s" % params[:team][:name])
+      @team = Team.find(:first, :conditions => { :name => params[:team][:name], :tournament_id => @tournament.id } )
       
       if not @team
         @team = Team.new(params[:team])

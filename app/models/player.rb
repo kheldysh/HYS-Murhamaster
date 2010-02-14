@@ -3,6 +3,8 @@ class Player < ActiveRecord::Base
   belongs_to :user
   belongs_to :tournament
   belongs_to :team
+  belongs_to :referee
+  
   has_many :assignments
   has_many :targets, :through => :assignments
 

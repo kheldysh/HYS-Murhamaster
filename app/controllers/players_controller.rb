@@ -28,6 +28,8 @@ class PlayersController < ApplicationController
 
   # GET /tournaments/1/edit
   def edit
+    @player = Player.find(params[:id])
+    @tournament = Tournament.find(params[:tournament_id])
   end
 
   # POST /tournaments
@@ -50,18 +52,10 @@ class PlayersController < ApplicationController
   # PUT /tournaments/1
   # PUT /tournaments/1.xml
   def update
-    @tournament = Tournament.find(params[:id])
-
-    respond_to do |format|
-      if @tournament.update_attributes(params[:tournament])
-        flash[:notice] = 'Tournament was successfully updated.'
-        format.html { redirect_to(@tournament) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @tournament.errors, :status => :unprocessable_entity }
-      end
-    end
+    @player = Player.find(params[:id])
+    @player.update_attributes(params[:player])
+    @player.save!
+    redirect_to :back
   end
 
   # DELETE /tournaments/1

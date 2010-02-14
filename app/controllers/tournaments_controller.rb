@@ -1,6 +1,7 @@
 class TournamentsController < ApplicationController
 
-  before_filter :is_admin?, :except => :ilmo
+  before_filter :is_admin?, :except => [:ilmo, :show]
+  before_filter :is_referee?
 
 
   # GET /tournaments/1/ilmo
@@ -98,4 +99,22 @@ class TournamentsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+
+  def is_referee?
+    if current_user.admin
+      return true
+    else
+      tournament = Tournament.find(params[:id])
+      tournament.referees.each do |ref|
+        if current_user.referees.include?(ref)
+          return true
+        end
+      end
+    end
+    return false
+  end
+
 end
+
+

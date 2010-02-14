@@ -25,8 +25,6 @@ class User < ActiveRecord::Base
     "%s %s" % [ self.first_name, self.last_name ]
   end
 
-
- 
   def self.authenticate(username, password)
     user = User.find_by_username(username)
     
@@ -52,8 +50,5 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(password)
   end
  
-  # def to_s
-  #   "%s %s" % [self.first_name, self.last_name]
-  # end
  
 end

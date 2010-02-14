@@ -31,6 +31,15 @@
 <% end %>
 
 <p>
+  <b>Puhelin:</b>
+  <%=h @user.phone %>
+</p>
+<p>
+  <b>Sähköposti:</b>
+  <%=h @user.email %>
+</p>
+
+<p>
   <b>Osoite:</b>
   <%=h @user.address %>
 </p>
@@ -59,6 +68,13 @@
   <b>Muut tuntomerkit:</b>
   <%=h @user.other_notes %>
 </p>
+
+<% if @player.referee != nil %>
+<p>
+  <b>Tuomari:</b>
+  <%=h @player.referee.user.full_name %>, <%=h @player.referee.user.phone %>
+</p>
+<% end %>  
 
 </td>
 

@@ -1,0 +1,15 @@
+<% form_for( [@tournament, @player] ) do |f| %>
+  <%= f.error_messages %>
+
+  <b><%= @player.with_real_name %></b>
+
+  <p>
+    <%= f.label :Tuomari %><br />
+    <%= collection_select :player, :referee_id, @tournament.referees, :id, :info %>
+  </p>
+  
+  <p>
+    <%= f.submit "Lisää" %>
+  </p>
+<% end %>
+

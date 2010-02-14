@@ -1,0 +1,17 @@
+
+<h3><%= @tournament.title %></h3>
+<table>
+  <tr>
+    <th>Tuomari</th>
+  </tr>
+
+<% for referee in @referees %>
+  <tr>
+    <td><%=h referee.user.full_name %></td>
+
+    <td><%= link_to 'Poista', referee, :method => :delete, :tournament_id => @tournament.id, :id => referee.id %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to "Uusi tuomari", new_tournament_referee_path %>
+

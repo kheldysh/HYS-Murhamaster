@@ -1,0 +1,17 @@
+<b>Ominaisuus ei juuri nyt käytössä.</b>
+
+<% form_for [@user, @picture] do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label "Kuvatiedosto " %><br />
+    <%= f.file_field :uploaded_picture %>
+  </p>
+    <p>
+    <%= f.submit "Lähetä" %>
+  </p>
+<% end %>
+
+<%= link_to 'Takaisin', :back %>
+
+

@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
   
   protected
   
+  def show_image(picture)
+    send_data picture.data, :type => picture.content_type, :disposition => 'inline', :filename => picture.name
+  end
+  
   def is_authenticated?
     if logged_in?
       logger.info "auth confirmed"
@@ -29,7 +33,7 @@ class ApplicationController < ActionController::Base
       redirect_to :controller => :users, :action => :show, :id => session[:user_id]
     end
   end
-  
+
   def is_admin?
     if session[:admin]
       logger.info "admin!"

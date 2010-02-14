@@ -1,5 +1,16 @@
-<h3><%= @target.tournament.title %></h3>
-<table>
+<h2><%= @target.tournament.title %></h2>
+
+<%# IMAGE_TAG TODO  %>
+
+<table cellspacing="20" class="top_align">
+<tr>
+<th>
+<h3>Perustiedot<h3>
+</th>
+<th>
+<h3>Kalenteri<h3>
+</th>
+</tr>
 <tr>
 <td>
 
@@ -9,7 +20,7 @@
 </p>
 <p>
   <b>Peitenimi:</b>
-  <%=h @target.name %>
+  <%=h @target.alias %>
 </p>
 
 <% if @target.team != nil %>
@@ -17,7 +28,7 @@
   <b>Joukkue:</b>
   <%=h @target.team.name %>
 </p>
-<% end>
+<% end %>
 
 <p>
   <b>Osoite:</b>
@@ -52,8 +63,6 @@
 </td>
 
 <td>
-<h4>Kalenteri<h4>
-
 <p>
   <b>Maanantai:</b>
   <%=h @calendar.monday %>

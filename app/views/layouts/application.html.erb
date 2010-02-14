@@ -25,7 +25,7 @@
     <ul>
     <% player.targets.each do |target| %>
           
-      <li><%= link_to target.name, target %></li>
+      <li><%= link_to target, user_target_path(current_user, target) %></li>
     <% end %>
     </ul>
   <% end %>

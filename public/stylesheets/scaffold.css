@@ -5,6 +5,7 @@ body, p, ol, ul, td {
   font-size:   13px;
   line-height: 18px;
 }
+td { vertical-align: top; }
 
 td.sidepanel { vertical-align: top; }
 

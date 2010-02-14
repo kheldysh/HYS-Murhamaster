@@ -46,4 +46,8 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(password)
   end
  
+  # def to_s
+  #   "%s %s" % [self.first_name, self.last_name]
+  # end
+ 
 end

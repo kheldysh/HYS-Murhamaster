@@ -1,44 +1,24 @@
 class CalendarsController < ApplicationController
-  # GET /calendars
-  # GET /calendars.xml
-  def index
-    @calendars = Calendar.find(:all)
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @calendars }
-    end
+  before_filter :is_admin?, :except => [:show, :edit, :update, :create]
+  before_filter :is_own_calendar?
+
+  def index 
+    @calendars = Calendar.find(:all)
   end
 
-  # GET /calendars/1
-  # GET /calendars/1.xml
   def show
     @calendar = Calendar.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @calendar }
-    end
   end
 
-  # GET /calendars/new
-  # GET /calendars/new.xml
   def new
     @calendar = Calendar.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @calendar }
-    end
   end
 
-  # GET /calendars/1/edit
   def edit
     @calendar = Calendar.find(params[:id])
   end
 
-  # POST /calendars
-  # POST /calendars.xml
   def create
     @calendar = Calendar.new(params[:calendar])
 
@@ -54,8 +34,6 @@ class CalendarsController < ApplicationController
     end
   end
 
-  # PUT /calendars/1
-  # PUT /calendars/1.xml
   def update
     @calendar = Calendar.find(params[:id])
 
@@ -71,8 +49,6 @@ class CalendarsController < ApplicationController
     end
   end
 
-  # DELETE /calendars/1
-  # DELETE /calendars/1.xml
   def destroy
     @calendar = Calendar.find(params[:id])
     @calendar.destroy
@@ -82,4 +58,21 @@ class CalendarsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-end
+  
+  def is_own_calendar?
+    @calendar = Calendar.find(params[:id])
+    logger.info "checked if own calendar"
+    if (current_user.id == @calendar.user.id) 
+      logger.info "is own calendar"
+      return true
+    elsif current_user.admin
+      logger.info "is admin"
+      return true
+    else
+      logger.info "unauthorized"
+      redirect_to root_path
+      return false
+    end
+  end
+  
+end 

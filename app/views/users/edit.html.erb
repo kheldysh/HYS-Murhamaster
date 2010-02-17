@@ -6,6 +6,17 @@
   <%= f.error_messages %>
 
   <p>
+    <b>Pelaajatuomarit:</b>
+    <ul>
+    <% @user.players.each do |player| %>
+      <% if player.referee != nil %>
+        <li><i><%= player.alias %></i>: <%= player.referee.info %> (<%= player.referee.user.phone %>)</li>
+      <% end %>
+    <% end %>
+    </ul>
+  </p>
+
+  <p>
     <%= f.label "Etunimi" %><br />
     <%= f.text_field :first_name %>
   </p>
@@ -18,6 +29,11 @@
     <%= f.label :Puhelin %><br />
     <%= f.text_field :phone %>
   </p>
+  <p class="secret">
+    <%= f.label :Sähköposti %><br />
+    <%= f.text_field :email %>
+  </p>
+  
   <p>
     <%= f.label "Osoite" %><br />
     <%= f.text_field :address %>

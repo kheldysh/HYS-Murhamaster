@@ -1,8 +1,7 @@
 class AssignmentsController < ApplicationController
 
-  before_filter :is_admin?
-
-
+  before_filter :is_referee?
+  
   def index
     @tournament = Tournament.find(params[:tournament_id])
     @assignments = Assignment.find(:all, [ "tournament_id = ?", @tournament.id ], :order => "player_id ASC")
@@ -25,8 +24,21 @@ class AssignmentsController < ApplicationController
   def destroy
     @assignment = Assignment.find(params[:id])
     @assignment.delete
-    redirect_to :back
+    redirect_to :tournament_assignments
   end
 
+  def is_referee?
+    @tournament = Tournament.find(params[:tournament_id])
+    if current_user.admin
+      return true
+    end
+    @tournament.referees.each do |referee|
+      if current_user.referees.include? referee
+        return true
+      end
+    end
+    redirect_to root_path
+    return false
+  end
 
 end

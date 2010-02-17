@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   skip_before_filter :is_authenticated?, :only => [ :index, :new, :create ]
   before_filter :own_data?, :except => [ :index, :new, :create ]
+  before_filter :is_admin?, :only => [:destroy]
 
   # GET /users
   # GET /users.xml

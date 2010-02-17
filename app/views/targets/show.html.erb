@@ -1,6 +1,6 @@
 <h2><%= @target.tournament.title %></h2>
 
-<%= image_tag "images/#{@target.user.picture.name}" %>
+<%= image_tag "#{@target.user.picture.name}" %>
 
 <table cellspacing="20" class="top_align">
 <tr>
@@ -60,6 +60,13 @@
   <%=h @user.other_notes %>
 </p>
 
+<% if @target.referee != nil %>
+<p>
+  <b>Tuomari:</b>
+  <%=h @target.referee.user.full_name %>, <%=h @target.referee.user.phone %>
+</p>
+<% end %>  
+
 </td>
 
 <td>
@@ -106,8 +113,3 @@
 </td>
 </tr>
 </table>
-
-<%= link_to 'Edit', edit_calendar_path(@calendar) %> |
-<%= link_to 'Back', calendars_path %>
-
-<%= link_to 'Back', :back %>

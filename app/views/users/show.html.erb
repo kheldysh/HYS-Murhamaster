@@ -12,6 +12,10 @@
   <b>Puhelin:</b>
   <%=h @user.phone %>
 </p>
+<p>
+  <b>Sähköposti:</b>
+  <%=h @user.email %>
+</p>
 
 <p>
   <b>Osoite:</b>
@@ -43,6 +47,16 @@
   <%=h @user.other_notes %>
 </p>
 
+<p>
+  <b>Pelaajatuomarit:</b>
+  <ul>
+  <% @user.players.each do |player| %>
+    <% if player.referee != nil %>
+      <li><i><%= player.alias %></i>: <%= player.referee.info %> (<%= player.referee.user.phone %>)</li>
+    <% end %>
+  <% end %>
+  </ul>
+</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

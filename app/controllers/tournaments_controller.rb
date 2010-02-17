@@ -1,7 +1,6 @@
 class TournamentsController < ApplicationController
 
-  before_filter :is_admin?, :except => [:ilmo, :show]
-  before_filter :is_referee?
+  before_filter [:is_admin?,  :is_referee?], :except => [:ilmo]
 
 
   # GET /tournaments/1/ilmo
@@ -109,9 +108,10 @@ class TournamentsController < ApplicationController
       tournament.referees.each do |ref|
         if current_user.referees.include?(ref)
           return true
-        end
+        end 
       end
     end
+    redirect_to root_path
     return false
   end
 

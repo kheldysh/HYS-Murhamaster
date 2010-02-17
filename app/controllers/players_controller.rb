@@ -1,6 +1,7 @@
 class PlayersController < ApplicationController
 
-  before_filter :own_data?, :except => [:show]
+  before_filter :own_data?, :except => [:show, :index]
+  before_filter :is_referee?, :only => [:index, :show, :destroy]
 
 
   # GET /tournaments
@@ -69,4 +70,9 @@ class PlayersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def is_referee?
+    @player = Player.find(params[:id])
+    if current_user.referees != nil
+      
 end

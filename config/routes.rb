@@ -16,10 +16,11 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.resources :referees
-  map.resources :assignments
+  # map.resources :assignments
 
   map.resources :users do |user|
     user.resources :targets
+    user.resource :calendar
     user.resource :picture
   end
 
@@ -27,12 +28,11 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resource :session
 
-  
   map.login "/login", :controller=>"users", :action=>"index"
   map.logout "/logout", :controller=>"sessions", :action=>"destroy"
   
   # map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  # map.connect ':controller/:action/:id.:format'
 
   map.root :controller => 'tournaments', :action => "index"
 

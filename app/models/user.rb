@@ -29,7 +29,6 @@ class User < ActiveRecord::Base
     user = User.find_by_username(username)
     
     logger.info "found user %s" % user
-    logger.info "testing against password %s" % password
     logger.info "%s == %s" % [hash_plaintext_password(password), user.password]
     if user && user.password == hash_plaintext_password(password)
       logger.info "correct info"

@@ -3,43 +3,46 @@ class IlmosController < ApplicationController
 skip_before_filter :is_authenticated?
 
   def show
+
+    if logged_in?
+      # if logged in, we don't need so much details filled
+      @user = current_user
+    else
+      # otherwise we create a whole new user
+      @user = User.new
+    end
+
     @tournament = Tournament.find(params[:tournament_id])
-    
-    @team = Team.new
-        
-    @user = User.new
-    @player = Player.new
     @calendar = Calendar.new
+    @team = Team.new
+    @player = Player.new
     @picture = Picture.new
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @tournament }
     end
+    
   end    
 
 
   def create
-    @tournament = Tournament.find(params[:tournament_id])
-    @user = User.new(params[:user])
-    @player = Player.new(params[:player])
-    @calendar = Calendar.new(params[:calendar])
-    @picture = Picture.new(params[:picture])
 
+    @tournament = Tournament.find(params[:tournament_id])
+    @player = Player.new(params[:player])
 
     if @tournament.team_game
-      @team = Team.find(:first, :conditions => { :name => params[:team][:id], :tournament_id => @tournament.id } )
+      logger.info("searching for existing team with name: %s" % params[:team][:name])
+      @team = Team.find(:first, :conditions => { :name => params[:team][:name], :tournament_id => @tournament.id } )
       
       if not @team
         @team = Team.new(params[:team])
       end
     end
-    
-    
-    User.transaction do
-      @user.save!
-
-      @calendar.user = @user
-      @calendar.save!
+      
+    if logged_in?
+      # if user is logged in, we need only player alias (and team)
+      @user = current_user
 
       if @tournament.team_game      
         @team.tournament = @tournament
@@ -50,18 +53,52 @@ skip_before_filter :is_authenticated?
       @player.user = @user
       @player.tournament = @tournament
       @player.save!
+            
+    else
+      # if user is not logged in, we create new user with new calendar and such
+      @user = User.new(params[:user])
+      @calendar = Calendar.new(params[:calendar])
+      if params[:picture][:uploaded_picture]
+        @picture = Picture.new(params[:picture])
+      else
+        @picture = nil
+      end       
+
+
       
-     
-      @picture.user = @user
-      @picture.save!
+      User.transaction do
+        @user.save!
+
+        @calendar.user = @user
+        @calendar.save!
+
+        if @tournament.team_game      
+          @team.tournament = @tournament
+          @team.save!
+          @player.team = @team
+        end
+
+        @player.user = @user
+        @player.tournament = @tournament
+        @player.save!
+        
+        if @picture
+          @picture.user = @user
+          @picture.save!
+        end
+        
+        
+        
+      end
+
       
-      
-      
-      flash[:notice] = 'Ilmoittautuminen rekisteröity! Tuomaristo ottaa sinuun vielä yhteyttä ennen peliä!'
-      redirect_to root_path
     end
-    
+
+    flash[:notice] = 'Ilmoittautuminen rekisteröity! Tuomaristo ottaa sinuun vielä yhteyttä ennen peliä!'
+    redirect_to root_path
+
   end
+
   
   # rescue ActiveRecord::RecordInvalid => e
     # @player.valid?

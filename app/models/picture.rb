@@ -3,9 +3,9 @@ class Picture < ActiveRecord::Base
   belongs_to :user
 
 
-  validates_format_of :content_type,
-                      :with => /^image/,
-                      :message => "--- ainoastaan kuvatiedosto kelpaa"
+  # validates_format_of :content_type,
+  #                     :with => /^image/,
+  #                     :message => "--- ainoastaan kuvatiedosto kelpaa"
 
   def uploaded_picture=(picture_field)
     self.name         = base_part_of(picture_field.original_filename)

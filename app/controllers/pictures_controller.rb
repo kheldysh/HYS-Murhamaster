@@ -4,13 +4,18 @@ class PicturesController < ApplicationController
   before_filter :is_own_or_targets_picture?, :only => :display
   
   def edit
-    @picture = Picture.find(:first, :conditions => ["user_id = ?", params[:user_id]])
+    @picture = Picture.new
     @user = User.find(params[:user_id])
   end
 
-  def update
-    @picture = Picture.find(params[:id])
-    # TODO
+  def create
+    logger.info(params[:picture][:uploaded_picture].size)
+    @picture = Picture.new(params[:picture])
+    @user = User.find(params[:user_id])
+    @picture.user = @user
+    @picture.save!
+    flash[:notice] = 'Kuva on vaihdettu!'
+    redirect_to root_path
   end
 
   def display
@@ -47,9 +52,11 @@ class PicturesController < ApplicationController
     
 
   def is_own_picture?
-    if current_user.id == params[:user_id]
+    if current_user.id == params[:user_id].to_i
+      logger.info "is own picture"
       return true
     end
+    logger.info "current user: id=%d" % current_user.id
     redirect_to root_path
     return false
   end

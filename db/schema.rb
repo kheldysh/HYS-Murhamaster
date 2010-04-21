@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100214210703) do
+ActiveRecord::Schema.define(:version => 20100421224811) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "player_id"
@@ -102,6 +102,9 @@ ActiveRecord::Schema.define(:version => 20100214210703) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
+    t.string   "university"
+    t.string   "faculty"
+    t.string   "department"
   end
 
 end

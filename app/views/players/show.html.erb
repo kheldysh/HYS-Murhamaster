@@ -69,13 +69,14 @@
   <%=h @user.other_notes %>
 </p>
 
-<% if @player.referee != nil %>
 <p>
+<% if @player.referee != nil %>
   <b>Tuomari:</b>
   <%=h @player.referee.user.full_name %>, <%=h @player.referee.user.phone %>
+<% else %>
+  <b>EI PELAAJATUOMARIA</b>
 </p>
 <% end %>  
-
 </td>
 
 <td>

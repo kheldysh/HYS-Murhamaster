@@ -16,8 +16,10 @@
 <ul>
   <li><%= link_to "Pelaajat", tournament_players_path(@tournament) %></li>
   <li><%= link_to "Renkaat", tournament_assignments_path(@tournament) %></li>
-  <li><%= link_to "Joukkueet", tournament_teams_path(@tournament) %></li>
-  <li><%= link_to "Joukkuerenkaat", tournament_team_assignments_path(@tournament) %></li>
+  <% if @tournament.team_game %>
+    <li><%= link_to "Joukkueet", tournament_teams_path(@tournament) %></li>
+    <li><%= link_to "Joukkuerenkaat", tournament_team_assignments_path(@tournament) %></li>
+  <% end %>
 
 <%= link_to 'Edit', edit_tournament_path(@tournament) %> |
 <%= link_to 'Back', tournaments_path %>

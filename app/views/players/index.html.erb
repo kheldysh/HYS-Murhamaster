@@ -2,16 +2,17 @@
 
 <table>
   <tr>
-    <th>User</th>
+    <th>Käyttäjä</th>
     <th>Alias</th>
-    <th>Tournament</th>
+    <th>Kohdesivu</th>
   </tr>
 
 <% for player in @players %>
   <tr>
     <td><%=h player.user.username %></td>
     <td><%=h player.alias %></td>
-    <td><%=h player.tournament.title %></td>
+    <td><li><%= link_to player.with_real_name, player_path(player) %></li>
+</td>
   </tr>
 <% end %>
 

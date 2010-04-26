@@ -4,10 +4,9 @@ class PlayersController < ApplicationController
   before_filter :is_referee?, :only => [:index, :show, :destroy]
 
 
-  # GET /tournaments
-  # GET /tournaments.xml
   def index
-    @players = Player.find(:all)
+    @tournament = Tournament.find(params[:tournament_id])
+    @players = @tournament.players
 
     respond_to do |format|
       format.html # index.html.erb

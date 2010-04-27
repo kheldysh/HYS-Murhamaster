@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
 
   before_filter :own_data?, :except => [:show, :index]
-  before_filter :is_referee?, :only => [:index, :show, :destroy]
+  before_filter :is_referee?, :only => [:show, :destroy]
 
 
   def index
@@ -72,6 +72,12 @@ class PlayersController < ApplicationController
   
   def is_referee?
     @player = Player.find(params[:id])
-    if current_user.referees != nil
+    current_user.referees.each do |ref|
+      if ref.tournament == @player.tournament
+        return true
+      end
+    end
+    return false
+  end
       
 end

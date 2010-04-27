@@ -21,7 +21,7 @@ class PicturesController < ApplicationController
   def display
     
     logger.info "picturesController engaged"
-    @picture = Picture.find(:first, :conditions => [ "name = ?", params[:file_name][0]] )
+    @picture = Picture.find(params[:file_name][1])
       send_data(
         @picture.data, 
         :type => @picture.content_type,
@@ -33,7 +33,7 @@ class PicturesController < ApplicationController
 
 
   def is_own_or_targets_picture?
-    @picture = Picture.find(:first, :conditions => [ "name = ?", params[:file_name][0] ])
+    @picture = Picture.find(params[:file_name][1])
 
     if current_user == @picture.user
       return true

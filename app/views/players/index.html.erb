@@ -11,7 +11,7 @@
   <tr>
     <td><%=h player.user.username %></td>
     <td><%=h player.alias %></td>
-    <td><li><%= link_to player.with_real_name, player_path(player) %></li>
+    <td><li><%= link_to player.with_real_name, tournament_player_path(@tournament, player) %></li>
 </td>
   </tr>
 <% end %>

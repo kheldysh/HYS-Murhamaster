@@ -5,14 +5,21 @@
     <th>Käyttäjä</th>
     <th>Alias</th>
     <th>Kohdesivu</th>
+    <th>Pelaajatuomari</th>
   </tr>
 
 <% for player in @players %>
   <tr>
-    <td><%=h player.user.username %></td>
+    <td><%=h player.user.full_name %></td>
     <td><%=h player.alias %></td>
-    <td><li><%= link_to player.with_real_name, tournament_player_path(@tournament, player) %></li>
-</td>
+    <td><%= link_to player.with_real_name, tournament_player_path(@tournament, player) %></td>
+    <td>
+      <% if player.referee != nil %>
+        <%=h player.referee.user.full_name %>
+      <% else %>
+        <%= link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player) %>
+      <% end %>        
+    </td>
   </tr>
 <% end %>
 

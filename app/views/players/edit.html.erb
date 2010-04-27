@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :Tuomari %><br />
-    <%= collection_select :player, :referee_id, @tournament.referees, :id, :info %>
+    <%= collection_select :player, :referee_id, @tournament.referees, :id, :full_info %>
   </p>
   
   <p>

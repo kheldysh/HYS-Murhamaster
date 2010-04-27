@@ -1,6 +1,7 @@
 class TournamentsController < ApplicationController
 
-  before_filter [:is_admin?,  :is_referee?], :except => [:ilmo]
+  before_filter :is_referee?, :except => [:ilmo, :edit, :update, :index]
+  before_filter :is_admin?, :only => [:edit, :update, :index]
 
 
   # GET /tournaments/1/ilmo

@@ -17,8 +17,21 @@
   </p>
 
   <p>
+    <%= f.label "Etunimi" %><br />
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label "Sukunimi" %><br />
+    <%= f.text_field :last_name %>
+  </p>
+
+  <p class="secret">
     <%= f.label :Puhelin %><br />
     <%= f.text_field :phone %>
+  </p>
+  <p class="secret">
+    <%= f.label :Sähköposti %><br />
+    <%= f.text_field :email %>
   </p>
   <p>
     <%= f.label :Osoite %><br />
@@ -45,12 +58,12 @@
     <%= f.text_field :eyes %>
   </p>
   <p>
-    <%= f.label :Lasit %><br />
-    <%= f.text_field :glasses %>
+    <%= f.label "Silmälasit*" %><br />
+    <%= f.select ( :glasses, [ "Aina", "Joskus", "Ei" ] ) %>
   </p>
   <p>
-    <%= f.label :Pituus %><br />
-    <%= f.text_field :height %> cm
+    <%= f.label "Pituus*" %><br />
+    <%= f.text_field :height, "size" => 3, "maxlength" => 3 %> cm
   </p>
   <p>
     <%= f.label :Hiukset %><br />

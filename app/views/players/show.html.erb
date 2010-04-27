@@ -1,6 +1,10 @@
 <h2><%= @player.tournament.title %></h2>
 
-<%= image_tag "images/#{@player.user.picture.id}" %>
+<% if @player.user.picture %>
+  <%= image_tag "images/#{@player.user.picture.id}" %>
+<% else %>
+  <b>PELAAJALLA EI KUVAA TOISTAISEKSI</b>
+<% end %>
 
 <table cellspacing="20" class="top_align">
 <tr>

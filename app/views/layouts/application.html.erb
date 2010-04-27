@@ -20,12 +20,14 @@
 <p><b><%= link_to 'Omat tiedot', edit_user_path(current_user) %></b><br />
    <b><%= link_to 'Oma kalenteri', edit_calendar_path(current_user.calendar) %></b></p>
 
-<h3>Tuomaroinnit</h3>
-<p>
-<% current_user.tournaments.each do |tournament| %>
-  <b><%= link_to tournament.title, tournament, :id => tournament.id  %></b><br />
+<% if current_user.is_referee? %>
+  <h3>Tuomaroinnit</h3>
+  <p>
+  <% current_user.tournaments.each do |tournament| %>
+    <b><%= link_to tournament.title, tournament, :id => tournament.id  %></b><br />
+  <% end %>
+  </p>
 <% end %>
-</p>
 <h3>Kohteet</h3>
   
   <% current_user.players.each do |player| %>
@@ -37,6 +39,15 @@
     <% end %>
     </ul>
   <% end %>
+  
+<h3>Avoimet ilmoittautumiset</h3>
+  <% Tournament.registration_open.each do |tournament| %>
+    <ul>
+      <li><%= link_to tournament.title, tournament_ilmo_path(tournament) %></li>
+    </ul>
+  <% end %>
+      
+
 </div>
 </td>
 <% end %>

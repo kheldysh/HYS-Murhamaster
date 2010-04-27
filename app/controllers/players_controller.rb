@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
 
   before_filter :own_data?, :except => [:show, :index]
-  before_filter :is_referee?, :only => [:show, :destroy]
+  before_filter :is_referee?, :only => [:index, :show, :destroy]
 
 
   def index
@@ -55,7 +55,8 @@ class PlayersController < ApplicationController
     @player = Player.find(params[:id])
     @player.update_attributes(params[:player])
     @player.save!
-    redirect_to :back
+    @tournament = Tournament.find(params[:tournament_id])
+    redirect_to tournament_players_path(@tournament)
   end
 
   # DELETE /tournaments/1
@@ -71,9 +72,10 @@ class PlayersController < ApplicationController
   end
   
   def is_referee?
-    @player = Player.find(params[:id])
+    @tournament = Tournament.find(params[:tournament_id])
+
     current_user.referees.each do |ref|
-      if ref.tournament == @player.tournament
+      if ref.tournament == @tournament
         return true
       end
     end

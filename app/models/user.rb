@@ -38,6 +38,10 @@ class User < ActiveRecord::Base
      end
   end
   
+  def is_referee?
+    return !self.referees.empty?
+  end
+    
   private
   
   def hash_password

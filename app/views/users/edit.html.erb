@@ -2,6 +2,28 @@
 
 <b><%= link_to "Vaihda kuvaa...", edit_user_picture_path(@user) %></b>
 
+
+<h3>Salasanan vaihto</h3>
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label "Salasana" %><br />
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.label "Salasana uudestaan" %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+
+  <p>
+    <%= f.submit "Päivitä" %>
+  </p>
+
+<% end %>
+
+<h3>Pelaajatietojen muokkaus</h3>
 <% form_for(@user) do |f| %>
   <%= f.error_messages %>
 
@@ -77,7 +99,7 @@
   </p>
 
   <p>
-    <%= f.submit "Update" %>
+    <%= f.submit "Päivitä" %>
   </p>
 <% end %>
 

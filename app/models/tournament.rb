@@ -12,4 +12,5 @@ class Tournament < ActiveRecord::Base
     end
   end
     
+  named_scope :registration_open, :conditions => ["app_deadline > ?", Time.now]
 end

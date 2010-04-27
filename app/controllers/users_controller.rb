@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     calendar = Calendar.new
     @user.calendar = calendar
     if @user.save
-      flash[:notice] = 'User was successfully created.'
+      flash[:notice] = 'Käyttäjä luotiin onnistuneesti.'
       redirect_to root_path
     else
       render :action => "new"
@@ -51,13 +51,15 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-    if params[:user].include? :password
+    if params[:user].include? :password and params[:user].include? :password_confirmation
       params[:user][:password] = User.hash_plaintext_password(params[:user][:password])
+      params[:user][:password_confirmation] = User.hash_plaintext_password(params[:user][:password_confirmation])
+
     end
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        flash[:notice] = 'User was successfully updated.'
+        flash[:notice] = 'Käyttäjätiedot päivitetty.'
         format.html { redirect_to(@user) }
         format.xml  { head :ok }
       else

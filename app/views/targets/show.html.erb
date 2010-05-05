@@ -1,7 +1,7 @@
 <h2><%= @target.tournament.title %></h2>
 
-<% if @player.user.picture %>
-  <%= image_tag "images/#{@player.user.picture.id}" %>
+<% if @target.user.picture %>
+  <%= image_tag "images/#{@target.user.picture.id}" %>
 <% else %>
   <b>PELAAJALLA EI KUVAA TOISTAISEKSI</b>
 <% end %>
@@ -21,10 +21,6 @@
 <p>
   <b>Nimi:</b>
   <%=h "%s %s" % [ @user.first_name, @user.last_name ] %>
-</p>
-<p>
-  <b>Peitenimi:</b>
-  <%=h @target.alias %>
 </p>
 
 <% if @target.team != nil %>

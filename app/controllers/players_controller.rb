@@ -1,40 +1,30 @@
 class PlayersController < ApplicationController
 
-  before_filter :own_data?, :except => [:show, :index]
-  before_filter :is_referee?, :only => [:index, :show, :destroy]
+  before_filter :own_data?, :except => [:show, :index, :update]
+  before_filter :is_referee?, :only => [:index, :show, :update, :destroy]
 
 
   def index
     @tournament = Tournament.find(params[:tournament_id])
     @players = @tournament.players
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @players }
-    end
   end
 
   def show
     @player = Player.find(params[:id])
     @user = @player.user
     @calendar = @user.calendar
-
   end
 
-  # GET /tournaments/new
-  # GET /tournaments/new.xml
   def new
   end
 
-  # GET /tournaments/1/edit
   def edit
     @player = Player.find(params[:id])
     @tournament = Tournament.find(params[:tournament_id])
   end
 
-  # POST /tournaments
-  # POST /tournaments.xml
   def create
+    # FIXME this is creation for _tournament_, not player :(
     @tournament = Tournament.new(params[:tournament])
 
     respond_to do |format|
@@ -49,8 +39,6 @@ class PlayersController < ApplicationController
     end
   end
 
-  # PUT /tournaments/1
-  # PUT /tournaments/1.xml
   def update
     @player = Player.find(params[:id])
     @player.update_attributes(params[:player])
@@ -59,21 +47,13 @@ class PlayersController < ApplicationController
     redirect_to tournament_players_path(@tournament)
   end
 
-  # DELETE /tournaments/1
-  # DELETE /tournaments/1.xml
   def destroy
     @tournament = Tournament.find(params[:id])
     @tournament.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(tournaments_url) }
-      format.xml  { head :ok }
-    end
   end
   
-  def is_referee?
+  def is_referee? # before_filter
     @tournament = Tournament.find(params[:tournament_id])
-
     current_user.referees.each do |ref|
       if ref.tournament == @tournament
         return true

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100421224811) do
+ActiveRecord::Schema.define(:version => 20100505230704) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "player_id"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(:version => 20100421224811) do
 
   create_table "players", :force => true do |t|
     t.string   "alias"
-    t.string   "type"
+    t.string   "status"
     t.integer  "user_id"
     t.integer  "tournament_id"
     t.datetime "created_at"

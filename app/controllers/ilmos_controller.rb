@@ -30,6 +30,7 @@ skip_before_filter :is_authenticated?
 
     @tournament = Tournament.find(params[:tournament_id])
     @player = Player.new(params[:player])
+    @player.status = :active
 
     if @tournament.team_game
       logger.info("searching for existing team with name: %s" % params[:team][:name])

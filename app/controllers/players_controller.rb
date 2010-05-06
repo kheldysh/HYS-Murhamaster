@@ -6,7 +6,9 @@ class PlayersController < ApplicationController
 
   def index
     @tournament = Tournament.find(params[:tournament_id])
-    @players = @tournament.players
+    @active_players = @tournament.players.active_players
+    @detectives = @tournament.players.detectives
+    @dead_players = @tournament.players.dead_players
   end
 
   def show

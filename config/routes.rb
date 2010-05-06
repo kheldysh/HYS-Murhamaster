@@ -13,6 +13,7 @@ ActionController::Routing::Routes.draw do |map|
     tournament.resources :teams
     tournament.resources :assignments
     tournament.resources :team_assignments
+    tournament.resources :targets
   end
 
   map.resources :referees

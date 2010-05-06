@@ -5,7 +5,10 @@ class TargetsController < ApplicationController
   def show
     @target = Player.find(params[:id])
     @user = @target.user
+    @tournament = @target.tournament
     @calendar = @user.calendar
+
+    @current_player = current_user.players.find(:first, [ "tournament = ?", @tournament ])
 
   end
   

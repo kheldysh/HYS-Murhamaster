@@ -1,5 +1,6 @@
 <h1>Listing players</h1>
 
+<h2>Elossaolevat</h2>
 <table>
   <tr>
     <th>Käyttäjä</th>
@@ -8,11 +9,11 @@
     <th>Pelaajatuomari</th>
   </tr>
 
-<% for player in @players %>
+<% for player in @active_players %>
   <tr>
     <td><%=h player.user.full_name %></td>
     <td><%=h player.alias %></td>
-    <td><%= link_to player.with_real_name, tournament_player_path(@tournament, player) %></td>
+    <td><%= link_to player.real_name, tournament_player_path(@tournament, player) %></td>
     <td>
       <% if player.referee != nil %>
         <%=h player.referee.user.full_name %>
@@ -20,6 +21,83 @@
         <%= link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player) %>
       <% end %>        
     </td>
+    <td>
+      <% form_for [@tournament, player] do |p|  %>
+        <%= p.hidden_field :status, { :value => :dead } %>
+        <%= submit_tag "Kuolleeksi" %>
+      <% end %>
+    </td>
+  </tr>
+<% end %>
+
+</table>
+
+<h2>Etsivät</h2>
+<table>
+  <tr>
+    <th>Käyttäjä</th>
+    <th>Alias</th>
+    <th>Kohdesivu</th>
+    <th>Pelaajatuomari</th>
+  </tr>
+
+<% for player in @detectives %>
+  <tr>
+    <td><%=h player.user.full_name %></td>
+    <td><%=h player.alias %></td>
+    <td><%= link_to player.real_name, tournament_player_path(@tournament, player) %></td>
+    <td>
+      <% if player.referee != nil %>
+        <%=h player.referee.user.full_name %>
+      <% else %>
+        <%= link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player) %>
+      <% end %>        
+    </td>
+    <td>
+      <% form_for [@tournament, player] do |p|  %>
+        <%= p.hidden_field :status, { :value => :dead } %>
+        <%= submit_tag "Kuolleeksi" %>
+      <% end %>
+    </td>
+  </tr>
+<% end %>
+
+</table>
+
+<h2>Kuolleet</h2>
+<table>
+  <tr>
+    <th>Käyttäjä</th>
+    <th>Alias</th>
+    <th>Kohdesivu</th>
+    <th>Pelaajatuomari</th>
+  </tr>
+
+<% for player in @dead_players %>
+  <tr>
+    <td><%=h player.user.full_name %></td>
+    <td><%=h player.alias %></td>
+    <td><%= link_to player.real_name, tournament_player_path(@tournament, player) %></td>
+    <td>
+      <% if player.referee != nil %>
+        <%=h player.referee.user.full_name %>
+      <% else %>
+        <%= link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player) %>
+      <% end %>        
+    </td>
+    <td>
+      <% form_for [@tournament, player] do |p|  %>
+        <%= p.hidden_field :status, { :value => :detective } %>
+        <%= submit_tag "Etsiväksi" %>
+      <% end %>
+    </td>
+    <td>
+      <% form_for [@tournament, player] do |p|  %>
+        <%= p.hidden_field :status, { :value => :active } %>
+        <%= submit_tag "Henkiin" %>
+      <% end %>
+    </td>
+
   </tr>
 <% end %>
 

@@ -10,9 +10,9 @@ class Player < ActiveRecord::Base
 
   validates_inclusion_of :status, :in => [:active, :detective, :dead]
  
-  named_scope :active_players, :conditions => ["status > ?", :active]
-  named_scope :dead_players, :conditions => ["status > ?", :dead]
-  named_scope :detectives, :conditions => ["status > ?", :detective]
+  named_scope :active_players, :conditions => ["status = ?", "active"]
+  named_scope :dead_players, :conditions => ["status = ?", "dead"]
+  named_scope :detectives, :conditions => ["status = ?", "detective"]
    
   def status
     read_attribute(:status).to_sym
@@ -21,9 +21,25 @@ class Player < ActiveRecord::Base
     write_attribute(:status, value.to_s)
   end
 
+  def detective?
+    self.status == :detective
+  end
+
+  def active?
+    self.status == :active
+  end
+
+  def dead?
+    self.status == :dead
+  end
+  
 
   def with_real_name
     "#{self.user.full_name}, #{self.alias}"
+  end
+
+  def real_name
+    self.user.full_name
   end
 
   def to_s

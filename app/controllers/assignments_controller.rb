@@ -4,7 +4,7 @@ class AssignmentsController < ApplicationController
   
   def index
     @tournament = Tournament.find(params[:tournament_id])
-    @assignments = Assignment.find(:all, [ "tournament_id = ?", @tournament.id ], :order => "player_id ASC")
+    @assignments = @tournament.assignments
     @new_assignment = Assignment.new
   end
 

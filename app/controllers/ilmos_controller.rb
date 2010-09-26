@@ -4,19 +4,24 @@ skip_before_filter :is_authenticated?
 
   def show
 
-    if logged_in?
-      # if logged in, we don't need so much details filled
-      @user = current_user
-    else
-      # otherwise we create a whole new user
-      @user = User.new
-    end
-
     @tournament = Tournament.find(params[:tournament_id])
     @calendar = Calendar.new
     @team = Team.new
     @player = Player.new
     @picture = Picture.new
+    @registered_already = false
+    if logged_in?
+      # if logged in, we don't need so much details filled
+      @user = current_user
+      @user.players.each do |p|
+        if p.tournament == @tournament
+          @registered_already = true
+        end
+      end
+    else
+      # otherwise we create a whole new user
+      @user = User.new
+    end
     
     respond_to do |format|
       format.html # show.html.erb
@@ -88,10 +93,7 @@ skip_before_filter :is_authenticated?
           @picture.save!
         end
         
-        
-        
       end
-
       
     end
 

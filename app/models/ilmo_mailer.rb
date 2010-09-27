@@ -7,8 +7,7 @@ class IlmoMailer < ActionMailer::Base
     @recipients = "tuomaristo@salamurhaajat.net"
     @from       = "murhamaster@salamurhaajat.net"
     @sent_on    = Time.now
-    
-    body       
+      
   end
 
   def player_message(player)

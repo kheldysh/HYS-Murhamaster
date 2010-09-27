@@ -1,34 +1,34 @@
-Uusi ilmoittautuminen Turnaukseen <%= player.tournament.title %>:
+Uusi ilmoittautuminen Turnaukseen <%= @player.tournament.title %>:
 
-Nimi: <%= user.full_name %>
-Peitenimi: <%= player.alias %>
-Sähköposti: <%= user.email %>
-Puhelin: <%= user.phone %>
-Osoite: <%= user.address %>
-Oppilaitos:   <%= user.university %> 
-Tiedekunta/vast: <%= user.faculty %> 
-Ainelaitos: <%= user.department %>
+Nimi: <%= @user.full_name %>
+Peitenimi: <%= @player.alias %>
+Sähköposti: <%= @user.email %>
+Puhelin: <%= @user.phone %>
+Osoite: <%= @user.address %>
+Oppilaitos:   <%= @user.university %> 
+Tiedekunta/vast: <%= @user.faculty %> 
+Ainelaitos: <%= @user.department %>
 
-Silmät: <%= user.eyes %>
-Silmälasit: <%= user.glasses %>
-Pituus: <%= user.height %>
-Hiukset: <%= user.hair %>
-Muut tuntomerkit: <%= user.other_notes %>
+Silmät: <%= @user.eyes %>
+Silmälasit: <%= @user.glasses %>
+Pituus: <%= @user.height %>
+Hiukset: <%= @user.hair %>
+Muut tuntomerkit: <%= @user.other_notes %>
 
 Kalenteri:
 
-Maanantai: <%= user.calendar.monday %>
+Maanantai: <%= @user.calendar.monday %>
 
-Tiistai: <%= user.calendar.tuesday %>
+Tiistai: <%= @user.calendar.tuesday %>
 
-Keskiviikko: <%= user.calendar.wednesday %>
+Keskiviikko: <%= @user.calendar.wednesday %>
 
-Torstai: <%= user.calendar.thursday %>
+Torstai: <%= @user.calendar.thursday %>
 
-Perjantai: <%= user.calendar.friday %>
+Perjantai: <%= @user.calendar.friday %>
 
-Lauantai: <%= user.calendar.saturday %>
+Lauantai: <%= @user.calendar.saturday %>
 
-Sunnuntai: <%= user.calendar.sunday %>
+Sunnuntai: <%= @user.calendar.sunday %>
 
-Liikennevälineet, muut huomiot: <%= user.calendar.misc %>
+Liikennevälineet, muut huomiot: <%= @user.calendar.misc %>

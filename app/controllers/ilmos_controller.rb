@@ -96,7 +96,8 @@ skip_before_filter :is_authenticated?
       end
       
     end
-
+    mail = IlmoMailer.referee_message(@player)
+    IlmoMailer.deliver(mail)
     flash[:notice] = 'Ilmoittautuminen rekisteröity! Tuomaristo ottaa sinuun vielä yhteyttä ennen peliä!'
     redirect_to root_path
 

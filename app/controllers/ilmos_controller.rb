@@ -64,7 +64,7 @@ skip_before_filter :is_authenticated?
       # if user is not logged in, we create new user with new calendar and such
       @user = User.new(params[:user])
       @calendar = Calendar.new(params[:calendar])
-      if params[:picture][:uploaded_picture]
+      if params[:picture] and params[:picture][:uploaded_picture]
         @picture = Picture.new(params[:picture])
       else
         @picture = nil

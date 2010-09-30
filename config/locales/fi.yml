@@ -6,6 +6,10 @@ fi:
   common:
     submit: "Lähetä"
 
+  layouts:
+    application:
+      language: "Kieli:"
+
   session:
     username: "Käyttäjätunnus"
     password: "Salasana"

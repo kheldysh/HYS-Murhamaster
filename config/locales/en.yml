@@ -6,6 +6,10 @@ en:
   common:
     submit: "Submit"
 
+  layouts:
+    application:
+      language: "Language:"
+
   session:
     username: "Username"
     password: "Salasana"

@@ -1,0 +1,74 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+fi:
+
+  common:
+    submit: "Lähetä"
+
+  session:
+    username: "Käyttäjätunnus"
+    password: "Salasana"
+    login: "Kirjaudu sisään"
+    logout: "Kirjaudu ulos"
+    register: "Rekisteröidy"
+  
+  ilmo:
+    title: "Pelaajien rekisteröityminen HYS:n {{tournament}} -peliin"
+    registration_end: "Rekisteröityminen päättyy {{date}}."
+
+    instructions: "Täytä tiedot mahdollisimman yksityiskohtaisesti. Pelistä tulee silloin huomattavasti paljon hauskempi sekä sinun että muiden osalta. Tähdellä (*) merkityt kohdat ovat pakollisia välittömästi, muut kohdat voi täyttää myöhemmin. Punaisella merkityt kohdat jäävät tuomariston tietoon. Tuomaristo voi harkintansa mukaan muokata ilmoittautumistietoja ja pyytää niihin täydennyksiä. Aikataulua voi (ja täytyy) täydentää ja muokata pelin aikana."
+
+    team_game_reminder: "Muistattehan, että joukkupelissä kaikkien joukkueen jäsenien tulee ilmoittautua erikseen ja laittaa sama nimi joukkue-kenttään!"
+
+    already_registered: "Olet jo ilmoittautunut peliin!"
+
+    old_user_reminder: "<b>Huom!</b> Mikäli olet jo luonut käyttäjätunnuksen uuteen Murhamasteriin, voit 
+      {{login_link}} ja ilmoittautua olemassaolevilla tiedoillasi!"
+    
+    problem_info: "Mikäli lomakkeen kanssa ilmenee ongelmia, ilmoittautuminen kannattaa hoitaa lähettämällä ilmoittautumistiedot osoitteeseen <a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>."
+    
+    to_log_in: "kirjautua sisään"
+    
+    murhamaster_account: "Murhamaster-tunnus"
+    account_info: "Ilmoittautumislomake luo sinulle seuraavaksi antamiesi tietojen perusteella tunnukset uuteen 
+  Murhamasteriin."
+
+    pic_size_caveat: "<b>Huom! Ainoastaan alle 512kt kokoiset kuvat kelpaavat.</b> Kuvan voi myös halutessaan lähettää sähköpostitse tuomaristolle (<a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>)."  
+
+    player_data: "Pelaajatiedot"
+    # login data
+    username: "Haluamasi käyttäjätunnus*"
+    password: "Salasana*"
+    password_confirmation: "Salasana uudestaan*"
+    # player data
+    alias: "Peitenimi*"
+    team_name: "Joukkueen nimi*"
+    # user details
+    first_name: "Etunimi*"
+    last_name: "Sukunimi*"
+    email: "Sähköposti*"
+    phone: "Puhelin"
+    address: "Osoite*"
+    university: "Oppilaitos"
+    faculty: "Tiedekunta/vast"
+    department: "ainelaitos"
+    eyes: "Silmät*"
+    glasses: "Silmälasit*"
+    always: "Aina"
+    sometimes: "Joskus"
+    no: "Ei"
+    height: "Pituus*"
+    hair: "Hiukset*"
+    other_characteristics: "Muut tuntomerkit"
+    picture: "Kuvatiedosto"
+    # calendar
+    calendar: "Aikataulu"
+    monday: "Maanantai"
+    tuesday: "Tiistai"
+    wednesday: "Keskiviikko"
+    thursday: "Torstai"
+    friday: "Perjantai"
+    saturday: "Lauantai"
+    sunday: "Sunnuntai"
+    other_notes: "Liikennevälineet, muut huomiot"

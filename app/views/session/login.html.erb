@@ -4,16 +4,16 @@
   <%= error_messages_for 'user' %>
 
 
-  <label for='user_login'>Username</label><br />
+  <label for='user_login'><%= I18n.t 'session.username' %></label><br />
   <%= text_field 'user', 'login', :size => 20 %><br />
 
-  <label for='user_login'>Password</label><br />
+  <label for='user_login'><%= I18n.t 'session.password' %></label><br />
   <%= password_field 'user', 'password', :size => 20 %><br />
 
   <p>
-    <%= submit_tag 'Login' %>
+    <%= submit_tag I18n.t 'session.login' %>
   </p>
 
 <% end %>
 
-<%= link_to 'Back', users_path %>
+  <%= link_to 'Back', users_path %>

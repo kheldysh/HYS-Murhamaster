@@ -2,4 +2,75 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+
+  common:
+    submit: "Submit"
+
+  session:
+    username: "Username"
+    password: "Salasana"
+    login: "Login"
+    logout: "Logout"
+    register: "Register"
+  
+  ilmo:
+    title: "Player registration for {{tournament}} tournament"
+    registration_end: "Registration ends {{date}}."
+    instructions: "Fill out the details as accurately as possible. This will make the game more enjoyable both for you and the others. Fields marked with an asterisk (*) are required for registration, other fields can be filled in afterwards. Fields marked with red color are for the umpires' eyes only. The umpires may make additions to the given information and ask for supplementary details, if necessary. The schedule can be (and should be) updated during the game."  
+    team_game_reminder: "NB: In a team game, every team member should register separately and put the same name in the 'Team name' field!"
+    
+    already_registered: "You have already registered yourself to the game!"
+
+    old_user_reminder: "<b>NB:</b> If you already have created an account for Murhamaster, you can 
+      {{login_link}} and register for the game with your existing information!"
+    
+    to_log_in: "log in"
+
+    problem_info: "If you encounter any problems with the registration form, please send your registration information to the umpires by e-mail: <a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>."
+
+    murhamaster_account: "Murhamaster account"
+    account_info: "A Murhamaster account will be created for you using these details."
+    
+    player_data: "Player details"
+
+    pic_size_caveat: "<b>NB! Only images with size of 512kB or less are accepted.</b> You may also send your image to the umpires by e-mail (<a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>)."
+    
+    # login data
+    username: "Username for logging into Murhamaster*"
+    password: "Password*"
+    password_confirmation: "Password confirmation*"
+    # player data
+    alias: "Codename*"
+    team_name: "Team*"
+    # user details
+    first_name: "First name*"
+    last_name: "Last name*"
+    email: "E-mail address*"
+    phone: "Phone number"
+    address: "Street address*"
+    university: "University"
+    faculty: "Faculty"
+    department: "Department"
+    eyes: "Eye color*"
+    glasses: "Glasses*"
+    always: "Always"
+    sometimes: "Sometimes"
+    no: "No"
+    height: "Height*"
+    hair: "Hair color*"
+    other_characteristics: "Other characteristics"
+    picture: "Picture"
+    # calendar
+    calendar: "Schedule"
+    monday: "Monday"
+    tuesday: "Tuesday"
+    wednesday: "Wednesday"
+    thursday: "Thursday"
+    friday: "Friday"
+    saturday: "Saturday"
+    sunday: "Sunday"
+    other_notes: "Transportation, protected areas, other notes"
+    
+
+  
+  

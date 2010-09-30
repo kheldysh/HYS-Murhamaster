@@ -1,69 +1,63 @@
-<h2><font color="#CC0000">Pelaajien rekisteröityminen HYS:n <i><%= @tournament.title %></i> -peliin</font></2>
-<h3><font color="#CC0000">Rekisteröityminen päättyy <%= @tournament.app_deadline_fin %>.</font></h3>
+<h2><font color="#CC0000"><%= I18n.t('ilmo.title', :tournament => "<i>#{@tournament.title}</i>") %></font></2>
+<h3><font color="#CC0000"><%= I18n.t('ilmo.registration_end', :date => @tournament.app_deadline_fin) %></font></h3>
 
-
-<p>Täytä tiedot mahdollisimman yksityiskohtaisesti. Pelistä tulee silloin huomattavasti paljon hauskempi sekä sinun että muiden osalta. Tähdellä (*) merkity kohdat ovat pakollisia välittömästi, muut kohdat voi täyttää myöhemmin.
-Punaisella merkityt kohdat jäävät tuomariston tietoon. Tuomaristo voi harkintansa mukaan muokata ilmoittautumistietoja ja pyytää niihin täydennyksiä. Aikataulua voi (ja täytyy) täydentää ja muokata pelin aikana.</p>
-<p>Muistattehan, että joukkupelissä kaikkien joukkueen jäsenien tulee ilmoittautua erikseen ja laittaa sama nimi 
-joukkue-kenttään!</p>
+<p><%= I18n.t('ilmo.instructions') %></p>
+<p><%= I18n.t('ilmo.team_game_reminder') %></p>
 
 <% if logged_in? %>
   <% if @registered_already %>
-    <h3>Olet jo ilmoittautunut peliin!</h3>
+    <h3><%= I18n.t('ilmo.already_registered') %></h3>
   <% else %>
     <h3>Pelaajatiedot</h3>
     <% form_for :player, :url => { :controller => :ilmos, :action => :create } do |p| %>
       <%= error_messages_for :player %>
       <p>
-        <%= p.label "Peitenimi*" %><br />
+        <%= p.label I18n.t('ilmo.alias') %><br />
         <%= p.text_field :alias %>
       </p>
       <% if @tournament.team_game %>
         <%= error_messages_for :team %>
         <% fields_for :team do |t| %>
           <p>
-            <%= t.label "Joukkue*" %><br />
+            <%= t.label I18n.t('ilmo.team_name') %><br />
             <%= t.text_field :name %>
           </p>
         <% end %>
       <% end %>
     <p>
-      <%= p.submit "Lähetä" %>
+      <%= p.submit I18n.t('common.submit') %>
     </p>
     <% end %>
   <% end %>
 
 <% else %>
-  <p><b>Huom!</b> Mikäli olet jo luonut käyttäjätunnuksen uuteen Murhamasteriin, voit 
-  <%= link_to 'kirjautua sisään', login_path %> ja ilmoittautua olemassaolevilla tiedoillasi!</p>
+  <p><%= I18n.t('ilmo.old_user_reminder', :login_link => link_to(I18n.t('ilmo.to_log_in'), login_path)) %></p>
 
-  <b>HUOM! Teknisistä syistä johtuen ilmoittautuminen kannattaa hoitaa lähettämällä ilmoittautumistiedot osoitteeseen
-  <a href="mailto:tuomaristo@salamurhaajat.net">tuomaristo@salamurhaajat.net</a>.</b>
+  <b><%= I18n.t('ilmo.problem_info') %></b>
   <% form_for :user, :url => { :controller => :ilmos, :action => :create }, :html => { :multipart => true } do |f| %>
     <%= error_messages_for :user %>
 
-  <h3>Murhamaster-tunnus</h3>
-  <i>Ilmoittautumislomake luo sinulle seuraavaksi antamiesi tietojen perusteella tunnukset uuteen 
-  Murhamasteriin.</i>
+  <h3><%= I18n.t('ilmo.murhamaster_account') %></h3>
+  <i><%= I18n.t('ilmo.account_info') %></i>
     <p class="secret">
-      <%= f.label "Haluamasi käyttäjätunnus*" %><br />
+      <%= f.label I18n.t('ilmo.username') %><br />
       <%= f.text_field :username %>
     </p>
-    <p class="secret">
-      <%= f.label "Salasana*" %><br />
+    <p>
+      <%= f.label I18n.t('ilmo.password') %><br />
       <%= f.password_field :password %>
     </p>
-    <p class="secret">
-      <%= f.label "Salasana uudestaan*" %><br />
+    <p>
+      <%= f.label I18n.t('ilmo.password_confirmation') %><br />
       <%= f.password_field :password_confirmation %>
     </p>
     
-    <h3>Pelaajatiedot</h3>
+    <h3><%= I18n.t('ilmo.player_data') %></h3>
     
     <%= error_messages_for :player %>
     <% fields_for :player do |p| %>
     <p>
-      <%= p.label "Peitenimi*" %><br />
+      <%= p.label I18n.t('ilmo.alias') %><br />
       <%= p.text_field :alias %>
     </p>
     <% end %>
@@ -71,124 +65,121 @@ joukkue-kenttään!</p>
       <%= error_messages_for :team %>
       <% fields_for :team do |t| %>
       <p>
-        <%= t.label "Joukkue*" %><br />
+        <%= t.label I18n.t('ilmo.team_name') %><br />
         <%= t.text_field :name %>
       </p>
       <% end %>
     <% end %>
 
     <p>
-      <%= f.label "Etunimi*" %><br />
+      <%= f.label I18n.t('ilmo.first_name') %><br />
       <%= f.text_field :first_name %>
     </p>
     <p>
-      <%= f.label "Sukunimi*" %><br />
+      <%= f.label I18n.t('ilmo.last_name') %><br />
       <%= f.text_field :last_name %>
     </p>
 
     <p class="secret">
-      <%= f.label "Sähköposti*" %><br />
+      <%= f.label I18n.t('ilmo.email') %><br />
       <%= f.text_field :email %>
     </p>
     
     <p class="secret">
-      <%= f.label :Puhelin %><br />
+      <%= f.label I18n.t('ilmo.phone') %><br />
       <%= f.text_field :phone %>
     </p>
     <p>
-      <%= f.label "Osoite*" %><br />
+      <%= f.label I18n.t('ilmo.address') %><br />
       <%= f.text_field :address %>
     </p>
 
     <p>
-      <%= f.label "Oppilaitos" %><br />
+      <%= f.label I18n.t('ilmo.university') %><br />
       <%= f.text_field :university %>
     </p>
 
     <p>
-      <%= f.label "Tiedekunta/vast" %><br />
+      <%= f.label I18n.t('ilmo.faculty') %><br />
       <%= f.text_field :faculty %>
     </p>
 
     <p>
-      <%= f.label "Ainelaitos" %><br />
+      <%= f.label I18n.t('ilmo.department') %><br />
       <%= f.text_field :department %>
     </p>
 
     <p>
-      <%= f.label "Silmät*" %><br />
+      <%= f.label I18n.t('ilmo.eyes') %><br />
       <%= f.text_field :eyes %>
     </p>
     <p>
-      <%= f.label "Silmälasit*" %><br />
-      <%= f.select ( :glasses, [ "Aina", "Joskus", "Ei" ] ) %>
+      <%= f.label I18n.t('ilmo.glasses') %><br />
+      <%= f.select ( :glasses, [ I18n.t('ilmo.always'), I18n.t('ilmo.sometimes'), I18n.t('ilmo.no') ] ) %>
     </p>
     <p>
-      <%= f.label "Pituus*" %><br />
+      <%= f.label I18n.t('ilmo.height') %><br />
       <%= f.text_field :height, "size" => 3, "maxlength" => 3 %> cm
     </p>
     <p>
-      <%= f.label "Hiukset*" %><br />
+      <%= f.label I18n.t('ilmo.hair') %><br />
       <%= f.text_field :hair %>
     </p>
     <p>
-      <%= f.label "Muut tuntomerkit" %><br />
+      <%= f.label I18n.t('ilmo.other_characteristics') %><br />
       <%= f.text_field :other_notes %>
     </p>
 
     <%= error_messages_for :picture %>
 
     <% fields_for :picture do |pic| %>  
-    <p>
-    <b>Huom! Ainoastaan alle 512kt kokoiset kuvat kelpaavat.</b>
-    Kuvan voi myös halutessaan lähettää sähköpostitse tuomaristolle
-    (<a href="mailto:tuomaristo@salamurhaajat.net">tuomaristo@salamurhaajat.net</a>).
+    <p><%= I18n.t('ilmo.pic_size_caveat') %>
     <br />
 
-      <%= pic.label "Kuvatiedosto* " %><br />
+      <%= pic.label I18n.t('ilmo.picture') %><br />
       <%= pic.file_field :uploaded_picture %>
     </p>
     <% end %>
 
 
-    <h3>Kalenteri</h3>
+    <h3><%= I18n.t('ilmo.calendar') %></h3>
     <% fields_for :calendar do |c| %>
     <p>
-      <%= c.label :Maanantai %><br />
+      <%= c.label I18n.t('ilmo.monday') %><br />
       <%= c.text_area :monday, "rows" => 5 %>
     </p>
     <p>
-      <%= c.label :Tiistai %><br />
+      <%= c.label I18n.t('ilmo.tuesday') %><br />
       <%= c.text_area :tuesday, "rows" => 5  %>
     </p>
     <p>
-      <%= c.label :Keskiviikko %><br />
+      <%= c.label I18n.t('ilmo.wednesday') %><br />
       <%= c.text_area :wednesday, "rows" => 5  %>
     </p>
     <p>
-      <%= c.label :Torstai %><br />
+      <%= c.label I18n.t('ilmo.thursday') %><br />
       <%= c.text_area :thursday, "rows" => 5  %>
     </p>
     <p>
-      <%= c.label :Perjantai %><br />
+      <%= c.label I18n.t('ilmo.friday') %><br />
       <%= c.text_area :friday, "rows" => 5  %>
     </p>
     <p>
-      <%= c.label :Lauantai %><br />
+      <%= c.label I18n.t('ilmo.saturday') %><br />
       <%= c.text_area :saturday, "rows" => 5  %>
     </p>
     <p>
-      <%= c.label :Sunnuntai %><br />
+      <%= c.label I18n.t('ilmo.sunday') %><br />
       <%= c.text_area :sunday, "rows" => 5  %>
     </p>
     <p>
-      <%= c.label "Liikennevälineet, muut huomiot" %><br />
+      <%= c.label I18n.t('ilmo.other_notes') %><br />
       <%= c.text_area :misc, "rows" => 5  %>
     </p>
     <% end %>
 
     <p>
-      <%= f.submit "Lähetä" %>
+      <%= f.submit I18n.t('common.submit') %>
     </p>
   <% end %>
  

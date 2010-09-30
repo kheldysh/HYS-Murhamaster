@@ -8,8 +8,29 @@ class ApplicationController < ActionController::Base
   include UserAuthentication # /lib/user_authentication.rb
   
   before_filter :is_authenticated?
+  before_filter :set_locale
   
   protected
+
+  def set_locale
+    session[:locale] = params[:locale] if params[:locale]
+    print "locale: ", session[:locale]
+    I18n.locale = session[:locale] || I18n.default_locale
+    
+    locale_path = "#{LOCALES_DIRECTORY}/#{I18n.locale}.yml"
+    
+    unless I18n.load_path.include? locale_path
+      I18n.load_path << locale_path
+      I18n.backend.send(:init_translations)
+    end
+    
+  rescue Exception => err
+    logger.error err
+    flash.now[:notice] = "#{I18n.locale} translation not possible"
+    
+    I18n.load_path = [locale_path]
+    I18n.locale = session[:locale] = I18n.default_locale
+  end
   
   def show_image(picture)
     send_data picture.data, :type => picture.content_type, :disposition => 'inline', :filename => picture.name

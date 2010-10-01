@@ -1,5 +1,5 @@
 <h2><font color="#CC0000"><%= I18n.t('ilmo.title', :tournament => "<i>#{@tournament.title}</i>") %></font></2>
-<h3><font color="#CC0000"><%= I18n.t('ilmo.registration_end', :date => @tournament.app_deadline_fin) %></font></h3>
+<h3><font color="#CC0000"><%= I18n.t('ilmo.registration_end', :date => @tournament.app_deadline_formatted) %></font></h3>
 
 <p><%= I18n.t('ilmo.instructions') %></p>
 <p><%= I18n.t('ilmo.team_game_reminder') %></p>

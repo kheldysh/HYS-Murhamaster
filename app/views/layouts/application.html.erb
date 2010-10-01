@@ -47,13 +47,15 @@
 <h3>Kohteet</h3>
   
   <% current_user.players.each do |player| %>
-    <h4><%= player.tournament.title %></h4>
-    <ul>
-    <% player.targets.each do |target| %>
-          
-      <li><%= link_to target, user_target_path(current_user, target) %></li>
+    <% if player.tournament.is_running? %>  
+      <h4><%= player.tournament.title %></h4>
+      <ul>
+      <% player.targets.each do |target| %>
+            
+        <li><%= link_to target, user_target_path(current_user, target) %></li>
+      <% end %>
+      </ul>
     <% end %>
-    </ul>
   <% end %>
   
 <h3>Avoimet ilmoittautumiset</h3>

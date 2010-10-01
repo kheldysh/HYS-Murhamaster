@@ -40,7 +40,9 @@
   <h3>Tuomaroinnit</h3>
   <p>
   <% current_user.tournaments.each do |tournament| %>
-    <b><%= link_to tournament.title, tournament, :id => tournament.id  %></b><br />
+    <% if tournament.is_relevant_for_referee? %>
+      <b><%= link_to tournament.title, tournament, :id => tournament.id  %></b><br />
+    <% end %>
   <% end %>
   </p>
 <% end %>

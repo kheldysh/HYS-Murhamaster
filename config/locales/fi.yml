@@ -76,3 +76,23 @@ fi:
     saturday: "Lauantai"
     sunday: "Sunnuntai"
     other_notes: "Liikennevälineet, muut huomiot"
+    
+  date:
+    formats:
+      default: "%e. %Bta %Y"
+      long: "%A %e. %Bta %Y"
+      short: "%e.%m.%Y"
+
+    day_names: [sunnuntai, maanantai, tiistai, keskiviikko, torstai, perjantai, lauantai]
+    abbr_day_names: [su, ma, ti, ke, to, pe, la]
+    month_names: [~, tammikuu, helmikuu, maaliskuu, huhtikuu, toukokuu, kesäkuu, heinäkuu, elokuu, syyskuu, lokakuu, marraskuu, joulukuu]
+    abbr_month_names: [~, tammi, helmi, maalis, huhti, touko, kesä, heinä, elo, syys, loka, marras, joulu]
+    order: [:day, :month, :year]
+
+  time:
+    formats:
+      default: "%A %e. %Bta %Y %H:%M:%S %z"
+      short: "%e.%m. %H.%M"
+      long: "%e. %Bta %Y %H.%M"
+    am: "aamupäivä"
+    pm: "iltapäivä"

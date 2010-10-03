@@ -55,6 +55,9 @@ class PicturesController < ApplicationController
     if current_user.id == params[:user_id].to_i
       logger.info "is own picture"
       return true
+    else current_user.admin
+      logger.info "user is admin"
+      return true
     end
     logger.info "current user: id=%d" % current_user.id
     redirect_to root_path

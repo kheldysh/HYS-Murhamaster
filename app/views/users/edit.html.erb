@@ -31,7 +31,7 @@
     <b>Pelaajatuomarit:</b>
     <ul>
     <% @user.players.each do |player| %>
-      <% if player.referee != nil %>
+      <% if player.referee != nil and player.tournament.is_running? %>
         <li><i><%= player.alias %></i>: <%= player.referee.info %> (<%= player.referee.user.phone %>)</li>
       <% end %>
     <% end %>

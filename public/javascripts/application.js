@@ -3,10 +3,10 @@
 
 function resize(which, max) {
 
-  console.log("RESIZE CALLED");
+  // console.log("RESIZE CALLED");
   var elem = document.getElementById(which);
   if (elem == undefined || elem == null) return false;
-  if (max == undefined) max = 100;
+  if (max == undefined) max = 640;
   if (elem.width > elem.height) {
     if (elem.width > max) elem.width = max;
   } else {

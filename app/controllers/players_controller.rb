@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
 
-  before_filter :own_data?, :except => [:show, :index, :update]
-  before_filter :is_referee?, :only => [:index, :show, :update, :destroy]
+  before_filter :own_data?, :except => [:show, :index, :update, :edit]
+  before_filter :is_referee?, :only => [:index, :show, :update, :destroy, :edit]
 
 
   def index

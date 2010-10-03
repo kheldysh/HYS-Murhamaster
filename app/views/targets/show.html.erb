@@ -1,7 +1,7 @@
 <h2><%= @target.tournament.title %></h2>
 
 <% if @target.user.picture %>
-  <%= image_tag "images/#{@target.user.picture.id}" %>
+  <%= image_tag("images/#{@target.user.picture.id}",  {:id => "#{@target.user.picture.id}", :onload => "resize('#{@target.user.picture.id}', 640)"}) %>
 <% else %>
   <b>PELAAJALLA EI KUVAA TOISTAISEKSI</b>
 <% end %>

@@ -8,7 +8,7 @@ class TargetsController < ApplicationController
     @tournament = @target.tournament
     @calendar = @user.calendar
 
-    @current_player = current_user.players.find(:first, [ "tournament = ?", @tournament ])
+    @current_player = current_user.players.find(:first, :conditions => [ "tournament_id = ?", @tournament ])
 
   end
   

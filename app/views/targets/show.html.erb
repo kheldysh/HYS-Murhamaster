@@ -18,6 +18,12 @@
 <tr>
 <td>
 
+<% if @current_player.detective? %>
+ <p>
+  <b>Peitenimi:</b>
+  <%= @target.alias %>
+</p>
+<% end %>
 
 <p>
   <b>Nimi:</b>

@@ -1,5 +1,7 @@
 <h1>Editing tournament</h1>
 
+<%= link_to "Add referees", :new_tournament_referee_path %>
+
 <% form_for(@tournament) do |f| %>
   <%= f.error_messages %>
 

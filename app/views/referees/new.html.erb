@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :Tuomari %><br />
-    <%= collection_select :referee, :user_id, @users, :id, :username %>
+    <%= collection_select :referee, :user_id, @users, :id, :full_name %>
   </p>
 
   <p>

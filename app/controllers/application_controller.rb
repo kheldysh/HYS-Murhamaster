@@ -64,5 +64,20 @@ class ApplicationController < ActionController::Base
       redirect_to :controller => :users, :action => :show, :id => session[:user_id]
     end
   end
+  
+  def is_referee?
+    @tournament = Tournament.find(params[:tournament_id])
+    if current_user.admin
+      return true
+    end
+    @tournament.referees.each do |referee|
+      if current_user.referees.include? referee
+        return true
+      end
+    end
+    redirect_to root_path
+    return false
+  end
+
 end
 

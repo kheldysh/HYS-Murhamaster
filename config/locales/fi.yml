@@ -61,7 +61,7 @@ fi:
     glasses: "Silmälasit*"
     always: "Aina"
     sometimes: "Joskus"
-    no: "Ei"
+    glasses_no: "Ei laseja"
     height: "Pituus*"
     hair: "Hiukset*"
     other_characteristics: "Muut tuntomerkit"

@@ -1,11 +1,12 @@
 class TeamsController < ApplicationController
 
-  before_filter :is_admin?
+  before_filter :is_referee?
 
   # GET /teams
   # GET /teams.xml
   def index
-    @teams = Team.all
+    @tournament = Tournament.find(params[:tournament_id])
+    @teams = @tournament.teams
 
     respond_to do |format|
       format.html # index.html.erb

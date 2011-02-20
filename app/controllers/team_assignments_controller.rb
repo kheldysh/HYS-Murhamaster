@@ -1,6 +1,6 @@
 class TeamAssignmentsController < ApplicationController
 
-  before_filter :is_admin?
+  before_filter :is_referee?
 
   def index
     @tournament = Tournament.find(params[:tournament_id])

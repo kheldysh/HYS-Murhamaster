@@ -42,6 +42,10 @@ class User < ActiveRecord::Base
     return !self.referees.empty?
   end
     
+  def is_current_referee_for?(player)
+    
+  end
+  
   private
   
   def hash_password

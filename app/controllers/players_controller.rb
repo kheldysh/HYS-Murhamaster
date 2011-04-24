@@ -26,25 +26,24 @@ class PlayersController < ApplicationController
   end
 
   def create
-    # FIXME this is creation for _tournament_, not player :(
-    @tournament = Tournament.new(params[:tournament])
-
-    respond_to do |format|
-      if @tournament.save
-        flash[:notice] = 'Tournament was successfully created.'
-        format.html { redirect_to(@tournament) }
-        format.xml  { render :xml => @tournament, :status => :created, :location => @tournament }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @tournament.errors, :status => :unprocessable_entity }
-      end
-    end
   end
 
   def update
     @player = Player.find(params[:id])
+    was_active = @player.active?
+    logger.info "player was active: %s" % was_active
+    
+    if params[:player][:status] == "dead"
+      logger.info 'new status: dead'
+    end
     @player.update_attributes(params[:player])
     @player.save!
+
+    # if player was active, take care of rings and tournament stats
+    if params[:player][:status] == "dead" and was_active
+      kill(@player)
+    end
+    
     @tournament = Tournament.find(params[:tournament_id])
     redirect_to tournament_players_path(@tournament)
   end
@@ -63,5 +62,13 @@ class PlayersController < ApplicationController
     end
     return false
   end
-      
+  
+  def kill(player)
+    logger.info "Killing player"
+    # increase tournament kill count here
+
+    # moving player's targets to new hunters
+    RingsController.drop_from_rings(player)
+  end 
+
 end

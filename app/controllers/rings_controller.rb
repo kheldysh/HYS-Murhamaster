@@ -45,4 +45,18 @@ class RingsController < ApplicationController
     return false
   end
 
+  # remove killed player from ring
+  def self.drop_from_rings(player)
+    for ring in player.tournament.rings
+      # assumes that ring will only contain one target per players
+      hunting = ring.assignments.find(:first, :conditions => ["target_id = ?", player])
+      hunted = ring.assignments.find(:first, :conditions => ["player_id = ?", player])
+      if hunting and hunted
+        hunted.player = hunting.player
+        hunted.save!
+        hunting.delete
+      end
+    end
+  end
+
 end

@@ -2,6 +2,7 @@ class Tournament < ActiveRecord::Base
   has_many :players
   has_many :teams
   has_many :assignments
+  has_many :rings
   has_many :team_assignments
   has_many :referees
   has_many :users, :through => :referees

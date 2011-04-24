@@ -1,0 +1,39 @@
+
+<h3><%= @tournament.title %></h3>
+<table>
+  <tr>
+    <th>Murhaaja</th>
+    <th></th>
+    <th>Kohde</th>
+  </tr>
+
+<% for assignment in @ring.assignments %>
+  <tr>
+    <td><%=h assignment.player.user.full_name %>
+        (<%=h assignment.player.alias %>)</td>
+    <td> ->  </td>
+    <td><%=h assignment.target.user.full_name %>
+        (<%=h assignment.target.alias %>)</td>
+
+    <td><%= link_to 'Poista', tournament_assignment_path(@tournament, assignment), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<% form_for([ @ring, @new_assignment ]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :Murhaaja %><br />
+    <%= collection_select :assignment, :player_id, @tournament.players, :id, :with_real_name %>
+  </p>
+
+  <p>
+    <%= f.label :Kohde %><br />
+    <%= collection_select :assignment, :target_id, @tournament.players, :id, :with_real_name %>
+  </p>
+  <p>
+    <%= f.submit "Lisää" %>
+  </p>
+<% end %>
+

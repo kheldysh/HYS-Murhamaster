@@ -24,7 +24,7 @@
     <td>
       <% form_for [@tournament, player] do |p|  %>
         <%= p.hidden_field :status, { :value => :dead } %>
-        <%= submit_tag "Kuolleeksi" %>
+        <%= submit_tag "Kuolleeksi", :onclick => 'return #{confirm_javascript_function("Siirretäänkö pelaaja kuolleeksi?")}'  %>
       <% end %>
     </td>
   </tr>
@@ -56,7 +56,7 @@
     <td>
       <% form_for [@tournament, player] do |p|  %>
         <%= p.hidden_field :status, { :value => :dead } %>
-        <%= submit_tag "Kuolleeksi" %>
+        <%= submit_tag "Kuolleeksi", :onclick => 'return #{confirm_javascript_function("Siirretäänkö pelaaja kuolleeksi?")}'  %>
       <% end %>
     </td>
   </tr>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100505230704) do
+ActiveRecord::Schema.define(:version => 20110419195001) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "player_id"
@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20100505230704) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tournament_id"
+    t.integer  "ring_id"
   end
 
   create_table "calendars", :force => true do |t|
@@ -31,6 +32,23 @@ ActiveRecord::Schema.define(:version => 20100505230704) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "misc"
+  end
+
+  create_table "fileLocal", :force => true do |t|
+    t.string  "fileName"
+    t.integer "fileSize", :limit => 8
+    t.string  "location"
+    t.integer "ownerId",  :limit => 8
+  end
+
+  create_table "fileRemote", :force => true do |t|
+    t.string  "fileHash"
+    t.string  "fileName"
+    t.integer "fileSize",           :limit => 8
+    t.string  "ownerHash"
+    t.integer "uploadDate",         :limit => 8
+    t.integer "chunkCount"
+    t.integer "minimalChunksCount"
   end
 
   create_table "pictures", :force => true do |t|
@@ -55,6 +73,12 @@ ActiveRecord::Schema.define(:version => 20100505230704) do
 
   create_table "referees", :force => true do |t|
     t.integer  "user_id"
+    t.integer  "tournament_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rings", :force => true do |t|
     t.integer  "tournament_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -85,6 +109,14 @@ ActiveRecord::Schema.define(:version => 20100505230704) do
     t.datetime "app_deadline"
     t.boolean  "team_game",    :default => false
   end
+
+  create_table "user", :force => true do |t|
+    t.string "hash"
+    t.string "login"
+    t.string "pass"
+  end
+
+  add_index "user", ["login"], :name => "I_login", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "username"

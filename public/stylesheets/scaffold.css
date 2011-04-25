@@ -9,7 +9,18 @@ td { vertical-align: top; }
 
 td.sidepanel { vertical-align: top; }
 
-p.secret {  color: #cc0000 }
+table#tournament_status {
+  background-color: #ffcc33;
+  border: 0;
+  padding: 0;
+  border-spacing: 0;
+  width: 100%;
+  color: #000000
+}
+
+p.secret { color: #cc0000 }
+
+p.event { color: #fff }
 
 pre {
   background-color: #000000;
@@ -28,6 +39,7 @@ a:hover { color: #fff; background-color:#000; }
 }
 
 h2 { color: #cc0000 }
+h3.event_header { color: #cc0000 }
 
 #errorExplanation {
   width: 400px;

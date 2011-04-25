@@ -15,6 +15,7 @@ ActionController::Routing::Routes.draw do |map|
     tournament.resources :team_assignments
     tournament.resources :targets
     tournament.resources :rings, :has_many => :assignments
+    tournament.resources :events
   end
 
   map.resources :referees

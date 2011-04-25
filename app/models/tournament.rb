@@ -6,6 +6,7 @@ class Tournament < ActiveRecord::Base
   has_many :team_assignments
   has_many :referees
   has_many :users, :through => :referees
+  has_many :events
   
   def app_deadline_formatted
     if app_deadline
@@ -21,6 +22,10 @@ class Tournament < ActiveRecord::Base
   def is_relevant_for_referee?
     Date.today <= finish_date + 30
   end
-    
+   
+  def descending_events
+    events
+  end
+   
   named_scope :registration_open, :conditions => ["app_deadline > ?", Time.now]
 end

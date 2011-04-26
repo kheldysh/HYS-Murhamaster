@@ -13,7 +13,7 @@
 <table id="tournament_status">
   <tbody>
     <tr>
-      <td class="status"><%= @tournament.title %> (<i><%= formatted_tournament_duration(@tournament) %></i>) </td>
+      <td class="status"><%= @tournament.title %> (<i><%= formatted_duration(@tournament) %></i>) </td>
       <td class="status">Status: <%= tournament_status(@tournament) %></td>
 
       <td class="status">Pelaajia murhattu:</td>
@@ -39,8 +39,8 @@
 
 
 
-<h1  class="event"><font color="#cc0000">Assassins 2011</font><font color="#cc0000"> 26.4.-8.5.2011</font></h1>
-<h1 class="event"><font color="#cc0000">Tapahtumat - </font><!--<a href="pisteet.html">Pisteet</a></h1>-->
+<h1 class="event"><font color="#cc0000"><%= @tournament.title %></font> <font color="#cc0000"><%= formatted_duration_with_year(@tournament) %></font></h1>
+<h1 class="event"><font color="#cc0000">Tapahtumat</font><!--<a href="pisteet.html">Pisteet</a></h1>-->
 
 
 

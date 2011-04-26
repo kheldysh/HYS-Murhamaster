@@ -4,6 +4,7 @@ class EventsController < ApplicationController
   
   layout "events", :except => [:new, :edit]
   
+  include UserAuthentication
   def index 
     @tournament = Tournament.find(params[:tournament_id])
     @events = @tournament.events.sort_by {|e| e.time}    

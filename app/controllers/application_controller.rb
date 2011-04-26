@@ -66,6 +66,11 @@ class ApplicationController < ActionController::Base
   end
   
   def is_referee?
+
+    if not logged_in?
+      return false
+    end
+    
     @tournament = Tournament.find(params[:tournament_id])
     if current_user.admin
       return true

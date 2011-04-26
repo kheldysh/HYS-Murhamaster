@@ -1,8 +1,10 @@
 class EventsController < ApplicationController
+  before_filter :is_referee, :except => [:index]
   layout "events", :except => [:new, :edit]
   def index 
     @tournament = Tournament.find(params[:tournament_id])
     @events = @tournament.events.sort_by {|e| e.time}    
+    @is_referee = is_referee?
   end
 
   def show

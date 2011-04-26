@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :is_referee, :except => [:index]
+  before_filter :is_referee?, :except => [:index]
   layout "events", :except => [:new, :edit]
   def index 
     @tournament = Tournament.find(params[:tournament_id])

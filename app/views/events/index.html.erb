@@ -1,5 +1,5 @@
 <hr />
-<% for event in @events.reverse %>
+<% @events.reverse.each do |event| %>
 
   <h2 class="event"><%= finnish_date(event.time) %> <%= event.title %></h2>
   <p class="event">

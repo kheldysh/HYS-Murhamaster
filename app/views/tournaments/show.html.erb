@@ -23,7 +23,7 @@
   <% end %>
 
 </ul>
-<%= link_to "Tapahtumat", tournament_events_path(@tournament) %>
+<%= link_to "Tapahtumat", tournament_events_path(@tournament) %><br />
 <% if current_user.admin %>
   <%= link_to 'Muokkaa turnausta', edit_tournament_path(@tournament) %>
 <% end %>

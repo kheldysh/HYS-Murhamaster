@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  layout "application", :only => [:new]
+  layout "events", :except => [:new]
   def index 
     @tournament = Tournament.find(params[:tournament_id])
     @events = @tournament.events.sort_by {|e| e.time}    
@@ -14,6 +14,7 @@ class EventsController < ApplicationController
   def new
     @tournament = Tournament.find(params[:tournament_id])
     @event = Event.new
+    render :layout => "application"
   end
 
   def edit

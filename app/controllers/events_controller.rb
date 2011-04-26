@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  layout "event", :except => [:new]
+  layout "events", :except => [:new]
   layout "application", :only => [:new]
   def index 
     @tournament = Tournament.find(params[:tournament_id])

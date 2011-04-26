@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_filter :is_referee?, :except => :index
-  skip_before_filter :is_authenticated? :only => :index
+  skip_before_filter :is_authenticated?, :only => :index
   
   layout "events", :except => [:new, :edit]
   

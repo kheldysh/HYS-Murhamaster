@@ -1,6 +1,9 @@
 class EventsController < ApplicationController
-  before_filter :is_referee?, :except => [:index]
+  before_filter :is_referee?, :except => :index
+  skip_before_filter :is_authenticated? :only => :index
+  
   layout "events", :except => [:new, :edit]
+  
   def index 
     @tournament = Tournament.find(params[:tournament_id])
     @events = @tournament.events.sort_by {|e| e.time}    

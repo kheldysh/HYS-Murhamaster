@@ -19,19 +19,19 @@
         <%= eventf.label "Murhia" %>
       </td>
       <td>
-        <%= select_tag :murders, options_for_select((0..10).to_a, selected="0") %>
+        <%= eventf.select :murders, (0..10).to_a %>
       </td>
       <td>
         <%= eventf.label "Tappoja" %>
       </td>
       <td>
-        <%= select_tag :self_defenses, options_for_select((0..10).to_a, selected="0") %>
+        <%= eventf.select :kills, (0..10).to_a %>
       </td>
       <td>
         <%= eventf.label "Pidätyksiä" %>
       </td>
       <td>
-        <%= select_tag :arrests, options_for_select((0..10).to_a, selected="0") %>
+        <%= eventf.select :arrests, (0..10).to_a %>
       </td>
     </tr>
     <tr>
@@ -39,19 +39,19 @@
         <%= eventf.label "Sivullisia" %>
       </td>
       <td>
-        <%= select_tag :collaterals, options_for_select((0..20).to_a, selected="0") %>
+        <%= eventf.select :collaterals, (0..40).to_a %>
       </td>
       <td>
         <%= eventf.label "Todistajia" %>
       </td>
       <td>
-        <%= select_tag :murders, options_for_select((0..20).to_a, selected="0") %>
+        <%= eventf.select :murders, (0..40).to_a %>
       </td>
       <td>
         <%= eventf.label "Silminnäkijöitä" %>
       </td>
       <td>
-        <%= select_tag :eyewitnesses, options_for_select((0..20).to_a, selected="0") %>
+        <%= eventf.select :eyewitnesses, (0..40).to_a %>
       </td>
     </tr>
   </table>

@@ -2,7 +2,7 @@ body { background-color: #000000; color: #fff; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
+  font-size:   12px;
   line-height: 18px;
 }
 td { vertical-align: top; }
@@ -15,14 +15,25 @@ table#tournament_status {
   padding: 0;
   border-spacing: 0;
   width: 100%;
-  color: #000000
+  color: #000000;
+  font-family: serif  
+}
+table#tournament_status td {
+  font-family: serif  
 }
 
-.event { font-family: Times New Roman, serif }
+.event { 
+  font-family: serif;
+  font-style: normal;
+ }
 
 p.secret { color: #cc0000 }
 
-p.event { color: #ffffff }
+p.event { 
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: normal;
+}
 
 pre {
   background-color: #000000;
@@ -41,7 +52,10 @@ a:hover { color: #fff; background-color:#000; }
 }
 
 h2 { color: #cc0000 }
-h2.event { color: #cc0000 }
+h3.event { 
+  color: #cc0000;
+  font-size: 14px;
+}
 
 #errorExplanation {
   width: 400px;

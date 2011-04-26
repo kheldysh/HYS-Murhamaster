@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110425121558) do
+ActiveRecord::Schema.define(:version => 20110426100429) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "player_id"
@@ -37,12 +37,12 @@ ActiveRecord::Schema.define(:version => 20110425121558) do
   create_table "events", :force => true do |t|
     t.text     "title"
     t.text     "content"
-    t.integer  "murders"
-    t.integer  "self_defenses"
-    t.integer  "arrests"
-    t.integer  "collaterals"
-    t.integer  "witnesses"
-    t.integer  "eyewitnesses"
+    t.integer  "murders",       :default => 0, :null => false
+    t.integer  "kills",         :default => 0, :null => false
+    t.integer  "arrests",       :default => 0, :null => false
+    t.integer  "collaterals",   :default => 0, :null => false
+    t.integer  "witnesses",     :default => 0, :null => false
+    t.integer  "eyewitnesses",  :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "time"
@@ -123,6 +123,12 @@ ActiveRecord::Schema.define(:version => 20110425121558) do
     t.datetime "updated_at"
     t.datetime "app_deadline"
     t.boolean  "team_game",    :default => false
+    t.integer  "murdered",     :default => 0,     :null => false
+    t.integer  "killed",       :default => 0,     :null => false
+    t.integer  "arrested",     :default => 0,     :null => false
+    t.integer  "collaterals",  :default => 0,     :null => false
+    t.integer  "witnesses",    :default => 0,     :null => false
+    t.integer  "eyewitnesses", :default => 0,     :null => false
   end
 
   create_table "user", :force => true do |t|

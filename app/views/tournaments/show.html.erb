@@ -22,8 +22,8 @@
     <li><%= link_to "Joukkuerenkaat", tournament_team_assignments_path(@tournament) %></li>
   <% end %>
 
-  <li><%= link_to "Tapahtumat", tournament_events_path(@tournament) %></li>
-
+</ul>
+<%= link_to "Tapahtumat", tournament_events_path(@tournament) %>
 <% if current_user.admin %>
   <%= link_to 'Muokkaa turnausta', edit_tournament_path(@tournament) %>
 <% end %>

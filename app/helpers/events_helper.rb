@@ -1,8 +1,11 @@
 module EventsHelper
   
-  def formatted_tournament_duration(tournament)
-    return "#{tournament.start_date.day}.#{tournament.start_date.month}.-
-            #{tournament.finish_date.day}.#{tournament.finish_date.month}."
+  def formatted_duration(tournament)
+    return "#{tournament.start_date.day}.#{tournament.start_date.month}.-#{tournament.finish_date.day}.#{tournament.finish_date.month}."
+  end
+  
+  def formatted_duration_with_year(tournament)
+    return "#{formatted_duration(tournament)}#{tournament.finish_date.year}"
   end
   
   def tournament_status(tournament)

@@ -1,10 +1,7 @@
 class EventsController < ApplicationController
   def index 
     @tournament = Tournament.find(params[:tournament_id])
-    logger.info(@tournament)
-    @events = @tournament.events.sort_by {|e| e.time}
-    logger.info(@events.first.title)
-    
+    @events = @tournament.events.sort_by {|e| e.time}    
   end
 
   def show
@@ -28,7 +25,7 @@ class EventsController < ApplicationController
     @event = Event.new(params[:event])
     @event.tournament = @tournament
     @event.save!
-    
+    @tournament.update_stats()    
     redirect_to tournament_events_path(@tournament)
   end
 
@@ -36,6 +33,7 @@ class EventsController < ApplicationController
     @tournament = Tournament.find(params[:tournament_id])
     @event = Event.find(params[:id])
     @event.update_attributes(params[:event])
+    @tournament.update_stats()    
     flash[:notice] = 'Event was successfully updated.'
     redirect_to tournament_events_path(@tournament)
 

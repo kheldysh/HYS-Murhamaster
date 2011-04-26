@@ -31,7 +31,7 @@ p.secret { color: #cc0000 }
 
 p.event { 
   color: #ffffff;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: normal;
 }
 
@@ -54,7 +54,7 @@ a:hover { color: #fff; background-color:#000; }
 h2 { color: #cc0000 }
 h3.event { 
   color: #cc0000;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 #errorExplanation {

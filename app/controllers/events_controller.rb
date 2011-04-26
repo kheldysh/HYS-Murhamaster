@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   def index 
     @tournament = Tournament.find(params[:tournament_id])
     @events = @tournament.events.sort_by {|e| e.time}    
-    @is_referee = is_referee?
+    @is_referee = current_user.is_referee_for?(@tournament)
   end
 
   def show

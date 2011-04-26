@@ -42,6 +42,15 @@ class User < ActiveRecord::Base
     return !self.referees.empty?
   end
     
+  def is_referee_for?(tournament)
+    tournament.referees.each do |referee|
+      if current_user.referees.include? referee
+        return true
+      end
+    end
+  end
+
+    
   def is_current_referee_for?(player)
     
   end

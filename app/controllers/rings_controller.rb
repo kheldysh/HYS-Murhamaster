@@ -19,6 +19,15 @@ class RingsController < ApplicationController
 
   def create
     @tournament = Tournament.find(params[:tournament_id])
+    #purge assignments without players or targets
+    params[:ring][:assignments_attributes].each do |key, ass|
+      if ass[:player_id] == "0" or ass[:target_id] == "0"
+        logger.info("puring empty assignment: #{ass[:player_id]}->#{ass[:target_id]}"
+        params[:ring][:assignments_attributes].delete(key)
+      end
+    end
+      
+    
     @ring = Ring.new(params[:ring])
     @ring.tournament = @tournament
     @ring.save!

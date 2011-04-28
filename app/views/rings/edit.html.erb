@@ -1,0 +1,51 @@
+<h3><%= @tournament.title %></h3>
+<% form_for( [@tournament, @ring] ) do |f| %>
+  <%= f.error_messages %>
+  <table>
+    <tr>
+      <th>Murhaaja</th>
+      <th></th>
+      <th>Kohde</th>
+    </tr>
+
+    <% f.fields_for :assignments do |ass_form| %>
+    <tr>
+      <td>
+        <%= ass_form.collection_select :player_id, @tournament.players, :id, :with_real_name %>
+      </td>
+      <td>
+      ->
+      </td>
+      <td>
+        <%= ass_form.collection_select :target_id, @tournament.players, :id, :with_real_name %>
+      </td>
+    </tr>
+    <% end %>
+    
+  </table>
+  <%= f.submit "Päivitä" %>
+
+<% end %>
+
+<h4>Lisää toimeksianto</h4>
+<% form_for([ @tournament, @ring ]) do |f| %>
+  <%= f.error_messages %>
+  <% fields_for @new_assignment do |new_ass| %>
+    <table>
+      <tr>
+        <td>
+          <%= f.label :Murhaaja %><br />
+          <%= collection_select :assignment, :player_id, @tournament.players, :id, :with_real_name %>
+        </td>
+        <td>
+          <%= f.label :Kohde %><br />
+          <%= collection_select :assignment, :target_id, @tournament.players, :id, :with_real_name %>
+        </td>
+      </tr>
+    </table>
+  <% end %>
+  <p>
+    <%= f.submit "Lisää" %>
+  </p>
+<% end %>
+

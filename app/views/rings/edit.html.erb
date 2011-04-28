@@ -19,6 +19,9 @@
       <td>
         <%= ass_form.collection_select :target_id, @tournament.players, :id, :with_real_name %>
       </td>
+      <td>
+      <%= link_to 'Poista', tournament_ring_assignment_path(@tournament, ring, assignment), :method => :delete %>
+      </td>
     </tr>
     <% end %>
     

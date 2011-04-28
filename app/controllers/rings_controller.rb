@@ -11,7 +11,8 @@ class RingsController < ApplicationController
   def new
     @ring = Ring.new
     @tournament = Tournament.find(params[:tournament_id])
-    for player in @tournament.players
+    @active_players = @tournament.players.find_all{ |player| player.active? }
+    for player in @active_players
       @ring.assignments.build
     end
   end
@@ -28,6 +29,7 @@ class RingsController < ApplicationController
 
   def edit
     @tournament = Tournament.find(params[:tournament_id])
+    @active_players = @tournament.players.find_all{ |player| player.active? }
     @ring = Ring.find(params[:id])
     @new_assignment = Assignment.new
   end

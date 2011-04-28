@@ -12,7 +12,6 @@ class AssignmentsController < ApplicationController
     @assignment = Assignment.new
   end
 
-
   def create
     attributes = params[:assignment]
     attributes[:tournament_id] = params[:tournament_id]
@@ -22,9 +21,11 @@ class AssignmentsController < ApplicationController
   end
   
   def destroy
+    @tournament = Tournament.find(params[:tournament_id])
     @assignment = Assignment.find(params[:id])
+    @ring = @assignment.ring
     @assignment.delete
-    redirect_to :tournament_assignments
+    redirect_to :tournament_ring_assignments
   end
 
   def is_referee?

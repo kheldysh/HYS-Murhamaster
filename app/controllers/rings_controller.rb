@@ -16,22 +16,28 @@ class RingsController < ApplicationController
     end
   end
 
-
   def create
+    params = purge_empty_assignments(params)
+
     @tournament = Tournament.find(params[:tournament_id])
-    #purge assignments without players or targets
-    params[:ring][:assignments_attributes].each do |key, ass|
-      if ass[:player_id] == "0" or ass[:target_id] == "0"
-        logger.info("puring empty assignment: #{ass[:player_id]}->#{ass[:target_id]}")
-        params[:ring][:assignments_attributes].delete(key)
-      end
-    end
-      
-    
     @ring = Ring.new(params[:ring])
     @ring.tournament = @tournament
     @ring.save!
     redirect_to :tournament_rings
+  end
+
+  def edit
+    @tournament = Tournament.find(params[:tournament_id])
+    @ring = Ring.find(params[:ring_id])
+  end
+  
+  def update
+    params = purge_empty_assignments(params)
+
+    @tournament = Tournament.find(params[:tournament_id])
+    @ring = Ring.find(params[:ring_id])
+    @ring.update_attributes(params[:ring])
+
   end
   
   def destroy
@@ -68,4 +74,15 @@ class RingsController < ApplicationController
     end
   end
 
+  def purge_empty_assignments(params)
+    # purge assignments without players or targets
+    # TODO: move this check to Assignment model and handle it properly
+    params[:ring][:assignments_attributes].each do |key, ass|
+      if ass[:player_id] == "0" or ass[:target_id] == "0"
+        logger.info("puring empty assignment: #{ass[:player_id]}->#{ass[:target_id]}")
+        params[:ring][:assignments_attributes].delete(key)
+      end
+    end
+    return params
+  end
 end

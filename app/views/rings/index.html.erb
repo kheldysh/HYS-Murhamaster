@@ -6,6 +6,7 @@
     <th>Murhaaja</th>
     <th></th>
     <th>Kohde</th>
+    <th><b><%= link_to 'Poista rengas', tournament_ring_path(@tournament, ring), :method => :delete, :confirm => 'Haluatko varmasti poistaa renkaan?' %>/<b></th>
   </tr>
 
 <% for assignment in ring.assignments %>

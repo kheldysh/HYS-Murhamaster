@@ -17,10 +17,10 @@ class RingsController < ApplicationController
   end
 
   def create
-    params = purge_empty_assignments(params)
+    new_params = purge_assignments(params)
 
-    @tournament = Tournament.find(params[:tournament_id])
-    @ring = Ring.new(params[:ring])
+    @tournament = Tournament.find(new_params[:tournament_id])
+    @ring = Ring.new(new_params[:ring])
     @ring.tournament = @tournament
     @ring.save!
     redirect_to :tournament_rings
@@ -28,15 +28,22 @@ class RingsController < ApplicationController
 
   def edit
     @tournament = Tournament.find(params[:tournament_id])
-    @ring = Ring.find(params[:ring_id])
+    @ring = Ring.find(params[:id])
+    @new_assignment = Assignment.new
   end
   
   def update
-    params = purge_empty_assignments(params)
-
-    @tournament = Tournament.find(params[:tournament_id])
-    @ring = Ring.find(params[:ring_id])
-    @ring.update_attributes(params[:ring])
+    new_params = purge_assignments(params)
+    @tournament = Tournament.find(new_params[:tournament_id])
+    @ring = Ring.find(new_params[:id])
+    if new_params[:assignment]
+      @new_assignment = Assignment.new(new_params[:assignment])
+      @ring.assignments.push(@new_assignment)
+      @ring.save!
+    else
+      @ring.update_attributes(new_params[:ring])
+    end
+    redirect_to :tournament_rings
 
   end
   
@@ -74,15 +81,27 @@ class RingsController < ApplicationController
     end
   end
 
-  def purge_empty_assignments(params)
-    # purge assignments without players or targets
-    # TODO: move this check to Assignment model and handle it properly
-    params[:ring][:assignments_attributes].each do |key, ass|
-      if ass[:player_id] == "0" or ass[:target_id] == "0"
-        logger.info("puring empty assignment: #{ass[:player_id]}->#{ass[:target_id]}")
-        params[:ring][:assignments_attributes].delete(key)
+  def purge_assignments(old_params)
+    logger.info(old_params)
+    if old_params[:ring]
+      # TODO: move this check to Assignment model and handle it properly
+      old_params[:ring][:assignments_attributes].each do |key, ass|
+        # purge assignments without players or targets
+        if ass[:player_id] == "0" or ass[:target_id] == "0"
+          logger.info("puring empty assignment: #{ass[:player_id]}->#{ass[:target_id]}")
+          old_params[:ring][:assignments_attributes].delete(key)
+        # purge assignments to own self
+        elsif ass[:player_id] == ass[:target_id]
+          logger.info("puring empty assignment: #{ass[:player_id]}->#{ass[:target_id]}")
+          old_params[:ring][:assignments_attributes].delete(key)
+        end
+      end
+    elsif old_params[:assignment]
+      if old_params[:assignment][:player_id] == "0" or old_params[:assignment][:target_id] == "0"
+        logger.info("puring empty old_params[:assignment]ignment: #{old_params[:assignment][:player_id]}->#{old_params[:assignment][:target_id]}")
+        old_params.delete(:assignment)
       end
     end
-    return params
+    return old_params
   end
 end

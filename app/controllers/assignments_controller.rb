@@ -25,7 +25,7 @@ class AssignmentsController < ApplicationController
     @assignment = Assignment.find(params[:id])
     @ring = @assignment.ring
     @assignment.delete
-    redirect_to :tournament_ring_assignments
+    redirect_to :tournament_rings
   end
 
   def is_referee?

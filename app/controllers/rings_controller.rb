@@ -36,6 +36,7 @@ class RingsController < ApplicationController
     new_params = purge_assignments(params)
     @tournament = Tournament.find(new_params[:tournament_id])
     @ring = Ring.find(new_params[:id])
+    # TODO: move this to AssignmentController and assignments wholly under rings
     if new_params[:assignment]
       @new_assignment = Assignment.new(new_params[:assignment])
       @ring.assignments.push(@new_assignment)
@@ -82,7 +83,6 @@ class RingsController < ApplicationController
   end
 
   def purge_assignments(old_params)
-    logger.info(old_params)
     if old_params[:ring]
       # TODO: move this check to Assignment model and handle it properly
       old_params[:ring][:assignments_attributes].each do |key, ass|
@@ -92,7 +92,7 @@ class RingsController < ApplicationController
           old_params[:ring][:assignments_attributes].delete(key)
         # purge assignments to own self
         elsif ass[:player_id] == ass[:target_id]
-          logger.info("puring empty assignment: #{ass[:player_id]}->#{ass[:target_id]}")
+          logger.info("puring self-pointing assignment: #{ass[:player_id]}->#{ass[:target_id]}")
           old_params[:ring][:assignments_attributes].delete(key)
         end
       end

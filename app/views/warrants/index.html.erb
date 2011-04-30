@@ -1,0 +1,37 @@
+
+<h3><%= @tournament.title %></h3>
+<table>
+  <tr>
+    <th>Etsivät</th>
+    <th></th>
+    <th>Etsintäkuulutettu</th>
+    <th></th>
+  </tr>
+<% for warrant in @tournament.warrants %>
+  <tr>
+    <td>
+      <% for assignment in warrant.assignments %>
+        <% if assignment.player %>
+          <%=h assignment.player.user.full_name %>
+            (<%=h assignment.player.alias %>)
+        <% end %>
+        <br />
+      <% end %>
+    </td>
+    <td> ->  </td>
+    <td>
+      <% if assignment.target %>
+        <%=h assignment.target.user.full_name %>
+          (<%=h assignment.target.alias %>)
+      <% end %>
+    </td>
+
+    <td><b><%= link_to 'Muokkaa etsintäkuulutusta', edit_tournament_warrant_path(@tournament, warrant) %> / 
+          <%= link_to 'Poista etsintäkuulutus', tournament_warrant_path(@tournament, warrant), :method
+            => :delete, :confirm => 'Haluatko varmasti poistaa etsintäkuulutuksen?' %></b>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Uusi etsintäkuulutus', new_tournament_warrant_path(@tournament) %>

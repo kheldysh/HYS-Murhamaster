@@ -24,7 +24,7 @@ class WarrantsController < ApplicationController
     new_params = purge_assignments(params)
     # if no assignments, don't create warrant
     unless params[:warrant][:assignments_attributes].empty?
-      @target = Player.find(new_params[:warrant][:assignments_attributes]["0"][:target_id])
+      @target = Player.find(new_params[:warrant][:target_id])
       @tournament = Tournament.find(new_params[:tournament_id])
       @warrant = Warrant.new(new_params[:warrant])
       @warrant.target = @target

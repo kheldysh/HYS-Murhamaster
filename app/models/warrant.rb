@@ -17,7 +17,7 @@ class Warrant < ActiveRecord::Base
     end
   end
   
-  def 
+  def target_is_not_blank? 
     assignments.each do |ass|
       if ass.target.blank?
         errors.add(:ass, "Etsintäkuulutuksen toimeksiannosta puuttuu kohde!")

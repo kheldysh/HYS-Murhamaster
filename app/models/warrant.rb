@@ -1,6 +1,9 @@
 class Warrant < ActiveRecord::Base
   has_many :assignments, :dependent => :destroy
   belongs_to :tournament
+  
+  belongs_to :target, :class_name => "Player", :foreign_key => "target_id"
+  
   accepts_nested_attributes_for :assignments, :allow_destroy => true
   
   validate :single_target_on_all_assignments?

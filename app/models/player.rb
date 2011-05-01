@@ -5,6 +5,7 @@ class Player < ActiveRecord::Base
   belongs_to :team
   belongs_to :referee
   
+  has_one :warrant
   has_many :assignments
   has_many :targets, :through => :assignments
 

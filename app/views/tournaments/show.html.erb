@@ -16,6 +16,7 @@
 <ul>
   <li><%= link_to "Pelaajat", tournament_players_path(@tournament) %></li>
   <li><%= link_to "Renkaat", tournament_rings_path(@tournament) %></li>
+  <li><%= link_to "Etsintäkuulutukset", tournament_warrants_path(@tournament) %></li>
   <li><%= link_to "Lisää uusi tapahtuma", new_tournament_event_path(@tournament) %></li>
   <% if @tournament.team_game %>
     <li><%= link_to "Joukkueet", tournament_teams_path(@tournament) %></li>

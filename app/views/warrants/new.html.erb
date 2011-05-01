@@ -1,0 +1,33 @@
+
+<h3><%= @tournament.title %></h3>
+<% form_for( [@tournament, @warrant] ) do |f| %>
+  <%= f.error_messages %>
+  <table>
+    <tr>
+      <th>Etsivät</th>
+      <th></th>
+      <th>Kohde</th>
+    </tr>
+
+    <% f.fields_for :assignments do |ass_form| %>
+    <tr>
+      <td>
+        <% @detectives.each do |det| %>
+          <%= det.with_real_name %> <%= ass_form.check_box :player_id, checked_value=det.id %>
+          <br />
+        <% end %>
+      </td>
+      <td>
+      ->
+      </td>
+      <td>
+        <%= ass_form.collection_select :target_id, @active_players, :id, :with_real_name, {:prompt => "(valitse)"} %>
+      </td>
+    </tr>
+    <% end %>
+    
+  </table>
+  <%= f.submit "Lisää" %>
+
+<% end %>
+

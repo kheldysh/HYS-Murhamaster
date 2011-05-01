@@ -1,4 +1,3 @@
-
 <h3><%= @tournament.title %></h3>
 <% form_for( [@tournament, @warrant] ) do |f| %>
   <%= f.error_messages %>
@@ -9,22 +8,23 @@
       <th>Kohde</th>
     </tr>
 
-    <% f.fields_for :assignments do |ass_form| %>
     <tr>
-      <td>
-        <% @detectives.each do |det| %>
-          <%= det.with_real_name %> <%= ass_form.check_box :player_id, checked_value=det.id %>
-          <br />
-        <% end %>
+      <td class=warrant>
+      <% f.fields_for :assignments do |ass_form| %>
+        <%= ass_form.label ass_form.object.player.with_real_name %> 
+        <span class="warrant">
+        <%= ass_form.check_box :player_id, {}, ass_form.object.player.id  %>
+        </span>
+        <br />
+      <% end %>
       </td>
       <td>
       ->
       </td>
       <td>
-        <%= ass_form.collection_select :target_id, @active_players, :id, :with_real_name, {:prompt => "(valitse)"} %>
+        <%= f.collection_select :target_id, @active_players, :id, :with_real_name, {:prompt => "(valitse)"} %>
       </td>
     </tr>
-    <% end %>
     
   </table>
   <%= f.submit "Lisää" %>

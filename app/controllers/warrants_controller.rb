@@ -59,7 +59,7 @@ class WarrantsController < ApplicationController
   
   def destroy
     @warrant = Warrant.find(params[:id])
-    @warrant.delete
+    @warrant.destroy
     redirect_to :tournament_warrants
   end
 

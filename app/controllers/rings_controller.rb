@@ -52,7 +52,7 @@ class RingsController < ApplicationController
   
   def destroy
     @ring = Ring.find(params[:id])
-    @ring.delete
+    @ring.destroy
     redirect_to :tournament_rings
   end
 

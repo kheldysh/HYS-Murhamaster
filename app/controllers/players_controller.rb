@@ -69,6 +69,7 @@ class PlayersController < ApplicationController
 
     # moving player's targets to new hunters
     RingsController.drop_from_rings(player)
+    WarrantsController.drop_from_warrants(player)
   end 
 
 end

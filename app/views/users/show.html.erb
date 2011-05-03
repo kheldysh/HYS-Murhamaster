@@ -1,69 +1,81 @@
-<p>
-  <b>Käyttäjä:</b>
-  <%=h @user.username %>
-</p>
+<table>
+  <tr>
+    <td>
+      <p>
+        <b>Käyttäjä:</b>
+        <%=h @user.username %>
+      </p>
 
-<p>
-  <b>Nimi:</b>
-  <%=h @user.full_name %>
-</p>
+      <p>
+        <b>Nimi:</b>
+        <%=h @user.full_name %>
+      </p>
 
-<p>
-  <b>Oppilaitos:</b>
-  <%=h @user.university %> / <%=h @user.faculty %> /  <%=h @user.department %>
-</p>
+      <p>
+        <b>Oppilaitos:</b>
+        <%=h @user.university %> / <%=h @user.faculty %> /  <%=h @user.department %>
+      </p>
 
 
-<p>
-  <b>Puhelin:</b>
-  <%=h @user.phone %>
-</p>
+      <p>
+        <b>Puhelin:</b>
+        <%=h @user.phone %>
+      </p>
 
-<p>
-  <b>Sähköposti:</b>
-  <%=h @user.email %>
-</p>
+      <p>
+        <b>Sähköposti:</b>
+        <%=h @user.email %>
+      </p>
 
-<p>
-  <b>Osoite:</b>
-  <%=h @user.address %>
-</p>
+      <p>
+        <b>Osoite:</b>
+        <%=h @user.address %>
+      </p>
 
-<p>
-  <b>Silmät:</b>
-  <%=h @user.eyes %>
-</p>
+      <p>
+        <b>Silmät:</b>
+        <%=h @user.eyes %>
+      </p>
 
-<p>
-  <b>Lasit:</b>
-  <%=h @user.glasses %>
-</p>
+      <p>
+        <b>Lasit:</b>
+        <%=h @user.glasses %>
+      </p>
 
-<p>
-  <b>Pituus:</b>
-  <%=h @user.height %>
-</p>
+      <p>
+        <b>Pituus:</b>
+        <%=h @user.height %>
+      </p>
 
-<p>
-  <b>Hiukset:</b>
-  <%=h @user.hair %>
-</p>
+      <p>
+        <b>Hiukset:</b>
+        <%=h @user.hair %>
+      </p>
 
-<p>
-  <b>Muut tuntomerkit:</b>
-  <%=h @user.other_notes %>
-</p>
+      <p>
+        <b>Muut tuntomerkit:</b>
+        <%=h @user.other_notes %>
+      </p>
 
-<p>
-  <b>Pelaajatuomarit:</b>
-  <ul>
-  <% @user.players.each do |player| %>
-    <% if player.referee != nil and player.tournament.is_running? %>
-      <li><i><%= player.alias %></i>: <%= player.referee.info %> (<%= player.referee.user.phone %>)</li>
-    <% end %>
-  <% end %>
-  </ul>
-</p>
-
+      <p>
+        <b>Pelaajatuomarit:</b>
+        <ul>
+        <% @user.players.each do |player| %>
+          <% if player.referee != nil and player.tournament.is_running? %>
+            <li><i><%= player.alias %></i>: <%= player.referee.info %> (<%= player.referee.user.phone %>)</li>
+          <% end %>
+        <% end %>
+        </ul>
+      </p>
+    </td>
+    <td>
+      <% if @user.picture %>
+        <%= image_tag("images/#{@user.picture.id}",  {:id => "#{@user.picture.id}", :onload => "resize('#{@user.picture.id}')"}) %>
+      <% else %>
+        <b>PELAAJALLA EI KUVAA TOISTAISEKSI</b>
+      <% end %>
+    </td>
+  </tr>
+</table>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

@@ -63,7 +63,7 @@ class WarrantsController < ApplicationController
     redirect_to :tournament_warrants
   end
 
-  def drop_from_warrants(player)
+  def self.drop_from_warrants(player)
     player.tournament.warrants.each do |warrant|
       if warrant.target == player
         warrant.destroy

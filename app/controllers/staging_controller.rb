@@ -1,0 +1,2 @@
+class StagingController < ApplicationController
+end

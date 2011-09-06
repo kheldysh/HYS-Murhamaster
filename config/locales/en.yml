@@ -16,29 +16,31 @@ en:
     login: "Login"
     logout: "Logout"
     register: "Register"
-  
+
   ilmo:
     title: "Player registration for {{tournament}} tournament"
     registration_end: "Registration ends {{date}}."
-    instructions: "Fill out the details as accurately as possible. This will make the game more enjoyable both for you and the others. Fields marked with an asterisk (*) are required for registration, other fields can be filled in afterwards. Fields marked with red color are for the umpires' eyes only. The umpires may make additions to the given information and ask for supplementary details, if necessary. The schedule can be (and should be) updated during the game."  
+    instructions: "Fill out the details as accurately as possible. This will make the game more enjoyable both for you and the others. Fields marked with an asterisk (*) are required for registration, other fields can be filled in afterwards. Fields marked with red color are for the umpires' eyes only. The umpires may make additions to the given information and ask for supplementary details, if necessary. The schedule can be (and should be) updated during the game."
     team_game_reminder: "NB: In a team game, every team member should register separately and put the same name in the 'Team name' field!"
-    
+
+    tournament_over_disclaimer: "Tournament is over. Thanks for all the participants!"
+
     already_registered: "You have already registered yourself to the game!"
 
-    old_user_reminder: "<b>NB:</b> If you already have created an account for Murhamaster, you can 
+    old_user_reminder: "<b>NB:</b> If you already have created an account for Murhamaster, you can
       {{login_link}} and register for the game with your existing information!"
-    
+
     to_log_in: "log in"
 
     problem_info: "If you encounter any problems with the registration form, please send your registration information to the umpires by e-mail: <a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>."
 
     murhamaster_account: "Murhamaster account"
     account_info: "A Murhamaster account will be created for you using these details."
-    
+
     player_data: "Player details"
 
     pic_size_caveat: "<b>NB! Only images with size of 512kB or less are accepted.</b> You may also send your image to the umpires by e-mail (<a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>)."
-    
+
     # login data
     username: "Username for logging into Murhamaster*"
     password: "Password*"
@@ -59,7 +61,7 @@ en:
     glasses: "Glasses*"
     always: "Always"
     sometimes: "Sometimes"
-    no: "No"
+    glasses_no: "No"
     height: "Height*"
     hair: "Hair color*"
     other_characteristics: "Other characteristics"
@@ -74,7 +76,7 @@ en:
     saturday: "Saturday"
     sunday: "Sunday"
     other_notes: "Transportation, protected areas, other notes"
-    
+
   date:
     formats:
       # Use the strftime parameters for formats.
@@ -83,10 +85,10 @@ en:
       default: "%d-%m-%Y"
       short: "%b %d"
       long: "%B %d, %Y"
-      
+
     day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
     abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
-      
+
     # Don't forget the nil at the beginning; there's no such thing as a 0th month
     month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
     abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
@@ -100,3 +102,4 @@ en:
       long: "%B %d, %Y %H:%M"
     am: "am"
     pm: "pm"
+

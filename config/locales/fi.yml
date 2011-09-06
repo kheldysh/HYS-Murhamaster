@@ -16,7 +16,7 @@ fi:
     login: "Kirjaudu sisään"
     logout: "Kirjaudu ulos"
     register: "Rekisteröidy"
-  
+
   ilmo:
     title: "Pelaajien rekisteröityminen HYS:n {{tournament}} -peliin"
     registration_end: "Rekisteröityminen päättyy {{date}}."
@@ -25,20 +25,22 @@ fi:
 
     team_game_reminder: "Muistattehan, että joukkupelissä kaikkien joukkueen jäsenien tulee ilmoittautua erikseen ja laittaa sama nimi joukkue-kenttään!"
 
+    tournament_over_disclaimer: "Turnaus on ohi. Kiitos kaikille osallistuneille!"
+
     already_registered: "Olet jo ilmoittautunut peliin!"
 
-    old_user_reminder: "<b>Huom!</b> Mikäli olet jo luonut käyttäjätunnuksen uuteen Murhamasteriin, voit 
+    old_user_reminder: "<b>Huom!</b> Mikäli olet jo luonut käyttäjätunnuksen uuteen Murhamasteriin, voit
       {{login_link}} ja ilmoittautua olemassaolevilla tiedoillasi!"
-    
+
     problem_info: "Mikäli lomakkeen kanssa ilmenee ongelmia, ilmoittautuminen kannattaa hoitaa lähettämällä ilmoittautumistiedot osoitteeseen <a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>."
-    
+
     to_log_in: "kirjautua sisään"
-    
+
     murhamaster_account: "Murhamaster-tunnus"
-    account_info: "Ilmoittautumislomake luo sinulle seuraavaksi antamiesi tietojen perusteella tunnukset uuteen 
+    account_info: "Ilmoittautumislomake luo sinulle seuraavaksi antamiesi tietojen perusteella tunnukset uuteen
   Murhamasteriin."
 
-    pic_size_caveat: "<b>Huom! Ainoastaan alle 512kt kokoiset kuvat kelpaavat.</b> Kuvan voi myös halutessaan lähettää sähköpostitse tuomaristolle (<a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>)."  
+    pic_size_caveat: "<b>Huom! Ainoastaan alle 512kt kokoiset kuvat kelpaavat.</b> Kuvan voi myös halutessaan lähettää sähköpostitse tuomaristolle (<a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>)."
 
     player_data: "Pelaajatiedot"
     # login data
@@ -76,7 +78,7 @@ fi:
     saturday: "Lauantai"
     sunday: "Sunnuntai"
     other_notes: "Liikennevälineet, muut huomiot"
-    
+
   date:
     formats:
       default: "%e. %Bta %Y"
@@ -96,3 +98,4 @@ fi:
       long: "%e. %Bta %Y %H.%M"
     am: "aamupäivä"
     pm: "iltapäivä"
+

@@ -1,187 +1,194 @@
 <h2><font color="#CC0000"><%= I18n.t('ilmo.title', :tournament => "<i>#{@tournament.title}</i>") %></font></2>
 <h3><font color="#CC0000"><%= I18n.t('ilmo.registration_end', :date => @tournament.app_deadline_formatted) %></font></h3>
 
-<p><%= I18n.t('ilmo.instructions') %></p>
-<p><%= I18n.t('ilmo.team_game_reminder') %></p>
+<% if @tournament.is_over? %>
+  <p><%= I18n.t('ilmo.tournament_over_disclaimer') %></p>
 
-<% if logged_in? %>
-  <% if @registered_already %>
-    <h3><%= I18n.t('ilmo.already_registered') %></h3>
+<% else %>
+
+  <p><%= I18n.t('ilmo.instructions') %></p>
+  <p><%= I18n.t('ilmo.team_game_reminder') %></p>
+
+  <% if logged_in? %>
+    <% if @registered_already %>
+      <h3><%= I18n.t('ilmo.already_registered') %></h3>
+    <% else %>
+      <h3>Pelaajatiedot</h3>
+      <% form_for :player, :url => { :controller => :ilmos, :action => :create } do |p| %>
+        <%= error_messages_for :player %>
+        <p>
+          <%= p.label I18n.t('ilmo.alias') %><br />
+          <%= p.text_field :alias %>
+        </p>
+        <% if @tournament.team_game %>
+          <%= error_messages_for :team %>
+          <% fields_for :team do |t| %>
+            <p>
+              <%= t.label I18n.t('ilmo.team_name') %><br />
+              <%= t.text_field :name %>
+            </p>
+          <% end %>
+        <% end %>
+      <p>
+        <%= p.submit I18n.t('common.submit') %>
+      </p>
+      <% end %>
+    <% end %>
+
   <% else %>
-    <h3>Pelaajatiedot</h3>
-    <% form_for :player, :url => { :controller => :ilmos, :action => :create } do |p| %>
+    <p><%= I18n.t('ilmo.old_user_reminder', :login_link => link_to(I18n.t('ilmo.to_log_in'), login_path)) %></p>
+
+    <b><%= I18n.t('ilmo.problem_info') %></b>
+    <% form_for :user, :url => { :controller => :ilmos, :action => :create }, :html => { :multipart => true } do |f| %>
+      <%= error_messages_for :user %>
+
+    <h3><%= I18n.t('ilmo.murhamaster_account') %></h3>
+    <i><%= I18n.t('ilmo.account_info') %></i>
+      <p class="secret">
+        <%= f.label I18n.t('ilmo.username') %><br />
+        <%= f.text_field :username %>
+      </p>
+      <p>
+        <%= f.label I18n.t('ilmo.password') %><br />
+        <%= f.password_field :password %>
+      </p>
+      <p>
+        <%= f.label I18n.t('ilmo.password_confirmation') %><br />
+        <%= f.password_field :password_confirmation %>
+      </p>
+
+      <h3><%= I18n.t('ilmo.player_data') %></h3>
+
       <%= error_messages_for :player %>
+      <% fields_for :player do |p| %>
       <p>
         <%= p.label I18n.t('ilmo.alias') %><br />
         <%= p.text_field :alias %>
       </p>
+      <% end %>
       <% if @tournament.team_game %>
         <%= error_messages_for :team %>
         <% fields_for :team do |t| %>
-          <p>
-            <%= t.label I18n.t('ilmo.team_name') %><br />
-            <%= t.text_field :name %>
-          </p>
+        <p>
+          <%= t.label I18n.t('ilmo.team_name') %><br />
+          <%= t.text_field :name %>
+        </p>
         <% end %>
       <% end %>
-    <p>
-      <%= p.submit I18n.t('common.submit') %>
-    </p>
-    <% end %>
-  <% end %>
 
-<% else %>
-  <p><%= I18n.t('ilmo.old_user_reminder', :login_link => link_to(I18n.t('ilmo.to_log_in'), login_path)) %></p>
-
-  <b><%= I18n.t('ilmo.problem_info') %></b>
-  <% form_for :user, :url => { :controller => :ilmos, :action => :create }, :html => { :multipart => true } do |f| %>
-    <%= error_messages_for :user %>
-
-  <h3><%= I18n.t('ilmo.murhamaster_account') %></h3>
-  <i><%= I18n.t('ilmo.account_info') %></i>
-    <p class="secret">
-      <%= f.label I18n.t('ilmo.username') %><br />
-      <%= f.text_field :username %>
-    </p>
-    <p>
-      <%= f.label I18n.t('ilmo.password') %><br />
-      <%= f.password_field :password %>
-    </p>
-    <p>
-      <%= f.label I18n.t('ilmo.password_confirmation') %><br />
-      <%= f.password_field :password_confirmation %>
-    </p>
-    
-    <h3><%= I18n.t('ilmo.player_data') %></h3>
-    
-    <%= error_messages_for :player %>
-    <% fields_for :player do |p| %>
-    <p>
-      <%= p.label I18n.t('ilmo.alias') %><br />
-      <%= p.text_field :alias %>
-    </p>
-    <% end %>
-    <% if @tournament.team_game %>
-      <%= error_messages_for :team %>
-      <% fields_for :team do |t| %>
       <p>
-        <%= t.label I18n.t('ilmo.team_name') %><br />
-        <%= t.text_field :name %>
+        <%= f.label I18n.t('ilmo.first_name') %><br />
+        <%= f.text_field :first_name %>
+      </p>
+      <p>
+        <%= f.label I18n.t('ilmo.last_name') %><br />
+        <%= f.text_field :last_name %>
+      </p>
+
+      <p class="secret">
+        <%= f.label I18n.t('ilmo.email') %><br />
+        <%= f.text_field :email %>
+      </p>
+
+      <p class="secret">
+        <%= f.label I18n.t('ilmo.phone') %><br />
+        <%= f.text_field :phone %>
+      </p>
+      <p>
+        <%= f.label I18n.t('ilmo.address') %><br />
+        <%= f.text_field :address %>
+      </p>
+
+      <p>
+        <%= f.label I18n.t('ilmo.university') %><br />
+        <%= f.text_field :university %>
+      </p>
+
+      <p>
+        <%= f.label I18n.t('ilmo.faculty') %><br />
+        <%= f.text_field :faculty %>
+      </p>
+
+      <p>
+        <%= f.label I18n.t('ilmo.department') %><br />
+        <%= f.text_field :department %>
+      </p>
+
+      <p>
+        <%= f.label I18n.t('ilmo.eyes') %><br />
+        <%= f.text_field :eyes %>
+      </p>
+      <p>
+        <%= f.label I18n.t('ilmo.glasses') %><br />
+        <%= f.select ( :glasses, [ I18n.t('ilmo.always'), I18n.t('ilmo.sometimes'), I18n.t('ilmo.glasses_no') ] ) %>
+      </p>
+      <p>
+        <%= f.label I18n.t('ilmo.height') %><br />
+        <%= f.text_field :height, "size" => 3, "maxlength" => 3 %> cm
+      </p>
+      <p>
+        <%= f.label I18n.t('ilmo.hair') %><br />
+        <%= f.text_field :hair %>
+      </p>
+      <p>
+        <%= f.label I18n.t('ilmo.other_characteristics') %><br />
+        <%= f.text_field :other_notes %>
+      </p>
+
+      <%= error_messages_for :picture %>
+
+      <% fields_for :picture do |pic| %>
+      <p><%= I18n.t('ilmo.pic_size_caveat') %>
+      <br />
+
+        <%= pic.label I18n.t('ilmo.picture') %><br />
+        <%= pic.file_field :uploaded_picture %>
       </p>
       <% end %>
+
+
+      <h3><%= I18n.t('ilmo.calendar') %></h3>
+      <% fields_for :calendar do |c| %>
+      <p>
+        <%= c.label I18n.t('ilmo.monday') %><br />
+        <%= c.text_area :monday, "rows" => 5 %>
+      </p>
+      <p>
+        <%= c.label I18n.t('ilmo.tuesday') %><br />
+        <%= c.text_area :tuesday, "rows" => 5  %>
+      </p>
+      <p>
+        <%= c.label I18n.t('ilmo.wednesday') %><br />
+        <%= c.text_area :wednesday, "rows" => 5  %>
+      </p>
+      <p>
+        <%= c.label I18n.t('ilmo.thursday') %><br />
+        <%= c.text_area :thursday, "rows" => 5  %>
+      </p>
+      <p>
+        <%= c.label I18n.t('ilmo.friday') %><br />
+        <%= c.text_area :friday, "rows" => 5  %>
+      </p>
+      <p>
+        <%= c.label I18n.t('ilmo.saturday') %><br />
+        <%= c.text_area :saturday, "rows" => 5  %>
+      </p>
+      <p>
+        <%= c.label I18n.t('ilmo.sunday') %><br />
+        <%= c.text_area :sunday, "rows" => 5  %>
+      </p>
+      <p>
+        <%= c.label I18n.t('ilmo.other_notes') %><br />
+        <%= c.text_area :misc, "rows" => 5  %>
+      </p>
+      <% end %>
+
+      <p>
+        <%= f.submit I18n.t('common.submit') %>
+      </p>
     <% end %>
 
-    <p>
-      <%= f.label I18n.t('ilmo.first_name') %><br />
-      <%= f.text_field :first_name %>
-    </p>
-    <p>
-      <%= f.label I18n.t('ilmo.last_name') %><br />
-      <%= f.text_field :last_name %>
-    </p>
-
-    <p class="secret">
-      <%= f.label I18n.t('ilmo.email') %><br />
-      <%= f.text_field :email %>
-    </p>
-    
-    <p class="secret">
-      <%= f.label I18n.t('ilmo.phone') %><br />
-      <%= f.text_field :phone %>
-    </p>
-    <p>
-      <%= f.label I18n.t('ilmo.address') %><br />
-      <%= f.text_field :address %>
-    </p>
-
-    <p>
-      <%= f.label I18n.t('ilmo.university') %><br />
-      <%= f.text_field :university %>
-    </p>
-
-    <p>
-      <%= f.label I18n.t('ilmo.faculty') %><br />
-      <%= f.text_field :faculty %>
-    </p>
-
-    <p>
-      <%= f.label I18n.t('ilmo.department') %><br />
-      <%= f.text_field :department %>
-    </p>
-
-    <p>
-      <%= f.label I18n.t('ilmo.eyes') %><br />
-      <%= f.text_field :eyes %>
-    </p>
-    <p>
-      <%= f.label I18n.t('ilmo.glasses') %><br />
-      <%= f.select ( :glasses, [ I18n.t('ilmo.always'), I18n.t('ilmo.sometimes'), I18n.t('ilmo.glasses_no') ] ) %>
-    </p>
-    <p>
-      <%= f.label I18n.t('ilmo.height') %><br />
-      <%= f.text_field :height, "size" => 3, "maxlength" => 3 %> cm
-    </p>
-    <p>
-      <%= f.label I18n.t('ilmo.hair') %><br />
-      <%= f.text_field :hair %>
-    </p>
-    <p>
-      <%= f.label I18n.t('ilmo.other_characteristics') %><br />
-      <%= f.text_field :other_notes %>
-    </p>
-
-    <%= error_messages_for :picture %>
-
-    <% fields_for :picture do |pic| %>  
-    <p><%= I18n.t('ilmo.pic_size_caveat') %>
-    <br />
-
-      <%= pic.label I18n.t('ilmo.picture') %><br />
-      <%= pic.file_field :uploaded_picture %>
-    </p>
-    <% end %>
-
-
-    <h3><%= I18n.t('ilmo.calendar') %></h3>
-    <% fields_for :calendar do |c| %>
-    <p>
-      <%= c.label I18n.t('ilmo.monday') %><br />
-      <%= c.text_area :monday, "rows" => 5 %>
-    </p>
-    <p>
-      <%= c.label I18n.t('ilmo.tuesday') %><br />
-      <%= c.text_area :tuesday, "rows" => 5  %>
-    </p>
-    <p>
-      <%= c.label I18n.t('ilmo.wednesday') %><br />
-      <%= c.text_area :wednesday, "rows" => 5  %>
-    </p>
-    <p>
-      <%= c.label I18n.t('ilmo.thursday') %><br />
-      <%= c.text_area :thursday, "rows" => 5  %>
-    </p>
-    <p>
-      <%= c.label I18n.t('ilmo.friday') %><br />
-      <%= c.text_area :friday, "rows" => 5  %>
-    </p>
-    <p>
-      <%= c.label I18n.t('ilmo.saturday') %><br />
-      <%= c.text_area :saturday, "rows" => 5  %>
-    </p>
-    <p>
-      <%= c.label I18n.t('ilmo.sunday') %><br />
-      <%= c.text_area :sunday, "rows" => 5  %>
-    </p>
-    <p>
-      <%= c.label I18n.t('ilmo.other_notes') %><br />
-      <%= c.text_area :misc, "rows" => 5  %>
-    </p>
-    <% end %>
-
-    <p>
-      <%= f.submit I18n.t('common.submit') %>
-    </p>
   <% end %>
- 
 
 <% end %>
+

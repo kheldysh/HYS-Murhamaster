@@ -1,6 +1,8 @@
 # Don't change this file!
 # Configure your app in config/environment.rb and config/environments/*.rb
 
+require 'thread' # added to make db:migrate work on prod env's rails 2.3.12
+
 RAILS_ROOT = "#{File.dirname(__FILE__)}/.." unless defined?(RAILS_ROOT)
 
 module Rails
@@ -107,3 +109,4 @@ end
 
 # All that for this:
 Rails.boot!
+

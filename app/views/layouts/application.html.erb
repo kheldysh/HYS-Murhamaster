@@ -25,8 +25,11 @@
     </td>
   </tr>
 </table>
-    
-<p style="color: green"><%= flash[:notice] %></p>
+<% if flash[:notice] %>
+  <p style="color: green"><%= flash[:notice] %></p>
+<% elsif flash[:alert] %>
+  <p style="color: red"><%= flash[:alert] %></p>
+<% end %>
 <table cellspacing="10">
 <tr>
 <% if logged_in? %>
@@ -47,19 +50,19 @@
   </p>
 <% end %>
 <h3>Kohteet</h3>
-  
+
   <% current_user.players.each do |player| %>
-    <% if player.tournament.is_running? %>  
+    <% if player.tournament.is_running? %>
       <h4><%= player.tournament.title %></h4>
       <ul>
       <% player.targets.uniq.each do |target| %>
-            
+
         <li><%= link_to target.user.full_name, user_target_path(current_user, target) %></li>
       <% end %>
       </ul>
     <% end %>
   <% end %>
-  
+
 <h3>Avoimet ilmoittautumiset</h3>
   <% Tournament.registration_open.each do |tournament| %>
     <ul>
@@ -79,3 +82,4 @@
 </table>
 </body>
 </html>
+

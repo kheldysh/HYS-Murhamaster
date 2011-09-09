@@ -1,6 +1,6 @@
 <h1>Käyttäjätietojen muokkaus</h1>
 
-<b><%= link_to "Vaihda kuvaa...", edit_user_pictures_path(@user) %></b>
+<b><%= link_to "Vaihda kuvaa...", edit_user_picture_path(@user) %></b>
 
 
 <h3>Salasanan vaihto</h3>
@@ -46,7 +46,7 @@
     <%= f.label "Sukunimi" %><br />
     <%= f.text_field :last_name %>
   </p>
-  
+
   <p class="secret">
     <%= f.label :Puhelin %><br />
     <%= f.text_field :phone %>
@@ -55,7 +55,7 @@
     <%= f.label :Sähköposti %><br />
     <%= f.text_field :email %>
   </p>
-  
+
   <p>
     <%= f.label "Osoite" %><br />
     <%= f.text_field :address %>
@@ -105,3 +105,4 @@
 
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
+

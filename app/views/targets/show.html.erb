@@ -1,5 +1,7 @@
 <h2><%= @target.tournament.title %></h2>
 
+<%= link_to "Muokkaa pelaajan tietoja", edit_tournament_target_path(@target.tournament, @target) %>
+<br />
 <% if @target.user.picture %>
   <%= image_tag("images/#{@target.user.picture.id}",  {:id => "#{@target.user.picture.id}", :onload => "resize('#{@target.user.picture.id}')"}) %>
 <% else %>
@@ -77,7 +79,7 @@
   <b>Tuomari:</b>
   <%=h @target.referee.user.full_name %>, <%=h @target.referee.user.phone %>
 </p>
-<% end %>  
+<% end %>
 
 </td>
 
@@ -125,3 +127,4 @@
 </td>
 </tr>
 </table>
+

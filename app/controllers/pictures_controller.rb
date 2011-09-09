@@ -1,29 +1,35 @@
 class PicturesController < ApplicationController
 
-  before_filter :is_own_picture?, :only => [:edit, :update]
+  before_filter :is_owner_or_referee?, :only => [:edit, :update]
   before_filter :is_own_or_targets_picture?, :only => :display
-  
+
   def edit
     @picture = Picture.new
     @user = User.find(params[:user_id])
   end
 
   def create
-    logger.info(params[:picture][:uploaded_picture].size)
-    @picture = Picture.new(params[:picture])
     @user = User.find(params[:user_id])
-    @picture.user = @user
-    @picture.save!
-    flash[:notice] = 'Kuva on vaihdettu!'
-    redirect_to root_path
+
+    if params[:picture]
+      logger.info(params[:picture][:uploaded_picture].size)
+      @picture = Picture.new(params[:picture])
+      @picture.user = @user
+      @picture.save!
+      flash[:notice] = 'Kuva on vaihdettu!'
+      redirect_to root_path
+    else
+      flash[:alert] = 'Ei kuvaa!'
+      redirect_to edit_user_pictures_path(@user)
+    end
   end
 
   def display
-    
+
     logger.info "picturesController engaged"
     @picture = Picture.find(params[:file_name][1])
       send_data(
-        @picture.data, 
+        @picture.data,
         :type => @picture.content_type,
         :filename => @picture.name,
         :disposition => 'inline'
@@ -49,7 +55,7 @@ class PicturesController < ApplicationController
       return false
     end
   end
-    
+
 
   def is_own_picture?
     if current_user.id == params[:user_id].to_i
@@ -65,3 +71,4 @@ class PicturesController < ApplicationController
   end
 
 end
+

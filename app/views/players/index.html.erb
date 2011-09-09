@@ -13,13 +13,13 @@
   <tr>
     <td><%=h player.user.full_name %></td>
     <td><%=h player.alias %></td>
-    <td><%= link_to player.real_name, tournament_player_path(@tournament, player) %></td>
+    <td><%= link_to player.real_name, tournament_target_path(@tournament, player) %></td>
     <td>
       <% if player.referee != nil %>
         <%=h player.referee.user.full_name %>
       <% else %>
         <%= link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player) %>
-      <% end %>        
+      <% end %>
     </td>
     <td>
       <% form_for [@tournament, player] do |p|  %>
@@ -51,7 +51,7 @@
         <%=h player.referee.user.full_name %>
       <% else %>
         <%= link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player) %>
-      <% end %>        
+      <% end %>
     </td>
     <td>
       <% form_for [@tournament, player] do |p|  %>
@@ -83,7 +83,7 @@
         <%=h player.referee.user.full_name %>
       <% else %>
         <%= link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player) %>
-      <% end %>        
+      <% end %>
     </td>
     <td>
       <% form_for [@tournament, player] do |p|  %>
@@ -104,5 +104,4 @@
 </table>
 
 <br />
-
 

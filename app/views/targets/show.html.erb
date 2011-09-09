@@ -1,6 +1,10 @@
 <h2><%= @target.tournament.title %></h2>
 
-<%= link_to "Muokkaa pelaajan tietoja", edit_tournament_target_path(@target.tournament, @target) %>
+
+<% if @referee %>
+  <%= link_to "Muokkaa pelaajan tietoja", edit_tournament_target_path(@target.tournament, @target) %>
+<% end %>
+
 <br />
 <% if @target.user.picture %>
   <%= image_tag("images/#{@target.user.picture.id}",  {:id => "#{@target.user.picture.id}", :onload => "resize('#{@target.user.picture.id}')"}) %>
@@ -20,11 +24,13 @@
 <tr>
 <td>
 
-<% if @current_player.detective? %>
- <p>
-  <b>Peitenimi:</b>
-  <%= @target.alias %>
-</p>
+<% if not @referee %>
+  <% if @current_player.detective? %>
+   <p>
+    <b>Peitenimi:</b>
+    <%= @target.alias %>
+  </p>
+  <% end %>
 <% end %>
 
 <p>

@@ -8,8 +8,10 @@ class TargetsController < ApplicationController
     @user = @target.user
     @tournament = @target.tournament
     @calendar = @user.calendar
-
-    @current_player = current_user.players.find(:first, :conditions => [ "tournament_id = ?", @tournament ])
+    @referee = is_referee?
+    if not @referee
+      @current_player = current_user.players.find(:first, :conditions => [ "tournament_id = ?", @tournament ])
+    end
 
   end
 

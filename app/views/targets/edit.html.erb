@@ -1,0 +1,146 @@
+<h2><%= @target.tournament.title %></h2>
+
+<%= link_to "Palaa pelaajan kohdesivulle", tournament_target_path(@target.tournament, @target) %>
+<br />
+<% if @target.user.picture %>
+  <%= image_tag("images/#{@target.user.picture.id}",  {:id => "#{@target.user.picture.id}", :onload => "resize('#{@target.user.picture.id}')"}) %>
+<% else %>
+  <b>PELAAJALLA EI KUVAA TOISTAISEKSI</b>
+<% end %>
+<% form_for([@tournament, @target], :html => { :multipart => true }, :url => tournament_target_path) do |f| %>
+  <%= f.error_messages %>
+
+  <b>Huom! Kuvien kokoraja on 512kB.</b>
+  <p>
+    <%= f.label "Uusi kuva: " %><br />
+    <%= f.file_field :uploaded_picture %>
+  </p>
+    <p>
+    <%= f.submit "Lähetä" %>
+  </p>
+<% end %>
+
+<% form_for :user, :url => tournament_target_path(@tournament, @target), :html => { :method => :put } do |f| %>
+  <%= error_messages_for :user %>
+
+  <table cellspacing="20" class="top_align">
+  <tr>
+  <th>
+  <h3>Perustiedot<h3>
+  </th>
+  <th>
+  <h3>Kalenteri<h3>
+  </th>
+  </tr>
+  <tr>
+  <td>
+
+  <p>
+    <%= f.label "Etunimi" %><br />
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label "Sukunimi" %><br />
+    <%= f.text_field :last_name %>
+  </p>
+
+  <p class="secret">
+    <%= f.label :Puhelin %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p class="secret">
+    <%= f.label "Sähköposti" %><br />
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.label "Osoite" %><br />
+    <%= f.text_field :address %>
+  </p>
+
+  <p>
+    <%= f.label "Oppilaitos" %><br />
+    <%= f.text_field :university %>
+  </p>
+
+  <p>
+    <%= f.label "Tiedekunta/vast" %><br />
+    <%= f.text_field :faculty %>
+  </p>
+
+  <p>
+    <%= f.label "Ainelaitos" %><br />
+    <%= f.text_field :department %>
+  </p>
+
+  <p>
+    <%= f.label "Silmät" %><br />
+    <%= f.text_field :eyes %>
+  </p>
+  <p>
+    <%= f.label "Silmälasit" %><br />
+    <%= f.select ( :glasses, [ "Aina", "Joskus", "Ei" ] ) %>
+  </p>
+  <p>
+    <%= f.label "Pituus" %><br />
+    <%= f.text_field :height, "size" => 3, "maxlength" => 3 %> cm
+  </p>
+  <p>
+    <%= f.label "Hiukset" %><br />
+    <%= f.text_field :hair %>
+  </p>
+
+  <p>
+    <%= f.label "Muut tuntomerkit" %><br />
+    <%= f.text_field :other_notes %>
+  </p>
+</td>
+
+<td>
+
+  <% fields_for @calendar do |c| %>
+
+    <p>
+      <%= c.label :Maanantai %><br />
+      <%= c.text_area :monday, "rows" => 5 %>
+    </p>
+    <p>
+      <%= c.label :Tiistai %><br />
+      <%= c.text_area :tuesday, "rows" => 5  %>
+    </p>
+    <p>
+      <%= c.label :Keskiviikko %><br />
+      <%= c.text_area :wednesday, "rows" => 5  %>
+    </p>
+    <p>
+      <%= c.label :Torstai %><br />
+      <%= c.text_area :thursday, "rows" => 5  %>
+    </p>
+    <p>
+      <%= c.label :Perjantai %><br />
+      <%= c.text_area :friday, "rows" => 5  %>
+    </p>
+    <p>
+      <%= c.label :Lauantai %><br />
+      <%= c.text_area :saturday, "rows" => 5  %>
+    </p>
+    <p>
+      <%= c.label :Sunnuntai %><br />
+      <%= c.text_area :sunday, "rows" => 5  %>
+    </p>
+    <p>
+      <%= c.label "Liikennevälineet, muut huomiot" %><br />
+      <%= c.text_area :misc, "rows" => 5  %>
+    </p>
+
+  <% end %>
+
+  </td>
+  </tr>
+  </table>
+  <p>
+    <%= f.submit "Päivitä" %>
+  </p>
+
+<% end %>
+

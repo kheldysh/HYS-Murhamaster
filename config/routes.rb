@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :teams do |team|
     team.resources :players
   end
-  
+
   map.resources :calendars
 
   map.resources :tournaments do |tournament|
@@ -20,7 +20,10 @@ ActionController::Routing::Routes.draw do |map|
     tournament.resources :events
   end
 
-  map.resources :referees
+  map.resources :referees do |referee|
+    referee.resources :players
+  end
+
   # map.resources :assignments
 
   map.resources :users do |user|
@@ -35,10 +38,11 @@ ActionController::Routing::Routes.draw do |map|
 
   map.login "/login", :controller=>"users", :action=>"index"
   map.logout "/logout", :controller=>"sessions", :action=>"destroy"
-  
+
   # map.connect ':controller/:action/:id'
   # map.connect ':controller/:action/:id.:format'
 
   map.root :controller => 'tournaments', :action => "index"
 
 end
+

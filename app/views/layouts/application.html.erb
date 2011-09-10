@@ -66,7 +66,7 @@
 <h3>Avoimet ilmoittautumiset</h3>
   <% Tournament.registration_open.each do |tournament| %>
     <ul>
-      <li><%= link_to tournament.title, tournament_ilmo_path(tournament) %></li>
+      <li><%= link_to tournament.title, new_tournament_ilmo_path(tournament) %></li>
     </ul>
   <% end %>
 

@@ -6,8 +6,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :calendars
 
   map.resources :tournaments do |tournament|
-    tournament.resource :ilmo
-
+    # tournament.resource :ilmo
+    tournament.resources :ilmos
     tournament.resources :players
     tournament.resources :referees
     tournament.resources :teams

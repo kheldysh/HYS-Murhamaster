@@ -1,103 +1,25 @@
-<h1>Listing players</h1>
+<h1>Ilmoittautuneet pelaajat</h1>
 
-<h2>Elossaolevat</h2>
+<h2>Hyväksyntää odottavat</h2>
 <table>
   <tr>
     <th>Käyttäjä</th>
     <th>Alias</th>
     <th>Kohdesivu</th>
-    <th>Pelaajatuomari</th>
   </tr>
 
-<% for player in @active_players %>
+<% for player in @waiting_players %>
   <tr>
     <td><%=h player.user.full_name %></td>
     <td><%=h player.alias %></td>
     <td><%= link_to player.real_name, tournament_target_path(@tournament, player) %></td>
-    <td>
-      <% if player.referee != nil %>
-        <%=h player.referee.user.full_name %>
-      <% else %>
-        <%= link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player) %>
-      <% end %>
-    </td>
-    <td>
-      <% form_for [@tournament, player] do |p|  %>
-        <%= p.hidden_field :status, { :value => :dead } %>
-        <%= submit_tag "Kuolleeksi", :onclick => 'return #{confirm_javascript_function("Siirretäänkö pelaaja kuolleeksi?")}'  %>
-      <% end %>
-    </td>
-  </tr>
-<% end %>
-
-</table>
-
-<h2>Etsivät</h2>
-<table>
-  <tr>
-    <th>Käyttäjä</th>
-    <th>Alias</th>
-    <th>Kohdesivu</th>
-    <th>Pelaajatuomari</th>
-  </tr>
-
-<% for player in @detectives %>
-  <tr>
-    <td><%=h player.user.full_name %></td>
-    <td><%=h player.alias %></td>
-    <td><%= link_to player.real_name, tournament_player_path(@tournament, player) %></td>
-    <td>
-      <% if player.referee != nil %>
-        <%=h player.referee.user.full_name %>
-      <% else %>
-        <%= link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player) %>
-      <% end %>
-    </td>
-    <td>
-      <% form_for [@tournament, player] do |p|  %>
-        <%= p.hidden_field :status, { :value => :dead } %>
-        <%= submit_tag "Kuolleeksi", :onclick => 'return #{confirm_javascript_function("Siirretäänkö pelaaja kuolleeksi?")}'  %>
-      <% end %>
-    </td>
-  </tr>
-<% end %>
-
-</table>
-
-<h2>Kuolleet</h2>
-<table>
-  <tr>
-    <th>Käyttäjä</th>
-    <th>Alias</th>
-    <th>Kohdesivu</th>
-    <th>Pelaajatuomari</th>
-  </tr>
-
-<% for player in @dead_players %>
-  <tr>
-    <td><%=h player.user.full_name %></td>
-    <td><%=h player.alias %></td>
-    <td><%= link_to player.real_name, tournament_player_path(@tournament, player) %></td>
-    <td>
-      <% if player.referee != nil %>
-        <%=h player.referee.user.full_name %>
-      <% else %>
-        <%= link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player) %>
-      <% end %>
-    </td>
-    <td>
-      <% form_for [@tournament, player] do |p|  %>
-        <%= p.hidden_field :status, { :value => :detective } %>
-        <%= submit_tag "Etsiväksi" %>
-      <% end %>
-    </td>
+    <td><%= link_to 'Muokkaa peitenimeä', edit_tournament_player_path(@tournament, player) %></td>
     <td>
       <% form_for [@tournament, player] do |p|  %>
         <%= p.hidden_field :status, { :value => :active } %>
-        <%= submit_tag "Henkiin" %>
+        <%= submit_tag "Hyväksy peliin" %>
       <% end %>
     </td>
-
   </tr>
 <% end %>
 

@@ -1,5 +1,5 @@
 class Tournament < ActiveRecord::Base
-  has_many :players
+  has_many :players, :dependent => :delete_all
   has_many :teams
   has_many :assignments
   has_many :rings

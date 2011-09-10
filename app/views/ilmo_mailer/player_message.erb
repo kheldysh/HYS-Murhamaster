@@ -1,9 +1,10 @@
 Ilmoittautumisesi Helsingin yliopiston salamurhaajien turnaukseen <%= @player.tournament.title %> on vastaanotettu. Tuomaristo ottaa sinuun vielä yhteyttä ennen pelin alkua.
 
 Tunnuksesi Murhamasteriin:
-
-Käyttäjätunnus: <%= @username %>
-Salasana:       <%= @passwd %>
+<% if @username and @passwd %>
+  Käyttäjätunnus: <%= @username %>
+  Salasana:       <%= @passwd %>
+<% end %>
 
 Voit vaihtaa salasanan Murhamasteriin kirjauduttuasi.
 

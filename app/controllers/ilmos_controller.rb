@@ -137,7 +137,7 @@ skip_before_filter :is_authenticated?
     covername.gsub!(/\W/, '') # leave only alphanumerals (and underscore)
     cover_slice = covername[0..5].downcase
 
-    time_hash = Digest::MD5.hexdigest(Time.now.to_s)
+    time_hash = Digest::MD5.hexdigest(Time.now.to_s+covername+rand().to_s)
     hash_slice_ind = rand(time_hash.length-3)
     hash_slice = time_hash[hash_slice_ind..hash_slice_ind+3]
 

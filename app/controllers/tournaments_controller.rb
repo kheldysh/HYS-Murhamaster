@@ -14,7 +14,7 @@ class TournamentsController < ApplicationController
       format.html # show.html.erb
       format.xml  { render :xml => @tournament }
     end
-  end    
+  end
 
   # GET /tournaments
   # GET /tournaments.xml
@@ -61,6 +61,9 @@ class TournamentsController < ApplicationController
 
     respond_to do |format|
       if @tournament.save
+        # ensure all statistics to be zero
+        Tournament.update_stats(@tournament)
+
         flash[:notice] = 'Tournament was successfully created.'
         format.html { redirect_to(@tournament) }
         format.xml  { render :xml => @tournament, :status => :created, :location => @tournament }
@@ -109,7 +112,7 @@ class TournamentsController < ApplicationController
       tournament.referees.each do |ref|
         if current_user.referees.include?(ref)
           return true
-        end 
+        end
       end
     end
     redirect_to root_path
@@ -117,5 +120,4 @@ class TournamentsController < ApplicationController
   end
 
 end
-
 

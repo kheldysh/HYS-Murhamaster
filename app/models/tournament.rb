@@ -9,7 +9,7 @@ class Tournament < ActiveRecord::Base
   has_many :users, :through => :referees
   has_many :events
 
-  before_create :update_stats
+  before_create Tournament.update_stats
 
   def app_deadline_formatted
     if app_deadline
@@ -37,25 +37,26 @@ class Tournament < ActiveRecord::Base
   named_scope :registration_open, :conditions => ["app_deadline > ?", Time.now]
 
 
-  def self.update_stats(tournament)
+  private
+    def update_stats(tournament)
 
-    tournament.murdered = 0
-    tournament.killed = 0
-    tournament.arrested = 0
-    tournament.collaterals = 0
-    tournament.witnesses = 0
-    tournament.eyewitnesses = 0
+      tournament.murdered = 0
+      tournament.killed = 0
+      tournament.arrested = 0
+      tournament.collaterals = 0
+      tournament.witnesses = 0
+      tournament.eyewitnesses = 0
 
-    tournament.events.each do |event|
-      tournament.murdered += event.murders
-      tournament.killed += event.kills
-      tournament.arrested += event.arrests
-      tournament.collaterals += event.collaterals
-      tournament.witnesses += event.witnesses
-      tournament.eyewitnesses += event.eyewitnesses
+      tournament.events.each do |event|
+        tournament.murdered += event.murders
+        tournament.killed += event.kills
+        tournament.arrested += event.arrests
+        tournament.collaterals += event.collaterals
+        tournament.witnesses += event.witnesses
+        tournament.eyewitnesses += event.eyewitnesses
+      end
+      tournament.save!
     end
-    tournament.save!
-  end
 
 end
 

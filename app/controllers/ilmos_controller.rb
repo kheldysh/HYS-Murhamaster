@@ -1,8 +1,16 @@
+require 'digest/md5'
+
 class IlmosController < ApplicationController
 
 skip_before_filter :is_authenticated?
 
-  def show
+  def index
+    @tournament = Tournament.find(params[:tournament_id])
+    @waiting_players = @tournament.players.waiting_players
+
+  end
+
+  def new
 
     @tournament = Tournament.find(params[:tournament_id])
     @calendar = Calendar.new
@@ -22,35 +30,35 @@ skip_before_filter :is_authenticated?
       # otherwise we create a whole new user
       @user = User.new
     end
-    
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @tournament }
     end
-    
-  end    
+
+  end
 
 
   def create
 
     @tournament = Tournament.find(params[:tournament_id])
     @player = Player.new(params[:player])
-    @player.status = :active
+    @player.status = :waiting_approval
 
     if @tournament.team_game
       logger.info("searching for existing team with name: %s" % params[:team][:name])
       @team = Team.find(:first, :conditions => { :name => params[:team][:name], :tournament_id => @tournament.id } )
-      
+
       if not @team
         @team = Team.new(params[:team])
       end
     end
-      
+
     if logged_in?
       # if user is logged in, we need only player alias (and team)
       @user = current_user
 
-      if @tournament.team_game      
+      if @tournament.team_game
         @team.tournament = @tournament
         @team.save!
         @player.team = @team
@@ -59,26 +67,31 @@ skip_before_filter :is_authenticated?
       @player.user = @user
       @player.tournament = @tournament
       @player.save!
-            
+
     else
       # if user is not logged in, we create new user with new calendar and such
+      username = generate_user(params[:user][:last_name], params[:user][:first_name])
+      passwd = generate_passwd(params[:player][:alias])
       @user = User.new(params[:user])
+      @user.username = username
+      @user.password = passwd
+
       @calendar = Calendar.new(params[:calendar])
       if params[:picture] and params[:picture][:uploaded_picture]
         @picture = Picture.new(params[:picture])
       else
         @picture = nil
-      end       
+      end
 
 
-      
+
       User.transaction do
         @user.save!
 
         @calendar.user = @user
         @calendar.save!
 
-        if @tournament.team_game      
+        if @tournament.team_game
           @team.tournament = @tournament
           @team.save!
           @player.team = @team
@@ -87,17 +100,17 @@ skip_before_filter :is_authenticated?
         @player.user = @user
         @player.tournament = @tournament
         @player.save!
-        
+
         if @picture
           @picture.user = @user
           @picture.save!
         end
-        
+
       end
-      
+
     end
     referee_mail = IlmoMailer.create_referee_message(@player)
-    player_mail = IlmoMailer.create_player_message(@player)
+    player_mail = IlmoMailer.create_player_message(@player, username, passwd)
     IlmoMailer.deliver(referee_mail)
     IlmoMailer.deliver(player_mail)
     flash[:notice] = 'Ilmoittautuminen rekisteröity! Tuomaristo ottaa sinuun vielä yhteyttä ennen peliä!'
@@ -105,11 +118,36 @@ skip_before_filter :is_authenticated?
 
   end
 
-  
+
   # rescue ActiveRecord::RecordInvalid => e
     # @player.valid?
     # redirect_to :back
   # end
+
+
+  def generate_user(last_name, first_name)
+    lname_max = 8
+    last_name.gsub!(/\W/, '') # leave only alphanumerals (and underscore)
+    last_name = last_name.length > lname_max ? last_name[0..lname_max] : last_name # overtly long usernames are bad
+    username = last_name.downcase + first_name.downcase[0..0] # last name plus first char of first name
+    return User.augment_if_exists(username)
+  end
+
+  def generate_passwd(covername) # generates quasi-random, yet memorizable passwd
+    covername.gsub!(/\W/, '') # leave only alphanumerals (and underscore)
+    cover_slice = covername[0..5].downcase
+
+    time_hash = Digest::MD5.hexdigest(Time.now.to_s)
+    hash_slice_ind = rand(time_hash.length-3)
+    hash_slice = time_hash[hash_slice_ind..hash_slice_ind+3]
+
+    # stick cover slice randomly inside hash slice
+    cover_slice_ind = rand(hash_slice.length)
+
+
+    passwd = cover_slice + hash_slice
+    return passwd
+  end
 
 end
 

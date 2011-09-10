@@ -4,12 +4,19 @@
   <b><%= @player.with_real_name %></b>
 
   <p>
-    <%= f.label :Tuomari %><br />
-    <%= collection_select :player, :referee_id, @tournament.referees, :id, :full_info %>
+    <%= f.label :Peitenimi %><br />
+    <%= f.text_field :alias %>
   </p>
-  
+
+  <% if not @player.waiting_approval? %>
+    <p>
+      <%= f.label :Tuomari %><br />
+      <%= collection_select :player, :referee_id, @tournament.referees, :id, :full_info %>
+    </p>
+  <% end %>
+
   <p>
-    <%= f.submit "Lisää" %>
+    <%= f.submit "Päivitä" %>
   </p>
 <% end %>
 

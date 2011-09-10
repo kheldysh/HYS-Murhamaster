@@ -7,18 +7,18 @@ class User < ActiveRecord::Base
   has_one :picture
   has_many :referees
   has_many :tournaments, :through => :referees
-  
+
   validates_presence_of :username, :password
   validates_uniqueness_of :username
 
   validates_length_of :username, :in => 3..15
-  
+
   # validates_length_of :password, :in => 5..30, :allow_blank => true, :on => :update
   # validates_length_of :password, :in => 5..30, :on => :create
   validates_confirmation_of :password
 
   # attr_accessor :password, :password_confirmation
- 
+
   before_create :hash_password
 
   def full_name
@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
 
   def self.authenticate(username, password)
     user = User.find_by_username(username)
-    
+
     logger.info "found user %s" % user
     logger.info "%s == %s" % [hash_plaintext_password(password), user.password]
     if user && user.password == hash_plaintext_password(password)
@@ -37,11 +37,11 @@ class User < ActiveRecord::Base
       return nil
      end
   end
-  
+
   def is_referee?
     return !self.referees.empty?
   end
-    
+
   def is_referee_for?(tournament)
     tournament.referees.each do |referee|
       if referees.include? referee
@@ -51,21 +51,32 @@ class User < ActiveRecord::Base
     return false
   end
 
-    
+
   def is_current_referee_for?(player)
-    
+
   end
-  
+
+  def augment_if_exists(username) # if username exists, appends order number
+    augmentation = 1
+    new_user = username
+    while User.exists?(:username => new_user)
+      new_user = username + augmentation.to_s
+      augmentation += 1
+    end
+    return new_user
+  end
+
   private
-  
+
   def hash_password
     return if self.password.blank?
     self.password = User.hash_plaintext_password(self.password)
   end
-  
+
   def self.hash_plaintext_password(password)
     Digest::SHA1.hexdigest(password)
   end
- 
- 
+
+
 end
+

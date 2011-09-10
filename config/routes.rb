@@ -29,7 +29,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users do |user|
     user.resources :targets
     user.resource :calendar
-    user.resource :pictures
+    user.resource :picture
   end
 
   map.connect "/images/*file_name", :controller => "pictures", :action => "display"

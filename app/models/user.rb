@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
 
   end
 
-  def augment_if_exists(username) # if username exists, appends order number
+  def self.augment_if_exists(username) # if username exists, appends order number
     augmentation = 1
     new_user = username
     while User.exists?(:username => new_user)

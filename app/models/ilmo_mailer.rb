@@ -1,5 +1,5 @@
 class IlmoMailer < ActionMailer::Base
-  
+
 
   def referee_message(player)
     @subject    = "%s, ilmoittautuminen: %s (%s)" % [ player.tournament.title, player.user.full_name, player.alias ]
@@ -7,14 +7,15 @@ class IlmoMailer < ActionMailer::Base
     @recipients = "tuomaristo@salamurhaajat.net"
     @from       = "murhamaster@salamurhaajat.net"
     @sent_on    = Time.now
-      
+
   end
 
-  def player_message(player)
+  def player_message(player, username, passwd)
     @subject    = "Ilmoittautumisvahvistus turnaukseen %s" % player.tournament.title
-    @body       = {:user => player.user, :player => player }
+    @body       = {:user => player.user, :player => player, :username =>  username, :passwd => passwd}
     @recipients = player.user.email
     @from       = "murhamaster@salamurhaajat.net"
     @sent_on    = Time.now
   end
 end
+

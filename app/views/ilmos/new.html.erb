@@ -42,21 +42,6 @@
     <% form_for :user, :url => { :controller => :ilmos, :action => :create }, :html => { :multipart => true } do |f| %>
       <%= error_messages_for :user %>
 
-    <h3><%= I18n.t('ilmo.murhamaster_account') %></h3>
-    <i><%= I18n.t('ilmo.account_info') %></i>
-      <p class="secret">
-        <%= f.label I18n.t('ilmo.username') %><br />
-        <%= f.text_field :username %>
-      </p>
-      <p>
-        <%= f.label I18n.t('ilmo.password') %><br />
-        <%= f.password_field :password %>
-      </p>
-      <p>
-        <%= f.label I18n.t('ilmo.password_confirmation') %><br />
-        <%= f.password_field :password_confirmation %>
-      </p>
-
       <h3><%= I18n.t('ilmo.player_data') %></h3>
 
       <%= error_messages_for :player %>

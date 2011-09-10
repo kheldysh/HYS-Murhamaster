@@ -25,6 +25,10 @@ class Tournament < ActiveRecord::Base
     finish_date < Date.today
   end
 
+  def has_waiting_players?
+    players.waiting_players.length > 0
+  end
+
   # We give 30 days of headroom for referees to manage the aftergame
   def is_relevant_for_referee?
     Date.today <= finish_date + 30

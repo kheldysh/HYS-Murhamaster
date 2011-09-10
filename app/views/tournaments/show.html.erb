@@ -14,6 +14,11 @@
 </p>
 
 <ul>
+  <% if @tournament.has_waiting_players? %>
+    <li><%= link_to "Ilmoittautumiset", tournament_ilmos_path(@tournament) %>
+        (<%= (@tournament.players.waiting_players.length) %>) </li>
+  <% end %>
+
   <li><%= link_to "Pelaajat", tournament_players_path(@tournament) %></li>
   <li><%= link_to "Renkaat", tournament_rings_path(@tournament) %></li>
   <li><%= link_to "Etsintäkuulutukset", tournament_warrants_path(@tournament) %></li>
@@ -28,3 +33,4 @@
 <% if current_user.admin %>
   <%= link_to 'Muokkaa turnausta', edit_tournament_path(@tournament) %>
 <% end %>
+

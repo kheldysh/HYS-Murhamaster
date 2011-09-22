@@ -43,7 +43,7 @@ class TargetsController < ApplicationController
   end
 
 
-  def is_own_target_or_referee?
+  def is_hunter_or_referee?
     if current_user.admin
       return true
     end

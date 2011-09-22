@@ -47,14 +47,14 @@ class TargetsController < ApplicationController
     if current_user.admin
       return true
     end
+    @target = Player.find(params[:id])
 
-    @tournament.referees.each do |referee|
+    @target.tournament.referees.each do |referee|
       if current_user.referees.include? referee
         return true
       end
     end
 
-    @target = Player.find(params[:id])
     current_user.players.each do |player|
       if player.targets.include? @target
         return true

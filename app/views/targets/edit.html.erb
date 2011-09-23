@@ -10,7 +10,7 @@
 <% form_for([@tournament, @target], :html => { :multipart => true }, :url => tournament_target_path) do |f| %>
   <%= f.error_messages %>
 
-  <b>Huom! Kuvien kokoraja on 512kB.</b>
+  <b>Huom! Kuvien kokoraja on 16MB.</b>
   <p>
     <%= f.label "Uusi kuva: " %><br />
     <%= f.file_field :uploaded_picture %>

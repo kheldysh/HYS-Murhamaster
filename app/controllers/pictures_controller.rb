@@ -15,7 +15,9 @@ class PicturesController < ApplicationController
       logger.info(params[:picture][:uploaded_picture].size)
       @picture = Picture.new(params[:picture])
       @picture.user = @user
+      @user.picture = @picture
       @picture.save!
+      @user.save!
       flash[:notice] = 'Kuva on vaihdettu!'
       redirect_to root_path
     else

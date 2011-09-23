@@ -1,6 +1,6 @@
 class TargetsController < ApplicationController
 
-  before_filter :is_own_target_or_referee?
+  before_filter :is_hunter_or_referee?
   before_filter :is_referee?, :only => :edit
 
   def show

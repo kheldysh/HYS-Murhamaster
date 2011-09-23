@@ -2,107 +2,118 @@
 
 <b><%= link_to "Vaihda kuvaa...", edit_user_picture_path(@user) %></b>
 
+<table>
+ <tr>
+  <td>
+  <h3>Salasanan vaihto</h3>
+  <% form_for(@user) do |f| %>
+    <%= f.error_messages %>
 
-<h3>Salasanan vaihto</h3>
-<% form_for(@user) do |f| %>
-  <%= f.error_messages %>
+    <p>
+      <%= f.label "Salasana" %><br />
+      <%= f.password_field :password %>
+    </p>
 
-  <p>
-    <%= f.label "Salasana" %><br />
-    <%= f.password_field :password %>
-  </p>
+    <p>
+      <%= f.label "Salasana uudestaan" %><br />
+      <%= f.password_field :password_confirmation %>
+    </p>
 
-  <p>
-    <%= f.label "Salasana uudestaan" %><br />
-    <%= f.password_field :password_confirmation %>
-  </p>
+    <p>
+      <%= f.submit "Päivitä" %>
+    </p>
 
-  <p>
-    <%= f.submit "Päivitä" %>
-  </p>
+  <% end %>
 
-<% end %>
+  <h3>Pelaajatietojen muokkaus</h3>
+  <% form_for(@user) do |f| %>
+    <%= f.error_messages %>
 
-<h3>Pelaajatietojen muokkaus</h3>
-<% form_for(@user) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <b>Pelaajatuomarit:</b>
-    <ul>
-    <% @user.players.each do |player| %>
-      <% if player.referee != nil and player.tournament.is_running? %>
-        <li><i><%= player.alias %></i>: <%= player.referee.info %> (<%= player.referee.user.phone %>)</li>
+    <p>
+      <b>Pelaajatuomarit:</b>
+      <ul>
+      <% @user.players.each do |player| %>
+        <% if player.referee != nil and player.tournament.is_running? %>
+          <li><i><%= player.alias %></i>: <%= player.referee.info %> (<%= player.referee.user.phone %>)</li>
+        <% end %>
       <% end %>
+      </ul>
+    </p>
+
+    <p>
+      <%= f.label "Etunimi" %><br />
+      <%= f.text_field :first_name %>
+    </p>
+    <p>
+      <%= f.label "Sukunimi" %><br />
+      <%= f.text_field :last_name %>
+    </p>
+
+    <p class="secret">
+      <%= f.label :Puhelin %><br />
+      <%= f.text_field :phone %>
+    </p>
+    <p class="secret">
+      <%= f.label :Sähköposti %><br />
+      <%= f.text_field :email %>
+    </p>
+
+    <p>
+      <%= f.label "Osoite" %><br />
+      <%= f.text_field :address %>
+    </p>
+
+    <p>
+      <%= f.label "Oppilaitos" %><br />
+      <%= f.text_field :university %>
+    </p>
+
+    <p>
+      <%= f.label "Tiedekunta/vast" %><br />
+      <%= f.text_field :faculty %>
+    </p>
+
+    <p>
+      <%= f.label "Ainelaitos" %><br />
+      <%= f.text_field :department %>
+    </p>
+
+    <p>
+      <%= f.label "Silmät" %><br />
+      <%= f.text_field :eyes %>
+    </p>
+    <p>
+      <%= f.label "Silmälasit" %><br />
+      <%= f.select ( :glasses, [ "Aina", "Joskus", "Ei" ] ) %>
+    </p>
+    <p>
+      <%= f.label "Pituus" %><br />
+      <%= f.text_field :height, "size" => 3, "maxlength" => 3 %> cm
+    </p>
+    <p>
+      <%= f.label "Hiukset" %><br />
+      <%= f.text_field :hair %>
+    </p>
+
+    <p>
+      <%= f.label "Muut tuntomerkit" %><br />
+      <%= f.text_field :other_notes %>
+    </p>
+
+    <p>
+      <%= f.submit "Päivitä" %>
+    </p>
+  <% end %>
+  </td>
+  <td>
+    <% if @target.user.picture %>
+      <%= image_tag("images/#{@target.user.picture.id}",  {:id => "#{@target.user.picture.id}", :onload => "resize('#{@target.user.picture.id}')"}) %>
+    <% else %>
+      <b>PELAAJALLA EI KUVAA TOISTAISEKSI</b>
     <% end %>
-    </ul>
-  </p>
-
-  <p>
-    <%= f.label "Etunimi" %><br />
-    <%= f.text_field :first_name %>
-  </p>
-  <p>
-    <%= f.label "Sukunimi" %><br />
-    <%= f.text_field :last_name %>
-  </p>
-
-  <p class="secret">
-    <%= f.label :Puhelin %><br />
-    <%= f.text_field :phone %>
-  </p>
-  <p class="secret">
-    <%= f.label :Sähköposti %><br />
-    <%= f.text_field :email %>
-  </p>
-
-  <p>
-    <%= f.label "Osoite" %><br />
-    <%= f.text_field :address %>
-  </p>
-
-  <p>
-    <%= f.label "Oppilaitos" %><br />
-    <%= f.text_field :university %>
-  </p>
-
-  <p>
-    <%= f.label "Tiedekunta/vast" %><br />
-    <%= f.text_field :faculty %>
-  </p>
-
-  <p>
-    <%= f.label "Ainelaitos" %><br />
-    <%= f.text_field :department %>
-  </p>
-
-  <p>
-    <%= f.label "Silmät" %><br />
-    <%= f.text_field :eyes %>
-  </p>
-  <p>
-    <%= f.label "Silmälasit" %><br />
-    <%= f.select ( :glasses, [ "Aina", "Joskus", "Ei" ] ) %>
-  </p>
-  <p>
-    <%= f.label "Pituus" %><br />
-    <%= f.text_field :height, "size" => 3, "maxlength" => 3 %> cm
-  </p>
-  <p>
-    <%= f.label "Hiukset" %><br />
-    <%= f.text_field :hair %>
-  </p>
-
-  <p>
-    <%= f.label "Muut tuntomerkit" %><br />
-    <%= f.text_field :other_notes %>
-  </p>
-
-  <p>
-    <%= f.submit "Päivitä" %>
-  </p>
-<% end %>
-
+  </td>
+ </tr>
+</table>
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
 

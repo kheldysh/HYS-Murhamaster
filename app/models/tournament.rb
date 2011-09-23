@@ -11,6 +11,9 @@ class Tournament < ActiveRecord::Base
 
   # before_create update_stats
 
+  named_scope :registration_open, :conditions => ["app_deadline > ?", Time.now]
+  named_scope :not_finished, :conditions => ["finish_date < ?", Date.today]
+
   def app_deadline_formatted
     if app_deadline
       return app_deadline.strftime("%d.%m.%Y, %H.%M")
@@ -33,9 +36,6 @@ class Tournament < ActiveRecord::Base
   def is_relevant_for_referee?
     Date.today <= finish_date + 30
   end
-
-  named_scope :registration_open, :conditions => ["app_deadline > ?", Time.now]
-
 
   def self.update_stats(tournament)
 

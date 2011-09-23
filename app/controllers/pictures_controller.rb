@@ -1,6 +1,6 @@
 class PicturesController < ApplicationController
 
-  before_filter :is_owner_or_referee?, :only => [:edit, :update]
+  before_filter :is_owner_or_referee?, :only => [:edit, :update, :create]
   before_filter :is_own_or_targets_picture?, :only => :display
 
   def edit
@@ -22,6 +22,10 @@ class PicturesController < ApplicationController
       flash[:alert] = 'Ei kuvaa!'
       redirect_to edit_user_pictures_path(@user)
     end
+  end
+
+  def update
+    create
   end
 
   def display

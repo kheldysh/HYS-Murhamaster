@@ -47,7 +47,12 @@ class PlayersController < ApplicationController
     end
 
     @tournament = Tournament.find(params[:tournament_id])
-    redirect_to tournament_players_path(@tournament)
+    # alias is only modifiable from ilmo listing
+    if params[:player][:alias]
+      redirect_to tournament_ilmos_path(@tournament)
+    else
+      redirect_to tournament_players_path(@tournament)
+    end
   end
 
   def destroy

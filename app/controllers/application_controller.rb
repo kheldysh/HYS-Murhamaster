@@ -75,10 +75,12 @@ class ApplicationController < ActionController::Base
       return true
     end
 
-    @tournament = Tournament.find(params[:tournament_id])
-    @tournament.referees.each do |referee|
-      if current_user.referees.include? referee
-        return true
+    @active_tournaments = Tournament.not_finished
+    @active_tournaments.each do |tournament|
+      current_user.referees.each do |referee|
+        if referee.tournament = tournament
+          return true
+        end
       end
     end
     redirect_to root_path

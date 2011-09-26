@@ -31,11 +31,13 @@ class TargetsController < ApplicationController
     @calendar = @user.calendar
     @calendar.update_attributes(params[:calendar])
 
-
-    if params[:picture] and params[:picture][:uploaded_picture]
-      @picture = Picture.new(params[:picture])
+    # not really DRY
+    if params[:player][:uploaded_picture]
+      @picture = Picture.new(params[:player])
       @picture.user = @user
+      @user.picture = @picture
       @picture.save!
+      @user.save!
     end
 
     redirect_to tournament_target_path(@tournament, @target)

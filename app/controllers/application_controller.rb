@@ -89,7 +89,8 @@ class ApplicationController < ActionController::Base
 
 
   def is_owner_or_referee?
-    if current_user.id == params[:user_id] or is_referee?
+    # remember to compare string against string
+    if current_user.id.to_s == params[:user_id] or is_referee?
       return true
     end
   end

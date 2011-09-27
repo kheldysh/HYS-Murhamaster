@@ -79,6 +79,7 @@ fi:
     sunday: "Sunnuntai"
     other_notes: "Liikennevälineet, muut huomiot"
 
+
   date:
     formats:
       default: "%e. %Bta %Y"

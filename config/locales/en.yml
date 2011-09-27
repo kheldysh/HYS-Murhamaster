@@ -78,6 +78,7 @@ p
     sunday: "Sunday"
     other_notes: "Transportation, protected areas, other notes"
 
+
   date:
     formats:
       # Use the strftime parameters for formats.

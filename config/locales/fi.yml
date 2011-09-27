@@ -37,10 +37,9 @@ fi:
     to_log_in: "kirjautua sisään"
 
     murhamaster_account: "Murhamaster-tunnus"
-    account_info: "Ilmoittautumislomake luo sinulle seuraavaksi antamiesi tietojen perusteella tunnukset uuteen
-  Murhamasteriin."
+    account_info: "Ilmoittautumislomakkeen lähetettyäsi saat sähköpostiisi tunnukset Murhamasteriin. Mikäli sähköpostia ei kuulu vuorokauden sisään, olethan yhteydessä tuomaristoon."
 
-    pic_size_caveat: "<b>Huom! Ainoastaan alle 512kt kokoiset kuvat kelpaavat.</b> Kuvan voi myös halutessaan lähettää sähköpostitse tuomaristolle (<a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>)."
+    pic_size_caveat: "<b>Kuvien kokoraja on 16MB.</b> Kuvan voi myös halutessaan lähettää sähköpostitse tuomaristolle (<a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>)."
 
     player_data: "Pelaajatiedot"
     # login data

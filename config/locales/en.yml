@@ -16,7 +16,7 @@ en:
     login: "Login"
     logout: "Logout"
     register: "Register"
-
+p
   ilmo:
     title: "Player registration for {{tournament}} tournament"
     registration_end: "Registration ends {{date}}."
@@ -35,11 +35,11 @@ en:
     problem_info: "If you encounter any problems with the registration form, please send your registration information to the umpires by e-mail: <a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>."
 
     murhamaster_account: "Murhamaster account"
-    account_info: "A Murhamaster account will be created for you using these details."
+    account_info: "After submitting the registration form, a username and a password for Murhamaster will be sent to your e-mail address. If you don't receive this e-mail within 24 hours, please contact the umpires."
 
     player_data: "Player details"
 
-    pic_size_caveat: "<b>NB! Only images with size of 512kB or less are accepted.</b> You may also send your image to the umpires by e-mail (<a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>)."
+    pic_size_caveat: "<b>Image size limit is 16MB.</b> You may also send your image to the umpires by e-mail (<a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>)."
 
     # login data
     username: "Username for logging into Murhamaster*"

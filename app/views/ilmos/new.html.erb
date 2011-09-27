@@ -37,6 +37,7 @@
 
   <% else %>
     <p><%= I18n.t('ilmo.old_user_reminder', :login_link => link_to(I18n.t('ilmo.to_log_in'), login_path)) %></p>
+    <p><%= I18n.t('ilmo.account_info') %></p>
 
     <b><%= I18n.t('ilmo.problem_info') %></b>
     <% form_for :user, :url => { :controller => :ilmos, :action => :create }, :html => { :multipart => true } do |f| %>

@@ -16,7 +16,7 @@ en:
     login: "Login"
     logout: "Logout"
     register: "Register"
-p
+
   ilmo:
     title: "Player registration for {{tournament}} tournament"
     registration_end: "Registration ends {{date}}."

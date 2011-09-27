@@ -12,7 +12,7 @@ en:
 
   session:
     username: "Username"
-    password: "Salasana"
+    password: "Password"
     login: "Login"
     logout: "Logout"
     register: "Register"
@@ -35,6 +35,7 @@ p
     problem_info: "If you encounter any problems with the registration form, please send your registration information to the umpires by e-mail: <a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>."
 
     murhamaster_account: "Murhamaster account"
+
     account_info: "After submitting the registration form, a username and a password for Murhamaster will be sent to your e-mail address. If you don't receive this e-mail within 24 hours, please contact the umpires."
 
     player_data: "Player details"

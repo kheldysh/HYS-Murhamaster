@@ -48,22 +48,29 @@ class TargetsController < ApplicationController
 
 
   def is_hunter_or_referee?
+    logger.info "is_hunter_or_referee?"
     if current_user.admin
+      logger.info "current_user is admin"
       return true
     end
     @target = Player.find(params[:id])
 
     @target.tournament.referees.each do |referee|
+      logger.info "checking target's referees"
       if current_user.referees.include? referee
+        logger.info "current_user is referee"
         return true
       end
     end
 
     current_user.players.each do |player|
+      logger.info "checking current_user's targets"
       if player.targets.include? @target
+        "current_user has this target"
         return true
       end
     end
+    logger.info "current_user not hunter nor referee, redirecting"
     redirect_to root_path
     return false
   end

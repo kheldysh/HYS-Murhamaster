@@ -54,10 +54,10 @@ class TargetsController < ApplicationController
       return true
     end
 
-    @target = Player.find(params[:id])
+    target = Player.find(params[:id])
     logger.info @target.inspect
 
-    @target.tournament.referees.each do |referee|
+    target.tournament.referees.each do |referee|
       logger.info "checking target's referees"
       if current_user.referees.include? referee
         logger.info "current_user is referee"
@@ -68,7 +68,7 @@ class TargetsController < ApplicationController
     current_user.players.each do |player|
       logger.info "checking current_user's targets, player.id: #{player.id}"
       logger.info player.targets.inspect
-      if player.targets.include? @target
+      if player.targets.include? target
         logger.info "current_user has this target"
         return true
       end

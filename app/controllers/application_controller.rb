@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
 
   def is_authenticated?
     if logged_in?
-      logger.info "auth confirmed"
+      logger.info "auth confirmed: user_id: #{current_user.id}"
       return true
     else
       logger.info "no login, redirecting"

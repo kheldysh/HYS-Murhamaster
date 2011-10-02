@@ -54,7 +54,7 @@ class TargetsController < ApplicationController
       return true
     end
     @target = Player.find(params[:id])
-    @target.inspect
+    logger.info @target.inspect
     @target.tournament.referees.each do |referee|
       logger.info "checking target's referees"
       if current_user.referees.include? referee

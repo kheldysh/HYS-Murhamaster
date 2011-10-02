@@ -64,7 +64,8 @@ class TargetsController < ApplicationController
     end
 
     current_user.players.each do |player|
-      logger.info "checking current_user's targets"
+      logger.info "checking current_user's targets, player.id: #{player.id}"
+      logger.info player.targets.inspect
       if player.targets.include? @target
         "current_user has this target"
         return true

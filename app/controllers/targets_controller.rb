@@ -72,13 +72,17 @@ class TargetsController < ApplicationController
       return true
     end
 
+    target = Player.find(params[:id])
+
     # check referee status
-    if is_target_tournament_referee?
-      return true
+    current_user.referees.each do |referee|
+      if referee.tournament == target.tournament
+        logger.info "current user is not referee for this tournament"
+        return true
+      end
     end
 
     # check hunter status
-    target = Player.find(params[:id])
     current_user.players.each do |player|
       logger.info "checking current_user's targets, player.id: #{player.id}"
       logger.info player.targets.inspect

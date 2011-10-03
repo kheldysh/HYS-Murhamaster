@@ -1,7 +1,7 @@
 class TargetsController < ApplicationController
 
   before_filter :is_hunter_or_referee?, :except => [:edit, :update]
-  before_filter :is_target_tournament_referee?, :only => :edit, :update]
+  before_filter :is_target_tournament_referee?, :only => [:edit, :update]
 
   def show
     @target = Player.find(params[:id])
@@ -11,7 +11,7 @@ class TargetsController < ApplicationController
 
     @referee = false
     current_user.referees.each do |referee|
-      if referee.tournament = @tournament
+      if referee.tournament == @tournament
         @referee = true
       end
     end

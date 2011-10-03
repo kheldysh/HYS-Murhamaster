@@ -56,7 +56,7 @@ class TargetsController < ApplicationController
   def is_target_tournament_referee?
     tournament = Tournament.find(params[:tournament_id])
     current_user.referees.each do |referee|
-      if referee.tournament = tournament
+      if referee.tournament == tournament
         logger.info "current user is not referee for this tournament"
         return true
       end

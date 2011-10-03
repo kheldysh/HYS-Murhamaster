@@ -1,7 +1,7 @@
 class TargetsController < ApplicationController
 
-  before_filter :is_hunter_or_referee?, :except => :edit
-  before_filter :is_referee?, :only => :edit
+  before_filter :is_hunter_or_referee?, :except => [:edit, :update]
+  before_filter :is_target_tournament_referee?, :only => :edit, :update]
 
   def show
     @target = Player.find(params[:id])
@@ -10,12 +10,9 @@ class TargetsController < ApplicationController
     @calendar = @user.calendar
 
     @referee = false
-    @active_tournaments = Tournament.not_finished
-    @active_tournaments.each do |tournament|
-      current_user.referees.each do |referee|
-        if referee.tournament = tournament
-          @referee = true
-        end
+    current_user.referees.each do |referee|
+      if referee.tournament = @tournament
+        @referee = true
       end
     end
 
@@ -56,25 +53,32 @@ class TargetsController < ApplicationController
 
   end
 
+  def is_target_tournament_referee?
+    tournament = Tournament.find(params[:tournament_id])
+    current_user.referees.each do |referee|
+      if referee.tournament = tournament
+        logger.info "current user is not referee for this tournament"
+        return true
+      end
+    end
+    redirect_to root_path
+    return false
+  end
 
   def is_hunter_or_referee?
-    logger.info "is_hunter_or_referee?"
+    # check admin status
     if current_user.admin
       logger.info "current_user is admin"
       return true
     end
 
-    target = Player.find(params[:id])
-    logger.info @target.inspect
-
-    target.tournament.referees.each do |referee|
-      logger.info "checking target's referees"
-      if current_user.referees.include? referee
-        logger.info "current_user is referee"
-        return true
-      end
+    # check referee status
+    if is_target_tournament_referee?
+      return true
     end
 
+    # check hunter status
+    target = Player.find(params[:id])
     current_user.players.each do |player|
       logger.info "checking current_user's targets, player.id: #{player.id}"
       logger.info player.targets.inspect
@@ -83,7 +87,7 @@ class TargetsController < ApplicationController
         return true
       end
     end
-    logger.info "current_user not hunter nor referee, redirecting"
+    logger.info "current_user not hunter nor referee/admin, redirecting"
     redirect_to root_path
     return false
   end

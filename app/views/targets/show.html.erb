@@ -24,7 +24,7 @@
 <tr>
 <td>
 
-<i>Kirjautunut viimeksi: <%= nil_date_handler(@calendar.updated_at) %></i>
+<i>Kirjautunut viimeksi: <%= nil_date_handler(@user.last_login) %></i>
 
 <% if not @referee %>
   <% if @current_player.detective? %>

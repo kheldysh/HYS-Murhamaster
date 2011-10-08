@@ -23,8 +23,9 @@
 </tr>
 <tr>
 <td>
-
-<i>Kirjautunut viimeksi: <%= nil_date_handler(@user.last_login) %></i>
+<% if @referee %>
+  <i>Kirjautunut viimeksi: <%= nil_date_handler(@user.last_login) %></i>
+<% end %>
 
 <% if not @referee %>
   <% if @current_player.detective? %>
@@ -92,7 +93,11 @@
 </td>
 
 <td>
-<i>Päivitetty: <%= finnish_date(@calendar.updated_at) %></i>
+
+<% if @referee %>
+  <i>Päivitetty: <%= finnish_date(@calendar.updated_at) %></i>
+<% end %>
+
 <p>
   <b>Maanantai:</b>
   <%= simple_format(@calendar.monday) %>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110501203005) do
+ActiveRecord::Schema.define(:version => 20111008172021) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "player_id"
@@ -159,6 +159,7 @@ ActiveRecord::Schema.define(:version => 20110501203005) do
     t.string   "university"
     t.string   "faculty"
     t.string   "department"
+    t.datetime "last_login"
   end
 
   create_table "warrants", :force => true do |t|

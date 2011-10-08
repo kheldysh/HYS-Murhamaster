@@ -7,7 +7,7 @@ module ApplicationHelper
   end
 
   def nil_date_handler(date)
-    if date is nil
+    if date == nil
       return "Ei tietoa"
     else
       return finnish_date(date)

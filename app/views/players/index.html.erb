@@ -12,7 +12,7 @@
 <% if @tournament.team_game? %> 
   <% @tournament.teams.each do |team| %>
           <tr><td><b><%=h team.name %></b></td><td></td><td></td><td></td></tr>
-        <% for player in team.players %>
+        <% (team.players.select {|p| p.active?}).each do %>
           <tr>
             <td><%=h player.user.full_name %></td>
             <td><%=h player.alias %></td>

@@ -55,7 +55,7 @@
     <% if player.tournament.is_running? %>
       <h4><%= player.tournament.title %></h4>
       <ul>
-      <% player.targets.uniq.each do |target| %>
+      <% player.targets.uniq.select {|t| t.active? }.each do |target| %>
 
         <li><%= link_to target.user.full_name, user_target_path(current_user, target) %></li>
       <% end %>

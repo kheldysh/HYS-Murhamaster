@@ -52,7 +52,7 @@
 <h3>Kohteet</h3>
 
   <% current_user.players.each do |player| %>
-    <% if player.tournament.is_running? %>
+    <% if player.tournament.is_running? and !player.dead? %>
       <h4><%= player.tournament.title %></h4>
       <ul>
       <% player.targets.uniq.select {|t| t.active? }.each do |target| %>

@@ -18,7 +18,7 @@
           <tr>
             <td><%=h player.user.full_name %></td>
             <td><%=h player.alias %></td>
-            <td><%= link_to player.real_name, tournament_target_path(@tournament, player) %></td>
+            <td><%= link_to player.real_name, tournament_player_path(@tournament, player) %></td>
             <td>
               <% if player.referee != nil %>
                 <%=h player.referee.user.full_name %>

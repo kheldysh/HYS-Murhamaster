@@ -7,6 +7,7 @@
   <title>Murhamaster 2.0</title>
   <%= stylesheet_link_tag 'scaffold' %>
   <%= javascript_include_tag :defaults %>
+  <%= yield :head %>
 </head>
 <body>
 <table width="100%">
@@ -62,6 +63,22 @@
       </ul>
     <% end %>
   <% end %>
+
+<h3>Joukkuetoverit</h3>
+  <% current_user.players.each do |player| %>
+      <% if player.tournament.is_running? and !player.dead? and player.tournament.team_game %>
+          <h4><%= player.team.name %></h4>
+          <% player.team.players.uniq.select {|t| t.active? }.each do |teammate| %>
+            <ul>
+              <li>
+                <%= teammate.real_name (teammate.alias) %>
+              </li>
+            </ul>
+          <% end %>
+      <% end %>
+  <% end %>
+              
+
 
 <h3>Avoimet ilmoittautumiset</h3>
   <% Tournament.registration_open.each do |tournament| %>

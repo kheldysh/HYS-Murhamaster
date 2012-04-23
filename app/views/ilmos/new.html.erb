@@ -1,3 +1,5 @@
+<% content_for :head, javascript_include_tag('gen_validatorv4.js') %>
+
 <h2><font color="#CC0000"><%= I18n.t('ilmo.title', :tournament => "<i>#{@tournament.title}</i>") %></font></2>
 <h3><font color="#CC0000"><%= I18n.t('ilmo.registration_end', :date => @tournament.app_deadline_formatted) %></font></h3>
 

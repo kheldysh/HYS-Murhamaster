@@ -79,6 +79,16 @@ fi:
     sunday: "Sunnuntai"
     other_notes: "Liikennevälineet, muut huomiot"
 
+    req:
+      alias: "Ole hyvä ja anna peitenimi."
+      first_name: "Ole hyvä ja anna etunimesi."
+      last_name: "Ole hyvä ja anna sukunimesi."
+      email: "Ole hyvä ja anna sähköpostiosoitteesi."
+      address: "Ole hyvä ja anna osoitteesi."
+      eyes: "Ole hyvä ja anna silmiesi väri."
+      glasses: "Ole hyvä ja kerro, pidätkö silmälaseja."
+      height: "Ole hyvä ja kerro pituutesi."
+      hair: "Ole hyvä ja kuvaile hiuksiasi."
 
   date:
     formats:

@@ -16,7 +16,7 @@
       <h3><%= I18n.t('ilmo.already_registered') %></h3>
     <% else %>
       <h3>Pelaajatiedot</h3>
-      <% form_for :player, :url => { :controller => :ilmos, :action => :create } do |p| %>
+      <% form_for :player, :url => { :controller => :ilmos, :action => :create }, :html => { :id => "ilmo_form" } do |p| %>
         <%= error_messages_for :player %>
         <p>
           <%= p.label I18n.t('ilmo.alias') %><br />
@@ -42,6 +42,7 @@
     <p><%= I18n.t('ilmo.account_info') %></p>
 
     <b><%= I18n.t('ilmo.problem_info') %></b>
+
     <% form_for :user, :url => { :controller => :ilmos, :action => :create }, :html => { :multipart => true } do |f| %>
       <%= error_messages_for :user %>
 
@@ -176,6 +177,19 @@
       </p>
     <% end %>
 
+    <script type="text/javascript">
+        var ilmoValidator  = new Validator("ilmo_form");
+        ilmoValidator.addValidation(I18.t('ilmo.req.alias'));
+        ilmoValidator.addValidation(I18.t('ilmo.req.first_name'));
+        ilmoValidator.addValidation(I18.t('ilmo.req.last_name'));
+        ilmoValidator.addValidation(I18.t('ilmo.req.email'));
+        ilmoValidator.addValidation(I18.t('ilmo.req.address'));
+        ilmoValidator.addValidation(I18.t('ilmo.req.eyes'));
+        ilmoValidator.addValidation(I18.t('ilmo.req.glasses'));
+        ilmoValidator.addValidation(I18.t('ilmo.req.height'));
+        ilmoValidator.addValidation(I18.t('ilmo.req.hair'));
+
+    </script>
   <% end %>
 
 <% end %>

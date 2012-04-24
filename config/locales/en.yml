@@ -78,6 +78,16 @@ en:
     sunday: "Sunday"
     other_notes: "Transportation, protected areas, other notes"
 
+    req:
+      alias: "Please give an alias."
+      first_name: "Please give your first name."
+      last_name: "Please give your last name."
+      email: "Please give your e-mail address."
+      address: "Please give your street address."
+      eyes: "Please describe your eye color."
+      glasses: "Please tell, if you use glasses."
+      height: "Please give your height."
+      hair: "Please describe your hair."
 
   date:
     formats:

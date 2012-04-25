@@ -51,9 +51,11 @@ class PicturesController < ApplicationController
       return true
     elsif
       current_user.players.each do |player|
-        @picture.user.players.each do |pic_player|
-          if player.targets.include? pic_player
-            return true
+        if player.tournament.is_running?
+          @picture.user.players.each do |pic_player|
+            if player.targets.include? pic_player
+              return true
+            end
           end
         end
       end

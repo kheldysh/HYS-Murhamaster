@@ -45,6 +45,7 @@ class PicturesController < ApplicationController
 
 
   def is_own_or_targets_picture?
+    logger.info "is_own_or_targets_picture"
     @picture = Picture.find(params[:file_name][1])
 
     if current_user == @picture.user

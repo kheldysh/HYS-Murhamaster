@@ -90,6 +90,9 @@ fi:
       height: "Ole hyvä ja kerro pituutesi."
       hair: "Ole hyvä ja kuvaile hiuksiasi."
 
+    invalid:
+      email: "Anna kelvollinen sähköpostiosoite."
+
   date:
     formats:
       default: "%e. %Bta %Y"

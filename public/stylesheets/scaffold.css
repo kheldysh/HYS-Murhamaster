@@ -22,6 +22,9 @@ table#tournament_status td {
   font-family: serif  
 }
 
+.validation_error {
+    font-style: italic;
+}
 
 td.warrant {
   text-align: justify

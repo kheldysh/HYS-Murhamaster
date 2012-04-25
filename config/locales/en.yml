@@ -89,6 +89,9 @@ en:
       height: "Please give your height."
       hair: "Please describe your hair."
 
+    invalid:
+      email: "Enter a valid e-mail address."
+
   date:
     formats:
       # Use the strftime parameters for formats.

@@ -16,7 +16,7 @@
       <h3><%= I18n.t('ilmo.already_registered') %></h3>
     <% else %>
       <h3>Pelaajatiedot</h3>
-      <% form_for :player, :url => { :controller => :ilmos, :action => :create }, :html => { :id => "ilmo_form" } do |p| %>
+      <% form_for :player, :url => { :controller => :ilmos, :action => :create }, :html => { :id => "ilmo_logged_in_form" } do |p| %>
         <%= error_messages_for :player %>
         <p>
           <%= p.label I18n.t('ilmo.alias') %><br />
@@ -43,7 +43,7 @@
 
     <b><%= I18n.t('ilmo.problem_info') %></b>
 
-    <% form_for :user, :url => { :controller => :ilmos, :action => :create }, :html => { :multipart => true } do |f| %>
+    <% form_for :user, :url => { :controller => :ilmos, :action => :create }, :html => { :id => "ilmo_form", :multipart => true } do |f| %>
       <%= error_messages_for :user %>
 
       <h3><%= I18n.t('ilmo.player_data') %></h3>
@@ -52,6 +52,7 @@
       <% fields_for :player do |p| %>
       <p>
         <%= p.label I18n.t('ilmo.alias') %><br />
+        <div class="validation_error" id="ilmo_form_playeralias_errorloc"></div>
         <%= p.text_field :alias %>
       </p>
       <% end %>
@@ -67,15 +68,18 @@
 
       <p>
         <%= f.label I18n.t('ilmo.first_name') %><br />
+        <div class="validation_error" id="ilmo_form_userfirst_name_errorloc"></div>
         <%= f.text_field :first_name %>
       </p>
       <p>
         <%= f.label I18n.t('ilmo.last_name') %><br />
+        <div class="validation_error" id="ilmo_form_userlast_name_errorloc"></div>
         <%= f.text_field :last_name %>
       </p>
 
       <p class="secret">
         <%= f.label I18n.t('ilmo.email') %><br />
+        <div class="validation_error" id="ilmo_form_useremail_errorloc"></div>
         <%= f.text_field :email %>
       </p>
 
@@ -85,6 +89,7 @@
       </p>
       <p>
         <%= f.label I18n.t('ilmo.address') %><br />
+        <div class="validation_error" id="ilmo_form_useraddress_errorloc"></div>
         <%= f.text_field :address %>
       </p>
 
@@ -105,18 +110,22 @@
 
       <p>
         <%= f.label I18n.t('ilmo.eyes') %><br />
+        <div class="validation_error" id="ilmo_form_usereyes_errorloc"></div>
         <%= f.text_field :eyes %>
       </p>
       <p>
         <%= f.label I18n.t('ilmo.glasses') %><br />
+        <div class="validation_error" id="ilmo_form_usereyes_errorloc"></div>
         <%= f.select( :glasses, [ I18n.t('ilmo.always'), I18n.t('ilmo.sometimes'), I18n.t('ilmo.glasses_no') ] ) %>
+
       </p>
       <p>
         <%= f.label I18n.t('ilmo.height') %><br />
-        <%= f.text_field :height, "size" => 3, "maxlength" => 3 %> cm
+        <%= f.text_field :height, "size" => 3, "maxlength" => 3 %> cm <div class="validation_error" id="ilmo_form_userheight_errorloc"></div>
       </p>
       <p>
         <%= f.label I18n.t('ilmo.hair') %><br />
+        <div class="validation_error" id="ilmo_form_userhair_errorloc"></div>
         <%= f.text_field :hair %>
       </p>
       <p>
@@ -179,16 +188,18 @@
 
     <script type="text/javascript">
         var ilmoValidator  = new Validator("ilmo_form");
-        ilmoValidator.addValidation(I18.t('ilmo.req.alias'));
-        ilmoValidator.addValidation(I18.t('ilmo.req.first_name'));
-        ilmoValidator.addValidation(I18.t('ilmo.req.last_name'));
-        ilmoValidator.addValidation(I18.t('ilmo.req.email'));
-        ilmoValidator.addValidation(I18.t('ilmo.req.address'));
-        ilmoValidator.addValidation(I18.t('ilmo.req.eyes'));
-        ilmoValidator.addValidation(I18.t('ilmo.req.glasses'));
-        ilmoValidator.addValidation(I18.t('ilmo.req.height'));
-        ilmoValidator.addValidation(I18.t('ilmo.req.hair'));
-
+        ilmoValidator.addValidation("player_alias", "req", "<%= I18n.t("ilmo.req.alias") %>");
+        ilmoValidator.addValidation("user_first_name", "req", "<%= I18n.t("ilmo.req.first_name") %>");
+        ilmoValidator.addValidation("user_last_name", "req", "<%= I18n.t("ilmo.req.last_name") %>");
+        ilmoValidator.addValidation("user_email", "req", "<%= I18n.t("ilmo.req.email") %>");
+        ilmoValidator.addValidation("user_email", "email", "<%= I18n.t("ilmo.invalid.email") %>");
+        ilmoValidator.addValidation("user_address", "req", "<%= I18n.t("ilmo.req.address") %>");
+        ilmoValidator.addValidation("user_eyes", "req", "<%= I18n.t("ilmo.req.eyes") %>");
+        ilmoValidator.addValidation("user_glasses", "req", "<%= I18n.t("ilmo.req.glasses") %>");
+        ilmoValidator.addValidation("user_height", "req", "<%= I18n.t("ilmo.req.height") %>");
+        ilmoValidator.addValidation("user_hair", "req", "<%= I18n.t("ilmo.req.hair") %>");
+        ilmoValidator.EnableOnPageErrorDisplay();
+        ilmoValidator.EnableMsgsTogether();
     </script>
   <% end %>
 

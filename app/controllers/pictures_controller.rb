@@ -48,20 +48,20 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:file_name][1])
 
     if current_user == @picture.user
+      logger.info "is current user"
       return true
-    elsif
-      current_user.players.each do |player|
-        if player.tournament.is_running?
-          @picture.user.players.each do |pic_player|
-            if player.targets.include? pic_player
-              return true
-            end
+    end
+    current_user.players.each do |player|
+      if player.tournament.is_running?
+        @picture.user.players.each do |pic_player|
+          if player.targets.include? pic_player
+            logger.info "is target"
+            return true
           end
         end
       end
-    else
-      return false
     end
+    return false
   end
 
 

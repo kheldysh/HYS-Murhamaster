@@ -67,6 +67,7 @@ class PlayersController < ApplicationController
         return true
       end
     end
+    redirect_to root_path
     return false
   end
 

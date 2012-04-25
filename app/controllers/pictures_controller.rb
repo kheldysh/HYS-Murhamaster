@@ -62,6 +62,7 @@ class PicturesController < ApplicationController
         end
       end
     end
+    redirect_to root_path
     return false
   end
 

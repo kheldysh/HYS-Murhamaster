@@ -121,7 +121,8 @@
       </p>
       <p>
         <%= f.label I18n.t('ilmo.height') %><br />
-        <%= f.text_field :height, "size" => 3, "maxlength" => 3 %> cm <div class="validation_error" id="ilmo_form_userheight_errorloc"></div>
+        <div class="validation_error" id="ilmo_form_userheight_errorloc"></div>
+        <%= f.text_field :height, "size" => 3, "maxlength" => 3 %> cm
       </p>
       <p>
         <%= f.label I18n.t('ilmo.hair') %><br />

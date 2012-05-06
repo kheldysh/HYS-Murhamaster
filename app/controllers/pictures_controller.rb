@@ -56,13 +56,23 @@ class PicturesController < ApplicationController
       if player.tournament.is_running?
         @picture.user.players.each do |pic_player|
           if player.targets.include? pic_player
-            logger.info "is target"
+            logger.info "hunter watching"
             return true
           end
         end
       end
     end
-    redirect_to root_path
+    current_user.referees.each do |referee|
+      if referee.tournament.is_running?
+        @picture.user.players.each do |pic_player|
+          if pic_player.tournament == referee.tournament
+            logger.info "referee watching"
+            return true
+          end
+        end
+      end
+    end
+
     return false
   end
 

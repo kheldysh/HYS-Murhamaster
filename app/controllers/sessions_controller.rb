@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
       if authenticated_user
         log_user_in(authenticated_user)
         authenticated_user.last_login = DateTime.now
+        authenticated_user.save!
         logger.info "user logged in!"
         redirect_to root_path
       else

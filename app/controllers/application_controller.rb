@@ -68,6 +68,7 @@ class ApplicationController < ActionController::Base
   def is_referee?
 
     if not logged_in?
+      redirect_to root_path
       return false
     end
 

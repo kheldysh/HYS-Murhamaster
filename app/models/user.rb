@@ -46,7 +46,6 @@ class User < ActiveRecord::Base
     end
   end
 
-
   def is_current_referee_for?(player)
     @referees.map(&:tournament).select(&:is_running?).each do |tournament|
       return true if tournament.players.include? player
@@ -61,6 +60,12 @@ class User < ActiveRecord::Base
       augmentation += 1
     end
     return new_user
+  end
+
+  def reset_password
+    new_pass = SecureRandom.hex(6)
+    self.password = User.hash_plaintext_password(new_pass)
+    new_pass
   end
 
   private

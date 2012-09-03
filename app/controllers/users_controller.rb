@@ -69,6 +69,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def reset_password
+    @user = User.find(params[:id])
+    new_pass = @user.reset_password
+    msg = ManagementMailer.create_password_reset_message(@user, new_pass)
+    ManagementMailer.deliver(msg)
+  end
+
   # DELETE /users/1
   # DELETE /users/1.xml
   def destroy

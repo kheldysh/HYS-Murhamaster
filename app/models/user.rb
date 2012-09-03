@@ -37,21 +37,20 @@ class User < ActiveRecord::Base
   end
 
   def is_referee?
-    return !self.referees.empty?
+    !self.referees.empty?
   end
 
   def is_referee_for?(tournament)
     tournament.referees.each do |referee|
-      if referees.include? referee
-        return true
-      end
+      return true if referees.include? referee
     end
-    return false
   end
 
 
   def is_current_referee_for?(player)
-
+    @referees.map(&:tournament).select(&:is_running?).each do |tournament|
+      return true if tournament.players.include? player
+    end
   end
 
   def self.augment_if_exists(username) # if username exists, appends order number

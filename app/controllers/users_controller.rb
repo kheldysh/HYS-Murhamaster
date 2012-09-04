@@ -73,7 +73,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     new_pass = @user.reset_password
     msg = ManagementMailer.create_password_reset_message(@user, new_pass)
-    ManagementMailer.deliver(msg)
+    begin
+      ManagementMailer.deliver(msg)
+      flash[:notice] = "Salasanan uudelleenasetus onnistui! Salasana on lähetetty pelaajalle sähköpostitse."
+    rescue Net::SMTPAuthenticationError, Net::SMTPServerBusy, Net::SMTPSyntaxError, Net::SMTPFatalError, Net::SMTPUnknownError => e
+      flash[:alert] = "Salasanaa ei voitu lähettää sähköpostitse. Pelaajan uusi salasana on #{new_pass}"
+    end
   end
 
   # DELETE /users/1

@@ -32,6 +32,7 @@ ActionController::Routing::Routes.draw do |map|
     user.resource :picture
   end
 
+  map.connect "/users/:id/reset_password", :controller => "users", :action => "reset_password"
   map.connect "/images/*file_name", :controller => "pictures", :action => "display"
 
   map.resource :session

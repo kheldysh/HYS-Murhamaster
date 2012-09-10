@@ -50,27 +50,10 @@ ActiveRecord::Schema.define(:version => 20111008172021) do
     t.integer  "tournament_id"
   end
 
-  create_table "fileLocal", :force => true do |t|
-    t.string  "fileName"
-    t.integer "fileSize", :limit => 8
-    t.string  "location"
-    t.integer "ownerId",  :limit => 8
-  end
-
-  create_table "fileRemote", :force => true do |t|
-    t.string  "fileHash"
-    t.string  "fileName"
-    t.integer "fileSize",           :limit => 8
-    t.string  "ownerHash"
-    t.integer "uploadDate",         :limit => 8
-    t.integer "chunkCount"
-    t.integer "minimalChunksCount"
-  end
-
   create_table "pictures", :force => true do |t|
     t.string   "name"
     t.string   "content_type"
-    t.binary   "data",         :limit => 16777215
+    t.binary   "data"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
@@ -131,14 +114,6 @@ ActiveRecord::Schema.define(:version => 20111008172021) do
     t.integer  "witnesses",    :default => 0,     :null => false
     t.integer  "eyewitnesses", :default => 0,     :null => false
   end
-
-  create_table "user", :force => true do |t|
-    t.string "hash"
-    t.string "login"
-    t.string "pass"
-  end
-
-  add_index "user", ["login"], :name => "I_login", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "username"

@@ -6,6 +6,7 @@
     <th>Käyttäjä</th>
     <th>Alias</th>
     <th>Kohdesivu</th>
+    <th></th>
   </tr>
 
 <% for player in @waiting_players %>
@@ -14,6 +15,7 @@
     <td><%=h player.alias %></td>
     <td><%= link_to player.real_name, tournament_target_path(@tournament, player) %></td>
     <td><%= link_to 'Muokkaa peitenimeä', edit_tournament_player_path(@tournament, player) %></td>
+    <td><% unless player.registration_email_sent %><%= "Ilmoittautuminen vahvistamatta pelaajalle!" %><% end %></td>
     <td>
       <% form_for [@tournament, player] do |p|  %>
         <%= p.hidden_field :status, { :value => :active } %>

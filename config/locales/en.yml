@@ -5,6 +5,9 @@ en:
 
   common:
     submit: "Submit"
+    user: "User"
+    alias: "Alias"
+    target_page: "Target page"
 
   layouts:
     application:
@@ -118,3 +121,9 @@ en:
     am: "am"
     pm: "pm"
 
+  admin:
+    registered_players: "Registered players"
+    confirm_player: "Confirm player"
+    waiting_confirmation: "Waiting confirmation"
+    change_alias: "Change alias"
+    registration_mail_error: "Registration not confirmed to player!"

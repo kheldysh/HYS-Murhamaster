@@ -5,6 +5,9 @@ fi:
 
   common:
     submit: "Lähetä"
+    user: "Käyttäjä"
+    alias: "Alias"
+    target_page: "Kohdesivu"
 
   layouts:
     application:
@@ -112,4 +115,11 @@ fi:
       long: "%e. %Bta %Y %H.%M"
     am: "aamupäivä"
     pm: "iltapäivä"
+
+  admin:
+    registered_players: "Ilmoittautuneet pelaajat"
+    confirm_player: "Hyväksy pelaaja"
+    waiting_confirmation: "Hyväksyntää odottavat"
+    change_alias: "Muokkaa peitenimeä"
+    registration_mail_error: "Ilmoittautuminen vahvistamatta pelaajalle!"
 

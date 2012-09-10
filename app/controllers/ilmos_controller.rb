@@ -83,8 +83,6 @@ skip_before_filter :is_authenticated?
         @picture = nil
       end
 
-
-
       User.transaction do
         @user.save!
 
@@ -112,7 +110,15 @@ skip_before_filter :is_authenticated?
     referee_mail = IlmoMailer.create_referee_message(@player)
     player_mail = IlmoMailer.create_player_message(@player, username, passwd)
     IlmoMailer.deliver(referee_mail)
-    IlmoMailer.deliver(player_mail)
+    begin
+      IlmoMailer.deliver(player_mail)
+      @player.registration_email_sent = true
+      @player.save
+    rescue
+      @player.registration_email_sent = false
+      @player.save
+    end
+
     flash[:notice] = 'Ilmoittautuminen rekisteröity! Tuomaristo ottaa sinuun vielä yhteyttä ennen peliä!'
     redirect_to root_path
 

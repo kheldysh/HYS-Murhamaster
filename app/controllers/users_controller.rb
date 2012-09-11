@@ -1,3 +1,4 @@
+#encoding: utf-8
 class UsersController < ApplicationController
 
   skip_before_filter :is_authenticated?, :only => [ :index, :new, :create ]

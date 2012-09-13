@@ -117,7 +117,7 @@ skip_before_filter :is_authenticated?
       @player.save
     end
 
-    flash[:notice] = 'Ilmoittautuminen rekisteröity! Tuomaristo ottaa sinuun vielä yhteyttä ennen peliä!'
+    flash[:notice] = I18n.t('ilmo.registration_received')
     redirect_to root_path
 
   end

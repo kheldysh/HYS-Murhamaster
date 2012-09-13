@@ -45,6 +45,8 @@ en:
 
     pic_size_caveat: "<b>Image size limit is 16MB.</b> You may also send your image to the umpires by e-mail (<a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>)."
 
+    registration_received: "Your registration to the {{tournament_title}} tournament by the Assassins at the University of Helsinki has been received. The umpires will contact you again before the tournament."
+
     # login data
     username: "Username for logging into Murhamaster*"
     password: "Password*"
@@ -96,7 +98,6 @@ en:
       email: "Enter a valid e-mail address."
 
     player_mail:
-      headline: "Your registration to the {{tournament_title}} tournament by the Assassins at the University of Helsinki has been received. The umpires will contact you again before the tournament."
       your_login: "Your login data for Murhamaster"
 
   date:

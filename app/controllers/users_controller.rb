@@ -1,18 +1,18 @@
-#encoding: utf-8
+# encoding: utf-8
 class UsersController < ApplicationController
 
   skip_before_filter :is_authenticated?, :only => [ :index, :new, :create ]
   before_filter :own_data?, :except => [ :index, :new, :create ]
   before_filter :is_admin?, :only => [:destroy]
 
-  # GET /users
-  # GET /users.xml
   def index
     @user = User.new
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @user }
+    end
   end
 
-  # GET /users/1
-  # GET /users/1.xml
   def show
     @user = User.find(params[:id])
 
@@ -22,8 +22,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/new
-  # GET /users/new.xml
   def new
     @user = User.new
   end

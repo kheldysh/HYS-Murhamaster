@@ -1,4 +1,12 @@
-log/
+.bundle
+db/*.sqlite3
+log/*.log
 tmp/
-config/database.yml
-mkmf.log
+.DS_STORE
+database.yml
+*.rails2
+.idea
+Gemfile.lock
+secret_token.rb
+.gitkeep
+/vendor/plugins/rails_upgrade

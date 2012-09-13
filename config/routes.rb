@@ -1,49 +1,38 @@
-ActionController::Routing::Routes.draw do |map|
-  map.resources :teams do |team|
-    team.resources :players
+HYSMurhamaster::Application.routes.draw do
+
+  root :to => 'tournaments#index'
+
+  resources :teams do
+    resources :players
   end
 
-  map.resources :calendars
+  resources :calendars
 
-  map.resources :tournaments do |tournament|
-    # tournament.resource :ilmo
-    tournament.resources :ilmos
-    tournament.resources :players
-    tournament.resources :referees
-    tournament.resources :teams
-    # tournament.resources :assignments
-    tournament.resources :team_assignments
-    tournament.resources :targets
-    tournament.resources :rings, :has_many => :assignments
-    tournament.resources :warrants, :has_many => :assignments
-
-    tournament.resources :events
+  resources :tournaments do
+    resources :ilmos
+    resources :players
+    resources :referees
+    resources :teams
+    resources :team_assignments
+    resources :targets
+    resources :rings
+    resources :warrants
+    resources :events
   end
 
-  map.resources :referees do |referee|
-    referee.resources :players
+  resources :referees do
+    resources :players
   end
 
-  # map.resources :assignments
-
-  map.resources :users do |user|
-    user.resources :targets
-    user.resource :calendar
-    user.resource :picture
+  resources :users do
+    resources :targets
+    resource :calendar
+    resource :picture
   end
 
-  map.connect "/users/:id/reset_password", :controller => "users", :action => "reset_password"
-  map.connect "/images/*file_name", :controller => "pictures", :action => "display"
-
-  map.resource :session
-
-  map.login "/login", :controller=>"users", :action=>"index"
-  map.logout "/logout", :controller=>"sessions", :action=>"destroy"
-
-  # map.connect ':controller/:action/:id'
-  # map.connect ':controller/:action/:id.:format'
-
-  map.root :controller => 'tournaments', :action => "index"
-
+  match '/users/:id/reset_password' => 'users#reset_password'
+  match '/images/*file_name' => 'pictures#display'
+  resource :session
+  match '/login' => 'users#index', :as => :login
+  match '/logout' => 'sessions#destroy', :as => :logout
 end
-

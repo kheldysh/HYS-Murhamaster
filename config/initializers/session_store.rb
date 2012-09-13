@@ -1,4 +1,8 @@
-ActionController::Base.session = {
-    :session_key => '_murhamaster_session',
-    :secret      => '2c621468ec40b7d321ed7912a73de4dee4712c59084e2257a9a30f67d709a3a1511e60ce6c65a5b133e1871e17e9c72f5f078d3cad624a2f955a52a7d12a7c4e'
-  }
+# Be sure to restart your server when you modify this file.
+
+HYSMurhamaster::Application.config.session_store :cookie_store, :key => '_HYS-Murhamaster_session'
+
+# Use the database for sessions instead of the cookie-based default,
+# which shouldn't be used to store highly confidential information
+# (create the session table with "rails generate session_migration")
+# HYSMurhamaster::Application.config.session_store :active_record_store

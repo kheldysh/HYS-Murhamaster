@@ -1,11 +1,13 @@
 class ApplicationController < ActionController::Base
+  include UserAuthentication # /lib/user_authentication.rb
+
+  protect_from_forgery
+
   helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password, :password_confirmation
 
-  include UserAuthentication # /lib/user_authentication.rb
 
   before_filter :is_authenticated?
   before_filter :set_locale
@@ -97,4 +99,3 @@ class ApplicationController < ActionController::Base
   end
 
 end
-

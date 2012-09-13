@@ -2,7 +2,6 @@
 
 <p><i>(*pakollinen kenttä)</i></p>
 <% form_for(@user, :html =>  {:class => 'validate'}) do |f| %>
-  <%= f.error_messages %>
 
   <p>
     <%= f.label "Käyttäjätunnus*" %><br />
@@ -27,15 +26,15 @@
   </p>
 
   <p class="secret">
-    <%= f.label :Puhelin %><br />
+    <%= f.label "Puhelin" %><br />
     <%= f.text_field :phone %>
   </p>
   <p class="secret">
-    <%= f.label :Sähköposti %><br />
+    <%= f.label "Sähköposti" %><br />
     <%= f.text_field :email %>
   </p>
   <p>
-    <%= f.label :Osoite %><br />
+    <%= f.label "Osoite" %><br />
     <%= f.text_field :address %>
   </p>
 
@@ -55,7 +54,7 @@
   </p>
 
   <p>
-    <%= f.label :Silmät %><br />
+    <%= f.label "Silmät" %><br />
     <%= f.text_field :eyes %>
   </p>
   <p>
@@ -67,7 +66,7 @@
     <%= f.text_field :height, "size" => 3, "maxlength" => 3 %> cm
   </p>
   <p>
-    <%= f.label :Hiukset %><br />
+    <%= f.label "Hiukset" %><br />
     <%= f.text_field :hair %>
   </p>
   <p>

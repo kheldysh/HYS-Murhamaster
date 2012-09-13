@@ -1,7 +1,6 @@
 <h1>Login</h1>
 
 <% form_for @user, :url=>session_url do |f| %>
-  <%= f.error_messages %>
 
   <p>
     <%= f.label I18n.t 'session.username' %><br />

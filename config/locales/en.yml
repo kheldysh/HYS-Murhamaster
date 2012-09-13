@@ -95,6 +95,10 @@ en:
     invalid:
       email: "Enter a valid e-mail address."
 
+    player_mail:
+      headline: "Your registration to the {{tournament_title}} tournament by the Assassins at the University of Helsinki has been received. The umpires will contact you again before the tournament."
+      your_login: "Your login data for Murhamaster"
+
   date:
     formats:
       # Use the strftime parameters for formats.

@@ -1,9 +1,9 @@
-Ilmoittautumisesi Helsingin yliopiston salamurhaajien turnaukseen <%= @player.tournament.title %> on vastaanotettu. Tuomaristo ottaa sinuun vielä yhteyttä ennen pelin alkua.
+<%= I18n.t('ilmo.player_mail.headline', @player.tournament.title) %>
 
 <% if @username and @passwd %>
-Tunnuksesi Murhamasteriin:
-  Käyttäjätunnus: <%= @username %>
-  Salasana:       <%= @passwd %>
+<%= I18n.t('ilmo.player_mail.your_login') %>:
+  <%= I18n.t('session.username') %>: <%= @username %>
+  <%= I18n.t('session.password') %>:  <%= @passwd %>
 <% end %>
 
 Voit vaihtaa salasanan Murhamasteriin kirjauduttuasi.

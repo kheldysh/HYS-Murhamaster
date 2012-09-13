@@ -96,6 +96,10 @@ fi:
     invalid:
       email: "Anna kelvollinen sähköpostiosoite."
 
+    player_mail:
+      headline: "Ilmoittautumisesi Helsingin yliopiston salamurhaajien turnaukseen {{tournament_title}} on vastaanotettu. Tuomaristo ottaa sinuun vielä yhteyttä ennen pelin alkua."
+      your_login: "Tunnuksesi Murhamasteriin"
+
   date:
     formats:
       default: "%e. %Bta %Y"

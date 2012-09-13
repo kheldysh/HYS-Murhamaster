@@ -11,11 +11,11 @@ class Player < ActiveRecord::Base
 
   validates_inclusion_of :status, :in => [:waiting_approval, :active, :detective, :dead]
 
-  named_scope :waiting_players, :conditions => ["status = ?", "waiting_approval"]
+  scope :waiting_players, :conditions => ["status = ?", "waiting_approval"]
 
-  named_scope :active_players, :conditions => ["status = ?", "active"]
-  named_scope :dead_players, :conditions => ["status = ?", "dead"]
-  named_scope :detectives, :conditions => ["status = ?", "detective"]
+  scope :active_players, :conditions => ["status = ?", "active"]
+  scope :dead_players, :conditions => ["status = ?", "dead"]
+  scope :detectives, :conditions => ["status = ?", "detective"]
 
   def status
     read_attribute(:status).to_sym

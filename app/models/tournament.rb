@@ -11,12 +11,12 @@ class Tournament < ActiveRecord::Base
 
   # before_create update_stats
 
-  named_scope :registration_open, :conditions => ["app_deadline > ?", Time.now]
-  named_scope :not_finished, :conditions => ["finish_date >= ?", Date.today]
+  scope :registration_open, :conditions => ["app_deadline > ?", Time.now]
+  scope :not_finished, :conditions => ["finish_date >= ?", Date.today]
 
   def app_deadline_formatted
     if app_deadline
-      return app_deadline.strftime("%d.%m.%Y, %H.%M")
+      app_deadline.strftime("%d.%m.%Y, %H.%M")
     end
   end
 

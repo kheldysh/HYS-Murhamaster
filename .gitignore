@@ -6,7 +6,6 @@ tmp/
 database.yml
 *.rails2
 .idea
-Gemfile.lock
 secret_token.rb
 .gitkeep
 /vendor/plugins/rails_upgrade

@@ -3,7 +3,7 @@
 <% form_for @user, :url=>session_url do |f| %>
 
   <p>
-    <%= f.label I18n.t 'session.username' %><br />
+    <%= f.label I18n.t('session.username') %><br />
     <%= f.text_field :username %>
   </p>
   <p>

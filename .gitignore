@@ -10,3 +10,4 @@ secret_token.rb
 .gitkeep
 /vendor/plugins/rails_upgrade
 /config/deploy.rb
+.env

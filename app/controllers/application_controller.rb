@@ -5,10 +5,6 @@ class ApplicationController < ActionController::Base
 
   helper :all # include all helpers, all the time
 
-  # Scrub sensitive parameters from your log
-  filter_parameter_logging :password, :password_confirmation
-
-
   before_filter :is_authenticated?
   before_filter :set_locale
 

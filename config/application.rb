@@ -37,7 +37,9 @@ module HYSMurhamaster
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
-    config.filter_parameters += [:password]
+    config.filter_parameters += [:password, :password_confirmation, :first_name, :last_name, :address, :email,
+                                 :university, :faculty, :department, :phone, :username, :other_notes,
+                                 :name, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday]
 
     config.autoload_paths += [config.root.join('lib')]
 

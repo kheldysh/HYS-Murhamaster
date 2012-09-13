@@ -132,3 +132,7 @@ en:
     waiting_confirmation: "Waiting confirmation"
     change_alias: "Change alias"
     registration_mail_error: "Registration not confirmed to player!"
+
+  warrant:
+    target_missing: "The target is missing from the warrant's assignment!"
+    too_many_targets: "A warrant may only include one target."

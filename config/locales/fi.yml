@@ -128,3 +128,6 @@ fi:
     change_alias: "Muokkaa peitenimeä"
     registration_mail_error: "Ilmoittautuminen vahvistamatta pelaajalle!"
 
+  warrant:
+    target_missing: "Etsintäkuulutuksen toimeksiannosta puuttuu kohde!"
+    too_many_targets: "Etsintäkuulutuksessa saa olla vain yksi kohde."

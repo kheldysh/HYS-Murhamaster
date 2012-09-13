@@ -107,11 +107,9 @@ skip_before_filter :is_authenticated?
       end
 
     end
-    referee_mail = IlmoMailer.create_referee_message(@player)
-    player_mail = IlmoMailer.create_player_message(@player, username, passwd)
-    IlmoMailer.deliver(referee_mail)
+    IlmoMailer.referee_message(@player).deliver
     begin
-      IlmoMailer.deliver(player_mail)
+      IlmoMailer.player_message(@player, username, passwd).deliver
       @player.registration_email_sent = true
       @player.save
     rescue

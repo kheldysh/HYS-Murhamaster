@@ -13,13 +13,13 @@
 
 <% for calendar in @calendars %>
   <tr>
-    <td><%=h calendar.monday %></td>
-    <td><%=h calendar.tuesday %></td>
-    <td><%=h calendar.wednesday %></td>
-    <td><%=h calendar.thursday %></td>
-    <td><%=h calendar.friday %></td>
-    <td><%=h calendar.saturday %></td>
-    <td><%=h calendar.sunday %></td>
+    <td><%=h simple_format(calendar.monday) %></td>
+    <td><%=h simple_format(calendar.tuesday) %></td>
+    <td><%=h simple_format(calendar.wednesday) %></td>
+    <td><%=h simple_format(calendar.thursday) %></td>
+    <td><%=h simple_format(calendar.friday) %></td>
+    <td><%=h simple_format(calendar.saturday) %></td>
+    <td><%=h simple_format(calendar.sunday) %></td>
     <td><%= link_to 'Show', calendar %></td>
     <td><%= link_to 'Edit', edit_calendar_path(calendar) %></td>
     <td><%= link_to 'Destroy', calendar, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -11,7 +11,7 @@
   <b>PELAAJALLA EI KUVAA TOISTAISEKSI</b>
 <% end %>
 <% form_for([@tournament, @target], :html => { :multipart => true }, :url => tournament_target_path) do |f| %>
-  <%= f.error_messages %>
+  <%#= f.error_messages %>
 
   <b>Huom! Kuvien kokoraja on 16MB.</b>
   <p>
@@ -24,7 +24,7 @@
 <% end %>
 
 <% form_for :user, :url => tournament_target_path(@tournament, @target), :html => { :method => :put } do |f| %>
-  <%= error_messages_for :user %>
+  <%#= error_messages_for :user %>
 
   <table cellspacing="20" class="top_align">
   <tr>

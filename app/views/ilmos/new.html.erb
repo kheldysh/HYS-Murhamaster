@@ -17,13 +17,13 @@
     <% else %>
       <h3>Pelaajatiedot</h3>
       <% form_for :player, :url => { :controller => :ilmos, :action => :create }, :html => { :id => "ilmo_logged_in_form" } do |p| %>
-        <%= error_messages_for :player %>
+        <%#= error_messages_for :player %>
         <p>
           <%= p.label I18n.t('ilmo.alias') %><br />
           <%= p.text_field :alias %>
         </p>
         <% if @tournament.team_game %>
-          <%= error_messages_for :team %>
+          <%#= error_messages_for :team %>
           <% fields_for :team do |t| %>
             <p>
               <%= t.label I18n.t('ilmo.team_name') %><br />
@@ -44,11 +44,11 @@
     <b><%= I18n.t('ilmo.problem_info') %></b>
 
     <% form_for :user, :url => { :controller => :ilmos, :action => :create }, :html => { :id => "ilmo_form", :multipart => true } do |f| %>
-      <%= error_messages_for :user %>
+      <%#= error_messages_for :user %>
 
       <h3><%= I18n.t('ilmo.player_data') %></h3>
 
-      <%= error_messages_for :player %>
+      <%#= error_messages_for :player %>
       <% fields_for :player do |p| %>
       <p>
         <%= p.label I18n.t('ilmo.alias') %><br />
@@ -57,7 +57,7 @@
       </p>
       <% end %>
       <% if @tournament.team_game %>
-        <%= error_messages_for :team %>
+        <%#= error_messages_for :team %>
         <% fields_for :team do |t| %>
         <p>
           <%= t.label I18n.t('ilmo.team_name') %><br />
@@ -134,7 +134,7 @@
         <%= f.text_field :other_notes %>
       </p>
 
-      <%= error_messages_for :picture %>
+      <%#= error_messages_for :picture %>
 
       <% fields_for :picture do |pic| %>
       <p><%= I18n.t('ilmo.pic_size_caveat') %>

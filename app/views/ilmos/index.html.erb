@@ -1,11 +1,11 @@
-<h1><%= I18n.t('admin.registered_players') %></h1>
+<h1><%= t('admin.registered_players') %></h1>
 
-<h2><%= I18n.t('admin.waiting_confirmation') %></h2>
+<h2><%= t('admin.waiting_confirmation') %></h2>
 <table>
   <tr>
-    <th><%= I18n.t('common.user') %></th>
-    <th><%= I18n.t('common.alias') %></th>
-    <th><%= I18n.t('common.target_page') %></th>
+    <th><%= t('common.user') %></th>
+    <th><%= t('common.alias') %></th>
+    <th><%= t('common.target_page') %></th>
     <th></th>
   </tr>
 
@@ -14,12 +14,12 @@
     <td><%=h player.user.full_name %></td>
     <td><%=h player.alias %></td>
     <td><%= link_to player.real_name, tournament_target_path(@tournament, player) %></td>
-    <td><%= link_to I18n.t('admin.change_alias'), edit_tournament_player_path(@tournament, player) %></td>
-    <td><% unless player.registration_email_sent %><%= I18n.t('admin.registration_mail_error') %><% end %></td>
+    <td><%= link_to t('admin.change_alias'), edit_tournament_player_path(@tournament, player) %></td>
+    <td><% unless player.registration_email_sent %><%= t('admin.registration_mail_error') %><% end %></td>
     <td>
       <% form_for [@tournament, player] do |p|  %>
         <%= p.hidden_field :status, { :value => :active } %>
-        <%= submit_tag I18n.t('admin.confirm_player') %>
+        <%= submit_tag t('admin.confirm_player') %>
       <% end %>
     </td>
   </tr>

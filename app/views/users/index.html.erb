@@ -3,16 +3,16 @@
 <% form_for @user, :url=>session_url do |f| %>
 
   <p>
-    <%= f.label I18n.t('session.username') %><br />
+    <%= f.label t('session.username') %><br />
     <%= f.text_field :username %>
   </p>
   <p>
-    <%= f.label I18n.t('session.password') %><br />
+    <%= f.label t('session.password') %><br />
     <%= f.password_field :password %>
   </p>
-<%= submit_tag I18n.t('session.login') %> 
+<%= submit_tag t('session.login') %>
 <% end %>
 
 <br />
 
-<%= link_to I18n.t('session.register'), new_user_path %>
+<%= link_to t('session.register'), new_user_path %>

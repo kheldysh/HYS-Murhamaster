@@ -2,20 +2,28 @@ class Picture < ActiveRecord::Base
 
   belongs_to :user
 
+  # TODO: add validations
 
-  # validates_format_of :content_type,
-  #                     :with => /^image/,
-  #                     :message => "--- ainoastaan kuvatiedosto kelpaa"
+  has_attached_file :photo,
+                    :styles => { :standard => '960x960>' },
+                    :storage => :s3,
+                    :s3_permissions => 'authenticated-read',
+                    :s3_credentials => {
+                        :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+                        :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+                    }, # File.join(Rails.root, 'config', 's3.yml'),
+                    :url => ':s3_domain_url',
+                    :path => '/assets/:class/:id/:style.:extension',
+                    :s3_server_side_encryption => :aes256,
+                    :s3_host_name => 's3-eu-west-1.amazonaws.com',
+                    :bucket => ENV['AWS_BUCKET']
 
-  def uploaded_picture=(picture_field)
-    self.name         = base_part_of(picture_field.original_filename)
-    self.content_type = picture_field.content_type.chomp
-    self.data         = picture_field.read
+  def url(style = :standard)
+    Paperclip::Interpolations.interpolate('/:class/:id/:style.:extension', photo, style)
   end
 
-  def base_part_of(file_name)
-    File.basename(file_name).gsub(/[^\w._-]/, '' )
+  def authenticated_url
+    photo.expiring_url(60, :standard)
   end
-
 
 end

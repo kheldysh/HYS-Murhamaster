@@ -39,7 +39,7 @@ class PlayersController < ApplicationController
     end
 
     @player.update_attributes(params[:player])
-    @player.save!
+    @player.save
 
     # if player was active, take care of rings and tournament stats
     if params[:player][:status] == "dead" and was_active

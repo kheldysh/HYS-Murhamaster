@@ -6,7 +6,7 @@
     <%= submit_tag "Resetoi käyttäjän salasana", :onclick => "return confirm('Haluatko varmasti resetoida käyttäjän salasanan?')" %>
 <% end %>
 <% if @target.user.picture %>
-  <%= image_tag("images/#{@target.user.picture.id}",  {:id => "#{@target.user.picture.id}", :onload => "resize('#{@target.user.picture.id}')"}) %>
+  <%= image_tag(@target.user.picture.url) %>
 <% else %>
   <b>PELAAJALLA EI KUVAA TOISTAISEKSI</b>
 <% end %>
@@ -16,7 +16,7 @@
   <b>Huom! Kuvien kokoraja on 16MB.</b>
   <p>
     <%= f.label "Uusi kuva: " %><br />
-    <%= f.file_field :uploaded_picture %>
+    <%= f.file_field :photo %>
   </p>
     <p>
     <%= f.submit "Lähetä" %>

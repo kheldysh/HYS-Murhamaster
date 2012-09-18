@@ -40,12 +40,12 @@ class TargetsController < ApplicationController
 
     # not really DRY
     if params[:player]
-      if params[:player][:uploaded_picture]
+      if params[:player][:photo]
         @picture = Picture.new(params[:player])
         @picture.user = @user
         @user.picture = @picture
-        @picture.save!
-        @user.save!
+        @picture.save
+        @user.save
       end
     end
 

@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   has_many :referees
   has_many :tournaments, :through => :referees
 
+  accepts_nested_attributes_for :calendar
+  accepts_nested_attributes_for :picture
+  accepts_nested_attributes_for :players
+
   validates_presence_of :username, :password
   validates_uniqueness_of :username
 

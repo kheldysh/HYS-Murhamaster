@@ -70,7 +70,7 @@
     </td>
     <td>
       <% if @user.picture %>
-        <%= image_tag("images/#{@user.picture.id}",  {:id => "#{@user.picture.id}", :onload => "resize('#{@user.picture.id}')"}) %>
+        <%= image_tag(@user.picture.url) %>
       <% else %>
         <b>PELAAJALLA EI KUVAA TOISTAISEKSI</b>
       <% end %>

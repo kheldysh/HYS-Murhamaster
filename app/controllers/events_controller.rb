@@ -36,7 +36,7 @@ class EventsController < ApplicationController
     @tournament = Tournament.find(params[:tournament_id])
     @event = Event.new(params[:event])
     @event.tournament = @tournament
-    @event.save!
+    @event.save
     Tournament.update_stats(@tournament)    
     redirect_to tournament_events_path(@tournament)
   end

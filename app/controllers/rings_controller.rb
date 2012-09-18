@@ -23,7 +23,7 @@ class RingsController < ApplicationController
     @tournament = Tournament.find(new_params[:tournament_id])
     @ring = Ring.new(new_params[:ring])
     @ring.tournament = @tournament
-    @ring.save!
+    @ring.save
     redirect_to :tournament_rings
   end
 
@@ -42,7 +42,7 @@ class RingsController < ApplicationController
     if new_params[:assignment]
       @new_assignment = Assignment.new(new_params[:assignment])
       @ring.assignments.push(@new_assignment)
-      @ring.save!
+      @ring.save
     else
       @ring.update_attributes(new_params[:ring])
     end
@@ -79,7 +79,7 @@ class RingsController < ApplicationController
         hunted = ring.assignments.find(:first, :conditions => ["player_id = ?", player])
         if hunting and hunted
           hunted.player = hunting.player
-          hunted.save!
+          hunted.save
           hunting.delete
         end
       end

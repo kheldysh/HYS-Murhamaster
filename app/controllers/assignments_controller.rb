@@ -16,7 +16,7 @@ class AssignmentsController < ApplicationController
     attributes = params[:assignment]
     attributes[:tournament_id] = params[:tournament_id]
     @assignment = Assignment.new(params[:assignment])
-    @assignment.save!
+    @assignment.save
     redirect_to :tournament_assignments
   end
   

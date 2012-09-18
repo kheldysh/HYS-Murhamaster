@@ -18,7 +18,7 @@ class RefereesController < ApplicationController
     attributes[:tournament_id] = params[:tournament_id]
 
     @judge = Referee.new(attributes)
-    @judge.save!
+    @judge.save
     redirect_to tournament_referees_path
   end
   

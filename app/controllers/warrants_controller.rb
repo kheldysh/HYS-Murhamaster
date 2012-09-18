@@ -29,7 +29,7 @@ class WarrantsController < ApplicationController
       @warrant = Warrant.new(new_params[:warrant])
       @warrant.target = @target
       @warrant.tournament = @tournament
-      @warrant.save!
+      @warrant.save
     end
     redirect_to :tournament_warrants
   end
@@ -49,7 +49,7 @@ class WarrantsController < ApplicationController
     if new_params[:assignment]
       @new_assignment = Assignment.new(new_params[:assignment])
       @warrant.assignments.push(@new_assignment)
-      @warrant.save!
+      @warrant.save
     else
       @warrant.update_attributes(new_params[:warrant])
     end

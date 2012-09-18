@@ -12,30 +12,30 @@ skip_before_filter :is_authenticated?
 
   def new
 
-    @tournament = Tournament.find(params[:tournament_id])
-    @calendar = Calendar.new
-    @team = Team.new
     @player = Player.new
-    @picture = Picture.new
+    tournament = Tournament.find(params[:tournament_id])
+    calendar = Calendar.new
+    picture = Picture.new
     @registered_already = false
+
     if logged_in?
       # if logged in, we don't need so much details filled
-      @user = current_user
-      @user.players.each do |p|
-        if p.tournament == @tournament
+      user = current_user
+      user.players.each do |p|
+        if p.tournament == tournament
           @registered_already = true
         end
       end
     else
       # otherwise we create a whole new user
-      @user = User.new
+      user = User.new
     end
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @tournament }
-    end
-
+    @player.user = user
+    @player.tournament = tournament
+    @player.team = Team.new if tournament.team_game
+    @player.user.calendar = calendar
+    @player.user.picture = picture
   end
 
 
@@ -60,13 +60,13 @@ skip_before_filter :is_authenticated?
 
       if @tournament.team_game
         @team.tournament = @tournament
-        @team.save!
+        @team.save
         @player.team = @team
       end
 
       @player.user = @user
       @player.tournament = @tournament
-      @player.save!
+      @player.save
 
     else
       # if user is not logged in, we create new user with new calendar and such
@@ -77,36 +77,37 @@ skip_before_filter :is_authenticated?
       @user.password = passwd
 
       @calendar = Calendar.new(params[:calendar])
-      if params[:picture] and params[:picture][:uploaded_picture]
+      if params[:picture] and params[:picture][:photo]
         @picture = Picture.new(params[:picture])
       else
         @picture = nil
       end
 
       User.transaction do
-        @user.save!
+        @user.save
 
         @calendar.user = @user
-        @calendar.save!
+        @calendar.save
 
         if @tournament.team_game
           @team.tournament = @tournament
-          @team.save!
+          @team.save
           @player.team = @team
         end
 
         @player.user = @user
         @player.tournament = @tournament
-        @player.save!
+        @player.save
 
         if @picture
           @picture.user = @user
-          @picture.save!
+          @picture.save
         end
 
       end
 
     end
+
     IlmoMailer.referee_message(@player).deliver
     begin
       IlmoMailer.player_message(@player, username, passwd).deliver
@@ -117,7 +118,7 @@ skip_before_filter :is_authenticated?
       @player.save
     end
 
-    flash[:notice] = I18n.t('ilmo.registration_received')
+    flash[:notice] = t('ilmo.registration_received')
     redirect_to root_path
 
   end

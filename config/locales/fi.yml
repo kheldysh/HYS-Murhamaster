@@ -21,8 +21,8 @@ fi:
     register: "Rekisteröidy"
 
   ilmo:
-    title: "Pelaajien rekisteröityminen HYS:n {{tournament}} -peliin"
-    registration_end: "Rekisteröityminen päättyy {{date}}."
+    title: "Pelaajien rekisteröityminen HYS:n %{tournament} -peliin"
+    registration_end: "Rekisteröityminen päättyy %{date}."
 
     instructions: "Täytä tiedot mahdollisimman yksityiskohtaisesti. Pelistä tulee silloin huomattavasti paljon hauskempi sekä sinun että muiden osalta. Tähdellä (*) merkityt kohdat ovat pakollisia välittömästi, muut kohdat voi täyttää myöhemmin. Punaisella merkityt kohdat jäävät tuomariston tietoon. Tuomaristo voi harkintansa mukaan muokata ilmoittautumistietoja ja pyytää niihin täydennyksiä. Aikataulua voi (ja täytyy) täydentää ja muokata pelin aikana."
 
@@ -33,7 +33,7 @@ fi:
     already_registered: "Olet jo ilmoittautunut peliin!"
 
     old_user_reminder: "<b>Huom!</b> Mikäli olet jo luonut käyttäjätunnuksen uuteen Murhamasteriin, voit
-      {{login_link}} ja ilmoittautua olemassaolevilla tiedoillasi!"
+      %{login_link} ja ilmoittautua olemassaolevilla tiedoillasi!"
 
     problem_info: "Mikäli lomakkeen kanssa ilmenee ongelmia, ilmoittautuminen kannattaa hoitaa lähettämällä ilmoittautumistiedot osoitteeseen <a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>."
 
@@ -45,7 +45,7 @@ fi:
 
     pic_size_caveat: "<b>Kuvien kokoraja on 16MB.</b> Kuvan voi myös halutessaan lähettää sähköpostitse tuomaristolle (<a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>)."
 
-    registration_received: "Ilmoittautumisesi Helsingin yliopiston salamurhaajien turnaukseen {{tournament_title}} on vastaanotettu. Tuomaristo ottaa sinuun vielä yhteyttä ennen pelin alkua."
+    registration_received: "Ilmoittautumisesi Helsingin yliopiston salamurhaajien turnaukseen %{tournament_title} on vastaanotettu. Tuomaristo ottaa sinuun vielä yhteyttä ennen pelin alkua."
 
     player_data: "Pelaajatiedot"
     # login data

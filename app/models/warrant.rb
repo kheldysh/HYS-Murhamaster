@@ -23,7 +23,7 @@ class Warrant < ActiveRecord::Base
   def single_target_on_all_assignments?
     assignments.each do |ass|
       if ass.target != assignments.first.target
-        errors.add(:ass, I18n.t('warrant.too_many_targets'))
+        errors.add(:ass, t('warrant.too_many_targets'))
       end
     end
   end
@@ -31,7 +31,7 @@ class Warrant < ActiveRecord::Base
   def target_is_not_blank? 
     assignments.each do |ass|
       if ass.target.blank?
-        errors.add(:ass, I18n.t('warrant.target_missing'))
+        errors.add(:ass, t('warrant.target_missing'))
       end
     end
   end

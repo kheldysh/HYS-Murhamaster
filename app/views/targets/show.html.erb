@@ -7,7 +7,7 @@
 
 <br />
 <% if @target.user.picture %>
-  <%= image_tag("images/#{@target.user.picture.id}",  {:id => "#{@target.user.picture.id}", :onload => "resize('#{@target.user.picture.id}')"}) %>
+  <%= image_tag(@target.user.picture.url) %>
 <% else %>
   <b>PELAAJALLA EI KUVAA TOISTAISEKSI</b>
 <% end %>

@@ -54,7 +54,7 @@ class Tournament < ActiveRecord::Base
       tournament.witnesses += event.witnesses
       tournament.eyewitnesses += event.eyewitnesses
     end
-    tournament.save!
+    tournament.save
   end
 
 end

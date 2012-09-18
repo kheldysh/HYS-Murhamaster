@@ -18,12 +18,12 @@ class TeamAssignmentsController < ApplicationController
     attributes[:tournament_id] = params[:tournament_id]
     @assignment = TeamAssignment.new(attributes)
 
-    if @assignment.save!
+    if @assignment.save
       @assignment.team.players.each do |player|
         @assignment.target.players.each do |target_player|
           player.targets << target_player
         end
-        player.save!
+        player.save
       end
     end
 

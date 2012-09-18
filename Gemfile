@@ -8,6 +8,8 @@ gem 'rails', '3.0.6'
 # Heroku necessities
 gem 'pg'
 gem 'thin'
+gem 'aws-sdk', '~> 1.3.4'
+gem 'paperclip'
 
 # Use unicorn as the web server
 # gem 'unicorn'

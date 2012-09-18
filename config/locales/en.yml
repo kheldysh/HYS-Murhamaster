@@ -21,8 +21,8 @@ en:
     register: "Register"
 
   ilmo:
-    title: "Player registration for {{tournament}} tournament"
-    registration_end: "Registration ends {{date}}."
+    title: "Player registration for %{tournament} tournament"
+    registration_end: "Registration ends %{date}."
     instructions: "Fill out the details as accurately as possible. This will make the game more enjoyable both for you and the others. Fields marked with an asterisk (*) are required for registration, other fields can be filled in afterwards. Fields marked with red color are for the umpires' eyes only. The umpires may make additions to the given information and ask for supplementary details, if necessary. The schedule can be (and should be) updated during the game."
     team_game_reminder: "NB: In a team game, every team member should register separately and put the same name in the 'Team name' field!"
 
@@ -31,7 +31,7 @@ en:
     already_registered: "You have already registered yourself to the game!"
 
     old_user_reminder: "<b>NB:</b> If you already have created an account for Murhamaster, you can
-      {{login_link}} and register for the game with your existing information!"
+      %{login_link} and register for the game with your existing information!"
 
     to_log_in: "log in"
 
@@ -45,7 +45,7 @@ en:
 
     pic_size_caveat: "<b>Image size limit is 16MB.</b> You may also send your image to the umpires by e-mail (<a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>)."
 
-    registration_received: "Your registration to the {{tournament_title}} tournament by the Assassins at the University of Helsinki has been received. The umpires will contact you again before the tournament."
+    registration_received: "Your registration to the %{tournament_title} tournament by the Assassins at the University of Helsinki has been received. The umpires will contact you again before the tournament."
 
     # login data
     username: "Username for logging into Murhamaster*"

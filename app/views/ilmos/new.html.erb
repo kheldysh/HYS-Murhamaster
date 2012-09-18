@@ -38,10 +38,10 @@
     <% end %>
 
   <% else %>
-    <p><%= t('ilmo.old_user_reminder', :login_link => link_to(t('ilmo.to_log_in'), login_path)) %></p>
+    <p><%= t('ilmo.old_user_reminder_html', :login_link => link_to(t('ilmo.to_log_in'), login_path)) %></p>
     <p><%= t('ilmo.account_info') %></p>
 
-    <b><%= t('ilmo.problem_info') %></b>
+    <b><%= t('ilmo.problem_info_html') %></b>
 
     <%= form_for @player.user, :url => { :controller => :ilmos, :action => :create }, :html => { :id => "ilmo_form", :multipart => true } do |f| %>
       <%#= error_messages_for :user %>
@@ -137,7 +137,9 @@
       <%#= error_messages_for :picture %>
 
       <%= fields_for @player.user.picture do |pic| %>
-      <p><%= t('ilmo.pic_size_caveat') %>
+
+      <p><%= t('ilmo.pic_size_caveat_html') %>
+
       <br />
 
         <%= pic.label t('ilmo.picture') %><br />

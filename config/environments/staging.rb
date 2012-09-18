@@ -35,7 +35,19 @@ HYSMurhamaster::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address        => "mail.salamurhaajat.net",
+      :port           => "25",
+      :domain         => "salamurhaajat.net",
+      :user_name      => ENV['SMTP_USER'],
+      :password       => ENV['SMTP_PASSWD'],
+      :authentication => :plain,
+      #:enable_starttls_auto => false
+      :openssl_verify_mode => OpenSSL::SSL::VERIFY_NONE
+  }
 
   # Enable threaded mode
   # config.threadsafe!

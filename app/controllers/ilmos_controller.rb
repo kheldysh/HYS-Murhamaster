@@ -108,14 +108,19 @@ skip_before_filter :is_authenticated?
 
     end
 
-    IlmoMailer.referee_message(@player).deliver
     begin
+      logger.info "sending registration mails"
+      IlmoMailer.referee_message(@player).deliver
       IlmoMailer.player_message(@player, username, passwd).deliver
       @player.registration_email_sent = true
       @player.save
-    rescue
+      logger.info "registration mails sent succesfully"
+    rescue Exception => e
+      logger.info "failed to send registration mails!"
+      logger.info e
       @player.registration_email_sent = false
       @player.save
+      raise e
     end
 
     flash[:notice] = t('ilmo.registration_received')

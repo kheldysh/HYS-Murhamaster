@@ -30,12 +30,12 @@ en:
 
     already_registered: "You have already registered yourself to the game!"
 
-    old_user_reminder: "<b>NB:</b> If you already have created an account for Murhamaster, you can
+    old_user_reminder_html: "<b>NB:</b> If you already have created an account for Murhamaster, you can
       %{login_link} and register for the game with your existing information!"
 
     to_log_in: "log in"
 
-    problem_info: "If you encounter any problems with the registration form, please send your registration information to the umpires by e-mail: <a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>."
+    problem_info_html: "If you encounter any problems with the registration form, please send your registration information to the umpires by e-mail: <a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>."
 
     murhamaster_account: "Murhamaster account"
 
@@ -43,7 +43,7 @@ en:
 
     player_data: "Player details"
 
-    pic_size_caveat: "<b>Image size limit is 16MB.</b> You may also send your image to the umpires by e-mail (<a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>)."
+    pic_size_caveat_html: "<b>Image size limit is 16MB.</b> You may also send your image to the umpires by e-mail (<a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>)."
 
     registration_received: "Your registration to the %{tournament_title} tournament by the Assassins at the University of Helsinki has been received. The umpires will contact you again before the tournament."
 
@@ -99,6 +99,7 @@ en:
 
     player_mail:
       your_login: "Your login data for Murhamaster"
+      password_info: "You can change your password after logging in to Murhamaster."
 
   date:
     formats:

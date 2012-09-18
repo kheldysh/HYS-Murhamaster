@@ -21,7 +21,7 @@ fi:
     register: "Rekisteröidy"
 
   ilmo:
-    title: "Pelaajien rekisteröityminen HYSin turnaukseen %{tournament}"
+    title_html: "Pelaajien rekisteröityminen HYSin turnaukseen <i>%{tournament}</i>"
     registration_end: "Rekisteröityminen päättyy %{date}."
 
     instructions: "Täytä tiedot mahdollisimman yksityiskohtaisesti. Pelistä tulee silloin huomattavasti paljon hauskempi sekä sinun että muiden osalta. Tähdellä (*) merkityt kohdat ovat pakollisia välittömästi, muut kohdat voi täyttää myöhemmin. Punaisella merkityt kohdat jäävät tuomariston tietoon. Tuomaristo voi harkintansa mukaan muokata ilmoittautumistietoja ja pyytää niihin täydennyksiä. Aikataulua voi (ja täytyy) täydentää ja muokata pelin aikana."

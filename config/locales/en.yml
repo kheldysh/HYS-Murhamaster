@@ -21,7 +21,7 @@ en:
     register: "Register"
 
   ilmo:
-    title: "Player registration for %{tournament} tournament"
+    title_html: "Player registration for <i>%{tournament}</i> tournament"
     registration_end: "Registration ends %{date}."
     instructions: "Fill out the details as accurately as possible. This will make the game more enjoyable both for you and the others. Fields marked with an asterisk (*) are required for registration, other fields can be filled in afterwards. Fields marked with red color are for the umpires' eyes only. The umpires may make additions to the given information and ask for supplementary details, if necessary. The schedule can be (and should be) updated during the game."
     team_game_reminder: "NB: In a team game, every team member should register separately and put the same name in the 'Team name' field!"

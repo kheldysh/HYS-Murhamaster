@@ -1,6 +1,6 @@
 <% content_for :head, javascript_include_tag('gen_validatorv4.js') %>
 
-<h2 color="#CC0000"><%= t('ilmo.title', :tournament => "#{@player.tournament.title}") %></h2>
+<h2 color="#CC0000"><%= t('ilmo.title_html', :tournament => "#{@player.tournament.title}") %></h2>
 <h3 color="#CC0000"><%= t('ilmo.registration_end', :date => @player.tournament.app_deadline_formatted) %></h3>
 
 <% if @player.tournament.is_over? %>

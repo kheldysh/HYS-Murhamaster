@@ -45,7 +45,6 @@ HYSMurhamaster::Application.configure do
       :user_name      => ENV['SMTP_USER'],
       :password       => ENV['SMTP_PASSWD'],
       :authentication => :plain,
-      #:enable_starttls_auto => false
       :openssl_verify_mode => OpenSSL::SSL::VERIFY_NONE
   }
 

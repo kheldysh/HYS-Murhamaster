@@ -120,7 +120,7 @@ skip_before_filter :is_authenticated?
       logger.info e
       @player.registration_email_sent = false
       @player.save
-      raise e
+      flash[:notice] = t('ilmo.mail_error')
     end
 
     flash[:notice] = t('ilmo.registration_received')

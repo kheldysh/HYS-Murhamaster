@@ -102,6 +102,8 @@ fi:
       your_login: "Tunnuksesi Murhamasteriin"
       password_info: "Voit vaihtaa salasanan Murhamasteriin kirjauduttuasi."
 
+    mail_error: "Ilmoittautuminen onnistui, mutta vahvistussähköpostia ei lähetetty teknisistä syistä. Tuomaristo ottaa sinuun yhteyttä ennen peliä."
+
   date:
     formats:
       default: "%e. %Bta %Y"

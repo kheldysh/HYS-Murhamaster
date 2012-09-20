@@ -101,6 +101,9 @@ en:
       your_login: "Your login data for Murhamaster"
       password_info: "You can change your password after logging in to Murhamaster."
 
+    mail_error: "Confirmation e-mail was not sent due to technical reasons. Registration was still successful. You will be contacted by the referees before the game."
+
+
   date:
     formats:
       # Use the strftime parameters for formats.

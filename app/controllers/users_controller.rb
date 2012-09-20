@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   before_filter :is_admin?, :only => [:destroy]
 
   def index
+    flash.keep(:notice)
     @user = User.new
   end
 

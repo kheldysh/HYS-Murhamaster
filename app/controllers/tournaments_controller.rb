@@ -19,6 +19,7 @@ class TournamentsController < ApplicationController
   # GET /tournaments
   # GET /tournaments.xml
   def index
+    flash.keep
     @tournaments = Tournament.find(:all)
 
     respond_to do |format|

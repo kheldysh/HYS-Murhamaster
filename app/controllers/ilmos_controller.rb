@@ -115,6 +115,7 @@ skip_before_filter :is_authenticated?
       @player.registration_email_sent = true
       @player.save
       logger.info "registration mails sent succesfully"
+      flash[:notice] = t('ilmo.registration_received')
     rescue Exception => e
       logger.info "failed to send registration mails!"
       logger.info e
@@ -122,10 +123,7 @@ skip_before_filter :is_authenticated?
       @player.save
       flash[:notice] = t('ilmo.mail_error')
     end
-
-    flash[:notice] = t('ilmo.registration_received')
     redirect_to root_path
-
   end
 
 

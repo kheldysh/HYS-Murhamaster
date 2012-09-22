@@ -29,13 +29,13 @@ skip_before_filter :is_authenticated?
     else
       # otherwise we create a whole new user
       user = User.new
+      user.calendar = calendar
+      user.picture = picture
     end
 
     @player.user = user
     @player.tournament = tournament
     @player.team = Team.new if tournament.team_game
-    @player.user.calendar = calendar
-    @player.user.picture = picture
   end
 
 

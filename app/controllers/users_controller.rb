@@ -12,24 +12,16 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @user }
-    end
   end
 
   def new
     @user = User.new
   end
 
-  # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
   end
 
-  # POST /users
-  # POST /users.xml
   def create
     @user = User.new(params[:user])
     calendar = Calendar.new
@@ -42,8 +34,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # PUT /users/1
-  # PUT /users/1.xml
   def update
     @user = User.find(params[:id])
 
@@ -56,11 +46,9 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         flash[:notice] = 'Käyttäjätiedot päivitetty.'
-        format.html { redirect_to(@user) }
-        format.xml  { head :ok }
+        redirect_to(@user)
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+        render :action => "edit"
       end
     end
   end
@@ -77,15 +65,17 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.xml
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+    redirect_to users_path
+  end
 
-    respond_to do |format|
-      format.html { redirect_to(users_url) }
-      format.xml  { head :ok }
+  # filter for preventing users from seeing others' data
+  def own_data?
+    unless params[:id] == session[:user_id].to_s || current_user.admin
+      redirect_to root_path
     end
   end
+
 end

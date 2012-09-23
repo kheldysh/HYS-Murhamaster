@@ -29,35 +29,31 @@ class PlayersController < ApplicationController
   end
 
   def update
-    @player = Player.find(params[:id])
-    was_active = @player.active?
-    logger.info "player was active: %s" % was_active
-
+    player = Player.find(params[:id])
+    was_active = player.active?
     # log killings
-    if params[:player][:status] == "dead"
-      logger.info 'new status: dead'
-    end
-
-    @player.update_attributes(params[:player])
-    @player.save
+    player.update_attributes(params[:player])
+    player.save
 
     # if player was active, take care of rings and tournament stats
     if params[:player][:status] == "dead" and was_active
-      kill(@player)
+      kill(player)
     end
 
-    @tournament = Tournament.find(params[:tournament_id])
+    tournament = player.tournament
     # alias is only modifiable from ilmo listing
     if params[:player][:alias]
-      redirect_to tournament_ilmos_path(@tournament)
+      redirect_to tournament_ilmos_path(tournament)
     else
-      redirect_to tournament_players_path(@tournament)
+      redirect_to tournament_players_path(tournament)
     end
   end
 
   def destroy
-    @tournament = Tournament.find(params[:id])
-    @tournament.destroy
+    player = Player.find(params[:id])
+    tournament = player.tournament
+    player.destroy
+    redirect_to tournament_players_path(tournament)
   end
 
   def is_referee? # before_filter
@@ -68,17 +64,15 @@ class PlayersController < ApplicationController
       end
     end
     redirect_to root_path
-    return false
   end
+
+  private
 
   def kill(player)
     logger.info "Killing player"
-    # increase tournament kill count here
-
     # moving player's targets to new hunters
     RingsController.drop_from_rings(player)
     WarrantsController.drop_from_warrants(player)
   end
 
 end
-

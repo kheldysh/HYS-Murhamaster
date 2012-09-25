@@ -39,7 +39,7 @@ module HYSMurhamaster
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password, :password_confirmation, :first_name, :last_name, :address, :email,
                                  :university, :faculty, :department, :phone, :username, :other_notes,
-                                 :name, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday]
+                                 :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday]
 
     config.secret_token = ENV['SECRET_TOKEN']
 

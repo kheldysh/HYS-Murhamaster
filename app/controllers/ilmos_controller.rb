@@ -107,7 +107,12 @@ skip_before_filter :is_authenticated?
         end
       end
 
-      send_registration_mails(username, passwd)
+      success = send_registration_mails(username, passwd)
+      if success
+        flash[:notice] = t('ilmo.registration_received')
+      else
+        flash[:notice] = t('ilmo.mail_error')
+      end
     end
 
     redirect_to root_path
@@ -126,13 +131,13 @@ skip_before_filter :is_authenticated?
       @player.registration_email_sent = true
       @player.save
       logger.info "registration mails sent succesfully"
-      flash[:notice] = t('ilmo.registration_received')
+      return true
     rescue Exception => e
       logger.info "failed to send registration mails!"
       logger.info e
       @player.registration_email_sent = false
       @player.save
-      flash[:notice] = t('ilmo.mail_error')
+      return false
     end
   end
 
@@ -155,7 +160,6 @@ skip_before_filter :is_authenticated?
     # stick cover slice randomly inside hash slice
     cover_slice_ind = rand(hash_slice.length)
 
-
     passwd = cover_slice + hash_slice
     return passwd
   end
@@ -169,7 +173,8 @@ skip_before_filter :is_authenticated?
       @player.user.password = password
       @player.user.save
     end
-    send_registration_mails(@player.user.username, password)
+    success = send_registration_mails(@player.user.username, password)
+    logger.info "#{success ? "registration mails resent successfully" : "resending registration mails failed"}"
   end
 
 end

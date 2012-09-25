@@ -68,6 +68,8 @@ skip_before_filter :is_authenticated?
       @player.tournament = @tournament
       @player.save
 
+      send_registration_mails
+
     else
       # if user is not logged in, we create new user with new calendar and such
       username = generate_user(params[:user][:last_name], params[:user][:first_name])
@@ -103,15 +105,24 @@ skip_before_filter :is_authenticated?
           @picture.user = @user
           @picture.save
         end
-
       end
 
+      send_registration_mails(username, passwd)
     end
 
+    redirect_to root_path
+  end
+
+  # rescue ActiveRecord::RecordInvalid => e
+    # @player.valid?
+    # redirect_to :back
+  # end
+
+  def send_registration_mails(username = nil, password = nil)
     begin
       logger.info "sending registration mails"
       IlmoMailer.referee_message(@player).deliver
-      IlmoMailer.player_message(@player, username, passwd).deliver
+      IlmoMailer.player_message(@player, username, password).deliver
       @player.registration_email_sent = true
       @player.save
       logger.info "registration mails sent succesfully"
@@ -123,15 +134,7 @@ skip_before_filter :is_authenticated?
       @player.save
       flash[:notice] = t('ilmo.mail_error')
     end
-    redirect_to root_path
   end
-
-
-  # rescue ActiveRecord::RecordInvalid => e
-    # @player.valid?
-    # redirect_to :back
-  # end
-
 
   def generate_user(last_name, first_name)
     lname_max = 8
@@ -155,6 +158,18 @@ skip_before_filter :is_authenticated?
 
     passwd = cover_slice + hash_slice
     return passwd
+  end
+
+  def reconfirm_registration(player, is_new_user)
+    @player = player
+    return if @player.registration_email_sent
+    password = nil
+    if is_new_user
+      password = generate_passwd(@player.alias)
+      @player.user.password = password
+      @player.user.save
+    end
+    send_registration_mails(@player.user.username, password)
   end
 
 end

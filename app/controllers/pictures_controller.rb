@@ -69,7 +69,7 @@ class PicturesController < ApplicationController
       end
     end
     current_user.referees.each do |referee|
-      if referee.tournament.is_running?
+      if referee.tournament.is_relevant_for_referee?
         @picture.user.players.each do |pic_player|
           if pic_player.tournament == referee.tournament
             logger.info "referee watching"

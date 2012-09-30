@@ -15,7 +15,9 @@ HYSMurhamaster::Application.routes.draw do
     resources :teams
     resources :team_assignments
     resources :targets
-    resources :rings
+    resources :rings do
+      resources :assignments
+    end
     resources :warrants
     resources :events
   end

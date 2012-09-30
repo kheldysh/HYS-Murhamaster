@@ -1268,8 +1268,8 @@ function sfm_str_trim(strIn)
 
 function VWZ_IsEmpty(value)
 {
-    value = sfm_str_trim(value);
-    return (value.length) == 0 ? true : false;
+    var trimmedValue = sfm_str_trim(value);
+    return ((trimmedValue.length) == 0);
 }
 /*
 	Copyright (C) 2003-2011 JavaScript-Coder.com . All rights reserved.

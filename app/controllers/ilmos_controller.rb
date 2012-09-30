@@ -7,7 +7,7 @@ skip_before_filter :is_authenticated?
   def index
     @tournament = Tournament.find(params[:tournament_id])
     @waiting_players = @tournament.players.waiting_players
-
+    @waiting_players.sort! { |a, b| a.user.last_name <=> b.user.last_name }
   end
 
   def new

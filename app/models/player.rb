@@ -17,6 +17,8 @@ class Player < ActiveRecord::Base
   scope :dead_players, :conditions => ["status = ?", "dead"]
   scope :detectives, :conditions => ["status = ?", "detective"]
 
+  scope :participating, :conditions => ["status != ?", "waiting_approval"]
+
   def status
     read_attribute(:status).to_sym
   end

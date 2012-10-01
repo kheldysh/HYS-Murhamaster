@@ -27,19 +27,24 @@ class ApplicationController < ActionController::Base
 
   def is_authenticated?
     redirect_to login_path unless logged_in?
+    true
   end
 
   def is_admin?
-    redirect_to root_path unless current_user.admin
+    redirect_to :controller => :users, :action => :show, :id => session[:user_id] unless current_user.admin
+    true
   end
 
   def is_referee?
+    puts "is_referee?"
     if current_user.admin
       return true
     end
     active_tournaments = Tournament.not_finished
     active_tournaments.each do |tournament|
+      puts tournament.title
       current_user.referees.each do |referee|
+        puts referee.user.full_name
         if referee.tournament == tournament
           return true
         end
@@ -53,6 +58,7 @@ class ApplicationController < ActionController::Base
     unless current_user.id.to_s == params[:user_id] or is_referee?
       redirect_to root_path
     end
+    true
   end
 
 end

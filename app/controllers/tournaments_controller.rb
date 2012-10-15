@@ -4,59 +4,30 @@ class TournamentsController < ApplicationController
   before_filter :is_admin?, :only => [:edit, :update, :index]
 
 
-  # GET /tournaments/1/ilmo
   def ilmo
     @tournament = Tournament.find(params[:id])
     @user = User.new
     @player = Player.new
     @calendar = Calendar.new
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @tournament }
-    end
   end
 
-  # GET /tournaments
-  # GET /tournaments.xml
   def index
     flash.keep
     @tournaments = Tournament.find(:all)
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @tournaments }
-    end
   end
 
-  # GET /tournaments/1
-  # GET /tournaments/1.xml
   def show
     @tournament = Tournament.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @tournament }
-    end
   end
 
-  # GET /tournaments/new
-  # GET /tournaments/new.xml
   def new
     @tournament = Tournament.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @tournament }
-    end
   end
 
-  # GET /tournaments/1/edit
   def edit
     @tournament = Tournament.find(params[:id])
   end
 
-  # POST /tournaments
-  # POST /tournaments.xml
   def create
     @tournament = Tournament.new(params[:tournament])
 
@@ -75,8 +46,6 @@ class TournamentsController < ApplicationController
     end
   end
 
-  # PUT /tournaments/1
-  # PUT /tournaments/1.xml
   def update
     @tournament = Tournament.find(params[:id])
 
@@ -92,16 +61,9 @@ class TournamentsController < ApplicationController
     end
   end
 
-  # DELETE /tournaments/1
-  # DELETE /tournaments/1.xml
   def destroy
     @tournament = Tournament.find(params[:id])
     @tournament.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(tournaments_url) }
-      format.xml  { head :ok }
-    end
   end
 
 
@@ -117,8 +79,6 @@ class TournamentsController < ApplicationController
       end
     end
     redirect_to root_path
-    return false
   end
 
 end
-

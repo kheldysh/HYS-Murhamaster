@@ -6,7 +6,7 @@
   <%= link_to "Muokkaa tapahtumaa", edit_tournament_event_path(@tournament, event) %>
   <% end %>
   <p class="event">
-    <%= simple_format(event.content, :class => "event") %>
+    <%= simple_format(event.content, {:class => "event"}, {:sanitize => false}) %>
   </p>  
   <hr />
 

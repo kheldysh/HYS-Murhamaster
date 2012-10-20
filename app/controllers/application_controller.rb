@@ -40,7 +40,7 @@ class ApplicationController < ActionController::Base
     if current_user.admin
       return true
     end
-    active_tournaments = Tournament.not_finished
+    active_tournaments = Tournament.is_relevant_for_referee?
     active_tournaments.each do |tournament|
       puts tournament.title
       current_user.referees.each do |referee|

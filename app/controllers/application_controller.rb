@@ -36,15 +36,12 @@ class ApplicationController < ActionController::Base
   end
 
   def is_referee?
-    puts "is_referee?"
     if current_user.admin
       return true
     end
-    active_tournaments = Tournament.is_relevant_for_referee?
+    active_tournaments = Tournament.relevant
     active_tournaments.each do |tournament|
-      puts tournament.title
       current_user.referees.each do |referee|
-        puts referee.user.full_name
         if referee.tournament == tournament
           return true
         end

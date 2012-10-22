@@ -13,6 +13,7 @@ class Tournament < ActiveRecord::Base
 
   scope :registration_open, :conditions => ["app_deadline > ?", Time.now]
   scope :not_finished, :conditions => ["finish_date >= ?", Date.today]
+  scope :relevant, :conditions => ["finish_date >= ?", Date.today - 30]
 
   def app_deadline_formatted
     if app_deadline

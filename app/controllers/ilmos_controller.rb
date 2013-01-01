@@ -46,12 +46,9 @@ skip_before_filter :is_authenticated?
     @player.status = :waiting_approval
 
     if @tournament.team_game
-      logger.info("searching for existing team with name: %s" % params[:team][:name])
-      @team = Team.find(:first, :conditions => { :name => params[:team][:name], :tournament_id => @tournament.id } )
-
-      if not @team
-        @team = Team.new(params[:team])
-      end
+      team_name = params[:team] ? params[:team][:name] : nil
+      logger.info("searching for existing team with name: %s" % team_name)
+      @team = Team.find_by_tournament_and_team_name(@tournament, team_name) || Team.new(params[:team])
     end
 
     if logged_in?

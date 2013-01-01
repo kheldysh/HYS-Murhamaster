@@ -38,7 +38,7 @@ end
 
 def login(user = nil)
   unless user
-    user = User.create(:username => "test", :password => "test")
+    user = User.find_by_username("test") || User.create(:username => "test", :password => "test")
   end
   session[:user_id] = user.id if user
   session[:admin] = user.admin if user

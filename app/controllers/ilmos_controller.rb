@@ -38,7 +38,6 @@ skip_before_filter :is_authenticated?
     @player.team = Team.new if tournament.team_game
   end
 
-
   def create
 
     @tournament = Tournament.find(params[:tournament_id])
@@ -48,7 +47,7 @@ skip_before_filter :is_authenticated?
     if @tournament.team_game
       team_name = params[:team] ? params[:team][:name] : nil
       logger.info("searching for existing team with name: %s" % team_name)
-      @team = Team.find_by_tournament_and_name(@tournament, team_name) || Team.new(params[:team])
+      @team = Team.find_by_tournament_id_and_name(@tournament.id, team_name) || Team.new(params[:team])
     end
 
     if logged_in?

@@ -69,7 +69,7 @@ skip_before_filter :is_authenticated?
 
     else
       # if user is not logged in, we create new user with new calendar and such
-      username = generate_user(params[:user][:last_name], params[:user][:first_name])
+      username = generate_username(params[:user][:last_name], params[:user][:first_name])
       passwd = generate_passwd(params[:player][:alias])
       @user = User.new(params[:user])
       @user.username = username
@@ -138,7 +138,7 @@ skip_before_filter :is_authenticated?
     end
   end
 
-  def generate_user(last_name, first_name)
+  def generate_username(last_name, first_name)
     lname_max = 8
     last_name.gsub!(/\W/, '') # leave only alphanumerals (and underscore)
     last_name = last_name.length > lname_max ? last_name[0..lname_max] : last_name # overtly long usernames are bad

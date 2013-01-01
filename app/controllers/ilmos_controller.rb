@@ -122,7 +122,7 @@ skip_before_filter :is_authenticated?
   def send_registration_mails(username = nil, password = nil)
     begin
       logger.info "sending registration mails"
-      IlmoMailer.referee_message(@player).deliver
+      IlmoMailer.referee_message(@player).deliver if @player.tournament.send_registration_announcements_to_referees
       IlmoMailer.player_message(@player, username, password).deliver
       @player.registration_email_sent = true
       @player.save

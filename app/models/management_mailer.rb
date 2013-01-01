@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class IlmoMailer < ActionMailer::Base
+class ManagementMailer < ActionMailer::Base
   def password_reset_message(user, password)
     @subject    = "Murhamaster-salasanasi on vaihdettu!" # "#{user.full_name}, ilmoittautuminen: %s (%s)" % [ player.tournament.title, player.user.full_name, player.alias ]
     @body       = "Hei, Murhamaster-salasanasi on vaihdettu!\n\n

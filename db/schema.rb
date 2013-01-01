@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120916235000) do
+ActiveRecord::Schema.define(:version => 20130101144547) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "player_id"
@@ -109,13 +109,14 @@ ActiveRecord::Schema.define(:version => 20120916235000) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "app_deadline"
-    t.boolean  "team_game",    :default => false
-    t.integer  "murdered",     :default => 0,     :null => false
-    t.integer  "killed",       :default => 0,     :null => false
-    t.integer  "arrested",     :default => 0,     :null => false
-    t.integer  "collaterals",  :default => 0,     :null => false
-    t.integer  "witnesses",    :default => 0,     :null => false
-    t.integer  "eyewitnesses", :default => 0,     :null => false
+    t.boolean  "team_game",                                   :default => false
+    t.integer  "murdered",                                    :default => 0,     :null => false
+    t.integer  "killed",                                      :default => 0,     :null => false
+    t.integer  "arrested",                                    :default => 0,     :null => false
+    t.integer  "collaterals",                                 :default => 0,     :null => false
+    t.integer  "witnesses",                                   :default => 0,     :null => false
+    t.integer  "eyewitnesses",                                :default => 0,     :null => false
+    t.boolean  "send_registration_announcements_to_referees", :default => true
   end
 
   create_table "users", :force => true do |t|

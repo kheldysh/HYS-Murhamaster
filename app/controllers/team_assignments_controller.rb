@@ -16,17 +16,7 @@ class TeamAssignmentsController < ApplicationController
   def create
     attributes = params[:team_assignment]
     attributes[:tournament_id] = params[:tournament_id]
-    @assignment = TeamAssignment.new(attributes)
-
-    if @assignment.save
-      @assignment.team.players.each do |player|
-        @assignment.target.players.each do |target_player|
-          player.targets << target_player
-        end
-        player.save
-      end
-    end
-
+    @assignment = TeamAssignment.create(attributes)
     redirect_to :tournament_team_assignments
   end
   

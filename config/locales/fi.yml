@@ -20,6 +20,10 @@ fi:
     logout: "Kirjaudu ulos"
     register: "Rekisteröidy"
 
+  team:
+    team_name: "Joukkueen nimi*"
+    organization: "Järjestö"
+
   ilmo:
     title_html: "Pelaajien rekisteröityminen HYSin turnaukseen <i>%{tournament}</i>"
     registration_end: "Rekisteröityminen päättyy %{date}."

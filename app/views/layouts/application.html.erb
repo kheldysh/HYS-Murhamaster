@@ -68,7 +68,7 @@
 
 <h3>Joukkuetoverit</h3>
   <% current_user.players.each do |player| %>
-      <% if player.tournament.is_running? and !player.dead? and player.tournament.team_game %>
+      <% if player.tournament.is_running? && player.active? && player.tournament.team_game && player.team %>
           <h4><%= player.team.name %></h4>
           <% player.team.players.uniq.select {|t| t.active? }.each do |teammate| %>
             <ul>

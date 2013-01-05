@@ -7,7 +7,7 @@
     <th>Kohdejoukkue</th>
   </tr>
 
-<% for assignment in @assignments %>
+<% @assignments.each do |assignment| %>
   <tr>
     <td><%=h assignment.team.name %></td>
     <td> ->  </td>

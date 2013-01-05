@@ -73,7 +73,7 @@
           <% player.team.players.uniq.select {|t| t.active? }.each do |teammate| %>
             <ul>
               <li>
-                <%= teammate.real_name (teammate.alias) %>
+                <%= "#{teammate.real_name} (#{teammate.alias})" %>
               </li>
             </ul>
           <% end %>

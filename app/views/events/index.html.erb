@@ -1,4 +1,5 @@
 <hr />
+
 <% @events.reverse.each do |event| %>
   
   <h3 class="event"><%= finnish_date(event.time) %> <%= event.title %></h3>
@@ -6,8 +7,8 @@
   <%= link_to "Muokkaa tapahtumaa", edit_tournament_event_path(@tournament, event) %>
   <% end %>
   <p class="event">
-    <%= simple_format(event.content, {:class => "event"}, {:sanitize => false}) %>
-  </p>  
+    <%== simple_format(event.content, {:class => "event"}, {:sanitize => false}) %>
+  </p>
   <hr />
 
 <% end %>

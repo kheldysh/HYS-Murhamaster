@@ -12,7 +12,7 @@ HYSMurhamaster::Application.routes.draw do
     resources :ilmos
     resources :players
     resources :referees
-    resources :teams
+    resources :teams, :controller => "tournaments/teams"
     resources :team_assignments
     resources :targets
     resources :rings do

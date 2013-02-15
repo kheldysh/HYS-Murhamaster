@@ -1,4 +1,4 @@
-class TeamsController < ApplicationController
+class Tournaments::TeamsController < ApplicationController
 
   before_filter :is_referee?
 

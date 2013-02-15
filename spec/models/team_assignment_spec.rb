@@ -13,10 +13,8 @@ describe TeamAssignment do
 
     it "assigns targets for individual players" do
       TeamAssignment.create(:team => @team1, :target => @team2)
-      @player1.targets.should include(@player3)
-      @player1.targets.should include(@player4)
-      @player2.targets.should include(@player3)
-      @player2.targets.should include(@player4)
+      @player1.targets.should include(@player3, @player4)
+      @player2.targets.should include(@player3, @player4)
     end
   end
 end

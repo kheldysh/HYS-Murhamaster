@@ -23,7 +23,7 @@ class TeamAssignmentsController < ApplicationController
   def destroy
     @assignment = TeamAssignment.find(params[:id])
     @assignment.delete
-    redirect_to :back
+    redirect_to :tournament_team_assignments
   end
 
 

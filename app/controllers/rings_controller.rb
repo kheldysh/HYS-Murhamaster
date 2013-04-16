@@ -89,10 +89,10 @@ class RingsController < ApplicationController
   def purge_assignments(old_params)
     if old_params[:ring]
       # TODO: move this check to Assignment model and handle it properly
-      old_params[:ring][:assignments_attributes].each do |key, ass|
-        if ["0", ""].include?(ass[:player_id]) || ["0", ""].include?(ass[:target_id])
+      old_params[:ring][:assignments_attributes].each do |key, assignment|
+        if %{"0", ""}.include?(assignment[:player_id]) || %{"0", ""}.include?(assignment[:target_id])
           old_params[:ring][:assignments_attributes].delete(key)
-        elsif ass[:player_id] == ass[:target_id]
+        elsif assignment[:player_id] == assignment[:target_id]
           old_params[:ring][:assignments_attributes].delete(key)
         end
       end

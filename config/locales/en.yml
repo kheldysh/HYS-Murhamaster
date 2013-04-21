@@ -49,8 +49,6 @@ en:
 
     pic_size_caveat_html: "<b>Image size limit is 16MB.</b> You may also send your image to the umpires by e-mail (<a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>)."
 
-    registration_received: "Your registration to the %{tournament_title} tournament by the Assassins at the University of Helsinki has been received. The umpires will contact you again before the tournament."
-
     # login data
     username: "Username for logging into Murhamaster*"
     password: "Password*"
@@ -104,7 +102,10 @@ en:
       your_login: "Your login data for Murhamaster"
       password_info: "You can change your password after logging in to Murhamaster."
 
-    mail_error: "Confirmation e-mail was not sent due to technical reasons. Registration was still successful. You will be contacted by the referees before the game."
+    complete:
+      welcome_header: "Kiitos ilmoittautumisestasi!"
+      registration_received: "Ilmoittautumisesi Helsingin yliopiston salamurhaajien turnaukseen %{tournament_title} on vastaanotettu. Tuomaristo ottaa sinuun vielä yhteyttä ennen pelin alkua."
+      mail_error: "Ilmoittautuminen onnistui, mutta vahvistussähköpostia ei lähetetty teknisistä syistä. Tuomaristo ottaa sinuun yhteyttä ennen peliä."
 
 
   date:

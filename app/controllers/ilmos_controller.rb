@@ -103,15 +103,9 @@ skip_before_filter :is_authenticated?
         end
       end
 
-      success = send_registration_mails(username, passwd)
-      if success
-        flash[:notice] = t('ilmo.registration_received')
-      else
-        flash[:notice] = t('ilmo.mail_error')
-      end
+      @mail_sent = send_registration_mails(username, passwd)
     end
-
-    redirect_to root_path
+    render :registration_complete
   end
 
   # rescue ActiveRecord::RecordInvalid => e
@@ -154,10 +148,8 @@ skip_before_filter :is_authenticated?
     hash_slice = time_hash[hash_slice_ind..hash_slice_ind+3]
 
     # stick cover slice randomly inside hash slice
-    cover_slice_ind = rand(hash_slice.length)
-
-    passwd = cover_slice + hash_slice
-    return passwd
+    # cover_slice_ind = rand(hash_slice.length)
+    cover_slice + hash_slice
   end
 
   def reconfirm_registration(player, is_new_user)

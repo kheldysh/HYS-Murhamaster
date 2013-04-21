@@ -49,8 +49,6 @@ fi:
 
     pic_size_caveat_html: "<b>Kuvien kokoraja on 16MB.</b> Kuvan voi myös halutessaan lähettää sähköpostitse tuomaristolle (<a href='mailto:tuomaristo@salamurhaajat.net'>tuomaristo@salamurhaajat.net</a>)."
 
-    registration_received: "Ilmoittautumisesi Helsingin yliopiston salamurhaajien turnaukseen %{tournament_title} on vastaanotettu. Tuomaristo ottaa sinuun vielä yhteyttä ennen pelin alkua."
-
     player_data: "Pelaajatiedot"
     # login data
     username: "Haluamasi käyttäjätunnus*"
@@ -106,7 +104,12 @@ fi:
       your_login: "Tunnuksesi Murhamasteriin"
       password_info: "Voit vaihtaa salasanan Murhamasteriin kirjauduttuasi."
 
-    mail_error: "Ilmoittautuminen onnistui, mutta vahvistussähköpostia ei lähetetty teknisistä syistä. Tuomaristo ottaa sinuun yhteyttä ennen peliä."
+    complete:
+      welcome_header: "Kiitos ilmoittautumisestasi!"
+      registration_received: "Ilmoittautumisesi Helsingin yliopiston salamurhaajien turnaukseen %{tournament_title} on vastaanotettu. Tuomaristo ottaa sinuun vielä yhteyttä ennen pelin alkua."
+      mail_error: "Ilmoittautuminen onnistui, mutta vahvistussähköpostia ei lähetetty teknisistä syistä. Tuomaristo ottaa sinuun yhteyttä ennen peliä."
+
+
 
   date:
     formats:

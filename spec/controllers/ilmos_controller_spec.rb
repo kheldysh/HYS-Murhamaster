@@ -13,7 +13,7 @@ describe IlmosController do
 
       it "accepts registration with alias" do
         post :create, { :player => { :alias => "foo" }, :tournament_id => @tournament.id }
-        response.should redirect_to(root_path)
+        response.should be_success
         Player.find_by_tournament_id_and_alias(@tournament.id, "foo").should_not be_nil
       end
 
@@ -24,7 +24,7 @@ describe IlmosController do
         end
         it "accepts registration with alias and team name" do
           post :create, { :player => { :alias => "foo" }, :team => { :name => "bar" }, :tournament_id => @tournament.id }
-          response.should redirect_to(root_path)
+          response.should be_success
           player = Player.find_by_tournament_id_and_alias(@tournament.id, "foo")
           team = Team.find_by_tournament_id_and_name(@tournament.id, "bar")
           player.should_not be_nil

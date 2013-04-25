@@ -9,7 +9,9 @@
 <% else %>
 
   <p><%= t('ilmo.instructions') %></p>
-  <p><%= t('ilmo.team_game_reminder') %></p>
+    <% if @player.tournament.team_game %>
+      <p><%= t('ilmo.team_game_reminder') %></p>
+    <% end %>
 
   <% if logged_in? %>
     <% if @registered_already %>

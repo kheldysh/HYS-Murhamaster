@@ -14,7 +14,7 @@ class RefereesController < ApplicationController
     # pick unique players based on last login
     all_users = User.all
     all_users.map(&:email).uniq.each do |email|
-      @users[email] = User.all.select { |u| u.email == email }.select(&:last_login).max { |a, b| a.last_login <=> b.last_login }
+      @users[email] = all_users.select { |u| u.email == email }.select(&:last_login).max { |a, b| a.last_login <=> b.last_login }
     end
 
     @users = @users.values.compact.sort { |a, b| a.last_name <=> b.last_name }

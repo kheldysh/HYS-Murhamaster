@@ -2,7 +2,7 @@ require 'digest/md5'
 
 class IlmosController < ApplicationController
 
-skip_before_filter :is_authenticated?
+skip_before_filter :is_authenticated?, :only => [ :new, :create ]
 
   def index
     @tournament = Tournament.find(params[:tournament_id])

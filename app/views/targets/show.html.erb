@@ -25,9 +25,15 @@
 <td>
 <% if @referee %>
   <i>Kirjautunut viimeksi: <%= nil_date_handler(@user.last_login) %></i>
+
+  <p>
+    <b>Sähköposti:</b>
+    <%=h @user.email %>
+  </p>
+
 <% end %>
 
-<% if not @referee %>
+<% unless @referee %>
   <% if @current_player.detective? %>
    <p>
     <b>Peitenimi:</b>

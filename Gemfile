@@ -33,4 +33,6 @@ gem 'paperclip'
 group :development, :test do
   gem 'rspec-rails'
   gem 'webrat'
+  gem 'better_errors'
+  gem 'binding_of_caller' # better_errors dep
 end

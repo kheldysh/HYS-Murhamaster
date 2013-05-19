@@ -8,13 +8,8 @@ class TeamAssignmentsController < ApplicationController
     @new_assignment = TeamAssignment.new
   end
 
-  def new
-    @assignment = TeamAssignment.new
-  end
-
-
   def create
-    attributes = params[:team_assignment]
+    attributes = params[:team_assignment] || {}
     attributes[:tournament_id] = params[:tournament_id]
     @assignment = TeamAssignment.create(attributes)
     redirect_to :tournament_team_assignments

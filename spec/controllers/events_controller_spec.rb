@@ -1,4 +1,5 @@
 require "spec_helper"
+require "shared_examples_for_controllers"
 
 describe EventsController do
 
@@ -24,6 +25,9 @@ describe EventsController do
       @tournament.events.last.title.should == "event"
       @tournament.events.last.content.should == "content"
     end
+  end
 
+  it_behaves_like "a referee-restricted CRUD controller", [:create, :update, :destroy, :new, :edit, :show] do
+    let(:target_class) { Event }
   end
 end

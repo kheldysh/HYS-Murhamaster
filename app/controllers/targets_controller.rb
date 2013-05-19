@@ -7,7 +7,6 @@ class TargetsController < ApplicationController
     @target = Player.find(params[:id])
     @user = @target.user
     @tournament = @target.tournament
-    @calendar = @user.calendar
 
     @referee = false
     current_user.referees.each do |referee|
@@ -26,18 +25,18 @@ class TargetsController < ApplicationController
     @target = Player.find(params[:id])
     @user = @target.user
     @tournament = @target.tournament
-    @calendar = @user.calendar
   end
 
 
   def update
     @tournament = Tournament.find(params[:tournament_id])
     @target = Player.find(params[:id])
-    @user = @target.user
-    @user.update_attributes(params[:user])
-    @calendar = @user.calendar
-    @calendar.update_attributes(params[:calendar])
-
+    if params[:user]
+      @user = @target.user
+      @user.update_attributes(params[:user])
+      @calendar = @user.calendar
+      @calendar.update_attributes(params[:calendar]) if params[:calendar]
+    end
     # not really DRY
     if params[:player]
       if params[:player][:photo]
@@ -75,11 +74,8 @@ class TargetsController < ApplicationController
     target = Player.find(params[:id])
 
     # check referee status
-    current_user.referees.each do |referee|
-      if referee.tournament == target.tournament
-        logger.info "current user is not referee for this tournament"
-        return true
-      end
+    if current_user.is_referee_for?(Tournament.find(params[:tournament_id]))
+      return true
     end
 
     # check hunter status

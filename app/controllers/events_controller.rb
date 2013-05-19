@@ -52,13 +52,9 @@ class EventsController < ApplicationController
 
 
   def destroy
+    @tournament = Tournament.find(params[:tournament_id])
     @event = Event.find(params[:id])
     @event.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(events_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to tournament_events_path(@tournament)
   end
-
 end

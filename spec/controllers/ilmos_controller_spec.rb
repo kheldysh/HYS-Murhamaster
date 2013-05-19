@@ -1,6 +1,13 @@
 require "spec_helper"
+require "shared_examples_for_controllers"
 
 describe IlmosController do
+
+  describe "#index" do
+    it_behaves_like "a referee-restricted action", :index, :get do
+      let(:target_id) { nil }
+    end
+  end
 
   describe "#create" do
 

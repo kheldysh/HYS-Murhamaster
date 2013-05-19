@@ -36,20 +36,8 @@ class ApplicationController < ActionController::Base
   end
 
   def is_referee?
-    if current_user.admin
-      return true
-    end
-    active_tournaments = Tournament.relevant
-    active_tournaments.each do |tournament|
-      current_user.referees.each do |referee|
-        if referee.tournament == tournament
-          return true
-        end
-      end
-    end
-    redirect_to root_path
+    current_user.is_referee_for?(Tournament.find(params[:tournament_id])) ? true : redirect_to(root_path)
   end
-
   def is_owner_or_referee?
     # remember to compare string against string
     unless current_user.id.to_s == params[:user_id] or is_referee?

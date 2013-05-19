@@ -18,18 +18,20 @@ class WarrantsController < ApplicationController
   end
 
   def create
-    params[:warrant][:assignments_attributes].each do |key, ass|
-      ass[:target_id] = params[:warrant][:target_id]
-    end
-    new_params = purge_assignments(params)
-    # if no assignments, don't create warrant
-    unless params[:warrant][:assignments_attributes].empty?
-      @target = Player.find(new_params[:warrant][:target_id])
-      @tournament = Tournament.find(new_params[:tournament_id])
-      @warrant = Warrant.new(new_params[:warrant])
-      @warrant.target = @target
-      @warrant.tournament = @tournament
-      @warrant.save
+    if params[:warrant]
+      params[:warrant][:assignments_attributes].each do |key, ass|
+        ass[:target_id] = params[:warrant][:target_id]
+      end
+      new_params = purge_assignments(params)
+      # if no assignments, don't create warrant
+      unless params[:warrant][:assignments_attributes].empty?
+        @target = Player.find(new_params[:warrant][:target_id])
+        @tournament = Tournament.find(new_params[:tournament_id])
+        @warrant = Warrant.new(new_params[:warrant])
+        @warrant.target = @target
+        @warrant.tournament = @tournament
+        @warrant.save
+      end
     end
     redirect_to :tournament_warrants
   end
@@ -69,20 +71,6 @@ class WarrantsController < ApplicationController
         warrant.destroy
       end
     end
-  end
-
-  def is_referee?
-    @tournament = Tournament.find(params[:tournament_id])
-    if current_user.admin
-      return true
-    end
-    @tournament.referees.each do |referee|
-      if current_user.referees.include? referee
-        return true
-      end
-    end
-    redirect_to root_path
-    return false
   end
 
   def purge_assignments(old_params)

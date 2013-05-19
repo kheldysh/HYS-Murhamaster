@@ -56,20 +56,6 @@ class RingsController < ApplicationController
     redirect_to :tournament_rings
   end
 
-  def is_referee?
-    @tournament = Tournament.find(params[:tournament_id])
-    if current_user.admin
-      return true
-    end
-    @tournament.referees.each do |referee|
-      if current_user.referees.include? referee
-        return true
-      end
-    end
-    redirect_to root_path
-    false
-  end
-
   # remove killed player from ring
   def self.drop_from_rings(player)
     unless player.tournament.team_game?

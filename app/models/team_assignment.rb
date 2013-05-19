@@ -8,6 +8,7 @@ class TeamAssignment < ActiveRecord::Base
   before_create :assign_targets_to_players
 
   def assign_targets_to_players
+    return unless team && target
     team.players.each do |player|
       target.players.each do |target_player|
         player.targets << target_player

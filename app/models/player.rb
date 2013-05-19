@@ -19,11 +19,13 @@ class Player < ActiveRecord::Base
 
   scope :participating, :conditions => ["status != ?", "waiting_approval"]
 
+  before_validation :default_status
+
   def status
-    read_attribute(:status).to_sym
+    read_attribute(:status)
   end
-  def status= (value)
-    write_attribute(:status, value.to_s)
+  def status=(value)
+    write_attribute(:status, value)
   end
 
   def waiting_approval?
@@ -57,6 +59,12 @@ class Player < ActiveRecord::Base
     else
       self.alias
     end
+  end
+
+  private
+
+  def default_status
+    self.status ||= :waiting_approval
   end
 
 end

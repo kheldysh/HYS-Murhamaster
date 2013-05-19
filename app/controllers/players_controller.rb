@@ -1,6 +1,6 @@
 class PlayersController < ApplicationController
 
-  before_filter :own_data?, :except => [:show, :index, :update, :edit]
+  before_filter :own_data?, :except => [:show, :index, :update, :destroy, :edit]
   before_filter :is_referee?, :only => [:index, :show, :update, :destroy, :edit]
 
 
@@ -14,7 +14,6 @@ class PlayersController < ApplicationController
   def show
     @player = Player.find(params[:id])
     @user = @player.user
-    @calendar = @user.calendar
   end
 
   def new
@@ -34,19 +33,18 @@ class PlayersController < ApplicationController
     # log killings
     player.update_attributes(params[:player])
     player.save
+    if params[:player]
 
-    # if player was active, take care of rings and tournament stats
-    if params[:player][:status] == "dead" and was_active
-      kill(player)
-    end
+      # if player was active, take care of rings and tournament stats
+      kill(player) if params[:player][:status] == "dead" && was_active
 
-    tournament = player.tournament
-    # alias is only modifiable from ilmo listing
-    if params[:player][:alias]
-      redirect_to tournament_ilmos_path(tournament)
-    else
-      redirect_to tournament_players_path(tournament)
+      tournament = player.tournament
+      # alias is only modifiable from ilmo listing
+      if params[:player][:alias]
+        redirect_to tournament_ilmos_path(tournament)
+      end
     end
+    redirect_to tournament_players_path(tournament)
   end
 
   def destroy

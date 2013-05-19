@@ -2,7 +2,8 @@ require 'digest/md5'
 
 class IlmosController < ApplicationController
 
-skip_before_filter :is_authenticated?, :only => [ :new, :create ]
+skip_before_filter :is_authenticated?, :except => :index
+before_filter :is_referee?, :only => :index
 
   def index
     @tournament = Tournament.find(params[:tournament_id])
@@ -11,7 +12,6 @@ skip_before_filter :is_authenticated?, :only => [ :new, :create ]
   end
 
   def new
-
     @player = Player.new
     tournament = Tournament.find(params[:tournament_id])
     calendar = Calendar.new
@@ -39,7 +39,6 @@ skip_before_filter :is_authenticated?, :only => [ :new, :create ]
   end
 
   def create
-
     @tournament = Tournament.find(params[:tournament_id])
     @player = Player.new(params[:player])
     @player.status = :waiting_approval

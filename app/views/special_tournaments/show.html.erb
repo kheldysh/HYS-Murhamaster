@@ -13,6 +13,9 @@
   <%=h @tournament.finish_date %>
 </p>
 
+<p>
+  <b>Pelaajat:</b>
+</p>
 <ul>
   <% @tournament.players.each do |player| %>
     <li><%= link_to player.real_name, tournament_target_path(@tournament, player) %></li>

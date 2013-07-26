@@ -1,0 +1,25 @@
+<p>
+  <b>Title:</b>
+  <%=h @tournament.title %>
+</p>
+
+<p>
+  <b>Aloituspäivämäärä:</b>
+  <%=h @tournament.start_date %>
+</p>
+
+<p>
+  <b>Päättymispäivämäärä:</b>
+  <%=h @tournament.finish_date %>
+</p>
+
+<ul>
+  <% @tournament.players.each do |player| %>
+    <li><%= link_to player.real_name, tournament_target_path(@tournament, player) %></li>
+  <% end %>
+</ul>
+
+<% if current_user.admin %>
+  <%= link_to 'Muokkaa turnausta', edit_tournament_path(@tournament) %>
+<% end %>
+

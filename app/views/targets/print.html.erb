@@ -39,43 +39,9 @@
     </div>
 
     <div id="activity" style="float:right">
-        <p>
-          <b>Maanantai:</b>
-          <%= simple_format(@user.calendar.monday) %>
-        </p>
 
         <p>
-          <b>Tiistai:</b>
-          <%= simple_format(@user.calendar.tuesday) %>
-        </p>
-
-        <p>
-          <b>Keskiviikko:</b>
-          <%= simple_format(@user.calendar.wednesday) %>
-        </p>
-
-        <p>
-          <b>Torstai:</b>
-          <%= simple_format(@user.calendar.thursday) %>
-        </p>
-
-        <p>
-          <b>Perjantai:</b>
-          <%= simple_format(@user.calendar.friday) %>
-        </p>
-
-        <p>
-          <b>Lauantai:</b>
-          <%= simple_format(@user.calendar.saturday) %>
-        </p>
-
-        <p>
-          <b>Sunnuntai:</b>
-          <%= simple_format(@user.calendar.sunday) %>
-        </p>
-
-        <p>
-          <b>Liikennevälineet, muut huomiot:</b>
+          <b>Ohjelma:</b>
           <%= simple_format(@user.calendar.misc) %>
         </p>
 

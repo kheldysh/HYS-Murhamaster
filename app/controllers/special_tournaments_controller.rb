@@ -5,6 +5,7 @@ class SpecialTournamentsController < ApplicationController
 
   def show
     @tournament = Tournament.find(params[:id])
+    @players = @tournament.players.sort { |a,b| a.user.last_name <=> b.user.last_name }
   end
 
   def new

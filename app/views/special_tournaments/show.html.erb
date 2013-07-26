@@ -14,10 +14,10 @@
 </p>
 
 <p>
-  <b>Pelaajat:</b>
+  <b>Pelaajat (<%= @players.size %>):</b>
 </p>
 <ul>
-  <% @tournament.players.each do |player| %>
+  <% @players.each do |player| %>
     <li><%= link_to player.real_name, tournament_target_path(@tournament, player) %></li>
   <% end %>
 </ul>

@@ -21,6 +21,12 @@ class TargetsController < ApplicationController
 
   end
 
+  def print
+    @target = Player.find(params[:id])
+    @user = @target.user
+    render :print, :layout => false
+  end
+
   def edit
     @target = Player.find(params[:id])
     @user = @target.user

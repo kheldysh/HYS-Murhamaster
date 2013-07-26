@@ -36,6 +36,7 @@ HYSMurhamaster::Application.routes.draw do
     resource :picture
   end
 
+  match '/tournaments/:tournament_id/targets/:id/print' => 'targets#print'
   match '/users/:id/reset_password' => 'users#reset_password'
   # match '/images/*file_name' => 'pictures#display'
   match 'pictures/:id/:style.:format', :controller => 'pictures', :action => 'display', :conditions => { :method => :get }

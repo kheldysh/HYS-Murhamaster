@@ -19,7 +19,10 @@
 <ul>
   <% @players.each do |player| %>
     <li><%= link_to player.real_name, tournament_target_path(@tournament, player) %>
-      <% unless player.user.picture %>
+      <% if player.user.picture %>
+        <%= link_to "Tulosta", :controller => "targets", :action => "print", :id => player.id, :tournament_id => @tournament.id %>
+
+      <% else %>
         <% form_for([@tournament, player], :html => { :multipart => true }, :url => tournament_target_path(@tournament, player)) do |f| %>
           <%= f.label "Uusi kuva: " %><br />
           <%= f.file_field :photo %>

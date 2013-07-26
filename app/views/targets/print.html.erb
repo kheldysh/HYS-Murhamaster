@@ -1,0 +1,84 @@
+<h2><%= @target.tournament.title %> - <%= @target.user.full_name %></h2>
+<div id="main" style="display: inline-block;">
+
+  <div id="image">
+    <% if @target.user.picture %>
+      <%= image_tag(@target.user.picture.url) %>
+    <% else %>
+      <b>PELAAJALLA EI KUVAA TOISTAISEKSI</b>
+    <% end %>
+  </div>
+  <div id="details">
+    <div id="description" style="float:left">
+      <p>
+        <b>Silmät:</b>
+        <%=h @user.eyes %>
+      </p>
+
+      <p>
+        <b>Silmälasit:</b>
+        <%=h @user.glasses %>
+      </p>
+
+      <p>
+        <b>Pituus:</b>
+        <%=h @user.height %>
+      </p>
+
+      <p>
+        <b>Hiukset:</b>
+        <%=h @user.hair %>
+      </p>
+
+      <p>
+        <b>Muut tuntomerkit:</b>
+        <%=h @user.other_notes %>
+      </p>
+    </div>
+
+    <div id="activity" style="float:right">
+        <p>
+          <b>Maanantai:</b>
+          <%= simple_format(@user.calendar.monday) %>
+        </p>
+
+        <p>
+          <b>Tiistai:</b>
+          <%= simple_format(@user.calendar.tuesday) %>
+        </p>
+
+        <p>
+          <b>Keskiviikko:</b>
+          <%= simple_format(@user.calendar.wednesday) %>
+        </p>
+
+        <p>
+          <b>Torstai:</b>
+          <%= simple_format(@user.calendar.thursday) %>
+        </p>
+
+        <p>
+          <b>Perjantai:</b>
+          <%= simple_format(@user.calendar.friday) %>
+        </p>
+
+        <p>
+          <b>Lauantai:</b>
+          <%= simple_format(@user.calendar.saturday) %>
+        </p>
+
+        <p>
+          <b>Sunnuntai:</b>
+          <%= simple_format(@user.calendar.sunday) %>
+        </p>
+
+        <p>
+          <b>Liikennevälineet, muut huomiot:</b>
+          <%= simple_format(@user.calendar.misc) %>
+        </p>
+
+    </div>
+
+    <br style="clear:both;" />
+  </div>
+</div>

@@ -31,20 +31,15 @@ class TargetsController < ApplicationController
   def update
     @tournament = Tournament.find(params[:tournament_id])
     @target = Player.find(params[:id])
-    if params[:user]
-      @user = @target.user
-      @user.update_attributes(params[:user])
-      @calendar = @user.calendar
-      @calendar.update_attributes(params[:calendar]) if params[:calendar]
-    end
+    user = @target.user
+    user.update_attributes(params[:user]) if params[:user]
+    user.calendar.update_attributes(params[:calendar]) if params[:calendar]
     # not really DRY
     if params[:player]
       if params[:player][:photo]
-        @picture = Picture.new(params[:player])
-        @picture.user = @user
-        @user.picture = @picture
-        @picture.save
-        @user.save
+        picture = Picture.new(params[:player])
+        picture.user = user
+        picture.save
       end
     end
 

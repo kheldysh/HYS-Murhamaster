@@ -15,11 +15,11 @@ class User < ActiveRecord::Base
   validates_presence_of :username, :password
   validates_uniqueness_of :username
 
-  validates_length_of :username, :in => 3..15
+  # validates_length_of :username, :in => 3..15
 
   # validates_length_of :password, :in => 5..30, :allow_blank => true, :on => :update
   # validates_length_of :password, :in => 5..30, :on => :create
-  validates_confirmation_of :password
+  # validates_confirmation_of :password
 
   # attr_accessor :password, :password_confirmation
 

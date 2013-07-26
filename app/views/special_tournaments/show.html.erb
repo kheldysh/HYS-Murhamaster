@@ -18,7 +18,15 @@
 </p>
 <ul>
   <% @players.each do |player| %>
-    <li><%= link_to player.real_name, tournament_target_path(@tournament, player) %></li>
+    <li><%= link_to player.real_name, tournament_target_path(@tournament, player) %>
+      <% unless player.user.picture %>
+        <% form_for([@tournament, player], :html => { :multipart => true }, :url => tournament_target_path(@tournament, player)) do |f| %>
+          <%= f.label "Uusi kuva: " %><br />
+          <%= f.file_field :photo %>
+          <%= f.submit "Lähetä" %>
+        <% end %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
 

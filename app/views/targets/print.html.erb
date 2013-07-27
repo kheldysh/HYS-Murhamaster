@@ -2,7 +2,7 @@
 
   <div id="image">
     <% if @target.user.picture %>
-      <%= image_tag(@target.user.picture.url, :height => 640) %>
+      <%= image_tag(@target.user.picture.url, :height => 640, :align => "center") %>
     <% else %>
       <b>PELAAJALLA EI KUVAA TOISTAISEKSI</b>
     <% end %>
@@ -11,7 +11,7 @@
   <h2><%= @target.tournament.title %> - <%= @target.user.full_name %></h2>
 
   <div id="details">
-    <div id="description" style="float:left;width:250">
+    <div id="description" style="float:left;width:300">
       <p>
         <b>Silmät:</b>
         <%=h @user.eyes %>
@@ -38,7 +38,7 @@
       </p>
     </div>
 
-    <div id="activity" style="float:right;width:250">
+    <div id="activity" style="float:right;width:300">
 
         <p>
           <b>Ohjelma:</b>

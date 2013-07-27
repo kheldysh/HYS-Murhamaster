@@ -2,7 +2,7 @@
 
   <div id="image">
     <% if @target.user.picture %>
-      <%= image_tag(@target.user.picture.url, :height => 640, :align => "center") %>
+      <%= image_tag(@target.user.picture.url, :height => 640, :"margin-left" => 150) %>
     <% else %>
       <b>PELAAJALLA EI KUVAA TOISTAISEKSI</b>
     <% end %>

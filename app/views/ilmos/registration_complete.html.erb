@@ -1,7 +1,7 @@
 <h2 color="#CC0000"><%= t('ilmo.complete.welcome_header') %></h2>
 <p>
   <% if @mail_sent %>
-    <%= t('ilmo.complete.registration_received', :tournament => "#{@tournament.title}") %>
+    <%= t('ilmo.complete.registration_received', :tournament_title => "#{@tournament.title}") %>
   <% else %>
     <%= t('ilmo.complete.mail_error') %>
   <% end %>

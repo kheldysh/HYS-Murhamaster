@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   # validates_length_of :password, :in => 5..30, :on => :create
   # validates_confirmation_of :password
 
-  # attr_accessor :password, :password_confirmation
+  attr_accessor :password_confirmation
 
   before_create :hash_password
 

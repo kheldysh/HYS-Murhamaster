@@ -30,15 +30,18 @@ class PlayersController < ApplicationController
   def update
     player = Player.find(params[:id])
     was_active = player.active?
+    old_alias = player.alias
     # log killings
-    params[:player][:status] = params[:player][:status].to_sym if params[:player] && params[:player].include?(:status)
-    player.update_attributes(params[:player])
     if params[:player]
+      params[:player][:status] = params[:player][:status].to_sym if params[:player].include?(:status)
+      player.update_attributes(params[:player])
       # if player was active, take care of rings and tournament stats
       kill(player) if params[:player][:status] == "dead" && was_active
       # alias is only modifiable from ilmo listing
-      if params[:player][:alias]
+      if params[:player][:alias] != old_alias
         redirect_to tournament_ilmos_path(player.tournament)
+      else
+        redirect_to tournament_players_path(player.tournament)
       end
     else
       redirect_to tournament_players_path(player.tournament)

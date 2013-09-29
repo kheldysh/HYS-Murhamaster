@@ -32,7 +32,7 @@ class PlayersController < ApplicationController
     was_active = player.active?
     # log killings
     params[:player][:status] = params[:player][:status].to_sym if params[:player] && params[:player].include?(:status)
-    plaa = player.update_attributes(params[:player])
+    player.update_attributes(params[:player])
     if params[:player]
       # if player was active, take care of rings and tournament stats
       kill(player) if params[:player][:status] == "dead" && was_active
@@ -40,8 +40,9 @@ class PlayersController < ApplicationController
       if params[:player][:alias]
         redirect_to tournament_ilmos_path(player.tournament)
       end
+    else
+      redirect_to tournament_players_path(player.tournament)
     end
-    redirect_to tournament_players_path(player.tournament)
   end
 
   def destroy

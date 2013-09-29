@@ -22,10 +22,10 @@ class Player < ActiveRecord::Base
   before_validation :default_status
 
   def status
-    read_attribute(:status)
+    read_attribute(:status).to_sym
   end
   def status=(value)
-    write_attribute(:status, value)
+    write_attribute(:status, value.to_sym)
   end
 
   def waiting_approval?

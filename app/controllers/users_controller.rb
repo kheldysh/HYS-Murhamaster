@@ -40,16 +40,14 @@ class UsersController < ApplicationController
     if params[:user] and params[:user].include? :password and params[:user].include? :password_confirmation
       params[:user][:password] = User.hash_plaintext_password(params[:user][:password])
       params[:user][:password_confirmation] = User.hash_plaintext_password(params[:user][:password_confirmation])
-
     end
 
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        flash[:notice] = 'Käyttäjätiedot päivitetty.'
-        redirect_to(@user)
-      else
-        render :action => "edit"
-      end
+    if @user.update_attributes(params[:user])
+      flash[:notice] = 'Käyttäjätiedot päivitetty.'
+      redirect_to(@user)
+    else
+      flash[:notice] = 'Päivitys ei onnistunut.'
+      render :action => "edit"
     end
   end
 

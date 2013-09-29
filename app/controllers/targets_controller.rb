@@ -75,7 +75,7 @@ class TargetsController < ApplicationController
     target = Player.find(params[:id])
 
     # check referee status
-    if current_user.is_referee_for?(Tournament.find(params[:tournament_id]))
+    if current_user.is_referee_for?(target.tournament)
       return true
     end
 

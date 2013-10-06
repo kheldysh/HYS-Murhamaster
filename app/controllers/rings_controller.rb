@@ -58,16 +58,22 @@ class RingsController < ApplicationController
 
   # remove killed player from ring
   def self.drop_from_rings(player)
-    unless player.tournament.team_game?
-      for ring in player.tournament.rings
-        # assumes that ring will only contain one target per players
-        hunting = ring.assignments.find(:first, :conditions => ["target_id = ?", player])
-        hunted = ring.assignments.find(:first, :conditions => ["player_id = ?", player])
-        if hunting and hunted
-          hunted.player = hunting.player
-          hunted.save
-          hunting.delete
-        end
+    player.tournament.rings.each do |ring|
+      # when ring only contains one target per player
+      hunters_assignment = ring.assignments.find_by_target_id(player)
+      own_assignment = ring.assignments.find_by_player_id(player)
+      if hunters_assignment && own_assignment
+        hunters_assignment.target = own_assignment.target
+        hunters_assignment.save
+        own_assignment.delete
+      end
+      # unilateral cases where either no hunter or no target
+      hunters_assignments = ring.assignments.find_all_by_target_id(player)
+      own_assignments = ring.assignments.find_all_by_player_id(player)
+      if hunters_assignments.present?
+        hunters_assignments.each(&:delete)
+      elsif own_assignments.present?
+        own_assignments.each(&:delete)
       end
     end
   end
@@ -83,7 +89,7 @@ class RingsController < ApplicationController
         end
       end
     elsif old_params[:assignment]
-      if old_params[:assignment][:player_id] == "0" or old_params[:assignment][:target_id] == "0"
+      if old_params[:assignment][:player_id] == "0" || old_params[:assignment][:target_id] == "0"
         old_params.delete(:assignment)
       end
     end

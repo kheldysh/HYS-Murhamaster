@@ -29,7 +29,7 @@ class RingsController < ApplicationController
 
   def edit
     @tournament = Tournament.find(params[:tournament_id])
-    @active_players = @tournament.players.find_all { |player| player.active? }
+    @active_players = @tournament.players.select(&:active?)
     @ring = Ring.find(params[:id])
     @new_assignment = Assignment.new
   end

@@ -162,6 +162,7 @@ before_filter :is_referee?, :only => :index
     end
     success = send_registration_mails(@player.user.username, password)
     logger.info "#{success ? "registration mails resent successfully" : "resending registration mails failed"}"
+    success
   end
 
 end

@@ -40,6 +40,7 @@ class ApplicationController < ActionController::Base
       logger.info("user #{current_user.username} tried to access referee-restricted page without permission")
       redirect_to(root_path)
     end
+    logger.info("user #{current_user.username} accessed a referee-restricted page")
     true
   end
 

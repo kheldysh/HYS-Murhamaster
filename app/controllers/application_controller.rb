@@ -26,6 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
   def is_authenticated?
+    logger.info("checking authentication for user #{current_user.username rescue "unknown"}")
     redirect_to login_path unless logged_in?
     true
   end

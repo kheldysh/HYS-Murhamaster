@@ -51,4 +51,8 @@ class ApplicationController < ActionController::Base
     true
   end
 
+  def redirect_to(options = {}, response_status = {})
+    logger.info("Redirected by #{caller(1).first rescue "unknown"}")
+    super(options, response_status)
+  end
 end

@@ -1,0 +1,24 @@
+%h3= @tournament.title
+- for ring in @tournament.rings
+  %table
+    %tr
+      %th Murhaaja
+      %th
+      %th Kohde
+      %th
+        %b= link_to 'Muokkaa rengasta', edit_tournament_ring_path(@tournament, ring)
+        \/
+        \#{link_to 'Poista rengas', tournament_ring_path(@tournament, ring, :authenticity_token => form_authenticity_token), :method => :delete, :confirm => 'Haluatko varmasti poistaa renkaan?'}
+    - for assignment in ring.assignments
+      %tr
+        %td
+          - if assignment.player
+            = h assignment.player.user.full_name
+            (#{h assignment.player.alias})
+        %td ->
+        %td
+          - if assignment.target
+            = h assignment.target.user.full_name
+            (#{h assignment.target.alias})
+        %td= link_to 'Poista', tournament_ring_assignment_path(@tournament, ring, assignment, :authenticity_token => form_authenticity_token), :method => :delete
+= link_to 'Uusi rengas', new_tournament_ring_path(@tournament)

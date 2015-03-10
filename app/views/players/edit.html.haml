@@ -1,0 +1,13 @@
+- form_for( [@tournament, @player] ) do |f|
+  %b= @player.with_real_name
+  %p
+    = f.label :Peitenimi
+    %br/
+    = f.text_field :alias
+  - if not @player.waiting_approval?
+    %p
+      = f.label :Tuomari
+      %br/
+      = collection_select :player, :referee_id, @tournament.referees, :id, :full_info
+  %p
+    = f.submit "Päivitä"

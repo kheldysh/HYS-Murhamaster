@@ -1,0 +1,11 @@
+%h1 Listing teams
+%table
+  %tr
+  - @teams.each do |team|
+    %tr
+      %td= team.name
+      %td= link_to 'Show', tournament_team_path(@tournament, team)
+      %td= link_to 'Edit', edit_tournament_team_path(@tournament, team)
+      %td= link_to 'Destroy', tournament_team_path(@tournament, team), :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New team', new_tournament_team_path(@tournament)

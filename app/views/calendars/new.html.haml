@@ -1,0 +1,32 @@
+%h1 New calendar
+- form_for(@calendar) do |f|
+  %p
+    = f.label :monday
+    %br/
+    = f.text_area :monday
+  %p
+    = f.label :tuesday
+    %br/
+    = f.text_area :tuesday
+  %p
+    = f.label :wednesday
+    %br/
+    = f.text_area :wednesday
+  %p
+    = f.label :thursday
+    %br/
+    = f.text_area :thursday
+  %p
+    = f.label :friday
+    %br/
+    = f.text_area :friday
+  %p
+    = f.label :saturday
+    %br/
+    = f.text_area :saturday
+  %p
+    = f.label :sunday
+    %br/
+    = f.text_area :sunday
+  %p
+    = f.submit "Create"

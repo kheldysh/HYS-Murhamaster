@@ -1,0 +1,41 @@
+!!!
+%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
+    %title Murhamaster 2.0
+    = stylesheet_link_tag 'scaffold'
+    = javascript_include_tag :defaults
+  %body
+    %table#tournament_status
+      %tbody
+        %tr
+          %td.status
+            = @tournament.title
+            (
+            %i>= formatted_duration(@tournament)
+            )
+          %td.status
+            Status: #{tournament_status(@tournament)}
+          %td.status Pelaajia murhattu:
+          %td= @tournament.murdered
+          %td.status Tappoja:
+          %td= @tournament.killed
+          %td.status Pidätyksiä:
+          %td= @tournament.arrested
+        %tr
+          %td.status
+          %td.status
+          %td.status Sivullisia uhreja:
+          %td= @tournament.collaterals
+          %td.status Todistajia:
+          %td= @tournament.witnesses
+          %td.status Silminnäkijöitä:
+          %td= @tournament.eyewitnesses
+    %h1.event
+      %font{:color => "#cc0000"}= @tournament.title
+      %font{:color => "#cc0000"}= formatted_duration_with_year(@tournament)
+    %h1.event
+      %font{:color => "#cc0000"} Tapahtumat
+      / <a href="pisteet.html">Pisteet</a>
+    #content
+      = yield

@@ -1,0 +1,156 @@
+- content_for :head, javascript_include_tag('gen_validatorv4.js')
+%h2{:color => "#CC0000"}= t('ilmo.title_html', :tournament => "#{@player.tournament.title}")
+%h3{:color => "#CC0000"}= t('ilmo.registration_end', :date => @player.tournament.app_deadline_formatted)
+- if @player.tournament.is_over?
+  %p= t('ilmo.tournament_over_disclaimer')
+- else
+  %p= t('ilmo.instructions')
+  %p= t('ilmo.payment')
+  - if @player.tournament.team_game
+    %p= t('ilmo.team_game_reminder')
+  - if logged_in?
+    - if @registered_already
+      %h3= t('ilmo.already_registered')
+    - else
+      %h3 Pelaajatiedot
+      = form_for @player, :url => { :controller => :ilmos, :action => :create }, :html => { :id => "ilmo_logged_in_form" } do |p|
+        %p
+          = p.label t('ilmo.alias')
+          %br/
+          = p.text_field :alias
+        %p
+        %br/
+        %p
+          = p.submit t('common.submit')
+  - else
+    %p= t('ilmo.old_user_reminder_html', :login_link => link_to(t('ilmo.to_log_in'), login_path))
+    %p= t('ilmo.account_info')
+    %b= t('ilmo.problem_info_html')
+    = form_for @player.user, :url => { :controller => :ilmos, :action => :create }, :html => { :id => "ilmo_form", :multipart => true } do |f|
+      %h3= t('ilmo.player_data')
+      = fields_for @player do |p|
+        %p
+          = p.label t('ilmo.alias')
+          %br/
+        #ilmo_form_playeralias_errorloc.validation_error
+        = p.text_field :alias
+      %p
+      %br/
+      %p
+        = f.label t('ilmo.first_name')
+        %br/
+      #ilmo_form_userfirst_name_errorloc.validation_error
+      = f.text_field :first_name
+      %p
+        = f.label t('ilmo.last_name')
+        %br/
+      #ilmo_form_userlast_name_errorloc.validation_error
+      = f.text_field :last_name
+      %p.secret
+        = f.label t('ilmo.email')
+        %br/
+      #ilmo_form_useremail_errorloc.validation_error
+      = f.text_field :email
+      %p.secret
+        = f.label t('ilmo.phone')
+        %br/
+        = f.text_field :phone
+      %p
+        = f.label t('ilmo.address')
+        %br/
+      #ilmo_form_useraddress_errorloc.validation_error
+      = f.text_field :address
+      %p
+        = f.label t('ilmo.university')
+        %br/
+        = f.text_field :university
+      %p
+        = f.label t('ilmo.faculty')
+        %br/
+        = f.text_field :faculty
+      %p
+        = f.label t('ilmo.department')
+        %br/
+        = f.text_field :department
+      %p
+        = f.label t('ilmo.eyes')
+        %br/
+      #ilmo_form_usereyes_errorloc.validation_error
+      = f.text_field :eyes
+      %p
+        = f.label t('ilmo.glasses')
+        %br/
+      #ilmo_form_usereyes_errorloc.validation_error
+      = f.select( :glasses, [ t('ilmo.always'), t('ilmo.sometimes'), t('ilmo.glasses_no') ] )
+      %p
+        = f.label t('ilmo.height')
+        %br/
+      #ilmo_form_userheight_errorloc.validation_error
+      = f.text_field :height, "size" => 3, "maxlength" => 3
+      cm
+      %p
+        = f.label t('ilmo.hair')
+        %br/
+      #ilmo_form_userhair_errorloc.validation_error
+      = f.text_field :hair
+      %p
+        = f.label t('ilmo.other_characteristics')
+        %br/
+        = f.text_field :other_notes
+      = fields_for @player.user.picture do |pic|
+        %p
+          = t('ilmo.pic_size_caveat_html')
+          %br/
+          = pic.label t('ilmo.picture')
+          %br/
+          = pic.file_field :photo
+      %h3= t('ilmo.calendar')
+      = fields_for @player.user.calendar do |c|
+        %p
+          = c.label t('ilmo.monday')
+          %br/
+          = c.text_area :monday, "rows" => 5
+        %p
+          = c.label t('ilmo.tuesday')
+          %br/
+          = c.text_area :tuesday, "rows" => 5
+        %p
+          = c.label t('ilmo.wednesday')
+          %br/
+          = c.text_area :wednesday, "rows" => 5
+        %p
+          = c.label t('ilmo.thursday')
+          %br/
+          = c.text_area :thursday, "rows" => 5
+        %p
+          = c.label t('ilmo.friday')
+          %br/
+          = c.text_area :friday, "rows" => 5
+        %p
+          = c.label t('ilmo.saturday')
+          %br/
+          = c.text_area :saturday, "rows" => 5
+        %p
+          = c.label t('ilmo.sunday')
+          %br/
+          = c.text_area :sunday, "rows" => 5
+        %p
+          = c.label t('ilmo.other_notes')
+          %br/
+          = c.text_area :misc, "rows" => 5
+      %p
+        = f.submit t('common.submit')
+    :javascript
+      var ilmoValidator  = new Validator("ilmo_form");
+      ilmoValidator.addValidation("player_alias", "req", "#{t("ilmo.req.alias")}");
+      ilmoValidator.addValidation("user_first_name", "req", "#{t("ilmo.req.first_name")}");
+      ilmoValidator.addValidation("user_last_name", "req", "#{t("ilmo.req.last_name")}");
+      ilmoValidator.addValidation("user_email", "req", "#{t("ilmo.req.email")}");
+      ilmoValidator.addValidation("user_email", "email", "#{t("ilmo.invalid.email")}");
+      ilmoValidator.addValidation("user_address", "req", "#{t("ilmo.req.address")}");
+      ilmoValidator.addValidation("user_eyes", "req", "#{t("ilmo.req.eyes")}");
+      ilmoValidator.addValidation("user_glasses", "req", "#{t("ilmo.req.glasses")}");
+      ilmoValidator.addValidation("user_height", "req", "#{t("ilmo.req.height")}");
+      ilmoValidator.addValidation("user_hair", "req", "#{t("ilmo.req.hair")}");
+      ilmoValidator.EnableOnPageErrorDisplay();
+      ilmoValidator.EnableMsgsTogether();

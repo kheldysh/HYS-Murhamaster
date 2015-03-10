@@ -1,0 +1,93 @@
+%h1 Listing players
+%h2 Elossaolevat
+%table
+  %tr
+    %th Käyttäjä
+    %th Alias
+    %th Kohdesivu
+    %th Pelaajatuomari
+  - if @tournament.team_game?
+    - @tournament.teams.each do |team|
+      - if team.players.any? {|p| p.active?}
+        %tr
+          %td
+            %b= h team.name
+          %td
+          %td
+          %td
+      - (team.players.select {|p| p.active?}).each do |player|
+        %tr
+          %td= h player.user.full_name
+          %td= h player.alias
+          %td= link_to player.real_name, tournament_player_path(@tournament, player)
+          %td
+            - if player.referee != nil
+              = h player.referee.user.full_name
+            - else
+              = link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player)
+          %td
+            - form_for [@tournament, player] do |p|
+              = p.hidden_field :status, { :value => :dead }
+              = submit_tag "Kuolleeksi", :onclick => 'return #{confirm_javascript_function("Siirretäänkö pelaaja kuolleeksi?")}'
+  - else
+    - for player in @active_players
+      %tr
+        %td= h player.user.full_name
+        %td= h player.alias
+        %td= link_to player.real_name, tournament_target_path(@tournament, player)
+        %td
+          - if player.referee != nil
+            = h player.referee.user.full_name
+          - else
+            = link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player)
+        %td
+          - form_for [@tournament, player] do |p|
+            = p.hidden_field :status, { :value => :dead }
+            = submit_tag "Kuolleeksi", :onclick => 'return #{confirm_javascript_function("Siirretäänkö pelaaja kuolleeksi?")}'
+%h2 Etsivät
+%table
+  %tr
+    %th Käyttäjä
+    %th Alias
+    %th Kohdesivu
+    %th Pelaajatuomari
+  - for player in @detectives
+    %tr
+      %td= h player.user.full_name
+      %td= h player.alias
+      %td= link_to player.real_name, tournament_player_path(@tournament, player)
+      %td
+        - if player.referee != nil
+          = h player.referee.user.full_name
+        - else
+          = link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player)
+      %td
+        - form_for [@tournament, player] do |p|
+          = p.hidden_field :status, { :value => :dead }
+          = submit_tag "Kuolleeksi", :onclick => 'return #{confirm_javascript_function("Siirretäänkö pelaaja kuolleeksi?")}'
+%h2 Kuolleet
+%table
+  %tr
+    %th Käyttäjä
+    %th Alias
+    %th Kohdesivu
+    %th Pelaajatuomari
+  - for player in @dead_players
+    %tr
+      %td= h player.user.full_name
+      %td= h player.alias
+      %td= link_to player.real_name, tournament_player_path(@tournament, player)
+      %td
+        - if player.referee != nil
+          = h player.referee.user.full_name
+        - else
+          = link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player)
+      %td
+        - form_for [@tournament, player] do |p|
+          = p.hidden_field :status, { :value => :detective }
+          = submit_tag "Etsiväksi"
+      %td
+        - form_for [@tournament, player] do |p|
+          = p.hidden_field :status, { :value => :active }
+          = submit_tag "Henkiin"
+%br/

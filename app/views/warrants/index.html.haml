@@ -1,0 +1,29 @@
+%h3= @tournament.title
+%table
+  %tr
+    %th Etsivät
+    %th
+    %th Etsintäkuulutettu
+    %th
+  - for warrant in @tournament.warrants
+    %tr
+      %td
+        - for assignment in warrant.assignments
+          - if assignment.player
+            = h assignment.player.user.full_name
+            (#{h assignment.player.alias})
+          %br/
+      %td ->
+      %td
+        = h warrant.target.user.full_name
+        (#{h warrant.target.alias})
+      %td
+        %b= link_to 'Poista etsintäkuulutus', tournament_warrant_path(@tournament, warrant), :method              => :delete, :confirm => 'Haluatko varmasti poistaa etsintäkuulutuksen?'
+    %tr
+      %td
+        %br/
+      %td
+        %br/
+      %td
+        %br/
+= link_to 'Uusi etsintäkuulutus', new_tournament_warrant_path(@tournament)

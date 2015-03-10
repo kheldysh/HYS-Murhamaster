@@ -1,0 +1,71 @@
+%h1 Uusi käyttäjä
+%p
+  %i (*pakollinen kenttä)
+- form_for(@user, :html =>  {:class => 'validate'}) do |f|
+  %p
+    = f.label "Käyttäjätunnus*"
+    %br/
+    = f.text_field :username
+  %p
+    = f.label "Salasana*"
+    %br/
+    = f.password_field :password
+  %p
+    = f.label "Salasana uudestaan*"
+    %br/
+    = f.password_field :password_confirmation
+  %p
+    = f.label "Etunimi"
+    %br/
+    = f.text_field :first_name
+  %p
+    = f.label "Sukunimi"
+    %br/
+    = f.text_field :last_name
+  %p.secret
+    = f.label "Puhelin"
+    %br/
+    = f.text_field :phone
+  %p.secret
+    = f.label "Sähköposti"
+    %br/
+    = f.text_field :email
+  %p
+    = f.label "Osoite"
+    %br/
+    = f.text_field :address
+  %p
+    = f.label "Oppilaitos"
+    %br/
+    = f.text_field :university
+  %p
+    = f.label "Tiedekunta/vast"
+    %br/
+    = f.text_field :faculty
+  %p
+    = f.label "Ainelaitos"
+    %br/
+    = f.text_field :department
+  %p
+    = f.label "Silmät"
+    %br/
+    = f.text_field :eyes
+  %p
+    = f.label "Silmälasit"
+    %br/
+    = f.select(:glasses, ["Aina", "Joskus", "Ei"])
+  %p
+    = f.label "Pituus"
+    %br/
+    = f.text_field :height, "size" => 3, "maxlength" => 3
+    cm
+  %p
+    = f.label "Hiukset"
+    %br/
+    = f.text_field :hair
+  %p
+    = f.label "Muut tuntomerkit"
+    %br/
+    = f.text_field :other_notes
+  %p
+    = f.submit "Create"

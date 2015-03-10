@@ -1,8 +1,0 @@
-  <h3 class="event_header"><%= finnish_date(@event.time) %> <%= @event.title %></h3>
-  <p>
-    <%= simple_format(@event.content, {}, {:sanitize => false}) %>
-  </p>  
-  <%= @event.tournament.title %>
-  <%= @event.tournament.events.first.title %>
-  <hr />
-

@@ -1,0 +1,94 @@
+%h2= @target.tournament.title
+- if @referee
+  = link_to "Muokkaa pelaajan tietoja", edit_tournament_target_path(@target.tournament, @target)
+%br/
+- if @target.user.picture
+  = image_tag(@target.user.picture.url)
+- else
+  %b PELAAJALLA EI KUVAA TOISTAISEKSI
+%table.top_align{:cellspacing => "20"}
+  %tr
+    %th
+      %h3 Perustiedot
+      %h3
+    %th
+      %h3 Kalenteri
+      %h3
+  %tr
+    %td
+      - if @referee
+        %i
+          Kirjautunut viimeksi: #{nil_date_handler(@user.last_login)}
+        %p
+          %b Sähköposti:
+          = h @user.email
+        %p
+          %b Puhelin:
+          = h @user.phone
+      - unless @referee
+        - if @current_player.detective?
+          %p
+            %b Peitenimi:
+            = @target.alias
+      %p
+        %b Nimi:
+        = h "%s %s" % [ @user.first_name, @user.last_name ]
+      - if @target.team != nil
+        %p
+          %b Joukkue:
+          = h @target.team.name
+      %p
+        %b Osoite:
+        = h @user.address
+      %p
+        %b Oppilaitos:
+        = h @user.university
+        \/ #{h @user.faculty} /  #{h @user.department}
+      %p
+        %b Silmät:
+        = h @user.eyes
+      %p
+        %b Silmälasit:
+        = h @user.glasses
+      %p
+        %b Pituus:
+        = h @user.height
+      %p
+        %b Hiukset:
+        = h @user.hair
+      %p
+        %b Muut tuntomerkit:
+        = h @user.other_notes
+      - if @target.referee != nil
+        %p
+          %b Tuomari:
+          = h @target.referee.user.full_name
+          , #{h @target.referee.user.phone}
+    %td
+      - if @referee
+        %i
+          Päivitetty: #{finnish_date(@user.calendar.updated_at)}
+      %p
+        %b Maanantai:
+        = simple_format(@user.calendar.monday)
+      %p
+        %b Tiistai:
+        = simple_format(@user.calendar.tuesday)
+      %p
+        %b Keskiviikko:
+        = simple_format(@user.calendar.wednesday)
+      %p
+        %b Torstai:
+        = simple_format(@user.calendar.thursday)
+      %p
+        %b Perjantai:
+        = simple_format(@user.calendar.friday)
+      %p
+        %b Lauantai:
+        = simple_format(@user.calendar.saturday)
+      %p
+        %b Sunnuntai:
+        = simple_format(@user.calendar.sunday)
+      %p
+        %b Liikennevälineet, muut huomiot:
+        = simple_format(@user.calendar.misc)

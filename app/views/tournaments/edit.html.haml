@@ -1,0 +1,31 @@
+%h1 Editing tournament
+= link_to "Add referees", new_tournament_referee_path(@tournament)
+- form_for(@tournament) do |f|
+  %p
+    = f.label :title
+    %br/
+    = f.text_field :title
+  %p
+    = f.label :start_date
+    %br/
+    = f.date_select :start_date
+  %p
+    = f.label :finish_date
+    %br/
+    = f.date_select :finish_date
+  %p
+    = f.label :application_deadline
+    %br/
+    = f.datetime_select :app_deadline
+  %p
+    = f.label :team_game
+    %br/
+    = f.check_box :team_game
+  %p
+    = f.label :send_registration_announcements_to_referees
+    %br/
+    = f.check_box :send_registration_announcements_to_referees
+  %p
+    = f.submit "Update"
+= link_to 'Show', @tournament
+|

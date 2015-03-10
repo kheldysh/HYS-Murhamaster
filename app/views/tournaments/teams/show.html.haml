@@ -1,0 +1,9 @@
+%p
+  %b Joukkue:
+  = h @team.name
+%p
+  %b Pelaajat:
+  %ul
+    - @team.players.each do |player|
+      %li= link_to player.with_real_name, team_player_path(@team, player)
+= link_to 'Edit', edit_tournament_team_path(@team.tournament, @team)

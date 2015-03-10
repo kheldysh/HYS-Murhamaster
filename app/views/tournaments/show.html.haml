@@ -1,0 +1,27 @@
+%p
+  %b Title:
+  = h @tournament.title
+%p
+  %b Aloituspäivämäärä:
+  = h @tournament.start_date
+%p
+  %b Päättymispäivämäärä:
+  = h @tournament.finish_date
+%ul
+  - if @tournament.has_waiting_players?
+    %li
+      = link_to "Ilmoittautumiset", tournament_ilmos_path(@tournament)
+      (#{(@tournament.players.waiting_players.length)})
+  %li
+    = link_to "Pelaajat", tournament_players_path(@tournament)
+    (#{(@tournament.players.participating.length)})
+  %li= link_to "Renkaat", tournament_rings_path(@tournament)
+  %li= link_to "Etsintäkuulutukset", tournament_warrants_path(@tournament)
+  %li= link_to "Lisää uusi tapahtuma", new_tournament_event_path(@tournament)
+  - if @tournament.team_game
+    %li= link_to "Joukkueet", tournament_teams_path(@tournament)
+    %li= link_to "Joukkuerenkaat", tournament_team_assignments_path(@tournament)
+= link_to "Tapahtumat", tournament_events_path(@tournament)
+%br/
+- if current_user.admin
+  = link_to 'Muokkaa turnausta', edit_tournament_path(@tournament)

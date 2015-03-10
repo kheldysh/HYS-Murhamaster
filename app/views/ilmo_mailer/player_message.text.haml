@@ -1,0 +1,7 @@
+= t('ilmo.complete.registration_received', :tournament_title => @player.tournament.title)
+- if @username and @passwd
+  = t('ilmo.player_mail.your_login')
+  \:
+  \#{t('session.username')}: #{@username}
+  \#{t('session.password')}:  #{@passwd}
+= t('ilmo.player_mail.password_info')

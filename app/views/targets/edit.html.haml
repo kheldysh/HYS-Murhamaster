@@ -1,0 +1,115 @@
+%h2= @target.tournament.title
+= link_to "Palaa pelaajan kohdesivulle", tournament_target_path(@target.tournament, @target)
+%br/
+- form_tag "users/#{@target.user.id}/reset_password" do
+  = submit_tag "Resetoi käyttäjän salasana", :onclick => "return confirm('Haluatko varmasti resetoida käyttäjän salasanan?')"
+- if @target.user.picture
+  = image_tag(@target.user.picture.url)
+- else
+  %b PELAAJALLA EI KUVAA TOISTAISEKSI
+- form_for([@tournament, @target], :html => { :multipart => true }, :url => tournament_target_path) do |f|
+  %b Huom! Kuvien kokoraja on 16MB.
+  %p
+    = f.label "Uusi kuva: "
+    %br/
+    = f.file_field :photo
+  %p
+    = f.submit "Lähetä"
+- form_for :user, :url => tournament_target_path(@tournament, @target), :html => { :method => :put } do |f|
+  %table.top_align{:cellspacing => "20"}
+    %tr
+      %th
+        %h3 Perustiedot
+      %th
+        %h3 Kalenteri
+    %tr
+      %td
+        %p
+          = f.label "Etunimi"
+          %br/
+          = f.text_field :first_name
+        %p
+          = f.label "Sukunimi"
+          %br/
+          = f.text_field :last_name
+        %p.secret
+          = f.label :Puhelin
+          %br/
+          = f.text_field :phone
+        %p.secret
+          = f.label "Sähköposti"
+          %br/
+          = f.text_field :email
+        %p
+          = f.label "Osoite"
+          %br/
+          = f.text_field :address
+        %p
+          = f.label "Oppilaitos"
+          %br/
+          = f.text_field :university
+        %p
+          = f.label "Tiedekunta/vast"
+          %br/
+          = f.text_field :faculty
+        %p
+          = f.label "Ainelaitos"
+          %br/
+          = f.text_field :department
+        %p
+          = f.label "Silmät"
+          %br/
+          = f.text_field :eyes
+        %p
+          = f.label "Silmälasit"
+          %br/
+          = f.select(:glasses, ["Aina", "Joskus", "Ei"])
+        %p
+          = f.label "Pituus"
+          %br/
+          = f.text_field :height, "size" => 3, "maxlength" => 3
+          cm
+        %p
+          = f.label "Hiukset"
+          %br/
+          = f.text_field :hair
+        %p
+          = f.label "Muut tuntomerkit"
+          %br/
+          = f.text_field :other_notes
+      %td
+        - fields_for @user.calendar do |c|
+          %p
+            = c.label :Maanantai
+            %br/
+            = c.text_area :monday, "rows" => 5
+          %p
+            = c.label :Tiistai
+            %br/
+            = c.text_area :tuesday, "rows" => 5
+          %p
+            = c.label :Keskiviikko
+            %br/
+            = c.text_area :wednesday, "rows" => 5
+          %p
+            = c.label :Torstai
+            %br/
+            = c.text_area :thursday, "rows" => 5
+          %p
+            = c.label :Perjantai
+            %br/
+            = c.text_area :friday, "rows" => 5
+          %p
+            = c.label :Lauantai
+            %br/
+            = c.text_area :saturday, "rows" => 5
+          %p
+            = c.label :Sunnuntai
+            %br/
+            = c.text_area :sunday, "rows" => 5
+          %p
+            = c.label "Liikennevälineet, muut huomiot"
+            %br/
+            = c.text_area :misc, "rows" => 5
+  %p
+    = f.submit "Päivitä"

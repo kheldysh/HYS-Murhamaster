@@ -1,0 +1,16 @@
+%h1 New special tournament
+- form_for(@tournament) do |f|
+  %p
+    = f.label :title
+    %br/
+    = f.text_field :title
+  %p
+    = f.label :start_date
+    %br/
+    = f.date_select :start_date
+  %p
+    = f.label :finish_date
+    %br/
+    = f.date_select :finish_date
+  %p
+    = f.submit "Create"

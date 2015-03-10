@@ -1,0 +1,24 @@
+%h1 Listing calendars
+%table
+  %tr
+    %th Monday
+    %th Tuesday
+    %th Wednesday
+    %th Thursday
+    %th Friday
+    %th Saturday
+    %th Sunday
+  - for calendar in @calendars
+    %tr
+      %td= h simple_format(calendar.monday)
+      %td= h simple_format(calendar.tuesday)
+      %td= h simple_format(calendar.wednesday)
+      %td= h simple_format(calendar.thursday)
+      %td= h simple_format(calendar.friday)
+      %td= h simple_format(calendar.saturday)
+      %td= h simple_format(calendar.sunday)
+      %td= link_to 'Show', calendar
+      %td= link_to 'Edit', edit_calendar_path(calendar)
+      %td= link_to 'Destroy', calendar, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New calendar', new_calendar_path

@@ -1,0 +1,8 @@
+%h3.event_header
+  = finnish_date(@event.time)
+  = @event.title
+%p
+  = simple_format(@event.content, {}, {:sanitize => false})
+= @event.tournament.title
+= @event.tournament.events.first.title
+%hr/

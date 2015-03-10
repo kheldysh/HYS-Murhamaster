@@ -1,0 +1,50 @@
+%table
+  %tr
+    %td
+      %p
+        %b Käyttäjä:
+        = h @user.username
+      %p
+        %b Nimi:
+        = h @user.full_name
+      %p
+        %b Oppilaitos:
+        = h @user.university
+        \/ #{h @user.faculty} /  #{h @user.department}
+      %p
+        %b Puhelin:
+        = h @user.phone
+      %p
+        %b Sähköposti:
+        = h @user.email
+      %p
+        %b Osoite:
+        = h @user.address
+      %p
+        %b Silmät:
+        = h @user.eyes
+      %p
+        %b Lasit:
+        = h @user.glasses
+      %p
+        %b Pituus:
+        = h @user.height
+      %p
+        %b Hiukset:
+        = h @user.hair
+      %p
+        %b Muut tuntomerkit:
+        = h @user.other_notes
+      %p
+        %b Pelaajatuomarit:
+      %ul
+        - @user.players.each do |player|
+          - if player.referee != nil and player.tournament.is_running?
+            %li
+              %i>= player.alias
+              \: #{player.referee.info} (#{player.referee.user.phone})
+    %td
+      - if @user.picture
+        = image_tag(@user.picture.url)
+      - else
+        %b PELAAJALLA EI KUVAA TOISTAISEKSI

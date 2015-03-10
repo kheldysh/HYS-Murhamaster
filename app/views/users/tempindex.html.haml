@@ -1,0 +1,26 @@
+%h1 Listing users
+%table
+  %tr
+    %th Username
+    %th Phone
+    %th Address
+    %th Eyes
+    %th Glasses
+    %th Height
+    %th Hair
+    %th Other notes
+  - for user in @users
+    %tr
+      %td= h user.username
+      %td= h user.phone
+      %td= h user.address
+      %td= h user.eyes
+      %td= h user.glasses
+      %td= h user.height
+      %td= h user.hair
+      %td= h user.other_notes
+      %td= link_to 'Show', user
+      %td= link_to 'Edit', edit_user_path(user)
+      %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New user', new_user_path

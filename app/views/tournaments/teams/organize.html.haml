@@ -1,0 +1,17 @@
+%h3= @tournament.title
+- form_tag("/tournament/#{@tournament.id}/teams/update_organization") do |f|
+  %table
+    %tr
+      %th Pelaaja
+      %th
+      %th Joukkue
+    - @tournament.players.each do |player|
+      - fields_for :player do |player_form|
+        %tr
+          %td
+            = player_form.collection_select :player_id, @tournament.players, :id, :with_real_name
+          %td
+            \->
+          %td
+            = player_form.collection_select :team_id, @tournament.teams, :id, :name, {:prompt => "(valitse)"}
+  = f.submit "Lisää"

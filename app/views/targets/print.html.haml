@@ -1,0 +1,31 @@
+#main{:style => "display: inline-block;"}
+  #image
+    - if @target.user.picture
+      = image_tag(@target.user.picture.url, :height => 640, :"margin-left" => 150)
+    - else
+      %b PELAAJALLA EI KUVAA TOISTAISEKSI
+  %h2
+    = @target.tournament.title
+    \- #{@target.user.full_name} (#{@target.alias})
+  #details
+    #description{:style => "float:left;width:300"}
+      %p
+        %b Silmät:
+        = h @user.eyes
+      %p
+        %b Silmälasit:
+        = h @user.glasses
+      %p
+        %b Pituus:
+        = h @user.height
+      %p
+        %b Hiukset:
+        = h @user.hair
+      %p
+        %b Muut tuntomerkit:
+        = h @user.other_notes
+    #activity{:style => "float:right;width:300"}
+      %p
+        %b Ohjelma:
+        = simple_format(@user.calendar.misc)
+    %br{:style => "clear:both;"}/

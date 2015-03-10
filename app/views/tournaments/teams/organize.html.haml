@@ -1,5 +1,5 @@
 %h3= @tournament.title
-- form_tag("/tournament/#{@tournament.id}/teams/update_organization") do |f|
+= form_tag("/tournament/#{@tournament.id}/teams/update_organization") do |f|
   %table
     %tr
       %th Pelaaja

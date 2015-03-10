@@ -1,5 +1,5 @@
 %h3= @tournament.title
-- form_for([@tournament, @ring]) do |f|
+= form_for([@tournament, @ring]) do |f|
   %table
     %tr
       %th Murhaaja
@@ -15,7 +15,7 @@
           = ass_form.collection_select(:target_id, @active_players, :id, :with_real_name)
   = f.submit "Päivitä"
 %h4 Lisää toimeksianto
-- form_for([@tournament, @ring, @new_assignment]) do |f|
+= form_for([@tournament, @ring, @new_assignment]) do |f|
   - f.fields_for(@new_assignment) do |new_ass|
     = f.label :Murhaaja
     %br/

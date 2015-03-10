@@ -16,7 +16,7 @@
         - unless player.registration_email_sent
           = t('admin.registration_mail_error')
       %td
-        - form_for [@tournament, player] do |p|
+        = form_for [@tournament, player] do |p|
           = p.hidden_field :status, { :value => :active }
           = submit_tag t('admin.confirm_player')
 %br/

@@ -1,13 +1,13 @@
 %h2= @target.tournament.title
 = link_to "Palaa pelaajan kohdesivulle", tournament_target_path(@target.tournament, @target)
 %br/
-- form_tag "users/#{@target.user.id}/reset_password" do
+= form_tag "users/#{@target.user.id}/reset_password" do
   = submit_tag "Resetoi käyttäjän salasana", :onclick => "return confirm('Haluatko varmasti resetoida käyttäjän salasanan?')"
 - if @target.user.picture
   = image_tag(@target.user.picture.url)
 - else
   %b PELAAJALLA EI KUVAA TOISTAISEKSI
-- form_for([@tournament, @target], :html => { :multipart => true }, :url => tournament_target_path) do |f|
+= form_for([@tournament, @target], :html => { :multipart => true }, :url => tournament_target_path) do |f|
   %b Huom! Kuvien kokoraja on 16MB.
   %p
     = f.label "Uusi kuva: "
@@ -15,7 +15,7 @@
     = f.file_field :photo
   %p
     = f.submit "Lähetä"
-- form_for :user, :url => tournament_target_path(@tournament, @target), :html => { :method => :put } do |f|
+= form_for :user, :url => tournament_target_path(@tournament, @target), :html => { :method => :put } do |f|
   %table.top_align{:cellspacing => "20"}
     %tr
       %th

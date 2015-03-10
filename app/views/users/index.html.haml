@@ -1,13 +1,10 @@
 %h1 Login
-- form_for @user, :url=>session_url do |f|
-  %p
-    = f.label t('session.username')
+= form_for(@user, url: session_url) do |f|
+    = f.label :username, t('session.username')
+    = f.text_field :username, size: 20
     %br/
-    = f.text_field :username
-  %p
-    = f.label t('session.password')
+    = f.label :password, t('session.password')
+    = f.password_field :password, size: 20
     %br/
-    = f.password_field :password
-  = submit_tag t('session.login')
-%br/
+    = f.submit t('session.login')
 = link_to t('session.register'), new_user_path

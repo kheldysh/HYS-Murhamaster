@@ -1,6 +1,6 @@
 %h1 Editing tournament
 = link_to "Add referees", new_tournament_referee_path(@tournament)
-- form_for(@tournament) do |f|
+= form_for(@tournament) do |f|
   %p
     = f.label :title
     %br/

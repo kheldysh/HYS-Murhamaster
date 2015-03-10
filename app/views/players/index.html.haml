@@ -26,7 +26,7 @@
             - else
               = link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player)
           %td
-            - form_for [@tournament, player] do |p|
+            = form_for [@tournament, player] do |p|
               = p.hidden_field :status, { :value => :dead }
               = submit_tag "Kuolleeksi", :onclick => 'return #{confirm_javascript_function("Siirretäänkö pelaaja kuolleeksi?")}'
   - else
@@ -41,7 +41,7 @@
           - else
             = link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player)
         %td
-          - form_for [@tournament, player] do |p|
+          = form_for [@tournament, player] do |p|
             = p.hidden_field :status, { :value => :dead }
             = submit_tag "Kuolleeksi", :onclick => 'return #{confirm_javascript_function("Siirretäänkö pelaaja kuolleeksi?")}'
 %h2 Etsivät
@@ -62,7 +62,7 @@
         - else
           = link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player)
       %td
-        - form_for [@tournament, player] do |p|
+        = form_for [@tournament, player] do |p|
           = p.hidden_field :status, { :value => :dead }
           = submit_tag "Kuolleeksi", :onclick => 'return #{confirm_javascript_function("Siirretäänkö pelaaja kuolleeksi?")}'
 %h2 Kuolleet
@@ -83,11 +83,11 @@
         - else
           = link_to 'Lisää tuomari', edit_tournament_player_path(@tournament, player)
       %td
-        - form_for [@tournament, player] do |p|
+        = form_for [@tournament, player] do |p|
           = p.hidden_field :status, { :value => :detective }
           = submit_tag "Etsiväksi"
       %td
-        - form_for [@tournament, player] do |p|
+        = form_for [@tournament, player] do |p|
           = p.hidden_field :status, { :value => :active }
           = submit_tag "Henkiin"
 %br/

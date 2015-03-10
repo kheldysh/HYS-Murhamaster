@@ -1,7 +1,7 @@
 %h1 Uusi käyttäjä
 %p
   %i (*pakollinen kenttä)
-- form_for(@user, :html =>  {:class => 'validate'}) do |f|
+= form_for(@user, :html =>  {:class => 'validate'}) do |f|
   %p
     = f.label "Käyttäjätunnus*"
     %br/

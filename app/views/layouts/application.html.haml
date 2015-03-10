@@ -1,17 +1,17 @@
 !!!
-%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+%html{:lang => 'en', 'xml:lang' => 'en', :xmlns => 'http://www.w3.org/1999/xhtml'}
   %head
-    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
+    %meta{:content => 'text/html;charset=UTF-8', 'http-equiv' => 'content-type'}/
     %title Murhamaster 2.0
     = stylesheet_link_tag 'scaffold'
     = javascript_include_tag :defaults
     = yield :head
   %body
-    %table{:width => "100%"}
+    %table{:width => '100%'}
       %tr
         %td
           %h1 MURHAMASTER 2.0
-        %td{:align => "right"}
+        %td{:align => 'right'}
           = t('layouts.application.language')
           = form_tag '', :method => 'GET', :class => 'locale' do
             = select_tag 'locale', options_for_select(LANGUAGES, I18n.locale), |
@@ -19,10 +19,10 @@
             = submit_tag 'submit'
             = javascript_tag "$$('.locale input').each(Element.hide)"
     - if flash[:notice]
-      %p{:style => "color: green"}= flash[:notice]
+      %p{:style => 'color: green'}= flash[:notice]
     - elsif flash[:alert]
-      %p{:style => "color: red"}= flash[:alert]
-    %table{:cellspacing => "10"}
+      %p{:style => 'color: red'}= flash[:alert]
+    %table{:cellspacing => '10'}
       %tr
         - if logged_in?
           %td.sidepanel

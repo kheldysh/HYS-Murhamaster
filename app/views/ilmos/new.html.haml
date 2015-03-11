@@ -139,8 +139,8 @@
           %br/
           = c.text_area :misc, 'rows' => 5
       %p
-        = label_tag 'Olen lukenut säännöt'
-        = check_box_tag(:rules_confirmed, 'yes', false)
+        = label_tag :rules_confirmed, 'Olen lukenut säännöt'
+        = check_box_tag(:rules_confirmed)
       %p
 
         = f.submit t('common.submit'), disabled: true

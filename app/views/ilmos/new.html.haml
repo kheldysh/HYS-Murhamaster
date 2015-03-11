@@ -159,10 +159,10 @@
       ilmoValidator.EnableOnPageErrorDisplay();
       ilmoValidator.EnableMsgsTogether();
 
-      $('#rule_confirmation').click(function() {
+      $('rule_confirmation').click(function() {
           if($(this).attr('checked') == false) {
-               $('#user_submit').attr('disabled','disabled');
+               $('user_submit').attr('disabled','disabled');
           } else {
-              $('#user_submit').removeAttr('disabled');
+              $('user_submit').removeAttr('disabled');
           }
       });

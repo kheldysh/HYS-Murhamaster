@@ -2,8 +2,7 @@
 - Tournament.registration_open.each do |tournament|
   %ul
     %li= link_to tournament.title, new_tournament_ilmo_path(tournament)
-
-%h2 Login
+%h1 Login
 = form_for(@user, url: session_url) do |f|
     = f.label :username, t('session.username')
     = f.text_field :username, size: 20

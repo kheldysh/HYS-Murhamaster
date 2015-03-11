@@ -161,10 +161,6 @@
 
     :javascript
       $('rules_confirmed').click(function() {
-        if ($(this).checked ) {
-            $('user_submit').disabled = false;
-        } else {
-            $('user_submit').disabled = true;
-        }
+        $('user_submit').writeAttribute('disabled', this.checked)
       });
 

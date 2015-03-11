@@ -24,10 +24,6 @@
       %p{:style => 'color: red'}= flash[:alert]
     %table{:cellspacing => '10'}
       %tr
-        %h3 Avoimet ilmoittautumiset
-        - Tournament.registration_open.each do |tournament|
-          %ul
-            %li= link_to tournament.title, new_tournament_ilmo_path(tournament)
         - if logged_in?
           %td.sidepanel
             #sidepanel
@@ -60,6 +56,10 @@
                     %ul
                       %li
                         = "#{teammate.real_name} (#{teammate.alias})"
+              %h3 Avoimet ilmoittautumiset
+              - Tournament.registration_open.each do |tournament|
+                %ul
+                  %li= link_to tournament.title, new_tournament_ilmo_path(tournament)
         %td
           #content
             = yield

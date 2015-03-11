@@ -140,12 +140,12 @@
           = c.text_area :misc, 'rows' => 5
       %p
         = label_tag 'Olen lukenut säännöt'
-        = check_box_tag(:rule_confirmation)
+        = check_box_tag(:rule_confirmation, checked: false)
       %p
 
-        = f.submit t('common.submit')
+        = f.submit t('common.submit'), disabled: true
     :javascript
-      var ilmoValidator  = new Validator("ilmo_form");
+      var ilmoValidator = new Validator("ilmo_form");
       ilmoValidator.addValidation("player_alias", "req", "#{t('ilmo.req.alias')}");
       ilmoValidator.addValidation("user_first_name", "req", "#{t('ilmo.req.first_name')}");
       ilmoValidator.addValidation("user_last_name", "req", "#{t('ilmo.req.last_name')}");
@@ -159,10 +159,12 @@
       ilmoValidator.EnableOnPageErrorDisplay();
       ilmoValidator.EnableMsgsTogether();
 
+    :javascript
       $('rule_confirmation').click(function() {
-          if($(this).attr('checked') == false) {
-               $('user_submit').attr('disabled','disabled');
-          } else {
-              $('user_submit').removeAttr('disabled');
-          }
+        if ($(this).checked ) {
+            $('user_submit').disabled = false;
+        } else {
+            $('user_submit').disabled = true;
+        }
       });
+

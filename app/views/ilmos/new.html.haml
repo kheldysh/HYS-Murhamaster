@@ -139,7 +139,7 @@
           %br/
           = c.text_area :misc, 'rows' => 5
       %p
-        = label_tag :rules_confirmed, t('ilmo.rules_confirmed', tournament_rules_href: "<a href='http://salamurhaajat.net/pelisaannot/turnaussaannot'>turnauksen säännöt</a>", weapon_rules_href: "<a href='http://salamurhaajat.net/pelisaannot/asesaannot'>asesäännöt</a>")
+        = label_tag :rules_confirmed, t('ilmo.rules_confirmed', tournament_rules_href: link_to('turnauksen säännöt', 'http://salamurhaajat.net/pelisaannot/turnaussaannot'), weapon_rules_href: link_to('asesäännöt', 'http://salamurhaajat.net/pelisaannot/asesaannot'))
         = check_box_tag(:rules_confirmed)
       %p
 

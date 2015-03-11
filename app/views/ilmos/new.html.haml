@@ -1,6 +1,6 @@
 - content_for :head, javascript_include_tag('gen_validatorv4.js')
-%h2{:color => "#CC0000"}= t('ilmo.title_html', :tournament => "#{@player.tournament.title}")
-%h3{:color => "#CC0000"}= t('ilmo.registration_end', :date => @player.tournament.app_deadline_formatted)
+%h2{:color => '#CC0000'}= t('ilmo.title_html', :tournament => "#{@player.tournament.title}")
+%h3{:color => '#CC0000'}= t('ilmo.registration_end', :date => @player.tournament.app_deadline_formatted)
 - if @player.tournament.is_over?
   %p= t('ilmo.tournament_over_disclaimer')
 - else
@@ -13,7 +13,7 @@
       %h3= t('ilmo.already_registered')
     - else
       %h3 Pelaajatiedot
-      = form_for @player, :url => { :controller => :ilmos, :action => :create }, :html => { :id => "ilmo_logged_in_form" } do |p|
+      = form_for(@player, url: {controller: :ilmos, action: :create}, html: {id: 'ilmo_logged_in_form'}) do |p|
         %p
           = p.label t('ilmo.alias')
           %br/
@@ -26,7 +26,7 @@
     %p= t('ilmo.old_user_reminder_html', :login_link => link_to(t('ilmo.to_log_in'), login_path))
     %p= t('ilmo.account_info')
     %b= t('ilmo.problem_info_html')
-    = form_for @player.user, :url => { :controller => :ilmos, :action => :create }, :html => { :id => "ilmo_form", :multipart => true } do |f|
+    = form_for(@player.user, url: {controller: :ilmos, action: :create}, html: {id: 'ilmo_form', multipart: true}) do |f|
       %h3= t('ilmo.player_data')
       = fields_for @player do |p|
         %p
@@ -86,7 +86,7 @@
         = f.label t('ilmo.height')
         %br/
       #ilmo_form_userheight_errorloc.validation_error
-      = f.text_field :height, "size" => 3, "maxlength" => 3
+      = f.text_field :height, 'size' => 3, 'maxlength' => 3
       cm
       %p
         = f.label t('ilmo.hair')
@@ -109,48 +109,60 @@
         %p
           = c.label t('ilmo.monday')
           %br/
-          = c.text_area :monday, "rows" => 5
+          = c.text_area :monday, 'rows' => 5
         %p
           = c.label t('ilmo.tuesday')
           %br/
-          = c.text_area :tuesday, "rows" => 5
+          = c.text_area :tuesday, 'rows' => 5
         %p
           = c.label t('ilmo.wednesday')
           %br/
-          = c.text_area :wednesday, "rows" => 5
+          = c.text_area :wednesday, 'rows' => 5
         %p
           = c.label t('ilmo.thursday')
           %br/
-          = c.text_area :thursday, "rows" => 5
+          = c.text_area :thursday, 'rows' => 5
         %p
           = c.label t('ilmo.friday')
           %br/
-          = c.text_area :friday, "rows" => 5
+          = c.text_area :friday, 'rows' => 5
         %p
           = c.label t('ilmo.saturday')
           %br/
-          = c.text_area :saturday, "rows" => 5
+          = c.text_area :saturday, 'rows' => 5
         %p
           = c.label t('ilmo.sunday')
           %br/
-          = c.text_area :sunday, "rows" => 5
+          = c.text_area :sunday, 'rows' => 5
         %p
           = c.label t('ilmo.other_notes')
           %br/
-          = c.text_area :misc, "rows" => 5
+          = c.text_area :misc, 'rows' => 5
       %p
+        = label_tag 'Olen lukenut säännöt'
+        = check_box_tag(:rule_confirmation)
+      %p
+
         = f.submit t('common.submit')
     :javascript
       var ilmoValidator  = new Validator("ilmo_form");
-      ilmoValidator.addValidation("player_alias", "req", "#{t("ilmo.req.alias")}");
-      ilmoValidator.addValidation("user_first_name", "req", "#{t("ilmo.req.first_name")}");
-      ilmoValidator.addValidation("user_last_name", "req", "#{t("ilmo.req.last_name")}");
-      ilmoValidator.addValidation("user_email", "req", "#{t("ilmo.req.email")}");
-      ilmoValidator.addValidation("user_email", "email", "#{t("ilmo.invalid.email")}");
-      ilmoValidator.addValidation("user_address", "req", "#{t("ilmo.req.address")}");
-      ilmoValidator.addValidation("user_eyes", "req", "#{t("ilmo.req.eyes")}");
-      ilmoValidator.addValidation("user_glasses", "req", "#{t("ilmo.req.glasses")}");
-      ilmoValidator.addValidation("user_height", "req", "#{t("ilmo.req.height")}");
-      ilmoValidator.addValidation("user_hair", "req", "#{t("ilmo.req.hair")}");
+      ilmoValidator.addValidation("player_alias", "req", "#{t('ilmo.req.alias')}");
+      ilmoValidator.addValidation("user_first_name", "req", "#{t('ilmo.req.first_name')}");
+      ilmoValidator.addValidation("user_last_name", "req", "#{t('ilmo.req.last_name')}");
+      ilmoValidator.addValidation("user_email", "req", "#{t('ilmo.req.email')}");
+      ilmoValidator.addValidation("user_email", "email", "#{t('ilmo.invalid.email')}");
+      ilmoValidator.addValidation("user_address", "req", "#{t('ilmo.req.address')}");
+      ilmoValidator.addValidation("user_eyes", "req", "#{t('ilmo.req.eyes')}");
+      ilmoValidator.addValidation("user_glasses", "req", "#{t('ilmo.req.glasses')}");
+      ilmoValidator.addValidation("user_height", "req", "#{t('ilmo.req.height')}");
+      ilmoValidator.addValidation("user_hair", "req", "#{t('ilmo.req.hair')}");
       ilmoValidator.EnableOnPageErrorDisplay();
       ilmoValidator.EnableMsgsTogether();
+
+      $('#rule_confirmation').click(function() {
+          if($(this).attr('checked') == false) {
+               $('#user_submit').attr('disabled','disabled');
+          } else {
+              $('#user_submit').removeAttr('disabled');
+          }
+      });

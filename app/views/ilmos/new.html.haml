@@ -140,7 +140,7 @@
           = c.text_area :misc, 'rows' => 5
       %p
         = label_tag 'Olen lukenut säännöt'
-        = check_box_tag(:rule_confirmation, nil, checked: false)
+        = check_box_tag(:rules_confirmed, 'yes', false)
       %p
 
         = f.submit t('common.submit'), disabled: true
@@ -160,7 +160,7 @@
       ilmoValidator.EnableMsgsTogether();
 
     :javascript
-      $('rule_confirmation').click(function() {
+      $('rules_confirmed').click(function() {
         if ($(this).checked ) {
             $('user_submit').disabled = false;
         } else {

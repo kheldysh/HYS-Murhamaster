@@ -140,7 +140,7 @@
           = c.text_area :misc, 'rows' => 5
       %p
         = label_tag 'Olen lukenut säännöt'
-        = check_box_tag(:rule_confirmation, checked: false)
+        = check_box_tag(:rule_confirmation, nil, checked: false)
       %p
 
         = f.submit t('common.submit'), disabled: true

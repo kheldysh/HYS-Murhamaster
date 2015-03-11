@@ -160,7 +160,7 @@
       ilmoValidator.EnableMsgsTogether();
 
     :javascript
-      $('rules_confirmed').click(function() {
+      $('rules_confirmed').observe('click', function() {
         console.log("foo");
         $('user_submit').disabled = !this.checked;
       });

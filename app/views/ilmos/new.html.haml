@@ -35,7 +35,7 @@
         #ilmo_form_playeralias_errorloc.validation_error
         = p.text_field :alias
       %p
-      - if @tournament.team_game
+      - if @player.tournament.team_game
         = fields_for :team do |t|
           %p
             = t.label t('ilmo.team_name')

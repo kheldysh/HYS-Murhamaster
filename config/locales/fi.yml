@@ -85,6 +85,7 @@ fi:
     saturday: "Lauantai"
     sunday: "Sunnuntai"
     other_notes: "Liikennevälineet, muut huomiot"
+    rules_confirmed: "Olen lukenut sekä <a href="http://salamurhaajat.net/pelisaannot/turnaussaannot">turnauksen säännöt</a> että <a href="http://salamurhaajat.net/pelisaannot/asesaannot">asesäännöt</a> ja lupaan noudattaa niitä."
 
     req:
       alias: "Ole hyvä ja anna peitenimi."

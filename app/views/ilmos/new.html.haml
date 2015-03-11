@@ -139,7 +139,7 @@
           %br/
           = c.text_area :misc, 'rows' => 5
       %p
-        = label_tag :rules_confirmed, 'Olen lukenut säännöt'
+        = label_tag :rules_confirmed, t('ilmo.rules_confirmed')
         = check_box_tag(:rules_confirmed)
       %p
 
@@ -161,7 +161,6 @@
 
     :javascript
       $('rules_confirmed').observe('click', function() {
-        console.log("foo");
         $('user_submit').disabled = !this.checked;
       });
 

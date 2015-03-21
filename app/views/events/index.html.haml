@@ -5,5 +5,5 @@
   - if @is_referee
     = link_to('Muokkaa tapahtumaa', edit_tournament_event_path(@tournament, event))
   %p{class: event}
-    = simple_format(event.content, {class: event}, {sanitize: false})
+    != simple_format(event.content, {class: event}, {sanitize: false})
   %hr

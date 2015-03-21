@@ -1,0 +1,9 @@
+%hr
+
+- @events.reverse.each do |event|
+  %h3{class: event}= "#{finnish_date(event.time)} #{event.title}"
+  - if @is_referee
+    = link_to('Muokkaa tapahtumaa', edit_tournament_event_path(@tournament, event))
+  %p{class: event}
+    = simple_format(event.content, {class: event}, {sanitize: false})
+  %hr

@@ -13,11 +13,11 @@ class SessionsController < ApplicationController
         log_user_in(authenticated_user)
         authenticated_user.last_login = DateTime.now
         authenticated_user.save
-        logger.info "user logged in!"
+        logger.info "user #{params[:user][:username]} logged in!"
         redirect_to root_path
       else
-        flash[:error] = "Login failed, check username and password."
-        logger.info "login failed!"
+        flash[:error] = 'Login failed, check username and password.'
+        logger.info "login failed for username #{params[:user][:username]}!"
         redirect_to login_path
       end
     end

@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   before_create :hash_password
 
   def full_name
-    "#{self.first_name}, #{self.last_name}"
+    "#{self.first_name} #{self.last_name}"
   end
 
   def self.authenticate(username, password)

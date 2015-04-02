@@ -10,9 +10,9 @@ class WarrantsController < ApplicationController
   def new
     @warrant = Warrant.new
     @tournament = Tournament.find(params[:tournament_id])
-    @active_players = @tournament.players.find_all{ |player| player.active? }
-    @detectives = @tournament.players.find_all{ |player| player.detective? }
-    for detective in @detectives
+    @active_players = @tournament.players.find_all(&:active?)
+    detectives = @tournament.players.find_all(&:detective?)
+    detectives.each do |detective|
       @warrant.assignments.build(attributes = {:player => detective})
     end
   end

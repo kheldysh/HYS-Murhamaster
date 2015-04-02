@@ -7,7 +7,7 @@
       %th Kohde
     %tr
       %td.warrant
-        - warrant_form.fields_for :assignments, @warrant.assignments do |assignment_form|
+        = warrant_form.fields_for :assignments, @warrant.assignments do |assignment_form|
           = assignment_form.label(assignment_form.object.player.with_real_name)
           %span.warrant
             = assignment_form.check_box(:player_id, {}, assignment_form.object.player.id)

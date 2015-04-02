@@ -1,5 +1,5 @@
 %h3= @tournament.title
-= form_for([@tournament, @warrant]) do |f|
+= form_for([@tournament, @warrant]) do |warrant_form|
   %table
     %tr
       %th Etsivät
@@ -7,8 +7,7 @@
       %th Kohde
     %tr
       %td.warrant
-        - f.fields_for :assignments do |assignment_form|
-          %p FOO
+        - warrant_form.fields_for :assignments, @warrant.assignments do |assignment_form|
           = assignment_form.label(assignment_form.object.player.with_real_name)
           %span.warrant
             = assignment_form.check_box(:player_id, {}, assignment_form.object.player.id)
@@ -16,5 +15,5 @@
       %td
         \->
       %td
-        = f.collection_select :target_id, @active_players, :id, :with_real_name, {:prompt => '(valitse)'}
-  = f.submit 'Lisää'
+        = warrant_form.collection_select( :target_id, @active_players, :id, :with_real_name, prompt: '(valitse)')
+  = warrant_form.submit 'Lisää'

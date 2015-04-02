@@ -13,13 +13,12 @@ class WarrantsController < ApplicationController
     @active_players = @tournament.players.find_all(&:active?)
     detectives = @tournament.players.find_all(&:detective?)
     @warrant.assignments.build(detectives.map { |detective| {player: detective} })
-    logger.info(@warrant.assignments)
   end
 
   def create
     if params[:warrant]
-      params[:warrant][:assignments_attributes].each do |key, ass|
-        ass[:target_id] = params[:warrant][:target_id]
+      params[:warrant][:assignments_attributes].each do |key, assignment|
+        assignment[:target_id] = params[:warrant][:target_id]
       end
       new_params = purge_assignments(params)
       # if no assignments, don't create warrant

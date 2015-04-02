@@ -12,9 +12,8 @@ class WarrantsController < ApplicationController
     @tournament = Tournament.find(params[:tournament_id])
     @active_players = @tournament.players.find_all(&:active?)
     detectives = @tournament.players.find_all(&:detective?)
-    detectives.each do |detective|
-      @warrant.assignments.build(attributes = {:player => detective})
-    end
+    @warrant.assignments.build(detectives.map { |detective| {player: detective} })
+    logger.info(@warrant.assignments)
   end
 
   def create

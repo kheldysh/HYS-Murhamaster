@@ -26,14 +26,14 @@ class User < ActiveRecord::Base
   before_create :hash_password
 
   def full_name
-    "%s %s" % [ self.first_name, self.last_name ]
+    "#{self.first_name, self.last_name}"
   end
 
   def self.authenticate(username, password)
     user = User.find_by_username(username)
 
     if user && user.password == hash_plaintext_password(password)
-      logger.info "correct info"
+      logger.info 'correct info'
       return user
     else
       return nil

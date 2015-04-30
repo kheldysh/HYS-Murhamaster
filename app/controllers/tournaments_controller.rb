@@ -71,4 +71,10 @@ class TournamentsController < ApplicationController
     logger.info("admin #{current_user.username} seen!") and return true if current_user.admin
     is_referee?
   end
+
+  def is_referee?
+    # a hack to support is_referee? helper within tournaments controller that uses id instead of tournaments_id
+    params[:tournament_id] = params[:id] unless params[:tournament_id]
+    super
+  end
 end

@@ -32,6 +32,6 @@ class RefereesController < ApplicationController
   def destroy
     @referee = Referee.find(params[:id])
     @referee.delete
-    redirect_to :back
+    redirect_to tournament_referees_path
   end
 end

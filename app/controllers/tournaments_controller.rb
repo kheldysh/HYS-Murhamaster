@@ -1,6 +1,6 @@
 class TournamentsController < ApplicationController
 
-  before_filter :is_referee?, :except => [:ilmo, :edit, :update, :index]
+  before_filter :is_referee_or_admin?, :except => [:ilmo, :edit, :update, :index]
   before_filter :is_admin?, :only => [:edit, :update, :index]
 
 
@@ -67,18 +67,8 @@ class TournamentsController < ApplicationController
   end
 
 
-  def is_referee?
-    if current_user.admin
-      return true
-    else
-      tournament = Tournament.find(params[:id])
-      tournament.referees.each do |ref|
-        if current_user.referees.include?(ref)
-          return true
-        end
-      end
-    end
-    redirect_to root_path
+  def is_referee_or_admin?
+    return true if current_user.admin
+    is_referee?
   end
-
 end

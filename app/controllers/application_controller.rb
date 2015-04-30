@@ -38,12 +38,14 @@ class ApplicationController < ActionController::Base
   end
 
   def is_referee?
-    unless current_user.is_referee_for?(Tournament.find(params[:tournament_id]))
+    tournament = Tournament.find(params[:tournament_id])
+    if current_user.is_referee_for?(tournament) && tournament.is_relevant_for_referee?
+      logger.info("user #{current_user.username} accessed a referee-restricted page")
+      true
+    else
       logger.info("user #{current_user.username} tried to access referee-restricted page without permission")
       redirect_to(root_path)
     end
-    logger.info("user #{current_user.username} accessed a referee-restricted page")
-    true
   end
 
   def is_owner_or_referee?

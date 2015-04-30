@@ -15,6 +15,9 @@ class Tournament < ActiveRecord::Base
   scope :not_finished, :conditions => ["finish_date >= ?", Date.today]
   scope :relevant, :conditions => ["finish_date >= ?", Date.today - 30]
 
+  # We give 14 days of headroom for referees to manage the aftergame
+  POSTGAME_VISIBILITY_DAYS = 14
+
   def app_deadline_formatted
     if app_deadline
       app_deadline.strftime("%d.%m.%Y, %H.%M")
@@ -33,9 +36,8 @@ class Tournament < ActiveRecord::Base
     players.waiting_players.length > 0
   end
 
-  # We give 30 days of headroom for referees to manage the aftergame
   def is_relevant_for_referee?
-    Date.today <= finish_date + 30
+    Date.today <= finish_date + POSTGAME_VISIBILITY_DAYS
   end
 
   def self.update_stats(tournament)

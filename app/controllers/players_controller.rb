@@ -55,16 +55,6 @@ class PlayersController < ApplicationController
     redirect_to tournament_players_path(tournament)
   end
 
-  def is_referee? # before_filter
-    @tournament = Tournament.find(params[:tournament_id])
-    current_user.referees.each do |ref|
-      if ref.tournament == @tournament
-        return true
-      end
-    end
-    redirect_to root_path
-  end
-
   private
 
   def kill(player)

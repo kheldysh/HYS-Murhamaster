@@ -6,4 +6,4 @@
     %tr
       %td= h referee.user.full_name
       %td= link_to 'Poista', referee, :method => :delete, :tournament_id => @tournament.id, :id => referee.id
-= link_to "Uusi tuomari", new_tournament_referee_path
+= link_to 'Uusi tuomari', new_tournament_referee_path

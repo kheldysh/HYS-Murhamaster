@@ -13,7 +13,7 @@ class TournamentsController < ApplicationController
 
   def index
     flash.keep
-    @tournaments = Tournament.find(:all)
+    @tournaments = Tournament.all
   end
 
   def show
@@ -68,7 +68,7 @@ class TournamentsController < ApplicationController
 
 
   def is_referee_or_admin?
-    return true if current_user.admin
+    logger.info("admin #{current_user.username} seen!") and return true if current_user.admin
     is_referee?
   end
 end

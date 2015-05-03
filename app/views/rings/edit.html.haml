@@ -16,12 +16,12 @@
   = f.submit 'Päivitä'
 %h4 Lisää toimeksianto
 = form_for([@tournament, @ring, @new_assignment]) do |f|
-    = f.label :Murhaaja
-    %br/
-    = f.collection_select(:player_id, @active_players, :id, :with_real_name)
-    %br/
-    = f.label :Kohde
-    %br/
-    = f.collection_select(:target_id, @active_players, :id, :with_real_name,  prompt: '(valitse)')
+  = f.label :Murhaaja
+  %br/
+  = f.collection_select(:player_id, @active_players, :id, :with_real_name)
+  %br/
+  = f.label :Kohde
+  %br/
+  = f.collection_select(:target_id, @active_players, :id, :with_real_name,  prompt: '(valitse)')
   %p
-    = f.submit 'Lisää'
+  = f.submit 'Lisää'

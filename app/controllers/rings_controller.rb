@@ -40,8 +40,8 @@ class RingsController < ApplicationController
     # TODO: move this to AssignmentController and assignments wholly under rings
     if new_params[:assignment]
       new_assignment = Assignment.new(new_params[:assignment])
-      ring.assignments.push(new_assignment)
-      ring.save
+      new_assignment.ring = ring
+      new_assignment.save
     else
       ring.update_attributes(new_params[:ring])
     end

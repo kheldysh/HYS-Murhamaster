@@ -45,7 +45,7 @@ module HYSMurhamaster
 
     config.autoload_paths += [config.root.join('lib')]
 
-    config.time_zone = 'UTC'
+    config.time_zone = 'Helsinki'
 
   end
 end

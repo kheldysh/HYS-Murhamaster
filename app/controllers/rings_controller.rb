@@ -38,8 +38,8 @@ class RingsController < ApplicationController
     logger.info("params after purging: #{new_params}")
     ring = Ring.find(new_params[:id])
     # TODO: move this to AssignmentController and assignments wholly under rings
-    if new_params[:assignment]
-      new_assignment = Assignment.new(new_params[:assignment])
+    if new_params[:ring][:assignment]
+      new_assignment = Assignment.new(new_params[:ring][:assignment])
       new_assignment.ring = ring
       new_assignment.save
     else

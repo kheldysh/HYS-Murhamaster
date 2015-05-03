@@ -20,6 +20,7 @@
     = f.label :Murhaaja
     %br/
     = new_ass.collection_select(:player_id, @active_players, :id, :with_real_name)
+    %br/
     = f.label :Kohde
     %br/
     = new_ass.collection_select(:target_id, @active_players, :id, :with_real_name,  prompt: '(valitse)')

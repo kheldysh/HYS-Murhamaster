@@ -10,7 +10,7 @@
       %td ->
       %td= h assignment.target.name
       %td= link_to 'Poista', tournament_team_assignment_path(@tournament, assignment), :method => :delete
-= form_for([ @tournament, @new_assignment ]) do |f|
+= form_for([@tournament, @new_assignment]) do |f|
   %p
     = f.label :Murhaajat
     %br/
@@ -20,4 +20,4 @@
     %br/
     = collection_select :team_assignment, :target_id, @tournament.teams, :id, :name
   %p
-    = f.submit "Lisää"
+    = f.submit 'Lisää'

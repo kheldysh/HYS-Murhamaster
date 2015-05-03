@@ -35,7 +35,7 @@ class RingsController < ApplicationController
   
   def update
     new_params = purge_assignments(params)
-    logger.info("params after purging:#{new_params}")
+    logger.info("params after purging: #{new_params}")
     ring = Ring.find(new_params[:id])
     # TODO: move this to AssignmentController and assignments wholly under rings
     if new_params[:assignment]

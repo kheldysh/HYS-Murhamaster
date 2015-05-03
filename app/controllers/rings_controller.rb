@@ -28,31 +28,30 @@ class RingsController < ApplicationController
   end
 
   def edit
-    @tournament = Tournament.find(params[:tournament_id])
-    @active_players = @tournament.players.select(&:active?)
     @ring = Ring.find(params[:id])
+    @active_players = @ring.tournament.players.select(&:active?)
     @new_assignment = Assignment.new
   end
   
   def update
     new_params = purge_assignments(params)
-    @tournament = Tournament.find(new_params[:tournament_id])
-    @ring = Ring.find(new_params[:id])
+    logger.info("params after purging:#{new_params}")
+    ring = Ring.find(new_params[:id])
     # TODO: move this to AssignmentController and assignments wholly under rings
     if new_params[:assignment]
-      @new_assignment = Assignment.new(new_params[:assignment])
-      @ring.assignments.push(@new_assignment)
-      @ring.save
+      new_assignment = Assignment.new(new_params[:assignment])
+      ring.assignments.push(new_assignment)
+      ring.save
     else
-      @ring.update_attributes(new_params[:ring])
+      ring.update_attributes(new_params[:ring])
     end
     redirect_to :tournament_rings
 
   end
   
   def destroy
-    @ring = Ring.find(params[:id])
-    @ring.destroy
+    ring = Ring.find(params[:id])
+    ring.destroy
     redirect_to :tournament_rings
   end
 

@@ -12,5 +12,5 @@
         %td
           \->
         %td
-          = ass_form.collection_select(:target_id, @active_players, :id, :with_real_name, {:prompt => "(valitse)"})
-  = f.submit "Lisää"
+          = ass_form.collection_select(:target_id, @active_players, :id, :with_real_name, prompt: '(valitse)')
+  = f.submit('Lisää')

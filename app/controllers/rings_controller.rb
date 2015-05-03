@@ -84,7 +84,7 @@ class RingsController < ApplicationController
         logger.info('purging assignments_attributes')
         # TODO: move this check to Assignment model and handle it properly
         old_params[:ring][:assignments_attributes].each do |key, assignment|
-          if %{"0", ""}.include?(assignment[:player_id]) || %{"0", ""}.include?(assignment[:target_id])
+          if %{'0', ''}.include?(assignment[:player_id]) || %{'0', ''}.include?(assignment[:target_id])
             old_params[:ring][:assignments_attributes].delete(key)
           elsif assignment[:player_id] == assignment[:target_id]
             old_params[:ring][:assignments_attributes].delete(key)
@@ -92,7 +92,7 @@ class RingsController < ApplicationController
         end
       elsif old_params[:ring][:assignment]
         logger.info('purging single assignment')
-        if old_params[:assignment][:player_id] == "0" || old_params[:assignment][:target_id] == "0"
+        if old_params[:ring][:assignment][:player_id] == '0' || old_params[:ring][:target_id] == '0'
           old_params.delete(:assignment)
         end
       end

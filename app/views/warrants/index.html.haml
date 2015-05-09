@@ -18,7 +18,7 @@
         = h warrant.target.user.full_name
         (#{h warrant.target.alias})
       %td
-        %b= link_to 'Poista etsintäkuulutus', tournament_warrant_path(@tournament, warrant), :method              => :delete, :confirm => 'Haluatko varmasti poistaa etsintäkuulutuksen?'
+        %b= button_to 'Poista etsintäkuulutus', tournament_warrant_path(@tournament, warrant), :method => :delete, :confirm => 'Haluatko varmasti poistaa etsintäkuulutuksen?'
     %tr
       %td
         %br/

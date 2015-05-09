@@ -8,7 +8,7 @@
       %th
         %b= link_to 'Muokkaa rengasta', edit_tournament_ring_path(@tournament, ring)
         \/
-        = button_to 'Poista rengas', tournament_ring_path(@tournament, ring), :method => :delete, :confirm => 'Haluatko varmasti poistaa renkaan?'
+        = link_to 'Poista rengas', tournament_ring_path(@tournament, ring, :authenticity_token => form_authenticity_token), :method => :delete, :confirm => 'Haluatko varmasti poistaa renkaan?'
     - for assignment in ring.assignments
       %tr
         %td

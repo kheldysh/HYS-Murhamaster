@@ -9,7 +9,7 @@
       %td= h assignment.team.name
       %td ->
       %td= h assignment.target.name
-      %td= link_to 'Poista', tournament_team_assignment_path(@tournament, assignment), :method => :delete
+      %td= button_to 'Poista', tournament_team_assignment_path(@tournament, assignment), :method => :delete
 = form_for([@tournament, @new_assignment]) do |f|
   %p
     = f.label :Murhaajat

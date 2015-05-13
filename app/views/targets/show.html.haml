@@ -1,12 +1,12 @@
 %h2= @target.tournament.title
 - if @referee
-  = link_to "Muokkaa pelaajan tietoja", edit_tournament_target_path(@target.tournament, @target)
+  = link_to 'Muokkaa pelaajan tietoja', edit_tournament_target_path(@target.tournament, @target)
 %br/
 - if @target.user.picture
   = image_tag(@target.user.picture.url)
 - else
   %b PELAAJALLA EI KUVAA TOISTAISEKSI
-%table.top_align{:cellspacing => "20"}
+%table.top_align{:cellspacing => '20'}
   %tr
     %th
       %h3 Perustiedot
@@ -32,7 +32,7 @@
             = @target.alias
       %p
         %b Nimi:
-        = h "%s %s" % [ @user.first_name, @user.last_name ]
+        = h "#{@user.first_name} #{@user.last_name}"
       - if @target.team != nil
         %p
           %b Joukkue:

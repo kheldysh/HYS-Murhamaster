@@ -1,8 +1,8 @@
 - content_for :head, javascript_include_tag('gen_validatorv4.js')
-%h2{:color => "#CC0000"}= t('ilmo.title_html', :tournament => "#{@player.tournament.title}")
-%h3{:color => "#CC0000"}= t('ilmo.registration_end', :date => @player.tournament.app_deadline_formatted)
+%h2{:color => '#CC0000'}= t('ilmo.title_html', :tournament => '#{@player.tournament.title}')
+%h3{:color => '#CC0000'}= t('ilmo.registration_end', :date => @player.tournament.app_deadline_formatted)
 %p
-  = form_for @player.user, :url => { :controller => :"special_tournaments/ilmos", :action => :create }, :html => { :id => "ilmo_form", :multipart => true } do |f|
+  = form_for @player.user, :url => { :controller => :'special_tournaments/ilmos', :action => :create }, :html => { :id => 'ilmo_form', :multipart => true } do |f|
     %h3= t('ilmo.player_data')
     = fields_for @player do |p|
       %p
@@ -10,64 +10,63 @@
         %br/
       #ilmo_form_playeralias_errorloc.validation_error
       = p.text_field :alias
-%p
-  = f.label t('ilmo.first_name')
-  %br/
-  #ilmo_form_userfirst_name_errorloc.validation_error
-  = f.text_field :first_name
-%p
-  = f.label t('ilmo.last_name')
-  %br/
-  #ilmo_form_userlast_name_errorloc.validation_error
-  = f.text_field :last_name
-%p.secret
-  = f.label t('ilmo.phone')
-  %br/
-  = f.text_field :phone
-%p
-  = f.label t('ilmo.eyes')
-  %br/
-  #ilmo_form_usereyes_errorloc.validation_error
-  = f.text_field :eyes
-%p
-  = f.label t('ilmo.glasses')
-  %br/
-  #ilmo_form_usereyes_errorloc.validation_error
-  = f.select( :glasses, [ t('ilmo.always'), t('ilmo.sometimes'), t('ilmo.glasses_no') ] )
-%p
-  = f.label t('ilmo.height')
-  %br/
-  #ilmo_form_userheight_errorloc.validation_error
-  = f.text_field :height, "size" => 3, "maxlength" => 3
-  cm
-%p
-  = f.label t('ilmo.hair')
-  %br/
-  #ilmo_form_userhair_errorloc.validation_error
-  = f.text_field :hair
-%p
-  = f.label t('ilmo.other_characteristics')
-  %br/
-  = f.text_field :other_notes
-/ <br />
-  %br/
-  / </p>
-  %h3= t('ilmo.calendar')
-  = fields_for @player.user.calendar do |c|
     %p
-      = c.label "Ohjelma"
+      = f.label t('ilmo.first_name')
       %br/
-      = c.text_area :misc, "rows" => 5
-  %p
-    = f.submit t('common.submit')
+      #ilmo_form_userfirst_name_errorloc.validation_error
+      = f.text_field :first_name
+    %p
+      = f.label t('ilmo.last_name')
+      %br/
+      #ilmo_form_userlast_name_errorloc.validation_error
+      = f.text_field :last_name
+    %p.secret
+      = f.label t('ilmo.phone')
+      %br/
+      = f.text_field :phone
+    %p
+      = f.label t('ilmo.eyes')
+      %br/
+      #ilmo_form_usereyes_errorloc.validation_error
+      = f.text_field :eyes
+    %p
+      = f.label t('ilmo.glasses')
+      %br/
+      #ilmo_form_usereyes_errorloc.validation_error
+      = f.select( :glasses, [ t('ilmo.always'), t('ilmo.sometimes'), t('ilmo.glasses_no') ] )
+    %p
+      = f.label t('ilmo.height')
+      %br/
+      #ilmo_form_userheight_errorloc.validation_error
+      = f.text_field :height, 'size' => 3, 'maxlength' => 3
+      cm
+    %p
+      = f.label t('ilmo.hair')
+      %br/
+      #ilmo_form_userhair_errorloc.validation_error
+      = f.text_field :hair
+    %p
+      = f.label t('ilmo.other_characteristics')
+      %br/
+      = f.text_field :other_notes
+      %br/
+      / </p>
+      %h3= t('ilmo.calendar')
+      = fields_for @player.user.calendar do |c|
+        %p
+          = c.label 'Ohjelma'
+          %br/
+          = c.text_area :misc, 'rows' => 5
+      %p
+        = f.submit t('common.submit')
 :javascript
-  var ilmoValidator  = new Validator("ilmo_form");
-  ilmoValidator.addValidation("player_alias", "req", "#{t("ilmo.req.alias")}");
-  ilmoValidator.addValidation("user_first_name", "req", "#{t("ilmo.req.first_name")}");
-  ilmoValidator.addValidation("user_last_name", "req", "#{t("ilmo.req.last_name")}");
-  ilmoValidator.addValidation("user_eyes", "req", "#{t("ilmo.req.eyes")}");
-  ilmoValidator.addValidation("user_glasses", "req", "#{t("ilmo.req.glasses")}");
-  ilmoValidator.addValidation("user_height", "req", "#{t("ilmo.req.height")}");
-  ilmoValidator.addValidation("user_hair", "req", "#{t("ilmo.req.hair")}");
+  var ilmoValidator  = new Validator('ilmo_form');
+  ilmoValidator.addValidation('player_alias', 'req', '#{t('ilmo.req.alias')}');
+  ilmoValidator.addValidation('user_first_name', 'req', '#{t('ilmo.req.first_name')}');
+  ilmoValidator.addValidation('user_last_name', 'req', '#{t('ilmo.req.last_name')}');
+  ilmoValidator.addValidation('user_eyes', 'req', '#{t('ilmo.req.eyes')}');
+  ilmoValidator.addValidation('user_glasses', 'req', '#{t('ilmo.req.glasses')}');
+  ilmoValidator.addValidation('user_height', 'req', '#{t('ilmo.req.height')}');
+  ilmoValidator.addValidation('user_hair', 'req', '#{t('ilmo.req.hair')}');
   ilmoValidator.EnableOnPageErrorDisplay();
   ilmoValidator.EnableMsgsTogether();

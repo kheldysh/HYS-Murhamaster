@@ -1,5 +1,5 @@
 - content_for :head, javascript_include_tag('gen_validatorv4.js')
-%h2{:color => '#CC0000'}= t('ilmo.title_html', :tournament => '#{@player.tournament.title}')
+%h2{:color => '#CC0000'}= t('ilmo.title_html', :tournament => "#{@player.tournament.title}")
 %h3{:color => '#CC0000'}= t('ilmo.registration_end', :date => @player.tournament.app_deadline_formatted)
 %p
   = form_for @player.user, :url => { :controller => :'special_tournaments/ilmos', :action => :create }, :html => { :id => 'ilmo_form', :multipart => true } do |f|

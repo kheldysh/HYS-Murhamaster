@@ -1,6 +1,6 @@
 HYSMurhamaster::Application.routes.draw do
 
-  root :to => 'tournaments#index'
+  root to: 'tournaments#index'
 
   resources :teams do
     resources :players
@@ -12,7 +12,7 @@ HYSMurhamaster::Application.routes.draw do
     resources :ilmos
     resources :players
     resources :referees
-    resources :teams, :controller => "tournaments/teams"
+    resources :teams, controller: 'tournaments/teams'
     resources :team_assignments
     resources :targets
     resources :rings do
@@ -23,7 +23,8 @@ HYSMurhamaster::Application.routes.draw do
   end
 
   resources :special_tournaments do
-    resources :ilmos, :controller => "special_tournaments/ilmos"
+    resources :ilmos, controller: 'special_tournaments/ilmos'
+    resources :targets, controller: 'special_tournaments/targets'
   end
 
   resources :referees do
@@ -39,7 +40,7 @@ HYSMurhamaster::Application.routes.draw do
   match '/tournaments/:tournament_id/targets/:id/print' => 'targets#print'
   match '/users/:id/reset_password' => 'users#reset_password'
   # match '/images/*file_name' => 'pictures#display'
-  match 'pictures/:id/:style.:format', :controller => 'pictures', :action => 'display', :conditions => { :method => :get }
+  match 'pictures/:id/:style.:format', controller: 'pictures', action: 'display', conditions: { method: :get }
   resource :session
   match '/login' => 'users#index', :as => :login
   match '/logout' => 'sessions#destroy', :as => :logout

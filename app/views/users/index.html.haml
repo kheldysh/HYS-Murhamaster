@@ -1,9 +1,9 @@
 %h3= t('open_registrations')
 - Tournament.registration_open.each do |tournament|
   %ul
-    = if tournament.special_event?
+    - if tournament.special_event?
       %li= link_to tournament.title, new_special_tournament_ilmo_path(tournament)
-    = else
+    - else
       %li= link_to tournament.title, new_tournament_ilmo_path(tournament)
 
 %h1 Login

@@ -1,0 +1,9 @@
+- @targets.each do |target|
+  %div
+    %div
+      - if @target.user.picture
+        = image_tag(@target.user.picture.url)
+      - else
+        %b PELAAJALLA EI KUVAA TOISTAISEKSI
+    %div
+      %p= link_to(target.user.full_name, special_tournament_target_path(target.tournament, target))

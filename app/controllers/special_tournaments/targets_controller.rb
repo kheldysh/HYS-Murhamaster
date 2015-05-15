@@ -1,5 +1,5 @@
 class SpecialTournaments::TargetsController < ApplicationController
-  before_filter is_special_tournament?
+  before_filter :is_special_tournament?
 
   def index
     @targets = Tournament.find(params[:special_tournament_id]).players

@@ -10,7 +10,7 @@ class SpecialTournaments::TargetsController < ApplicationController
   end
 
   def is_special_tournament?
-    return true if t.special_event?
+    return true if Tournament.find(params[:special_tournament_id]).special_event?
     render root
   end
 end

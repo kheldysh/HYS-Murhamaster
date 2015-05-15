@@ -51,14 +51,21 @@
       = f.text_field :other_notes
       %br/
       / </p>
-      %h3= t('ilmo.calendar')
-      = fields_for @player.user.calendar do |c|
-        %p
-          = c.label 'Ohjelma'
-          %br/
-          = c.text_area :misc, 'rows' => 5
+    = fields_for @player.user.picture do |pic|
       %p
-        = f.submit t('common.submit')
+        = t('ilmo.pic_size_caveat_html')
+        %br/
+        = pic.label t('ilmo.picture')
+        %br/
+        = pic.file_field :photo
+    %h3= t('ilmo.calendar')
+    = fields_for @player.user.calendar do |c|
+      %p
+        = c.label 'Ohjelma'
+        %br/
+        = c.text_area :misc, 'rows' => 5
+    %p
+      = f.submit t('common.submit')
 :javascript
   var ilmoValidator  = new Validator('ilmo_form');
   ilmoValidator.addValidation('player_alias', 'req', '#{t('ilmo.req.alias')}');

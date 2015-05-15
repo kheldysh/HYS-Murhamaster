@@ -1,4 +1,4 @@
-class TargetsController < ApplicationController
+class SpecialTournaments::TargetsController < ApplicationController
   before_filter is_special_tournament?
 
   def index

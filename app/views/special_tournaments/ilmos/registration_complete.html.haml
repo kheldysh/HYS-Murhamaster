@@ -3,5 +3,5 @@
   - if @mail_sent
     = t('ilmo.complete.registration_received', :tournament => "#{@tournament.title}")
   - else
-    = "Kiitos ilmoittautumisesta! Kohteiden jako tapahtuu Käpyaulassa lauantaina klo 10.30-11.30."
-  = link_to "Takaisin ilmoittautumislomakkeeseen", new_special_tournament_ilmo_path(@tournament)
+    = 'Kiitos ilmoittautumisesta! Peli käynnistyy lauantaina klo 10.00.'
+  = link_to 'Takaisin ilmoittautumislomakkeeseen', new_special_tournament_ilmo_path(@tournament)

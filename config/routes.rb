@@ -47,5 +47,5 @@ HYSMurhamaster::Application.routes.draw do
   match '/logout' => 'sessions#destroy', :as => :logout
 
   # FIXME dirty hack for ropecon
-  match '/ropecon' => 'special_tournaments#targets'
+  match '/ropecon', controller: SpecialTournaments::PlayersController, action: 'index'
 end

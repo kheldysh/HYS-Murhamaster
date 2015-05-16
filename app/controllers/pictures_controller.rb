@@ -1,8 +1,8 @@
 class PicturesController < ApplicationController
 
-  skip_filter :is_authenticated?, only: display
+  skip_before_filter :is_authenticated?, :only => [:display]
   before_filter :is_owner_or_referee?, :only => [:edit, :update, :create]
-  before_filter :is_own_or_targets_picture?, :only => :display
+  before_filter :is_own_or_targets_picture?, :only => [:display]
 
   def edit
     @picture = Picture.new

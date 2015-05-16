@@ -1,5 +1,5 @@
 class SpecialTournaments::TargetsController < ApplicationController
-  skip_before_filter :is_authenticated?
+  skip_filter :is_authenticated?
   before_filter :is_special_tournament?
 
   def index

@@ -1,8 +1,8 @@
 class PicturesController < ApplicationController
 
+  skip_filter :is_authenticated?, only: display
   before_filter :is_owner_or_referee?, :only => [:edit, :update, :create]
   before_filter :is_own_or_targets_picture?, :only => :display
-  skip_before_filter :is_authenticated?, only: display
 
   def edit
     @picture = Picture.new
@@ -51,7 +51,7 @@ class PicturesController < ApplicationController
   def is_own_or_targets_picture?
     logger.info "is_own_or_targets_picture"
     @picture = Picture.find(params[:id])
-
+    # FIXME: special tournament handling with unauthenticated users should lie elsewhere
     return true if @picture.user.players.map(&:tournament).any? { |t| t.is_running? && t.special_event? }
 
     if current_user == @picture.user

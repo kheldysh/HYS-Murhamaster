@@ -44,7 +44,7 @@ class PicturesController < ApplicationController
   def display
     picture = Picture.find_by_id(params[:id])
     head(:not_found) and return unless picture
-    redirect_to picture.authenticated_url(params[:display])
+    redirect_to picture.authenticated_url(params[:style])
   end
 
   def is_own_or_targets_picture?

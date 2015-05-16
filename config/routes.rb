@@ -40,7 +40,7 @@ HYSMurhamaster::Application.routes.draw do
   match '/tournaments/:tournament_id/targets/:id/print' => 'targets#print'
   match '/users/:id/reset_password' => 'users#reset_password'
   # match '/images/*file_name' => 'pictures#display'
-  match 'pictures/:id/:style.:format', controller: 'pictures', action: 'display', conditions: { method: :get }
+  # match 'pictures/:id/:style.:format', controller: 'pictures', action: 'display', conditions: { method: :get }
   resource :session
   match '/login' => 'users#index', :as => :login
   match '/logout' => 'sessions#destroy', :as => :logout

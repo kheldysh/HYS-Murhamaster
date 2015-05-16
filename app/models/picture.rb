@@ -22,8 +22,8 @@ class Picture < ActiveRecord::Base
     Paperclip::Interpolations.interpolate('/:class/:id/:style.:extension', photo, style)
   end
 
-  def authenticated_url
-    photo.expiring_url(60, :standard)
+  def authenticated_url(style = :standard)
+    photo.expiring_url(60, style)
   end
 
 end

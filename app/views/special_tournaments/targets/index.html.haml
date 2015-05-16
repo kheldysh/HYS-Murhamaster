@@ -1,8 +1,8 @@
 - @targets.each do |target|
   %div
     %div
-      - if @target.user.picture
-        = image_tag(@target.user.picture.url)
+      - if target.user.picture
+        = image_tag(target.user.picture.url)
       - else
         %b PELAAJALLA EI KUVAA TOISTAISEKSI
     %div

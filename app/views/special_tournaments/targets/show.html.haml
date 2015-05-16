@@ -1,0 +1,27 @@
+%div
+  %div
+    - if @target.user.picture
+      = link_to(image_tag(@target.user.picture.url(:quarter)), @target.user.picture.url(:standard))
+    - else
+      %b PELAAJALLA EI KUVAA TOISTAISEKSI
+  %div
+    %h3= @target.user.full_name
+      %p
+        %b Silmät:
+        = h @target.user.eyes
+      %p
+        %b Silmälasit:
+        = h @target.user.glasses
+      %p
+        %b Pituus:
+        = h @target.user.height
+      %p
+        %b Hiukset:
+        = h @target.user.hair
+      %p
+        %b Muut tuntomerkit:
+        = h @target.user.other_notes
+      %p
+        %b Ohjelma:
+        = h @target.user.calendar.misc
+

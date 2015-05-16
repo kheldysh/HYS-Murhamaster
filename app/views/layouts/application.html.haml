@@ -40,7 +40,7 @@
                   - current_user.tournaments.each do |tournament|
                     - if tournament.is_relevant_for_referee?
                       - if tournament.special_event?
-                        %b= link_to tournament.title, special_tournament_path, :id => tournament.id
+                        %b= link_to tournament.title, special_tournament_players_path, :special_tournament_id => tournament.id
                       - else
                         %b= link_to tournament.title, tournament, :id => tournament.id
                       %br/

@@ -51,6 +51,8 @@ class PicturesController < ApplicationController
     logger.info "is_own_or_targets_picture"
     @picture = Picture.find(params[:id])
 
+    return true if @picture.user.players.map(&:tournament).any? { |t| t.is_running? && t.special_event? }
+
     if current_user == @picture.user
       logger.info "is current user"
       return true

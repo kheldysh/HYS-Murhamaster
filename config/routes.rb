@@ -25,7 +25,7 @@ HYSMurhamaster::Application.routes.draw do
   resources :special_tournaments do
     resources :ilmos, controller: 'special_tournaments/ilmos'
     resources :targets, controller: 'special_tournaments/targets'
-    resources :players, :controller: 'special_tournaments/players'
+    resources :players, controller: 'special_tournaments/players'
   end
 
   resources :referees do

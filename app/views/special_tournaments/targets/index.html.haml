@@ -2,7 +2,7 @@
   %div
     %div
       - if target.user.picture
-        = image_tag(target.user.picture.url, size: '480')
+        = image_tag(target.user.picture.url(:quarter))
       - else
         %b PELAAJALLA EI KUVAA TOISTAISEKSI
     %div

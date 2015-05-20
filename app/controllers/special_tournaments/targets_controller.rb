@@ -13,12 +13,12 @@ class SpecialTournaments::TargetsController < ApplicationController
 
   def is_special_tournament?
     return true if Tournament.find(params[:special_tournament_id]).special_event?
-    redirect_to(root)
+    redirect_to(root_path)
   end
 
   def tournament_running?
     return true if Tournament.find(params[:special_tournament_id]).is_running?
-    redirect_to(root)
+    redirect_to(root_path)
   end
 end
 

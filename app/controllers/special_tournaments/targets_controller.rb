@@ -1,6 +1,7 @@
 class SpecialTournaments::TargetsController < ApplicationController
   skip_filter :is_authenticated?
   before_filter :is_special_tournament?
+  before_filter :tournament_running?
 
   def index
     @targets = Tournament.find(params[:special_tournament_id]).players.active_players
@@ -12,6 +13,11 @@ class SpecialTournaments::TargetsController < ApplicationController
 
   def is_special_tournament?
     return true if Tournament.find(params[:special_tournament_id]).special_event?
+    render root
+  end
+
+  def tournament_running?
+    return true if Tournament.find(params[:special_tournament_id]).is_running?
     render root
   end
 end

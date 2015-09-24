@@ -45,7 +45,7 @@ before_filter :is_referee?, :only => :index
 
     if @tournament.team_game
       team_name = params[:team] ? params[:team][:name] : nil
-      logger.info("searching for existing team with name: %s" % team_name)
+      logger.info('searching for existing team with name: %s' % team_name)
       @team = Team.find_by_tournament_id_and_name(@tournament.id, team_name) || Team.new(params[:team])
     end
 
@@ -70,6 +70,7 @@ before_filter :is_referee?, :only => :index
       username = generate_username(params[:user][:last_name], params[:user][:first_name])
       passwd = generate_passwd(params[:player][:alias])
       @user = User.new(params[:user])
+      logger.info("creating new user: #{@user.first_name} #{@user.last_name} (#{@player.alias}), username #{username}")
       @user.username = username
       @user.password = passwd
 
@@ -114,15 +115,15 @@ before_filter :is_referee?, :only => :index
 
   def send_registration_mails(username = nil, password = nil)
     begin
-      logger.info "sending registration mails"
+      logger.info 'sending registration mails'
       IlmoMailer.referee_message(@player).deliver if @player.tournament.send_registration_announcements_to_referees
       IlmoMailer.player_message(@player, username, password).deliver
       @player.registration_email_sent = true
       @player.save
-      logger.info "registration mails sent succesfully"
+      logger.info 'registration mails sent succesfully'
       return true
     rescue Exception => e
-      logger.info "failed to send registration mails!"
+      logger.info 'failed to send registration mails!'
       logger.info e
       @player.registration_email_sent = false
       @player.save
@@ -132,14 +133,14 @@ before_filter :is_referee?, :only => :index
 
   def generate_username(last_name, first_name)
     lname_max = 8
-    last_name.gsub!(/\W/, '') # leave only alphanumerals (and underscore)
+    last_name = last_name.gsub(/\W/, '') # leave only alphanumerals (and underscore)
     last_name = last_name.length > lname_max ? last_name[0..lname_max] : last_name # overtly long usernames are bad
-    username = last_name.downcase + first_name.downcase[0..0] # last name plus first char of first name
+    username = last_name.downcase + first_name.gsub(/\W/, '').downcase[0..0] # last name plus first char of first name
     return User.augment_if_exists(username)
   end
 
   def generate_passwd(covername) # generates quasi-random, yet memorizable passwd
-    covername.gsub!(/\W/, '') # leave only alphanumerals (and underscore)
+    covername = covername.gsub(/\W/, '') # leave only alphanumerals (and underscore)
     cover_slice = covername[0..5].downcase
 
     time_hash = Digest::MD5.hexdigest(Time.now.to_s+covername+rand().to_s)

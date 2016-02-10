@@ -1,5 +1,3 @@
-I18n.default_locale = "fi"
-
 LOCALES_DIRECTORY="#{Rails.root}/config/locales"
 
 LANGUAGES = {

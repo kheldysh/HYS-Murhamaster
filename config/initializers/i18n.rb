@@ -1,6 +1,6 @@
 I18n.default_locale = "fi"
 
-LOCALES_DIRECTORY="#{RAILS_ROOT}/config/locales"
+LOCALES_DIRECTORY="#{Rails.root}/config/locales"
 
 LANGUAGES = {
   "Suomi" => "fi",

@@ -38,6 +38,7 @@ HYSMurhamaster::Application.routes.draw do
     resource :picture
   end
 
+  get '/tournaments/:tournament_id/register', to: 'ilmos#new', as: :tournament_register
   match '/tournaments/:tournament_id/targets/:id/print' => 'targets#print'
   match '/users/:id/reset_password' => 'users#reset_password'
   # match '/images/*file_name' => 'pictures#display'

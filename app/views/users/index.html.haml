@@ -4,7 +4,7 @@
     - if tournament.special_event?
       %li= link_to tournament.title, new_special_tournament_ilmo_path(tournament)
     - else
-      %li= link_to tournament.title, new_tournament_ilmo_path(tournament)
+      %li= link_to tournament.title, tournament_registration_path(tournament)
 
 %h1 Login
 = form_for(@user, url: session_url) do |f|

@@ -30,7 +30,7 @@ en:
     title_html: "Player registration for <i>%{tournament}</i> tournament"
     registration_end: "Registration ends %{date}."
     instructions: "Fill out the details as accurately as possible. This will make the game more enjoyable both for you and the others. Fields marked with an asterisk (*) are required for registration, other fields can be filled in afterwards. Fields marked with red color are for the umpires' eyes only. The umpires may make additions to the given information and ask for supplementary details, if necessary. The schedule can be (and should be) updated during the game."
-    payment: "Tournament fee is five (5) euros. Payment instructions will be provided upon the start of the tournament."
+    payment: "A possible tournament fee is declared on the tournament info page. The umpires will provide payment details when necessary."
 
     team_game_reminder: "NB: In a team game, every team member should register separately!"
 
@@ -130,7 +130,7 @@ en:
     month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
     abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
     # Used in date_select and datime_select.
-    order: 
+    order:
       - :year
       - :month
       - :day

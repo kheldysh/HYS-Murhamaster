@@ -30,7 +30,7 @@ fi:
     registration_end: "Rekisteröityminen päättyy %{date}."
 
     instructions: "Täytä tiedot mahdollisimman yksityiskohtaisesti. Pelistä tulee silloin huomattavasti paljon hauskempi sekä sinun että muiden osalta. Tähdellä (*) merkityt kohdat ovat pakollisia välittömästi, muut kohdat voi täyttää myöhemmin. Punaisella merkityt kohdat jäävät tuomariston tietoon. Tuomaristo voi harkintansa mukaan muokata ilmoittautumistietoja ja pyytää niihin täydennyksiä. Aikataulua voi (ja täytyy) täydentää ja muokata pelin aikana."
-    payment: "Turnauksen osallistumismaksu on viisi (5) euroa. Tuomaristo kertoo maksuohjeet pelin alkaessa."
+    payment: "Mahdollisesta turnausmaksusta on kerrottu pelin infosivulla ja tuomaristo tiedottaa maksuohjeista tarvittaessa."
     team_game_reminder: "Muistattehan, että joukkupelissä kaikkien joukkueen jäsenien tulee ilmoittautua erikseen!"
 
     tournament_over_disclaimer: "Turnaus on ohi. Kiitos kaikille osallistuneille!"
@@ -123,7 +123,7 @@ fi:
     abbr_day_names: [su, ma, ti, ke, to, pe, la]
     month_names: [~, tammikuu, helmikuu, maaliskuu, huhtikuu, toukokuu, kesäkuu, heinäkuu, elokuu, syyskuu, lokakuu, marraskuu, joulukuu]
     abbr_month_names: [~, tammi, helmi, maalis, huhti, touko, kesä, heinä, elo, syys, loka, marras, joulu]
-    order: 
+    order:
       - :day
       - :month
       - :year

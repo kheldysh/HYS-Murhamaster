@@ -154,8 +154,8 @@
         = label_tag :rules_confirmed, t('ilmo.rules_confirmed', tournament_rules_href: link_to('turnauksen säännöt', 'http://salamurhaajat.net/pelisaannot/turnaussaannot'), weapon_rules_href: link_to('asesäännöt', 'http://salamurhaajat.net/pelisaannot/asesaannot')).html_safe
         = check_box_tag(:rules_confirmed)
       %p
+        = f.submit t('common.submit'), disabled: false
 
-        = f.submit t('common.submit'), disabled: true
     :javascript
       var ilmoValidator = new Validator("ilmo_form");
       ilmoValidator.addValidation("player_alias", "req", "#{t('ilmo.req.alias')}");
@@ -171,8 +171,8 @@
       ilmoValidator.EnableOnPageErrorDisplay();
       ilmoValidator.EnableMsgsTogether();
 
-    :javascript
-      $('rules_confirmed').observe('click', function() {
-        $('user_submit').disabled = !this.checked;
-      });
-
+    -#
+      :javascript
+        $('rules_confirmed').observe('click', function() {
+          $('user_submit').disabled = !this.checked;
+        });

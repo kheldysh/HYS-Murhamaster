@@ -18,6 +18,8 @@ class Picture < ActiveRecord::Base
                     s3_host_name: 's3-eu-west-1.amazonaws.com',
                     bucket: ENV['AWS_BUCKET']
 
+  validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
   def url(style = :standard)
     Paperclip::Interpolations.interpolate('/:class/:id/:style.:extension', photo, style)
   end

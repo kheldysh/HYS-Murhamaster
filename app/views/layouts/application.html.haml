@@ -17,7 +17,7 @@
             = select_tag 'locale', options_for_select(LANGUAGES, I18n.locale), |
               :onchange => 'this.form.submit()'                                |
             = submit_tag 'submit'
-            = javascript_tag "$$('.locale input').each(Element.hide)"
+            = javascript_tag "$('.locale input').each(Element.hide)"
     - if flash[:notice]
       %p{:style => 'color: green'}= flash[:notice]
     - elsif flash[:alert]

@@ -34,7 +34,7 @@
       %tr
         %td= h player.user.full_name
         %td= h player.alias
-        %td= link_to player.real_name, tournament_target_path(@tournament, player)
+        %td= link_to player.real_name, tournament_player_path(@tournament, player)
         %td
           - if player.referee != nil
             = h player.referee.user.full_name

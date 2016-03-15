@@ -15,14 +15,8 @@
     %td
       %p
         - if @referee
-          %i
-            Kirjautunut viimeksi: #{nil_date_handler(@user.last_login)}
-          %p
-            %b Sähköposti:
-            = h @user.email
-          %p
-            %b Puhelin:
-            = h @user.phone
+          %i Kirjautunut viimeksi: #{nil_date_handler(@user.last_login)}
+      %p
         %b Nimi:
         = h "%s %s" % [ @user.first_name, @user.last_name ]
       %p

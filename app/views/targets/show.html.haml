@@ -16,7 +16,7 @@
       %h3
   %tr
     %td
-      - if @referee
+      - if current_user.is_referee_for?(@target.tournament)
         %i
           Kirjautunut viimeksi: #{nil_date_handler(@user.last_login)}
         %p

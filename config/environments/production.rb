@@ -34,14 +34,14 @@ HYSMurhamaster::Application.configure do
   # Enable serving of images, stylesheets, and javascripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
 
-  # Disable delivery errors, bad email addresses will be ignored
+  # Disable delivery e§rrors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :address        => "mail.salamurhaajat.net",
-      :port           => "25",
-      :domain         => "salamurhaajat.net",
+      :address        => ENV['SMTP_SERVER'],
+      :port           => ENV['SMTP_PORT'],
+      :domain         => ENV['SMTP_DOMAIN'],
       :user_name      => ENV['SMTP_USER'],
       :password       => ENV['SMTP_PASSWD'],
       :authentication => :plain,

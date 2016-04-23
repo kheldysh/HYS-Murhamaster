@@ -114,19 +114,23 @@ before_filter :is_referee?, :only => :index
   # end
 
   def send_registration_mails(username = nil, password = nil)
+    logger.info 'sending registration mails'
     begin
-      logger.info 'sending registration mails'
       IlmoMailer.referee_message(@player).deliver if @player.tournament.send_registration_announcements_to_referees
+      logger.info 'referee info mail sent succesfully'
+    rescue Exception => e
+      logger.info 'failed to send referee info mail!'
+      logger.info e
+    end
+    begin
       IlmoMailer.player_message(@player, username, password).deliver
-      @player.registration_email_sent = true
-      @player.save
-      logger.info 'registration mails sent succesfully'
+      @player.update_attribute(:registration_email_sent, true)
+      logger.info 'registration mail sent succesfully'
       return true
     rescue Exception => e
-      logger.info 'failed to send registration mails!'
+      logger.info 'failed to send registration mail!'
       logger.info e
-      @player.registration_email_sent = false
-      @player.save
+      @player.update_attribute(:registration_email_sent, false)
       return false
     end
   end
@@ -167,4 +171,3 @@ before_filter :is_referee?, :only => :index
   end
 
 end
-

@@ -15,7 +15,6 @@ class IlmoMailer < ActionMailer::Base
     @username = username
     @passwd = passwd
     subject = "Ilmoittautumisvahvistus turnaukseen #{player.tournament.title}"
-    content_type 'text/plain'
     mail(to: player.user.email,  subject: subject, content_type: 'text/plain')
   end
 end

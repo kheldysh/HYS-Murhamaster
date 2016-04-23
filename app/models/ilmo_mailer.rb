@@ -6,7 +6,7 @@ class IlmoMailer < ActionMailer::Base
     @user = player.user
     @player = player
     subject = "#{player.tournament.title}, ilmoittautuminen: #{player.user.full_name} (#{player.alias})"
-    mail(to: => ENV['REFEREE_EMAIL'], subject: subject, content_type: 'text/plain')
+    mail(to: ENV['REFEREE_EMAIL'], subject: subject, content_type: 'text/plain')
   end
 
   def player_message(player, username, passwd)

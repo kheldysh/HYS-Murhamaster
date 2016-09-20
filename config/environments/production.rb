@@ -45,7 +45,7 @@ HYSMurhamaster::Application.configure do
       :user_name      => ENV['SMTP_USER'],
       :password       => ENV['SMTP_PASSWD'],
       :authentication => :plain,
-      :openssl_verify_mode => OpenSSL::SSL::VERIFY_NONE
+      :enable_starttls_auto => true
   }
 
   # Enable threaded mode

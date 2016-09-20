@@ -120,8 +120,8 @@ before_filter :is_referee?, :only => :index
       logger.info 'referee info mail sent succesfully'
     rescue Exception => e
       logger.info 'failed to send referee info mail!'
-      logger.info e
-      logger.info e.backtrace
+      logger.error "Error: #{e}"
+      e.backtrace.each { |line| logger.error line }
     end
     begin
       IlmoMailer.player_message(@player, username, password).deliver
@@ -129,9 +129,9 @@ before_filter :is_referee?, :only => :index
       logger.info 'registration mail sent succesfully'
       return true
     rescue Exception => e
-      logger.info 'failed to send registration mail!'
-      logger.info e
-      logger.info e.backtrace
+      logger.error 'failed to send registration mail!'
+      logger.error "Error: #{e}"
+      e.backtrace.each { |line| logger.error line }
       @player.update_attribute(:registration_email_sent, false)
       return false
     end

@@ -40,6 +40,7 @@ HYSMurhamaster::Application.routes.draw do
 
   get '/tournaments/:tournament_id/registration', to: 'ilmos#new', as: :tournament_registration
   match '/tournaments/:tournament_id/targets/:id/print' => 'targets#print'
+  match '/tournaments/:tournament_id/resend_registration_mails' => 'ilmos#resend_registration_mails'
   match '/users/:id/reset_password' => 'users#reset_password'
   # match '/images/*file_name' => 'pictures#display'
   match 'pictures/:id/:style.:format', controller: 'pictures', action: 'display', conditions: { method: :get }

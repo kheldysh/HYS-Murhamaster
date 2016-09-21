@@ -20,3 +20,7 @@
           = p.hidden_field :status, { :value => :active }
           = submit_tag t('admin.confirm_player')
 %br/
+- if current_user.admin
+  = form_for(@tournament, url: {controller: :ilmos, action: :resend_registration_mails}) do |f|
+    %p
+      = f.submit "RESEND CONFIRMATIONS"

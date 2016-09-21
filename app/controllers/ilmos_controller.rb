@@ -4,6 +4,7 @@ class IlmosController < ApplicationController
 
 skip_before_filter :is_authenticated?, :except => :index
 before_filter :is_referee?, :only => :index
+before_filter :is_admin?, :only => :resend_registration_mails
 
   def index
     @tournament = Tournament.find(params[:tournament_id])
@@ -63,7 +64,7 @@ before_filter :is_referee?, :only => :index
       @player.tournament = @tournament
       @player.save
 
-      send_registration_mails
+      @mail_sent = send_registration_mails(@player)
 
     else
       # if user is not logged in, we create new user with new calendar and such
@@ -103,20 +104,40 @@ before_filter :is_referee?, :only => :index
         end
       end
 
-      @mail_sent = send_registration_mails(username, passwd)
+      @mail_sent = send_registration_mails(@player, username, passwd)
     end
     render :registration_complete
   end
+
+  def resend_registration_mails
+    @tournament = Tournament.find(params[:tournament_id])
+    @tournament.players.select(&:active?).select {|p| !p.registration_email_sent}.each do |p|
+      if p.user.last_login
+        # send mail for existing user
+        logger.info("sending registration confirmation to #{p.user.full_name}, #{p}")
+        @mail_sent = send_registration_mails(p)
+      else
+        # send registration mail with new credentials
+        logger.info("resetting passwd and sending registration confirmation to #{p.user.full_name}, #{p}")
+        u = p.user
+        new_passwd = u.reset_password
+        u.save
+        @mail_sent = send_registration_mails(p, p.user.username, new_passwd)
+      end
+    end
+    render :registration_complete
+  end
+
 
   # rescue ActiveRecord::RecordInvalid => e
     # @player.valid?
     # redirect_to :back
   # end
 
-  def send_registration_mails(username = nil, password = nil)
+  def send_registration_mails(player, username = nil, password = nil)
     logger.info 'sending registration mails'
     begin
-      IlmoMailer.referee_message(@player).deliver if @player.tournament.send_registration_announcements_to_referees
+      IlmoMailer.referee_message(player).deliver if player.tournament.send_registration_announcements_to_referees
       logger.info 'referee info mail sent succesfully'
     rescue Exception => e
       logger.info 'failed to send referee info mail!'
@@ -124,15 +145,15 @@ before_filter :is_referee?, :only => :index
       e.backtrace.each { |line| logger.error line }
     end
     begin
-      IlmoMailer.player_message(@player, username, password).deliver
-      @player.update_attribute(:registration_email_sent, true)
+      IlmoMailer.player_message(player, username, password).deliver
+      player.update_attribute(:registration_email_sent, true)
       logger.info 'registration mail sent succesfully'
       return true
     rescue Exception => e
       logger.error 'failed to send registration mail!'
       logger.error "Error: #{e}"
       e.backtrace.each { |line| logger.error line }
-      @player.update_attribute(:registration_email_sent, false)
+      player.update_attribute(:registration_email_sent, false)
       return false
     end
   end

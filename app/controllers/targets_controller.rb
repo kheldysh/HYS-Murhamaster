@@ -15,10 +15,8 @@ class TargetsController < ApplicationController
       end
     end
 
-    if not @referee
-      @current_player = current_user.players.find(:first, :conditions => [ "tournament_id = ?", @tournament ])
-    end
-
+    current_player = current_user.players.find(:first, :conditions => [ "tournament_id = ?", @tournament ])
+    @detective = current_player.present? && current_player.detective?
   end
 
   def print
@@ -93,4 +91,3 @@ class TargetsController < ApplicationController
     return false
   end
 end
-

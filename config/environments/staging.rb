@@ -39,13 +39,13 @@ HYSMurhamaster::Application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :address        => "mail.salamurhaajat.net",
-      :port           => "25",
-      :domain         => "salamurhaajat.net",
+      :address        => ENV['SMTP_SERVER'],
+      :port           => ENV['SMTP_PORT'],
+      :domain         => ENV['SMTP_DOMAIN'],
       :user_name      => ENV['SMTP_USER'],
-      :password       => ENV['SMTP_PASSWD'],
+      :password => ENV['SMTP_PASSWD'],
       :authentication => :plain,
-      :openssl_verify_mode => OpenSSL::SSL::VERIFY_NONE
+      :enable_starttls_auto => true
   }
 
   # Enable threaded mode
